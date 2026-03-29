@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew install:*)",
+      "Bash(mdfind -name node kind:unix)",
+      "Bash(open \"/Users/huichen/Desktop/Website Test/index.html\")",
+      "Bash(ls /usr/local/bin/node /opt/homebrew/bin/node ~/.nvm/versions/node/*/bin/node)",
+      "Bash(/usr/local/bin/node --version)",
+      "Bash(/opt/homebrew/bin/node --version)",
+      "Bash(/usr/local/bin/node screenshot.mjs http://localhost:3000 hero)",
+      "Bash(/usr/local/bin/npm install:*)",
+      "Bash(/usr/local/bin/node -e \":*)",
+      "Bash(/usr/local/bin/node screenshot.mjs http://localhost:3000 hero2)",
+      "Bash(/usr/local/bin/node screenshot.mjs http://localhost:3000 hero3)"
+    ]
+  }
+}

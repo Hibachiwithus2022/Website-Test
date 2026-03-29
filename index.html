@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hibachi Connect — Private Hibachi Chef Nationwide</title>
+  <meta name="description" content="Hibachi Connect — Professional private hibachi chefs brought directly to your backyard, venue, or event. Serving all 48 contiguous U.S. states. Book at hibachiconnect.com." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red:      '#C8102E',
+              redDark:  '#9E0B22',
+              cream:    '#F5EFE0',
+              creamDark:'#EDE5CE',
+              charcoal: '#1A1209',
+              gold:     '#D4A843',
+            }
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            serif:   ['Playfair Display', 'serif'],
+            body:    ['DM Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #FFFFFF;
+      color: #1A1209;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Film grain texture ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: overlay;
+    }
+
+    /* ── Typography helpers ── */
+    .font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; }
+    .font-serif   { font-family: 'Playfair Display', serif; }
+
+    /* ── Shadows ── */
+    .shadow-brand {
+      box-shadow: 0 2px 4px rgba(200,16,46,.08), 0 8px 24px rgba(200,16,46,.12), 0 24px 48px rgba(0,0,0,.3);
+    }
+    .shadow-card {
+      box-shadow: 0 1px 3px rgba(26,18,9,.06), 0 4px 16px rgba(26,18,9,.07), 0 12px 32px rgba(26,18,9,.06);
+    }
+    .shadow-float {
+      box-shadow: 0 4px 8px rgba(200,16,46,.15), 0 16px 40px rgba(200,16,46,.1), 0 32px 64px rgba(0,0,0,.4);
+    }
+
+    /* ── Nav ── */
+    nav#navbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 200;
+      transition: background .4s ease, box-shadow .4s ease;
+    }
+    nav#navbar.scrolled {
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(26,18,9,.07), 0 4px 24px rgba(0,0,0,.1);
+    }
+    .nav-link {
+      color: #1A1209;
+      text-decoration: none;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35rem 0;
+      position: relative;
+      transition: color .25s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: #C8102E;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+    }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #C8102E; color: #F5EFE0;
+      font-family: 'DM Sans', sans-serif; font-weight: 600;
+      font-size: .83rem; letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; padding: .85rem 2.2rem;
+      border: none; cursor: pointer;
+      position: relative; overflow: hidden;
+      transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease;
+      box-shadow: 0 4px 16px rgba(200,16,46,.35), 0 1px 3px rgba(0,0,0,.3);
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .btn-primary:hover  { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 28px rgba(200,16,46,.45), 0 2px 8px rgba(0,0,0,.4); }
+    .btn-primary:active { transform: translateY(0) scale(.99); }
+    .btn-primary:focus-visible { outline: 2px solid #D4A843; outline-offset: 3px; }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: transparent; color: #F5EFE0;
+      font-family: 'DM Sans', sans-serif; font-weight: 600;
+      font-size: .83rem; letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; padding: .85rem 2.2rem;
+      border: 1px solid rgba(245,239,224,.3);
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease, transform .2s cubic-bezier(.34,1.56,.64,1);
+    }
+    .btn-ghost:hover  { background: rgba(245,239,224,.08); border-color: rgba(245,239,224,.65); transform: translateY(-2px); }
+    .btn-ghost:active { transform: translateY(0); }
+    .btn-ghost:focus-visible { outline: 2px solid #D4A843; outline-offset: 3px; }
+
+    /* ── Hero ── */
+    #hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
+    #hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('Brand_Assets/Hibachi%20at%20Home%20in%20Texas.jpg');
+      background-size: cover; background-position: center 20%;
+      transform: scale(1.06);
+      transition: transform 8s ease;
+    }
+    #hero-bg.loaded { transform: scale(1); }
+    #hero-overlay {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 90% at 15% 50%, rgba(200,16,46,.2) 0%, transparent 65%),
+        linear-gradient(to right, rgba(26,18,9,.92) 0%, rgba(26,18,9,.58) 55%, rgba(26,18,9,.28) 100%),
+        linear-gradient(to top, rgba(26,18,9,.75) 0%, transparent 55%);
+    }
+    #hero-overlay::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(200,16,46,.07); mix-blend-mode: multiply;
+    }
+
+    /* ── Red pill label ── */
+    .red-pill {
+      display: inline-block;
+      background: rgba(200,16,46,.13); border: 1px solid rgba(200,16,46,.38);
+      color: #C8102E;
+      font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+      padding: .28rem 1rem; margin-bottom: 1.25rem;
+    }
+
+    /* ── Section defaults ── */
+    section { padding: 6rem 1.5rem; }
+
+    /* ── Cards ── */
+    .step-card {
+      background: #FFFFFF; border: 1px solid rgba(26,18,9,.09);
+      padding: 2rem 1.75rem; position: relative; overflow: hidden;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1), border-color .3s ease;
+    }
+    .step-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, #C8102E, #D4A843);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .4s ease;
+    }
+    .step-card:hover { transform: translateY(-4px); border-color: rgba(200,16,46,.4); box-shadow: 0 8px 32px rgba(26,18,9,.1); }
+    .step-card:hover::before { transform: scaleX(1); }
+
+    .menu-card {
+      background: #FFFFFF; border: 1px solid rgba(26,18,9,.08);
+      padding: 1.75rem;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1), background .3s ease;
+    }
+    .menu-card:hover { transform: translateY(-3px); background: #FFFFFF; box-shadow: 0 8px 28px rgba(26,18,9,.1); }
+
+    /* ── Pricing cards ── */
+    .pricing-card {
+      background: #FFFFFF; border: 1px solid rgba(26,18,9,.09);
+      padding: 2.5rem 2rem; position: relative; overflow: hidden; box-shadow: 0 2px 8px rgba(26,18,9,.06);
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1), border-color .3s ease;
+    }
+    .pricing-card.featured {
+      background: #FFF5F7; border-color: rgba(200,16,46,.5);
+    }
+    .pricing-card:hover { transform: translateY(-5px); }
+
+    /* ── Testimonial ── */
+    .testimonial-card {
+      background: #FFFFFF; border: 1px solid rgba(26,18,9,.08);
+      padding: 2.25rem 2rem; position: relative; box-shadow: 0 2px 12px rgba(26,18,9,.06);
+      transition: transform .3s ease;
+    }
+    .testimonial-card:hover { transform: translateY(-3px); }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif; font-size: 5rem;
+      color: #C8102E; opacity: .4;
+      position: absolute; top: .25rem; left: 1.25rem; line-height: 1;
+    }
+
+    /* ── State grid ── */
+    .state-btn {
+      background: #F8F6F2; border: 1px solid rgba(26,18,9,.1);
+      color: rgba(26,18,9,.65); font-size: .75rem; font-weight: 500;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: .5rem .6rem; text-align: center; cursor: pointer;
+      text-decoration: none; display: block;
+      transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s cubic-bezier(.34,1.56,.64,1);
+    }
+    .state-btn:hover {
+      background: rgba(200,16,46,.08); border-color: rgba(200,16,46,.45);
+      color: #C8102E; transform: translateY(-2px);
+    }
+    .state-btn.active {
+      background: rgba(200,16,46,.08); border-color: rgba(200,16,46,.45); color: #C8102E;
+    }
+    .state-btn.highlight {
+      background: #C8102E; border-color: #C8102E; color: #F5EFE0;
+      animation: statePop .35s cubic-bezier(.34,1.56,.64,1);
+    }
+    @keyframes statePop { 0%{transform:scale(.92)} 100%{transform:scale(1)} }
+
+    /* ── FAQ accordion ── */
+    .faq-item { border-bottom: 1px solid rgba(26,18,9,.08); }
+    .faq-trigger {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 0;
+      color: #1A1209; font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; font-weight: 500; text-align: left;
+      transition: color .2s ease;
+    }
+    .faq-trigger:hover { color: #C8102E; }
+    .faq-trigger:focus-visible { outline: 2px solid #D4A843; outline-offset: 2px; }
+    .faq-icon {
+      flex-shrink: 0; width: 22px; height: 22px;
+      border: 1px solid rgba(26,18,9,.2);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1), border-color .2s ease, background .2s ease;
+    }
+    .faq-trigger[aria-expanded="true"] .faq-icon {
+      transform: rotate(45deg); border-color: #C8102E; background: rgba(200,16,46,.15);
+    }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-body.open { max-height: 400px; }
+    .faq-body p { padding-bottom: 1.4rem; color: rgba(26,18,9,.6); line-height: 1.75; font-size: .95rem; }
+
+    /* ── Form ── */
+    .form-input {
+      width: 100%;
+      background: #FFFFFF; border: 1px solid rgba(26,18,9,.15);
+      color: #1A1209; padding: .9rem 1.1rem;
+      font-family: 'DM Sans', sans-serif; font-size: .95rem;
+      outline: none;
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .form-input::placeholder { color: rgba(26,18,9,.32); }
+    .form-input:focus { border-color: #C8102E; background: #FFFFFF; }
+    .form-label {
+      display: block; font-size: .72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(26,18,9,.5); margin-bottom: .4rem;
+    }
+
+    /* ── Check items ── */
+    .check-item {
+      display: flex; align-items: flex-start; gap: .75rem;
+      padding: .6rem 0; border-bottom: 1px solid rgba(26,18,9,.07);
+    }
+    .check-item:last-child { border-bottom: none; }
+    .check-icon {
+      flex-shrink: 0; width: 20px; height: 20px;
+      background: rgba(200,16,46,.14); border: 1px solid rgba(200,16,46,.38);
+      display: flex; align-items: center; justify-content: center; margin-top: 3px;
+    }
+
+    /* ── Ornament divider ── */
+    .ornament {
+      display: flex; align-items: center; gap: 1rem; color: #C8102E;
+      font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
+    }
+    .ornament::before, .ornament::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,16,46,.6) 50%, transparent);
+      max-width: 100px;
+    }
+
+    /* ── Stat numbers ── */
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: #C8102E; line-height: 1;
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity .6s ease, transform .6s cubic-bezier(.34,1.2,.64,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* ── Hamburger ── */
+    .hamburger { cursor: pointer; background: none; border: none; padding: .25rem; }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: #1A1209; margin: 5px 0;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Footer ── */
+    footer { background: #1A1209; border-top: 1px solid rgba(26,18,9,.1); }
+
+    /* ── Scroll cue animation ── */
+    @keyframes scrollCue {
+      0%   { opacity:0; transform:scaleY(0); transform-origin:top; }
+      50%  { opacity:1; transform:scaleY(1); }
+      100% { opacity:0; transform:scaleY(1) translateY(10px); }
+    }
+
+    /* ── State search highlight ── */
+    #stateSearch:focus { border-color: #C8102E; background: #FFFFFF; outline: none; }
+
+    /* ── Success toast ── */
+    #toast {
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: #C8102E; color: #F5EFE0;
+      padding: 1rem 1.5rem; font-size: .9rem; font-weight: 500;
+      box-shadow: 0 8px 32px rgba(200,16,46,.4);
+      transform: translateY(80px); opacity: 0;
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;
+      z-index: 500;
+    }
+    #toast.show { transform: translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════ NAV -->
+<nav id="navbar">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#hero" class="flex-shrink-0">
+      <img src="Brand_Assets/Hibachi%20Connet%20Logo.png" alt="Hibachi Connect" style="height:72px;width:auto;display:block;border-radius:8px;" />
+    </a>
+
+    <!-- Desktop -->
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="#about"     class="nav-link">About</a>
+      <a href="#menu"      class="nav-link">Menu</a>
+      <a href="#pricing"   class="nav-link">Pricing</a>
+      <a href="#locations" class="nav-link">Locations</a>
+      <a href="#reviews"   class="nav-link">Reviews</a>
+      <a href="#faq"       class="nav-link">FAQ</a>
+      <a href="#book"      class="btn-primary" style="padding:.6rem 1.5rem;">Book Now</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="hamburger lg:hidden" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t" style="border-color:rgba(26,18,9,.1);background:rgba(255,255,255,.98);">
+    <div class="flex flex-col px-6 py-5 gap-5">
+      <a href="#about"     class="nav-link" onclick="closeMobile()">About</a>
+      <a href="#menu"      class="nav-link" onclick="closeMobile()">Menu</a>
+      <a href="#pricing"   class="nav-link" onclick="closeMobile()">Pricing</a>
+      <a href="#locations" class="nav-link" onclick="closeMobile()">Locations</a>
+      <a href="#reviews"   class="nav-link" onclick="closeMobile()">Reviews</a>
+      <a href="#faq"       class="nav-link" onclick="closeMobile()">FAQ</a>
+      <a href="#book"      class="btn-primary text-center" onclick="closeMobile()">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════ HERO -->
+<section id="hero" style="padding:0;">
+  <div id="hero-bg"></div>
+  <div id="hero-overlay"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-36 md:py-0 md:min-h-screen md:flex md:items-center">
+    <div class="max-w-2xl">
+      <div class="red-pill reveal">Now Serving All 48 Contiguous States</div>
+
+      <h1 class="font-display leading-none reveal reveal-delay-1"
+          style="font-size:clamp(3.6rem,9.5vw,7.5rem);letter-spacing:.02em;text-shadow:0 2px 48px rgba(0,0,0,.55);">
+        The Hibachi<br />
+        <span style="color:#C8102E;">Comes to You</span>
+      </h1>
+
+      <p class="mt-6 text-lg reveal reveal-delay-2" style="color:rgba(26,18,9,0.78);max-width:38rem;line-height:1.72;">
+        Professional teppanyaki chefs who bring the sizzle, the flair, and restaurant-quality flavors — right to your backyard, venue, or event, anywhere in the lower 48.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-4 reveal reveal-delay-3">
+        <a href="#book" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Your Event
+        </a>
+        <a href="#pricing" class="btn-ghost">View Pricing</a>
+      </div>
+
+      <!-- Social proof strip -->
+      <div class="mt-14 flex flex-wrap items-center gap-6 reveal reveal-delay-4">
+        <div>
+          <div class="stat-num">200+</div>
+          <div style="font-size:.7rem;color:rgba(26,18,9,0.50);letter-spacing:.14em;text-transform:uppercase;margin-top:.2rem;">Events Hosted</div>
+        </div>
+        <div style="width:1px;height:48px;background:rgba(245,239,224,.2);"></div>
+        <div>
+          <div class="stat-num">5★</div>
+          <div style="font-size:.7rem;color:rgba(26,18,9,0.50);letter-spacing:.14em;text-transform:uppercase;margin-top:.2rem;">Avg. Rating</div>
+        </div>
+        <div style="width:1px;height:48px;background:rgba(245,239,224,.2);"></div>
+        <div>
+          <div class="stat-num">48</div>
+          <div style="font-size:.7rem;color:rgba(26,18,9,0.50);letter-spacing:.14em;text-transform:uppercase;margin-top:.2rem;">States Served</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2" style="opacity:.45;">
+    <span style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,18,9,.55);">Scroll</span>
+    <div style="width:1px;height:36px;background:linear-gradient(to bottom,rgba(200,16,46,.8),transparent);animation:scrollCue 1.8s ease-in-out infinite;"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ ABOUT -->
+<section id="about" style="background:#F8F6F2;padding:6rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Image -->
+      <div class="relative reveal">
+        <div style="position:relative;overflow:hidden;">
+          <img src="Brand_Assets/Hibachi%20at%20Home%20in%20Texas.jpg"
+               alt="Hibachi chef entertaining guests"
+               style="width:100%;display:block;object-fit:cover;height:520px;filter:saturate(1.08);" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,9,.3) 0%,transparent 50%);"></div>
+          <div style="position:absolute;inset:0;background:rgba(200,16,46,.04);mix-blend-mode:multiply;"></div>
+        </div>
+        <div style="position:absolute;bottom:-1.5rem;right:-1.5rem;background:#C8102E;padding:1.5rem 2rem;" class="shadow-float hidden md:block">
+          <div class="font-display" style="font-size:2.4rem;color:#1A1209;">100%</div>
+          <div style="font-size:.68rem;color:rgba(26,18,9,0.82);letter-spacing:.12em;text-transform:uppercase;margin-top:.2rem;">Guest Satisfaction</div>
+        </div>
+        <div style="position:absolute;top:-1rem;left:-1rem;width:100%;height:100%;border:1px solid rgba(200,16,46,.2);pointer-events:none;" class="hidden md:block"></div>
+      </div>
+
+      <!-- Text -->
+      <div>
+        <div class="red-pill reveal">Our Story</div>
+        <h2 class="font-display leading-none reveal reveal-delay-1" style="font-size:clamp(2.4rem,5vw,3.8rem);color:#1A1209;margin-bottom:1.5rem;">
+          Restaurant Quality.<br /><span style="color:#C8102E;">Your Backyard.</span>
+        </h2>
+        <p style="color:rgba(26,18,9,.65);line-height:1.78;margin-bottom:1.25rem;" class="reveal reveal-delay-2">
+          Hibachi Connect was born from a simple belief: the best part of a hibachi restaurant isn't just the food — it's the show. The sizzle, the flying shrimp, the onion volcano. We bottle that energy and bring it directly to you, coast to coast.
+        </p>
+        <p style="color:rgba(26,18,9,.65);line-height:1.78;margin-bottom:2rem;" class="reveal reveal-delay-3">
+          Our chefs are trained teppanyaki professionals who blend culinary mastery with pure showmanship. Birthday, anniversary, corporate retreat, or just a Friday night with friends — we make it unforgettable, no matter where you are in the continental U.S.
+        </p>
+
+        <div class="reveal reveal-delay-4">
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#C8102E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <span style="color:rgba(26,18,9,.75);">Full setup &amp; teardown — we bring all equipment</span>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#C8102E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <span style="color:rgba(26,18,9,.75);">Fresh, premium ingredients — sourced regionally</span>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#C8102E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <span style="color:rgba(26,18,9,.75);">Live entertainment — tricks, flames, and hibachi flair</span>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#C8102E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <span style="color:rgba(26,18,9,.75);">Scalable for 10 to 200+ guests — any size event</span>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#C8102E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <span style="color:rgba(26,18,9,.75);">Serving all 48 contiguous U.S. states</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ MENU -->
+<section id="menu" style="background:#FFFFFF;padding:6rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="red-pill reveal" style="display:inline-block;">The Menu</div>
+      <h2 class="font-display leading-none reveal reveal-delay-1" style="font-size:clamp(2.4rem,5vw,3.8rem);color:#1A1209;">
+        What's On the Grill
+      </h2>
+      <p class="mt-4 reveal reveal-delay-2" style="color:rgba(26,18,9,.55);max-width:38rem;margin-inline:auto;">
+        Every package includes a full teppanyaki spread. Mix proteins and customize add-ons to match your crowd.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+
+      <div class="menu-card reveal">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🥩</div>
+        <h3 class="font-display" style="font-size:1.55rem;color:#1A1209;margin-bottom:.4rem;">Filet Mignon</h3>
+        <p style="color:rgba(26,18,9,.6);font-size:.88rem;line-height:1.68;">Tender center-cut filet, seasoned and seared to perfection on the open teppan grill.</p>
+        <div style="margin-top:.85rem;color:#C8102E;font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;">Premium +</div>
+      </div>
+
+      <div class="menu-card reveal reveal-delay-1">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🍤</div>
+        <h3 class="font-display" style="font-size:1.55rem;color:#1A1209;margin-bottom:.4rem;">Hibachi Shrimp</h3>
+        <p style="color:rgba(26,18,9,.6);font-size:.88rem;line-height:1.68;">Jumbo shrimp with garlic butter and house hibachi sauce — a crowd favorite every time.</p>
+        <div style="margin-top:.85rem;color:#D4A843;font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;">Best Seller</div>
+      </div>
+
+      <div class="menu-card reveal reveal-delay-2">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🍗</div>
+        <h3 class="font-display" style="font-size:1.55rem;color:#1A1209;margin-bottom:.4rem;">Hibachi Chicken</h3>
+        <p style="color:rgba(26,18,9,.6);font-size:.88rem;line-height:1.68;">Juicy chicken breast grilled with teriyaki glaze, onions, and signature seasoning.</p>
+      </div>
+
+      <div class="menu-card reveal">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🐟</div>
+        <h3 class="font-display" style="font-size:1.55rem;color:#1A1209;margin-bottom:.4rem;">Salmon</h3>
+        <p style="color:rgba(26,18,9,.6);font-size:.88rem;line-height:1.68;">Fresh salmon fillet with lemon butter, sesame, and a delicate soy glaze.</p>
+      </div>
+
+      <div class="menu-card reveal reveal-delay-1">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🌿</div>
+        <h3 class="font-display" style="font-size:1.55rem;color:#1A1209;margin-bottom:.4rem;">Veggie Option</h3>
+        <p style="color:rgba(26,18,9,.6);font-size:.88rem;line-height:1.68;">Zucchini, mushrooms, onions, and seasonal vegetables — grilled and beautifully seasoned.</p>
+      </div>
+
+      <div class="menu-card reveal reveal-delay-2" style="border:1px solid rgba(200,16,46,.28);background:rgba(200,16,46,.04);">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🍱</div>
+        <h3 class="font-display" style="font-size:1.55rem;color:#1A1209;margin-bottom:.6rem;">Every Plate Includes</h3>
+        <ul style="color:rgba(26,18,9,0.58);font-size:.88rem;line-height:2;">
+          <li>· Hibachi fried rice</li>
+          <li>· Grilled vegetables</li>
+          <li>· Yum yum &amp; ginger sauce</li>
+          <li>· Miso soup</li>
+          <li>· Garden salad</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="text-center reveal">
+      <a href="#book" class="btn-primary">Customize Your Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ PRICING -->
+<section id="pricing" style="background:#F2F0EC;padding:6rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="red-pill reveal" style="display:inline-block;">Transparent Pricing</div>
+      <h2 class="font-display leading-none reveal reveal-delay-1" style="font-size:clamp(2.4rem,5vw,3.8rem);color:#1A1209;">
+        Simple. Upfront. No Surprises.
+      </h2>
+      <p class="mt-4 reveal reveal-delay-2" style="color:rgba(26,18,9,0.58);max-width:40rem;margin-inline:auto;">
+        All packages include full chef service, equipment, setup, and teardown. You provide the space and the appetites.
+      </p>
+    </div>
+
+    <!-- Main pricing grid -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+
+      <!-- Standard -->
+      <div class="pricing-card reveal">
+        <div style="font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,18,9,.45);margin-bottom:1rem;">Standard</div>
+        <div class="font-display" style="font-size:3.5rem;color:#1A1209;line-height:1;">$55
+          <span style="font-size:1.2rem;color:rgba(26,18,9,.45);">/person</span>
+        </div>
+        <div style="font-size:.8rem;color:rgba(26,18,9,.45);margin-top:.3rem;margin-bottom:1.75rem;">Children under 12: $30/person</div>
+        <ul style="font-size:.9rem;color:rgba(26,18,9,.65);line-height:2.1;">
+          <li>✓ &nbsp;Choose 2 proteins per person</li>
+          <li>✓ &nbsp;Hibachi fried rice</li>
+          <li>✓ &nbsp;Grilled vegetables</li>
+          <li>✓ &nbsp;Salad &amp; miso soup</li>
+          <li>✓ &nbsp;Yum yum &amp; ginger sauce</li>
+          <li>✓ &nbsp;Full chef setup &amp; cleanup</li>
+        </ul>
+        <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid rgba(245,239,224,.08);font-size:.8rem;color:rgba(26,18,9,0.40);">
+          Minimum order: $550
+        </div>
+        <a href="#book" class="btn-ghost" style="width:100%;justify-content:center;margin-top:1.5rem;">Get a Quote</a>
+      </div>
+
+      <!-- Premium (featured) -->
+      <div class="pricing-card featured reveal reveal-delay-1" style="border-color:rgba(200,16,46,.5);">
+        <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);">
+          <span style="background:#C8102E;color:#1A1209;font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.25rem 1rem;">Most Popular</span>
+        </div>
+        <div style="font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#C8102E;margin-bottom:1rem;margin-top:.75rem;">Premium</div>
+        <div class="font-display" style="font-size:3.5rem;color:#1A1209;line-height:1;">$65
+          <span style="font-size:1.2rem;color:rgba(26,18,9,.45);">/person</span>
+        </div>
+        <div style="font-size:.8rem;color:rgba(26,18,9,.45);margin-top:.3rem;margin-bottom:1.75rem;">Children under 12: $35/person</div>
+        <ul style="font-size:.9rem;color:rgba(26,18,9,.65);line-height:2.1;">
+          <li>✓ &nbsp;Choose 3 proteins per person</li>
+          <li>✓ &nbsp;Hibachi fried rice &amp; noodles</li>
+          <li>✓ &nbsp;Grilled vegetables</li>
+          <li>✓ &nbsp;Salad &amp; miso soup</li>
+          <li>✓ &nbsp;Edamame starter</li>
+          <li>✓ &nbsp;Yum yum &amp; ginger sauce</li>
+          <li>✓ &nbsp;Full chef setup &amp; cleanup</li>
+          <li>✓ &nbsp;Priority booking</li>
+        </ul>
+        <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid rgba(200,16,46,.2);font-size:.8rem;color:rgba(26,18,9,0.40);">
+          Minimum order: $650
+        </div>
+        <a href="#book" class="btn-primary" style="width:100%;justify-content:center;margin-top:1.5rem;">Get a Quote</a>
+      </div>
+
+      <!-- Elite -->
+      <div class="pricing-card reveal reveal-delay-2">
+        <div style="font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D4A843;margin-bottom:1rem;">Elite</div>
+        <div class="font-display" style="font-size:3.5rem;color:#1A1209;line-height:1;">Custom
+        </div>
+        <div style="font-size:.8rem;color:rgba(26,18,9,.45);margin-top:.3rem;margin-bottom:1.75rem;">Corporate &amp; large events</div>
+        <ul style="font-size:.9rem;color:rgba(26,18,9,.65);line-height:2.1;">
+          <li>✓ &nbsp;Unlimited protein selection</li>
+          <li>✓ &nbsp;Filet mignon &amp; lobster tail</li>
+          <li>✓ &nbsp;Multiple chef stations</li>
+          <li>✓ &nbsp;Full premium spread</li>
+          <li>✓ &nbsp;Gyoza &amp; specialty appetizers</li>
+          <li>✓ &nbsp;Dedicated event coordinator</li>
+          <li>✓ &nbsp;Flexible scheduling</li>
+          <li>✓ &nbsp;200+ guest capacity</li>
+        </ul>
+        <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid rgba(245,239,224,.08);font-size:.8rem;color:rgba(26,18,9,0.40);">
+          Contact us for custom pricing
+        </div>
+        <a href="#book" class="btn-ghost" style="width:100%;justify-content:center;margin-top:1.5rem;">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- Add-ons row -->
+    <div class="reveal" style="background:#F8F6F2;border:1px solid rgba(26,18,9,.08);padding:2rem 2.5rem;">
+      <div style="font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,18,9,.5);margin-bottom:1.25rem;">Popular Add-Ons</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(26,18,9,.07);">
+          <span style="font-size:.9rem;color:rgba(26,18,9,0.75);">Scallops</span>
+          <span style="color:#D4A843;font-weight:600;font-size:.9rem;">+$5/person</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(26,18,9,.07);">
+          <span style="font-size:.9rem;color:rgba(26,18,9,0.75);">Lobster Tail</span>
+          <span style="color:#D4A843;font-weight:600;font-size:.9rem;">+$15/person</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(26,18,9,.07);">
+          <span style="font-size:.9rem;color:rgba(26,18,9,0.75);">Gyoza (6 pc)</span>
+          <span style="color:#D4A843;font-weight:600;font-size:.9rem;">+$10/person</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(26,18,9,.07);">
+          <span style="font-size:.9rem;color:rgba(26,18,9,0.75);">Yakisoba Noodles</span>
+          <span style="color:#D4A843;font-weight:600;font-size:.9rem;">+$5/person</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ HOW IT WORKS -->
+<section id="how" style="background:#FFFFFF;padding:6rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="red-pill reveal" style="display:inline-block;">The Process</div>
+      <h2 class="font-display leading-none reveal reveal-delay-1" style="font-size:clamp(2.4rem,5vw,3.8rem);color:#1A1209;">
+        How It Works
+      </h2>
+      <p class="mt-4 reveal reveal-delay-2" style="color:rgba(26,18,9,.55);max-width:38rem;margin-inline:auto;">
+        Four easy steps and you're on your way to the most memorable dinner party of the year.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="step-card reveal">
+        <div class="font-display" style="font-size:3.5rem;color:rgba(200,16,46,.25);line-height:1;margin-bottom:.75rem;">01</div>
+        <h3 class="font-display" style="font-size:1.45rem;color:#1A1209;margin-bottom:.6rem;">Book Online</h3>
+        <p style="font-size:.88rem;color:rgba(26,18,9,.6);line-height:1.7;">Fill out the booking form with your date, guest count, location, and protein preferences. We'll confirm within 24 hours.</p>
+      </div>
+
+      <div class="step-card reveal reveal-delay-1">
+        <div class="font-display" style="font-size:3.5rem;color:rgba(200,16,46,.25);line-height:1;margin-bottom:.75rem;">02</div>
+        <h3 class="font-display" style="font-size:1.45rem;color:#1A1209;margin-bottom:.6rem;">We Prepare</h3>
+        <p style="font-size:.88rem;color:rgba(26,18,9,.6);line-height:1.7;">Our chefs source the finest local ingredients and prep everything beforehand. You don't lift a finger.</p>
+      </div>
+
+      <div class="step-card reveal reveal-delay-2">
+        <div class="font-display" style="font-size:3.5rem;color:rgba(200,16,46,.25);line-height:1;margin-bottom:.75rem;">03</div>
+        <h3 class="font-display" style="font-size:1.45rem;color:#1A1209;margin-bottom:.6rem;">We Arrive &amp; Perform</h3>
+        <p style="font-size:.88rem;color:rgba(26,18,9,.6);line-height:1.7;">Our team arrives with full teppan grill, tools, and ingredients. Setup takes about 30 minutes. Then the show begins.</p>
+      </div>
+
+      <div class="step-card reveal reveal-delay-3">
+        <div class="font-display" style="font-size:3.5rem;color:rgba(200,16,46,.25);line-height:1;margin-bottom:.75rem;">04</div>
+        <h3 class="font-display" style="font-size:1.45rem;color:#1A1209;margin-bottom:.6rem;">Enjoy &amp; Relax</h3>
+        <p style="font-size:.88rem;color:rgba(26,18,9,.6);line-height:1.7;">Sit back, enjoy the performance, and feast. When dinner's done, we clean up completely — leaving your space spotless.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ STATS BAND -->
+<section style="background:#C8102E;padding:3.5rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <div class="font-display" style="font-size:clamp(2.5rem,5vw,3.8rem);color:#1A1209;line-height:1;">200+</div>
+        <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,18,9,0.70);margin-top:.4rem;">Events Hosted</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="font-display" style="font-size:clamp(2.5rem,5vw,3.8rem);color:#1A1209;line-height:1;">48</div>
+        <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,18,9,0.70);margin-top:.4rem;">States Covered</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="font-display" style="font-size:clamp(2.5rem,5vw,3.8rem);color:#1A1209;line-height:1;">5★</div>
+        <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,18,9,0.70);margin-top:.4rem;">Average Rating</div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="font-display" style="font-size:clamp(2.5rem,5vw,3.8rem);color:#1A1209;line-height:1;">100%</div>
+        <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,18,9,0.70);margin-top:.4rem;">Would Rebook</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ SERVICE LOCATIONS -->
+<section id="locations" style="background:#F8F6F2;padding:6rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="red-pill reveal" style="display:inline-block;">Service Area</div>
+      <h2 class="font-display leading-none reveal reveal-delay-1" style="font-size:clamp(2.4rem,5vw,3.8rem);color:#1A1209;">
+        We Come to You — Nationwide
+      </h2>
+      <p class="mt-4 reveal reveal-delay-2" style="color:rgba(26,18,9,0.58);max-width:42rem;margin-inline:auto;">
+        Hibachi Connect serves all 48 contiguous states. Search your state below to confirm we have chefs in your area.
+      </p>
+    </div>
+
+    <!-- State search -->
+    <div class="reveal" style="max-width:28rem;margin:0 auto 3rem;">
+      <div style="position:relative;">
+        <input
+          id="stateSearch"
+          type="text"
+          placeholder="Type your state name…"
+          class="form-input"
+          style="padding-left:3rem;"
+          oninput="filterStates(this.value)"
+          aria-label="Search state"
+        />
+        <svg style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:rgba(26,18,9,.35);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div id="stateResult" style="margin-top:.75rem;font-size:.9rem;min-height:1.4rem;text-align:center;color:rgba(26,18,9,.55);"></div>
+    </div>
+
+    <!-- States grid -->
+    <div id="statesGrid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 reveal">
+      <!-- populated by JS -->
+    </div>
+
+    <p class="text-center mt-8 reveal" style="font-size:.8rem;color:rgba(26,18,9,.35);">
+      * We do not currently service Hawaii or Alaska. All other states are covered.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ REVIEWS -->
+<section id="reviews" style="background:#FFFFFF;padding:6rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="red-pill reveal" style="display:inline-block;">What Guests Say</div>
+      <h2 class="font-display leading-none reveal reveal-delay-1" style="font-size:clamp(2.4rem,5vw,3.8rem);color:#1A1209;">
+        Real Experiences
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="testimonial-card reveal">
+        <div style="display:flex;gap:.2rem;margin-bottom:1.25rem;padding-top:2.5rem;">
+          <span style="color:#D4A843;">★★★★★</span>
+        </div>
+        <p style="font-size:.95rem;color:rgba(26,18,9,.65);line-height:1.78;margin-bottom:1.5rem;">
+          "Booked Hibachi Connect for my wife's birthday in Austin and it was absolutely incredible. The chef's tricks had everyone laughing and the food was restaurant-quality. Highly recommend for any occasion."
+        </p>
+        <div style="display:flex;align-items:center;gap:.75rem;">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(200,16,46,.2);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;color:#C8102E;font-size:1.1rem;">JM</div>
+          <div>
+            <div style="font-weight:600;font-size:.88rem;color:#1A1209;">James M.</div>
+            <div style="font-size:.75rem;color:rgba(26,18,9,.45);">Austin, TX</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div style="display:flex;gap:.2rem;margin-bottom:1.25rem;padding-top:2.5rem;">
+          <span style="color:#D4A843;">★★★★★</span>
+        </div>
+        <p style="font-size:.95rem;color:rgba(26,18,9,.65);line-height:1.78;margin-bottom:1.5rem;">
+          "We used them for a corporate event in Atlanta — 60 guests and flawless execution. The entire team was professional from booking to cleanup. Already planning our next event with them."
+        </p>
+        <div style="display:flex;align-items:center;gap:.75rem;">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(200,16,46,.2);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;color:#C8102E;font-size:1.1rem;">SL</div>
+          <div>
+            <div style="font-weight:600;font-size:.88rem;color:#1A1209;">Sarah L.</div>
+            <div style="font-size:.75rem;color:rgba(26,18,9,.45);">Atlanta, GA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div style="display:flex;gap:.2rem;margin-bottom:1.25rem;padding-top:2.5rem;">
+          <span style="color:#D4A843;">★★★★★</span>
+        </div>
+        <p style="font-size:.95rem;color:rgba(26,18,9,.65);line-height:1.78;margin-bottom:1.5rem;">
+          "I had them come to our backyard in Denver for a graduation party. My guests are still talking about it two months later. The shrimp toss alone was worth every penny. 10/10."
+        </p>
+        <div style="display:flex;align-items:center;gap:.75rem;">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(200,16,46,.2);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;color:#C8102E;font-size:1.1rem;">RM</div>
+          <div>
+            <div style="font-weight:600;font-size:.88rem;color:#1A1209;">Ryan M.</div>
+            <div style="font-size:.75rem;color:rgba(26,18,9,.45);">Denver, CO</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ FAQ -->
+<section id="faq" style="background:#F2F0EC;padding:6rem 1.5rem;">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-14">
+      <div class="red-pill reveal" style="display:inline-block;">Common Questions</div>
+      <h2 class="font-display leading-none reveal reveal-delay-1" style="font-size:clamp(2.4rem,5vw,3.8rem);color:#1A1209;">
+        FAQ
+      </h2>
+    </div>
+
+    <div id="faqList" class="reveal">
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>Do you really serve all 48 contiguous states?</span>
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </div>
+        </button>
+        <div class="faq-body"><p>Yes! We have a network of professional hibachi chefs across the country. We service all lower 48 states — from coast to coast. We do not currently operate in Hawaii or Alaska. If you're unsure, use our state search tool above.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>What do I need to provide?</span>
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </div>
+        </button>
+        <div class="faq-body"><p>Just tables, chairs, and plates for your guests! We bring the portable teppan grill, all cooking equipment, utensils, ingredients, sauces, and of course the chef. We handle setup and cleanup so you can focus on having fun.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>How far in advance should I book?</span>
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </div>
+        </button>
+        <div class="faq-body"><p>We recommend booking at least 1–2 weeks in advance to guarantee availability, especially on weekends. For large events (50+ guests) or holiday weekends, book 4–6 weeks out. Last-minute requests are sometimes possible — reach out and we'll do our best!</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>What is the minimum guest count?</span>
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </div>
+        </button>
+        <div class="faq-body"><p>Our minimum order value is $550, which typically covers 8–10 guests at the standard per-person rate. There's no hard minimum guest count — we can accommodate small gatherings as long as the minimum is met. Maximum capacity depends on your space, but we've served 200+ guests with multiple chef stations.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>Can I host indoors?</span>
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </div>
+        </button>
+        <div class="faq-body"><p>We typically recommend outdoor or well-ventilated spaces due to the smoke and open flame produced during hibachi cooking. Covered patios, decks, and backyards work perfectly. For indoor events, a venue with commercial ventilation (like a banquet hall or event center) may be suitable — contact us and we'll assess your setup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>Do you accommodate dietary restrictions?</span>
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </div>
+        </button>
+        <div class="faq-body"><p>Absolutely. We offer vegetarian and gluten-free friendly options. Just let us know about any dietary needs or allergies in the booking form and our chef will accommodate. We can customize sauces, proteins, and sides as needed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>What is your cancellation policy?</span>
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </div>
+        </button>
+        <div class="faq-body"><p>Cancellations made 7+ days before your event receive a full refund of your deposit. Cancellations within 72 hours of the event may forfeit the deposit. We understand life happens — please reach out as early as possible if you need to reschedule and we'll work with you.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ BOOKING -->
+<section id="book" style="background:#FFFFFF;padding:6rem 1.5rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Left: info -->
+      <div>
+        <div class="red-pill reveal">Get in Touch</div>
+        <h2 class="font-display leading-none reveal reveal-delay-1" style="font-size:clamp(2.4rem,5vw,3.8rem);color:#1A1209;margin-bottom:1.5rem;">
+          Book Your<br /><span style="color:#C8102E;">Hibachi Experience</span>
+        </h2>
+        <p style="color:rgba(26,18,9,.65);line-height:1.78;margin-bottom:2.5rem;" class="reveal reveal-delay-2">
+          Fill out the form and we'll respond with a detailed quote within 24 hours. For urgent inquiries, reach us directly below.
+        </p>
+
+        <!-- Contact info -->
+        <div style="display:flex;flex-direction:column;gap:1.25rem;background:#F8F6F2;padding:2rem;border:1px solid rgba(26,18,9,.08);" class="reveal reveal-delay-3">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="width:44px;height:44px;background:rgba(200,16,46,.14);border:1px solid rgba(200,16,46,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21H6.6a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,18,9,.4);margin-bottom:.15rem;">Phone</div>
+              <a href="tel:+16027672965" style="color:#1A1209;text-decoration:none;font-weight:500;">(602) 767-2965</a>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="width:44px;height:44px;background:rgba(200,16,46,.14);border:1px solid rgba(200,16,46,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,18,9,.4);margin-bottom:.15rem;">Email</div>
+              <a href="mailto:info@hibachiconnect.com" style="color:#1A1209;text-decoration:none;font-weight:500;">info@hibachiconnect.com</a>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="width:44px;height:44px;background:rgba(200,16,46,.14);border:1px solid rgba(200,16,46,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,18,9,.4);margin-bottom:.15rem;">Service Area</div>
+              <span style="color:#1A1209;font-weight:500;">All 48 Contiguous U.S. States</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="reveal reveal-delay-2">
+        <form id="bookingForm" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:1.25rem;background:#F8F6F2;padding:2rem;border:1px solid rgba(26,18,9,.08);">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="form-label">First Name *</label>
+              <input class="form-input" type="text" name="firstName" required placeholder="John" />
+            </div>
+            <div>
+              <label class="form-label">Last Name *</label>
+              <input class="form-input" type="text" name="lastName" required placeholder="Smith" />
+            </div>
+          </div>
+          <div>
+            <label class="form-label">Email *</label>
+            <input class="form-input" type="email" name="email" required placeholder="john@example.com" />
+          </div>
+          <div>
+            <label class="form-label">Phone Number</label>
+            <input class="form-input" type="tel" name="phone" placeholder="(555) 000-0000" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="form-label">Event Date *</label>
+              <input class="form-input" type="date" name="eventDate" required />
+            </div>
+            <div>
+              <label class="form-label">Guest Count *</label>
+              <input class="form-input" type="number" name="guests" required placeholder="e.g. 20" min="1" />
+            </div>
+          </div>
+          <div>
+            <label class="form-label">State / City *</label>
+            <input class="form-input" type="text" name="location" required placeholder="e.g. Dallas, TX" />
+          </div>
+          <div>
+            <label class="form-label">Package Interest</label>
+            <select class="form-input" name="package" style="background:#FFFFFF;cursor:pointer;color:#1A1209;">
+              <option value="" style="background:#FFFFFF;">Select a package…</option>
+              <option value="standard" style="background:#FFFFFF;">Standard ($55/person)</option>
+              <option value="premium" style="background:#FFFFFF;">Premium ($65/person)</option>
+              <option value="elite" style="background:#FFFFFF;">Elite (Custom)</option>
+              <option value="unsure" style="background:#FFFFFF;">Not sure yet</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Tell Us About Your Event</label>
+            <textarea class="form-input" name="message" rows="4" placeholder="Birthday party, corporate event, dietary restrictions, special requests…"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Request
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ FOOTER -->
+<footer style="padding:3.5rem 1.5rem 2rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10 mb-10">
+
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <img src="Brand_Assets/Hibachi%20Connet%20Logo.png" alt="Hibachi Connect" style="height:68px;width:auto;margin-bottom:1rem;display:block;" />
+        <p style="font-size:.88rem;color:rgba(26,18,9,0.60);line-height:1.75;max-width:22rem;">
+          Professional private hibachi chef service bringing the teppanyaki experience to your backyard — serving all 48 contiguous U.S. states.
+        </p>
+        <!-- Social -->
+        <div style="display:flex;gap:.75rem;margin-top:1.5rem;">
+          <a href="#" aria-label="Instagram" style="width:38px;height:38px;background:rgba(245,239,224,.06);border:1px solid rgba(245,239,224,.1);display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease;" onmouseover="this.style.borderColor='rgba(200,16,46,.5)';this.style.background='rgba(200,16,46,.1)';" onmouseout="this.style.borderColor='rgba(245,239,224,.1)';this.style.background='rgba(245,239,224,.06)';">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(26,18,9,0.70);"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" style="width:38px;height:38px;background:rgba(245,239,224,.06);border:1px solid rgba(245,239,224,.1);display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease;" onmouseover="this.style.borderColor='rgba(200,16,46,.5)';this.style.background='rgba(200,16,46,.1)';" onmouseout="this.style.borderColor='rgba(245,239,224,.1)';this.style.background='rgba(245,239,224,.06)';">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="color:rgba(26,18,9,0.70);"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.78a4.86 4.86 0 0 1-1.01-.09z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <div style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,18,9,0.45);margin-bottom:1rem;">Quick Links</div>
+        <div style="display:flex;flex-direction:column;gap:.6rem;">
+          <a href="#about"     style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#C8102E'" onmouseout="this.style.color='rgba(245,239,224,.6)'">About Us</a>
+          <a href="#menu"      style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#C8102E'" onmouseout="this.style.color='rgba(245,239,224,.6)'">The Menu</a>
+          <a href="#pricing"   style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#C8102E'" onmouseout="this.style.color='rgba(245,239,224,.6)'">Pricing</a>
+          <a href="#locations" style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#C8102E'" onmouseout="this.style.color='rgba(245,239,224,.6)'">Service Area</a>
+          <a href="#reviews"   style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#C8102E'" onmouseout="this.style.color='rgba(245,239,224,.6)'">Reviews</a>
+          <a href="#faq"       style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#C8102E'" onmouseout="this.style.color='rgba(245,239,224,.6)'">FAQ</a>
+          <a href="#book"      style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#C8102E'" onmouseout="this.style.color='rgba(245,239,224,.6)'">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,18,9,0.45);margin-bottom:1rem;">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:.75rem;">
+          <a href="tel:+16027672965" style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;">(602) 767-2965</a>
+          <a href="mailto:info@hibachiconnect.com" style="font-size:.88rem;color:rgba(26,18,9,0.60);text-decoration:none;">info@hibachiconnect.com</a>
+          <div style="font-size:.88rem;color:rgba(26,18,9,.55);">All 48 Contiguous States</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid rgba(245,239,224,.06);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+      <p style="font-size:.78rem;color:rgba(26,18,9,0.28);">© 2026 Hibachi Connect — hibachiconnect.com. All rights reserved.</p>
+      <p style="font-size:.78rem;color:rgba(26,18,9,0.28);">Not serving Hawaii or Alaska.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast notification -->
+<div id="toast">✓ &nbsp;Request sent! We'll be in touch within 24 hours.</div>
+
+<!-- ════════════════════════════════════ JAVASCRIPT -->
+<script>
+  /* ── Nav scroll ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ── Mobile menu ── */
+  const menuBtn   = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('hidden');
+    menuBtn.classList.toggle('open', !open);
+  });
+  function closeMobile() {
+    mobileMenu.classList.add('hidden');
+    menuBtn.classList.remove('open');
+  }
+
+  /* ── Hero bg load ── */
+  window.addEventListener('load', () => {
+    document.getElementById('hero-bg').classList.add('loaded');
+  });
+
+  /* ── Scroll reveal ── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ── FAQ accordion ── */
+  function toggleFaq(trigger) {
+    const body = trigger.nextElementSibling;
+    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+    // Close all
+    document.querySelectorAll('.faq-trigger').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+      t.nextElementSibling.classList.remove('open');
+    });
+
+    // Open clicked if was closed
+    if (!isOpen) {
+      trigger.setAttribute('aria-expanded', 'true');
+      body.classList.add('open');
+    }
+  }
+
+  /* ── 48 States data ── */
+  const STATES = [
+    'Alabama','Arizona','Arkansas','California','Colorado','Connecticut',
+    'Delaware','Florida','Georgia','Idaho','Illinois','Indiana','Iowa',
+    'Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts',
+    'Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska',
+    'Nevada','New Hampshire','New Jersey','New Mexico','New York',
+    'North Carolina','North Dakota','Ohio','Oklahoma','Oregon',
+    'Pennsylvania','Rhode Island','South Carolina','South Dakota',
+    'Tennessee','Texas','Utah','Vermont','Virginia','Washington',
+    'West Virginia','Wisconsin','Wyoming'
+  ];
+
+  /* ── Build state grid (clickable links → location.html) ── */
+  const grid = document.getElementById('statesGrid');
+  STATES.forEach(state => {
+    const btn = document.createElement('a');
+    btn.className = 'state-btn active';
+    btn.textContent = state;
+    btn.dataset.state = state.toLowerCase();
+    btn.href = `location.html?state=${encodeURIComponent(state)}`;
+    btn.style.cursor = 'pointer';
+    btn.title = `View cities in ${state}`;
+    grid.appendChild(btn);
+  });
+
+  /* ── State search ── */
+  function filterStates(query) {
+    const q = query.toLowerCase().trim();
+    const result = document.getElementById('stateResult');
+    const btns   = grid.querySelectorAll('.state-btn');
+
+    // Reset highlight
+    btns.forEach(b => { b.classList.remove('highlight'); b.classList.add('active'); });
+
+    if (!q) { result.textContent = ''; return; }
+
+    const match = STATES.find(s => s.toLowerCase().startsWith(q));
+    if (match) {
+      result.innerHTML = `<span style="color:#C8102E;font-weight:600;">✓</span> &nbsp;Yes! We serve <strong>${match}</strong>.`;
+      btns.forEach(b => {
+        if (b.dataset.state === match.toLowerCase()) {
+          b.classList.add('highlight'); b.classList.remove('active');
+          b.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    } else if (['hawaii','alaska'].some(s => s.startsWith(q))) {
+      result.innerHTML = `<span style="color:rgba(26,18,9,0.50);">We don't currently serve Hawaii or Alaska.</span>`;
+    } else {
+      result.innerHTML = `<span style="color:rgba(26,18,9,0.40);">Keep typing to find your state…</span>`;
+    }
+  }
+
+  /* ── Pre-fill booking form from city selection (set by location.html) ── */
+  window.addEventListener('load', () => {
+    const city  = sessionStorage.getItem('hc_city');
+    const state = sessionStorage.getItem('hc_state');
+    if (city && state) {
+      const locationField = document.querySelector('[name="location"]');
+      if (locationField) locationField.value = `${city}, ${state}`;
+      sessionStorage.removeItem('hc_city');
+      sessionStorage.removeItem('hc_state');
+    }
+  });
+
+  /* ── Form submit ── */
+  function handleSubmit(e) {
+    e.preventDefault();
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    e.target.reset();
+    setTimeout(() => toast.classList.remove('show'), 4500);
+  }
+</script>
+
+</body>
+</html>

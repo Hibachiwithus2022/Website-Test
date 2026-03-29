@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hibachi With Us — Nationwide Private Hibachi Service</title>
+  <meta name="description" content="Hibachi With Us serves all 50 states. Book a private hibachi chef for your backyard, anywhere in the country." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #FFFFFF;
+      color: #1A1209;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav#navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      transition: background .4s ease, box-shadow .4s ease;
+    }
+    nav#navbar.scrolled {
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(26,18,9,.07), 0 4px 24px rgba(0,0,0,.1);
+    }
+    .nav-link {
+      color: #F5EFE0;
+      text-decoration: none; font-size: .8rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .35rem 0; position: relative;
+      transition: color .25s ease;
+    }
+    .nav-link.dark { color: #1A1209; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px; background: #C8102E;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+    }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #C8102E; color: #F5EFE0;
+      font-family: 'DM Sans', sans-serif; font-weight: 600;
+      font-size: .83rem; letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; padding: .85rem 2.2rem;
+      border: none; cursor: pointer; position: relative; overflow: hidden;
+      transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease;
+      box-shadow: 0 4px 16px rgba(200,16,46,.35), 0 1px 3px rgba(0,0,0,.2);
+    }
+    .btn-primary:hover  { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 28px rgba(200,16,46,.45); }
+    .btn-primary:active { transform: translateY(0) scale(.99); }
+    .btn-primary:focus-visible { outline: 2px solid #D4A843; outline-offset: 3px; }
+
+    .hamburger { cursor: pointer; background: none; border: none; padding: .25rem; }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: #F5EFE0; margin: 5px 0;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .hamburger.dark-bars span { background: #1A1209; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Hero ── */
+    #hero {
+      position: relative; min-height: 52vh;
+      display: flex; align-items: center; overflow: hidden;
+      background-image: url('Brand_Assets/Hibachi%20at%20Home%20in%20Texas.jpg');
+      background-size: cover; background-position: center 30%;
+    }
+    #hero-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(26,18,9,.88) 0%, rgba(26,18,9,.6) 55%, rgba(26,18,9,.35) 100%),
+        linear-gradient(to top, rgba(26,18,9,.7) 0%, transparent 60%);
+    }
+
+    /* ── Region tabs ── */
+    .region-tab {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .6rem 1.5rem;
+      font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      border: 1px solid rgba(26,18,9,.15); background: #FFFFFF; color: rgba(26,18,9,.55);
+      cursor: pointer; transition: all .2s cubic-bezier(.34,1.56,.64,1);
+      text-decoration: none;
+    }
+    .region-tab:hover { border-color: rgba(200,16,46,.4); color: #C8102E; transform: translateY(-1px); }
+    .region-tab.active { background: #C8102E; border-color: #C8102E; color: #FFFFFF; }
+
+    /* ── State section ── */
+    .state-section { padding-top: 3rem; }
+    .state-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.5rem; padding-bottom: .75rem;
+      border-bottom: 2px solid rgba(200,16,46,.15);
+    }
+    .state-flag {
+      width: 36px; height: 36px;
+      background: rgba(200,16,46,.1); border: 1px solid rgba(200,16,46,.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .state-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; letter-spacing: .06em; color: #1A1209; line-height: 1;
+    }
+    .state-city-count {
+      font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(26,18,9,.4); margin-top: .15rem;
+    }
+
+    /* ── City card ── */
+    .city-card {
+      background: #FFFFFF; border: 1px solid rgba(26,18,9,.09);
+      padding: 1.25rem 1.4rem;
+      transition: transform .25s cubic-bezier(.34,1.56,.64,1), border-color .2s ease, box-shadow .2s ease;
+      cursor: pointer; text-decoration: none; display: block; color: inherit;
+      position: relative; overflow: hidden;
+    }
+    .city-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: #C8102E; transform: scaleY(0); transform-origin: bottom;
+      transition: transform .25s ease;
+    }
+    .city-card:hover { transform: translateY(-3px); border-color: rgba(200,16,46,.3); box-shadow: 0 6px 24px rgba(26,18,9,.1); }
+    .city-card:hover::before { transform: scaleY(1); }
+    .city-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: .04em; color: #1A1209; line-height: 1.1; }
+    .city-desc { font-size: .8rem; color: rgba(26,18,9,.55); line-height: 1.55; margin-top: .35rem; }
+    .city-tag {
+      display: inline-block; margin-top: .6rem;
+      font-size: .65rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: #C8102E; background: rgba(200,16,46,.08); border: 1px solid rgba(200,16,46,.2);
+      padding: .15rem .55rem;
+    }
+
+    /* ── Search ── */
+    .search-input {
+      width: 100%; background: #FFFFFF; border: 1px solid rgba(26,18,9,.15);
+      color: #1A1209; padding: .85rem 1rem .85rem 2.8rem;
+      font-family: 'DM Sans', sans-serif; font-size: .95rem; outline: none;
+      transition: border-color .2s ease;
+    }
+    .search-input:focus { border-color: #C8102E; }
+    .search-input::placeholder { color: rgba(26,18,9,.35); }
+
+    /* ── Reveal animation ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s cubic-bezier(.34,1.2,.64,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .08s; }
+    .reveal-delay-2 { transition-delay: .16s; }
+    .reveal-delay-3 { transition-delay: .24s; }
+
+    /* ── Region panel ── */
+    .region-panel { display: none; }
+    .region-panel.active { display: block; }
+
+    /* ── Footer ── */
+    footer { background: #1A1209; border-top: 1px solid rgba(26,18,9,.1); }
+
+    @keyframes scrollCue {
+      0%   { opacity:0; transform:scaleY(0); transform-origin:top; }
+      50%  { opacity:1; transform:scaleY(1); }
+      100% { opacity:0; transform:scaleY(1) translateY(10px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="navbar">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex-shrink-0">
+      <img src="Brand_Assets/Hibachi%20With%20Us%20-%20Transparent%20Background.png" alt="Hibachi With Us" style="height:64px;width:auto;display:block;" />
+    </a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="index.html#about"     class="nav-link" id="nl1">About</a>
+      <a href="index.html#menu"      class="nav-link" id="nl2">Menu</a>
+      <a href="index.html#pricing"   class="nav-link" id="nl3">Pricing</a>
+      <a href="locations.html"       class="nav-link" id="nl4">Locations</a>
+      <a href="index.html#reviews"   class="nav-link" id="nl5">Reviews</a>
+      <a href="index.html#faq"       class="nav-link" id="nl6">FAQ</a>
+      <a href="index.html#book"      class="btn-primary" style="padding:.6rem 1.5rem;">Book Now</a>
+    </div>
+    <button class="hamburger lg:hidden" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden border-t" style="border-color:rgba(26,18,9,.1);background:rgba(255,255,255,.98);">
+    <div class="flex flex-col px-6 py-5 gap-5">
+      <a href="index.html#about"   class="nav-link dark">About</a>
+      <a href="index.html#menu"    class="nav-link dark">Menu</a>
+      <a href="index.html#pricing" class="nav-link dark">Pricing</a>
+      <a href="locations.html"     class="nav-link dark">Locations</a>
+      <a href="index.html#reviews" class="nav-link dark">Reviews</a>
+      <a href="index.html#faq"     class="nav-link dark">FAQ</a>
+      <a href="index.html#book"    class="btn-primary text-center">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero" style="padding:0;">
+  <div id="hero-overlay"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 pt-40">
+    <div style="display:inline-block;background:rgba(200,16,46,.15);border:1px solid rgba(200,16,46,.4);color:#C8102E;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.28rem 1rem;margin-bottom:1.25rem;">
+      Serving Nationwide
+    </div>
+    <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:.03em;color:#F5EFE0;line-height:1;text-shadow:0 2px 40px rgba(0,0,0,.4);">
+      We Come To You
+    </h1>
+    <p style="margin-top:1rem;font-size:1.05rem;color:rgba(245,239,224,.75);max-width:36rem;line-height:1.7;">
+      Wherever you are in the country, we'll bring the hibachi to your backyard. No restaurant required.
+    </p>
+    <a href="index.html#book" class="btn-primary" style="margin-top:2rem;">Book Your Chef</a>
+  </div>
+</section>
+
+<!-- ══ MAIN CONTENT ══ -->
+<main style="background:#FFFFFF;padding-bottom:0;">
+
+
+  <!-- ── Stats band ── -->
+  <div style="background:#1A1209;padding:4rem 1.5rem;">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#C8102E;line-height:1;">50</div>
+          <div style="font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.5);margin-top:.3rem;">States Served</div>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#C8102E;line-height:1;">200+</div>
+          <div style="font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.5);margin-top:.3rem;">Cities &amp; Counting</div>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#C8102E;line-height:1;">5★</div>
+          <div style="font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.5);margin-top:.3rem;">Rated Experience</div>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#C8102E;line-height:1;">24hr</div>
+          <div style="font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.5);margin-top:.3rem;">Booking Response</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── How it works ── -->
+  <div style="padding:5rem 1.5rem;background:#FFFFFF;">
+    <div class="max-w-5xl mx-auto text-center">
+      <div style="font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#C8102E;margin-bottom:.75rem;">Nationwide Service</div>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:.04em;color:#1A1209;line-height:1;">We Bring the Hibachi to You</h2>
+      <p style="margin-top:1rem;font-size:1rem;color:rgba(26,18,9,.6);max-width:42rem;margin-left:auto;margin-right:auto;line-height:1.75;">
+        No matter where you are in the United States, our private hibachi chefs will travel to you. Backyard, venue, or vacation rental — we set up, cook, and clean up.
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto" style="margin-top:4rem;">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:2.5rem 2rem;position:relative;overflow:hidden;">
+          <div style="width:48px;height:48px;background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.5rem;">📍</div>
+          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.04em;color:#1A1209;margin-bottom:.6rem;">Tell Us Where You Are</h3>
+          <p style="font-size:.9rem;color:rgba(26,18,9,.6);line-height:1.7;">Share your city and address when booking. We serve all 50 states — there's no location too far.</p>
+          <div style="position:absolute;top:1.5rem;right:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:4rem;color:rgba(26,18,9,.04);line-height:1;">01</div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:2.5rem 2rem;position:relative;overflow:hidden;">
+          <div style="width:48px;height:48px;background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.5rem;">👨‍🍳</div>
+          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.04em;color:#1A1209;margin-bottom:.6rem;">We Match You a Chef</h3>
+          <p style="font-size:.9rem;color:rgba(26,18,9,.6);line-height:1.7;">We'll match you with an experienced hibachi chef in your area and confirm your booking within 24 hours.</p>
+          <div style="position:absolute;top:1.5rem;right:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:4rem;color:rgba(26,18,9,.04);line-height:1;">02</div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:2.5rem 2rem;position:relative;overflow:hidden;">
+          <div style="width:48px;height:48px;background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.5rem;">🔥</div>
+          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.04em;color:#1A1209;margin-bottom:.6rem;">Enjoy the Experience</h3>
+          <p style="font-size:.9rem;color:rgba(26,18,9,.6);line-height:1.7;">Your chef arrives, sets up the grill, and puts on a full show. You just relax and enjoy every bite.</p>
+          <div style="position:absolute;top:1.5rem;right:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:4rem;color:rgba(26,18,9,.04);line-height:1;">03</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Popular cities ── -->
+  <div style="padding:5rem 1.5rem;background:#FAFAF9;border-top:1px solid rgba(26,18,9,.06);">
+    <div class="max-w-6xl mx-auto">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <div style="font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#C8102E;margin-bottom:.75rem;">Most Booked</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:.04em;color:#1A1209;line-height:1;">Popular Cities</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <a href="cities/houston.html" style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 24px rgba(26,18,9,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:#1A1209;">Houston, TX</div>
+          <div style="font-size:.78rem;color:rgba(26,18,9,.5);margin-top:.25rem;">Our home base</div>
+          <span style="display:inline-block;margin-top:.5rem;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C8102E;background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.2);padding:.12rem .5rem;">Most Booked</span>
+        </a>
+        <a href="cities/dallas.html" style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 24px rgba(26,18,9,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:#1A1209;">Dallas, TX</div>
+          <div style="font-size:.78rem;color:rgba(26,18,9,.5);margin-top:.25rem;">DFW Metroplex</div>
+        </a>
+        <a href="cities/miami.html" style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 24px rgba(26,18,9,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:#1A1209;">Miami, FL</div>
+          <div style="font-size:.78rem;color:rgba(26,18,9,.5);margin-top:.25rem;">Magic City luxury</div>
+        </a>
+        <a href="cities/atlanta.html" style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 24px rgba(26,18,9,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:#1A1209;">Atlanta, GA</div>
+          <div style="font-size:.78rem;color:rgba(26,18,9,.5);margin-top:.25rem;">ATL events</div>
+        </a>
+        <a href="cities/new-york.html" style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 24px rgba(26,18,9,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:#1A1209;">New York, NY</div>
+          <div style="font-size:.78rem;color:rgba(26,18,9,.5);margin-top:.25rem;">Tri-state area</div>
+        </a>
+        <a href="cities/los-angeles.html" style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 24px rgba(26,18,9,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:#1A1209;">Los Angeles, CA</div>
+          <div style="font-size:.78rem;color:rgba(26,18,9,.5);margin-top:.25rem;">Southern California</div>
+        </a>
+        <a href="cities/chicago.html" style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 24px rgba(26,18,9,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:#1A1209;">Chicago, IL</div>
+          <div style="font-size:.78rem;color:rgba(26,18,9,.5);margin-top:.25rem;">Windy City events</div>
+        </a>
+        <a href="cities/austin.html" style="background:#FFFFFF;border:1px solid rgba(26,18,9,.09);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 24px rgba(26,18,9,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:#1A1209;">Austin, TX</div>
+          <div style="font-size:.78rem;color:rgba(26,18,9,.5);margin-top:.25rem;">Live Music Capital</div>
+        </a>
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;font-size:.85rem;color:rgba(26,18,9,.45);">Don't see your city? <a href="index.html#book" style="color:#C8102E;text-decoration:underline;text-underline-offset:3px;">Contact us</a> — we travel anywhere.</p>
+    </div>
+  </div>
+
+  <!-- ── CTA Band ── -->
+  <div style="background:#C8102E;padding:3.5rem 1.5rem;">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#F5EFE0;line-height:1;">Ready to Book?</div>
+        <p style="color:rgba(245,239,224,.8);margin-top:.4rem;font-size:.95rem;">We serve all 50 states. Tell us your city and we'll make it happen.</p>
+      </div>
+      <a href="index.html#book" class="btn-primary" style="background:#F5EFE0;color:#C8102E;box-shadow:0 4px 16px rgba(0,0,0,.2);flex-shrink:0;">Book Now</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer style="padding:3rem 1.5rem 2rem;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-10 mb-10">
+      <div class="md:col-span-1">
+        <img src="Brand_Assets/Hibachi%20With%20Us%20-%20Transparent%20Background.png" alt="Hibachi With Us" style="height:64px;width:auto;margin-bottom:1rem;display:block;" />
+        <p style="font-size:.88rem;color:rgba(245,239,224,.55);line-height:1.75;">Private hibachi chef service — bringing the teppanyaki experience to your backyard nationwide.</p>
+      </div>
+      <div>
+        <div style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.4);margin-bottom:1rem;">Service Area</div>
+        <div style="display:flex;flex-direction:column;gap:.5rem;">
+          <span style="font-size:.88rem;color:rgba(245,239,224,.6);">🌎 All 50 States</span>
+          <span style="font-size:.88rem;color:rgba(245,239,224,.6);">🏠 Backyards &amp; Venues</span>
+          <span style="font-size:.88rem;color:rgba(245,239,224,.6);">✈️ We Travel to You</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.4);margin-bottom:1rem;">Quick Links</div>
+        <div style="display:flex;flex-direction:column;gap:.5rem;">
+          <a href="index.html" style="font-size:.88rem;color:rgba(245,239,224,.6);text-decoration:none;">Home</a>
+          <a href="index.html#menu" style="font-size:.88rem;color:rgba(245,239,224,.6);text-decoration:none;">Menu</a>
+          <a href="index.html#pricing" style="font-size:.88rem;color:rgba(245,239,224,.6);text-decoration:none;">Pricing</a>
+          <a href="index.html#book" style="font-size:.88rem;color:rgba(245,239,224,.6);text-decoration:none;">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(245,239,224,.07);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+      <p style="font-size:.75rem;color:rgba(245,239,224,.3);">© 2026 Hibachi With Us. All rights reserved.</p>
+      <p style="font-size:.75rem;color:rgba(245,239,224,.3);">Serving all 50 U.S. states 🔥</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Nav scroll ──
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link:not(.dark)');
+  const hamSpans = document.querySelector('.hamburger:not(.dark-bars)')?.querySelectorAll('span');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 60;
+    navbar.classList.toggle('scrolled', scrolled);
+    navLinks.forEach(l => l.classList.toggle('dark', scrolled));
+    if (hamSpans) hamSpans.forEach(s => s.style.background = scrolled ? '#1A1209' : '#F5EFE0');
+  }, { passive: true });
+
+  // ── Hamburger ──
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // ── Region tabs ──
+  function showRegion(region, btn) {
+    document.querySelectorAll('.region-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.region-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + region).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: document.getElementById('regionBar').offsetTop - 10, behavior: 'smooth' });
+    // trigger reveals for new panel
+    setTimeout(triggerReveals, 100);
+  }
+
+  // ── Scroll reveal ──
+  function triggerReveals() {
+    const reveals = document.querySelectorAll('.reveal:not(.visible)');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  }
+  triggerReveals();
+
+  // ── Search ──
+  function searchCities(query) {
+    const q = query.trim().toLowerCase();
+    const overlay = document.getElementById('searchOverlay');
+    const results = document.getElementById('searchResults');
+    const countEl = document.getElementById('searchResultCount');
+
+    if (!q) {
+      overlay.style.display = 'none';
+      countEl.textContent = '';
+      return;
+    }
+
+    overlay.style.display = 'block';
+    const cards = document.querySelectorAll('.city-card, .state-header');
+    const matches = [];
+
+    document.querySelectorAll('.city-card').forEach(card => {
+      const cityName = card.querySelector('.city-name')?.textContent.toLowerCase() || '';
+      const cityDesc = card.querySelector('.city-desc')?.textContent.toLowerCase() || '';
+      // get state name from parent state-section
+      const stateSection = card.closest('[data-state]') || card.closest('.state-section');
+      const stateName = stateSection?.querySelector('.state-name')?.textContent.toLowerCase() || '';
+      if (cityName.includes(q) || stateName.includes(q) || cityDesc.includes(q)) {
+        matches.push(card.cloneNode(true));
+      }
+    });
+
+    results.innerHTML = '';
+    matches.forEach(c => results.appendChild(c));
+    countEl.textContent = matches.length ? `${matches.length} location${matches.length !== 1 ? 's' : ''} found` : 'No locations found';
+    if (!matches.length) results.innerHTML = '<p style="color:rgba(26,18,9,.5);padding:2rem 0;">No cities matched your search. <a href=\'index.html#book\' style=\'color:#C8102E;\'>Contact us</a> — we may still serve your area!</p>';
+  }
+
+  function clearSearch() {
+    document.getElementById('citySearch').value = '';
+    document.getElementById('searchOverlay').style.display = 'none';
+    document.getElementById('searchResultCount').textContent = '';
+  }
+</script>
+</body>
+</html>
