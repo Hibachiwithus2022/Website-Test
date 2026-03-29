@@ -5,7 +5,7 @@ import Link from 'next/link'
 const REGIONS = [
   {
     name: 'South',
-    slugs: ['texas','florida','georgia','north-carolina','tennessee','virginia','south-carolina','alabama','louisiana','mississippi','arkansas','kentucky','west-virginia','oklahoma','maryland','delaware','washington-dc'],
+    slugs: ['texas','florida','georgia','north-carolina','tennessee','virginia','south-carolina','alabama','louisiana','mississippi','arkansas','kentucky','west-virginia','oklahoma','maryland','washington-dc'],
   },
   {
     name: 'West',
@@ -17,7 +17,7 @@ const REGIONS = [
   },
   {
     name: 'Northeast',
-    slugs: ['new-york','pennsylvania','new-jersey','massachusetts','connecticut','maine','new-hampshire','rhode-island','vermont'],
+    slugs: ['new-york','pennsylvania','new-jersey','massachusetts','connecticut','maine','new-hampshire','rhode-island','vermont','delaware'],
   },
 ]
 
