@@ -5,7 +5,7 @@ import Link from 'next/link'
 const REGIONS = [
   {
     name: 'South',
-    slugs: ['texas','florida','georgia','north-carolina','tennessee','virginia','south-carolina','alabama','louisiana','mississippi','arkansas','kentucky','west-virginia','oklahoma','maryland','delaware'],
+    slugs: ['texas','florida','georgia','north-carolina','tennessee','virginia','south-carolina','alabama','louisiana','mississippi','arkansas','kentucky','west-virginia','oklahoma','maryland','delaware','washington-dc'],
   },
   {
     name: 'West',
@@ -48,11 +48,11 @@ export default function LocationsClient({ allStates, citiesByState }) {
             <span style={{ color: '#C8102E' }}>Near You</span>
           </h1>
           <p style={{ color: 'rgba(245,239,224,0.68)', maxWidth: '40rem', margin: '0 auto 2.5rem', fontSize: '1.05rem', lineHeight: 1.78 }}>
-            We serve all 48 contiguous U.S. states. Browse your state below, select your city, and book your private hibachi experience.
+            We serve all 50 U.S. states. Browse your state below, select your city, and book your private hibachi experience.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem', flexWrap: 'wrap' }}>
             {[
-              { val: '48', label: 'States' },
+              { val: '50', label: 'States' },
               { val: '$55', label: 'Per Adult' },
               { val: '5.0★', label: 'Rating' },
               { val: '200+', label: 'Events' },
@@ -191,7 +191,7 @@ export default function LocationsClient({ allStates, citiesByState }) {
             Don't See Your City?
           </h2>
           <p style={{ color: 'rgba(245,239,224,0.6)', marginBottom: '2rem', lineHeight: 1.75 }}>
-            We serve communities across all 48 states. Contact us directly — if you have the space, we'll find a way to bring hibachi to you.
+            We serve communities across all 50 states. Contact us directly — if you have the space, we'll find a way to bring hibachi to you.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:+16027672965" className="btn-primary">(602) 767-2965</a>

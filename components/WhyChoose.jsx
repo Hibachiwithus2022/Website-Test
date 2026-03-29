@@ -8,7 +8,7 @@ const REASONS = [
       </svg>
     ),
     title: 'Nationwide Coverage',
-    desc:  'We serve all 48 contiguous U.S. states. From major metros to smaller cities — we connect you with a local chef wherever you are.',
+    desc:  'We serve all 50 U.S. states. From major metros to smaller cities — we connect you with a local chef wherever you are.',
   },
   {
     icon: (

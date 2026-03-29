@@ -9,7 +9,7 @@ const FAQS = [
   },
   {
     q: 'Do you travel to my city? Do you serve my area?',
-    a: 'Hibachi Connect serves all 48 contiguous U.S. states — from major metros like Houston, Phoenix, and Atlanta to smaller cities and suburbs. We don\'t currently serve Hawaii or Alaska. Search your city above or contact us to confirm availability in your specific area.',
+    a: 'Hibachi Connect serves all 50 U.S. states — from major metros like Houston, Phoenix, and Atlanta to smaller cities and suburbs. We don\'t currently serve Hawaii or Alaska. Search your city above or contact us to confirm availability in your specific area.',
   },
   {
     q: 'What do I need to provide?',

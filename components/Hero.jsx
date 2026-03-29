@@ -61,7 +61,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <div className="red-pill animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            Now Serving All 48 Contiguous States
+            Now Serving All 50 States Nationwide
           </div>
 
           {/* H1 — primary SEO headline */}
@@ -112,7 +112,7 @@ export default function Hero() {
             {[
               { num: '200+',  label: 'Events Hosted' },
               { num: '5.0★',  label: 'Average Rating' },
-              { num: '48',    label: 'States Served'  },
+              { num: '50',    label: 'States Served'  },
             ].map((s, i) => (
               <div key={i} className="flex items-center gap-6">
                 {i > 0 && <div style={{ width: 1, height: 48, background: 'rgba(245,239,224,0.14)' }} />}

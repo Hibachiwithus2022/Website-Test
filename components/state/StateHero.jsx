@@ -67,7 +67,7 @@ export default function StateHero({ state, stateSlug, stateData }) {
             { val: '$55', label: 'Per Adult' },
             { val: '$550', label: 'Minimum' },
             { val: '5.0★', label: 'Rating' },
-            { val: '48', label: 'States Served' },
+            { val: '50', label: 'States Served' },
           ].map((item) => (
             <div key={item.label}>
               <div className="font-display" style={{ fontSize: '1.7rem', color: '#F5EFE0', lineHeight: 1 }}>{item.val}</div>

@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Image src="/brand/logo.png" alt="Hibachi Connect" width={72} height={72} className="mb-4 rounded-lg" />
             <p style={{ fontSize: '0.88rem', color: 'rgba(245,239,224,0.48)', lineHeight: 1.75, maxWidth: '22rem' }}>
-              Hibachi Connect is the nation's leading platform for private hibachi chef experiences. We bring the teppanyaki show to your backyard — serving all 48 contiguous states.
+              Hibachi Connect is the nation's leading platform for private hibachi chef experiences. We bring the teppanyaki show to your backyard — serving all 50 states.
             </p>
             {/* Social */}
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
@@ -86,7 +86,7 @@ export default function Footer() {
                 info@hibachiconnect.com
               </a>
               <div style={{ fontSize: '0.88rem', color: 'rgba(245,239,224,0.55)' }}>
-                All 48 Contiguous U.S. States
+                All 50 U.S. States
               </div>
               <div style={{ marginTop: '0.5rem' }}>
                 <a href="#book" className="btn-primary" style={{ padding: '0.65rem 1.5rem', fontSize: '0.8rem', display: 'inline-flex' }}>

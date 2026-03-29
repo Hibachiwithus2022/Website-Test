@@ -17,11 +17,11 @@ const dmSans = DM_Sans({
 
 export const metadata = {
   title:       'Hibachi Connect | Private Hibachi Chef at Home — Nationwide',
-  description: 'Book a private hibachi chef for your backyard, event, or venue. Professional teppanyaki chefs travel to your home across all 48 contiguous U.S. states. Starting at $55/person.',
+  description: 'Book a private hibachi chef for your backyard, event, or venue. Professional teppanyaki chefs travel to your home across all 50 U.S. states. Starting at $55/person.',
   keywords:    'hibachi at home, hibachi near me, private hibachi chef, backyard hibachi party, hibachi catering, teppanyaki at home',
   openGraph: {
     title:       'Hibachi Connect | Private Hibachi Chef at Home',
-    description: 'Professional hibachi chefs come to you. Serving all 48 states. From $55/person.',
+    description: 'Professional hibachi chefs come to you. Serving all 50 states. From $55/person.',
     type:        'website',
     url:         'https://hibachiconnect.com',
     siteName:    'Hibachi Connect',
