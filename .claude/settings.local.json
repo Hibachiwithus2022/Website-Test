@@ -11,7 +11,9 @@
       "Bash(/usr/local/bin/npm install:*)",
       "Bash(/usr/local/bin/node -e \":*)",
       "Bash(/usr/local/bin/node screenshot.mjs http://localhost:3000 hero2)",
-      "Bash(/usr/local/bin/node screenshot.mjs http://localhost:3000 hero3)"
+      "Bash(/usr/local/bin/node screenshot.mjs http://localhost:3000 hero3)",
+      "Bash(node screenshot.mjs http://localhost:3000 hero)",
+      "Bash(node screenshot.mjs http://localhost:3000 full)"
     ]
   }
 }
