@@ -120,8 +120,8 @@ function customerEmailHtml({ name, date, guests }) {
       <div style="margin-bottom:28px;">
         <div style="font-size:13px;font-weight:700;letter-spacing:0.08em;color:#1A1209;margin-bottom:14px;">What happens next:</div>
         ${[
-          ['📞', 'We'll call or email to confirm your event date and location.'],
-          ['👨‍🍳', 'We'll match you with a professional hibachi chef in your area.'],
+          ['📞', "We'll call or email to confirm your event date and location."],
+          ['👨\u200d🍳', "We'll match you with a professional hibachi chef in your area."],
           ['🔥', 'Your chef arrives, sets up, and puts on an amazing show!'],
         ].map(([icon, text]) => `
         <div style="display:flex;gap:12px;margin-bottom:10px;align-items:flex-start;">
