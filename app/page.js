@@ -9,6 +9,7 @@ import Occasions    from '../components/Occasions'
 import WhyChoose    from '../components/WhyChoose'
 import FeaturedCities from '../components/FeaturedCities'
 import FAQ          from '../components/FAQ'
+import BookingSection from '../components/BookingSection'
 import FinalCTA     from '../components/FinalCTA'
 import Footer       from '../components/Footer'
 
@@ -107,7 +108,10 @@ export default function HomePage() {
         {/* 10. FAQ */}
         <FAQ />
 
-        {/* 11. Final CTA */}
+        {/* 11. Booking Form */}
+        <BookingSection />
+
+        {/* 12. Final CTA */}
         <FinalCTA />
       </main>
 
