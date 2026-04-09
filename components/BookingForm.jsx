@@ -243,7 +243,7 @@ export default function BookingForm() {
         {status === 'loading' ? (
           <>
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
-              style={{ animation: 'spin 0.9s linear infinite' }}>
+              style={{ animation: 'booking-spin 0.9s linear infinite' }}>
               <path d="M12 2a10 10 0 0 1 10 10"/>
             </svg>
             Submitting…
@@ -262,11 +262,8 @@ export default function BookingForm() {
         We respond within 1 business day · No payment required to request
       </p>
 
-      <style jsx>{`
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @media (max-width: 640px) {
-          .two-col { grid-template-columns: 1fr !important; }
-        }
+      <style>{`
+        @keyframes booking-spin { to { transform: rotate(360deg); } }
       `}</style>
     </form>
   )
