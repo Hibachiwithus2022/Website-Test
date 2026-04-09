@@ -37,16 +37,16 @@ export default function CityOccasions({ cityName, featuredOccasions = [] }) {
   ]
 
   return (
-    <section style={{ background: '#1A1209', padding: '5rem 1.5rem' }}>
+    <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Perfect For Any Occasion</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
             Every Celebration in {cityName}<br />
             <span style={{ color: '#C8102E' }}>Deserves Hibachi</span>
           </h2>
-          <p style={{ color: 'rgba(245,239,224,0.5)', maxWidth: '36rem', margin: '1rem auto 0', fontSize: '0.93rem', lineHeight: 1.75 }}>
+          <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '36rem', margin: '1rem auto 0', fontSize: '0.93rem', lineHeight: 1.75 }}>
             From intimate dinners to 200-person parties — our chefs adapt to the occasion, every time.
           </p>
         </div>
@@ -67,8 +67,8 @@ function OccasionCard({ occasion }) {
     <div
       style={{
         padding: '1.5rem 1rem',
-        background: 'rgba(245,239,224,0.04)',
-        border: '1px solid rgba(245,239,224,0.08)',
+        background: '#F8F5F2',
+        border: '1px solid rgba(26,18,9,0.09)',
         textAlign: 'center',
         cursor: 'default',
         transition: 'all 0.25s ease',
@@ -79,13 +79,13 @@ function OccasionCard({ occasion }) {
         e.currentTarget.style.transform = 'translateY(-3px)'
       }}
       onMouseLeave={e => {
-        e.currentTarget.style.background = 'rgba(245,239,224,0.04)'
-        e.currentTarget.style.borderColor = 'rgba(245,239,224,0.08)'
+        e.currentTarget.style.background = '#F8F5F2'
+        e.currentTarget.style.borderColor = 'rgba(26,18,9,0.09)'
         e.currentTarget.style.transform = 'translateY(0)'
       }}
     >
       <div style={{ fontSize: '2rem', marginBottom: '0.6rem' }}>{getIcon(occasion)}</div>
-      <div style={{ fontSize: '0.82rem', fontWeight: 600, color: '#F5EFE0', lineHeight: 1.4 }}>{occasion}</div>
+      <div style={{ fontSize: '0.82rem', fontWeight: 600, color: '#1A1209', lineHeight: 1.4 }}>{occasion}</div>
     </div>
   )
 }

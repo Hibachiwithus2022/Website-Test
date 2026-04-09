@@ -27,7 +27,7 @@ export default function CityTestimonials({ cityName, testimonials = [] }) {
   ].slice(0, 3)
 
   return (
-    <section style={{ background: 'linear-gradient(180deg,#1E1410,#1A1209)', padding: '5rem 1.5rem' }}>
+    <section style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
@@ -40,11 +40,11 @@ export default function CityTestimonials({ cityName, testimonials = [] }) {
             ))}
           </div>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Verified Reviews</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
             What {cityName} Guests<br />
             <span style={{ color: '#C8102E' }}>Are Saying</span>
           </h2>
-          <p style={{ color: 'rgba(245,239,224,0.45)', maxWidth: '36rem', margin: '1rem auto 0', fontSize: '0.9rem', lineHeight: 1.75 }}>
+          <p style={{ color: 'rgba(26,18,9,0.5)', maxWidth: '36rem', margin: '1rem auto 0', fontSize: '0.9rem', lineHeight: 1.75 }}>
             5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.
           </p>
         </div>
@@ -64,8 +64,8 @@ function TestimonialCard({ t }) {
   return (
     <article
       style={{
-        background: 'rgba(245,239,224,0.04)',
-        border: '1px solid rgba(245,239,224,0.08)',
+        background: '#FFFFFF',
+        border: '1px solid rgba(26,18,9,0.09)',
         padding: '2.25rem 2rem',
         position: 'relative',
         transition: 'transform 0.28s ease, border-color 0.28s ease',
@@ -76,7 +76,7 @@ function TestimonialCard({ t }) {
       }}
       onMouseLeave={e => {
         e.currentTarget.style.transform = 'translateY(0)'
-        e.currentTarget.style.borderColor = 'rgba(245,239,224,0.08)'
+        e.currentTarget.style.borderColor = 'rgba(26,18,9,0.09)'
       }}
     >
       {/* Quote mark */}
@@ -96,7 +96,7 @@ function TestimonialCard({ t }) {
         ))}
       </div>
 
-      <p style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.75)', lineHeight: 1.82, marginBottom: '1.5rem' }}>{t.text}</p>
+      <p style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.72)', lineHeight: 1.82, marginBottom: '1.5rem' }}>{t.text}</p>
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
@@ -107,8 +107,8 @@ function TestimonialCard({ t }) {
             fontFamily: '"Bebas Neue", sans-serif', color: '#C8102E', fontSize: '0.95rem',
           }}>{t.initials}</div>
           <div>
-            <div style={{ fontWeight: 600, fontSize: '0.86rem', color: '#F5EFE0' }}>{t.name}</div>
-            <div style={{ fontSize: '0.7rem', color: 'rgba(245,239,224,0.38)' }}>{t.city}</div>
+            <div style={{ fontWeight: 600, fontSize: '0.86rem', color: '#1A1209' }}>{t.name}</div>
+            <div style={{ fontSize: '0.7rem', color: 'rgba(26,18,9,0.4)' }}>{t.city}</div>
           </div>
         </div>
         <span style={{

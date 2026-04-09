@@ -19,7 +19,7 @@ export default function LocationSearch() {
   const quickCities = FEATURED_CITIES.slice(0, 7)
 
   return (
-    <section id="locations" className="section" style={{ background: 'linear-gradient(180deg,#1E1410 0%,#1A1209 100%)' }}>
+    <section id="locations" className="section" style={{ background: '#F8F5F2' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -29,7 +29,7 @@ export default function LocationSearch() {
             Private Hibachi Chefs<br />
             <span style={{ color: '#C8102E' }}>Across the U.S.</span>
           </h2>
-          <p className="mt-4" style={{ color: 'rgba(245,239,224,0.58)', maxWidth: '38rem', margin: '1rem auto 0' }}>
+          <p className="mt-4" style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '38rem', margin: '1rem auto 0' }}>
             We connect you with local hibachi chefs in your city. Search your location or pick from popular cities below.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function LocationSearch() {
           <div className="relative flex-1">
             <svg
               className="absolute left-4 top-1/2 -translate-y-1/2"
-              width="18" height="18" fill="none" stroke="rgba(245,239,224,0.35)"
+              width="18" height="18" fill="none" stroke="rgba(26,18,9,0.35)"
               strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"
             >
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -61,7 +61,7 @@ export default function LocationSearch() {
 
         {/* Quick city links */}
         <div>
-          <p style={{ textAlign: 'center', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(245,239,224,0.38)', marginBottom: '1rem' }}>
+          <p style={{ textAlign: 'center', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.38)', marginBottom: '1rem' }}>
             Popular Cities
           </p>
           <div className="flex flex-wrap justify-center gap-3">
@@ -84,9 +84,9 @@ export default function LocationSearch() {
           align-items: center;
           gap: 0.4rem;
           padding: 0.5rem 1.1rem;
-          background: rgba(245,239,224,0.05);
-          border: 1px solid rgba(245,239,224,0.12);
-          color: rgba(245,239,224,0.75);
+          background: #FFFFFF;
+          border: 1px solid rgba(26,18,9,0.12);
+          color: rgba(26,18,9,0.65);
           font-size: 0.82rem;
           font-weight: 500;
           letter-spacing: 0.04em;
@@ -96,7 +96,7 @@ export default function LocationSearch() {
         .quick-city-link:hover {
           background: rgba(200,16,46,0.12);
           border-color: rgba(200,16,46,0.45);
-          color: #F5EFE0;
+          color: #C8102E;
           transform: translateY(-2px);
         }
         .quick-city-link:focus-visible {

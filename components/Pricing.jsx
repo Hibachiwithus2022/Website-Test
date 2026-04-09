@@ -76,7 +76,7 @@ export default function Pricing() {
     <section
       id="pricing"
       className="section"
-      style={{ background: 'linear-gradient(180deg,#1E1410 0%,#1A1209 100%)' }}
+      style={{ background: '#F8F5F2' }}
     >
       <div className="max-w-7xl mx-auto">
 
@@ -92,7 +92,7 @@ export default function Pricing() {
             </h2>
           </RevealWrapper>
           <RevealWrapper delay={0.2}>
-            <p style={{ color: 'rgba(245,239,224,0.58)', maxWidth: '40rem', margin: '1rem auto 0' }}>
+            <p style={{ color: 'rgba(26,18,9,0.58)', maxWidth: '40rem', margin: '1rem auto 0' }}>
               All packages include chef, equipment, setup, and full cleanup. You provide the space — we bring everything else.
             </p>
           </RevealWrapper>
@@ -108,11 +108,11 @@ export default function Pricing() {
               padding: '0.85rem 2rem',
             }}
           >
-            <span style={{ fontSize: '0.8rem', color: 'rgba(245,239,224,0.6)', letterSpacing: '0.06em' }}>
+            <span style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.6)', letterSpacing: '0.06em' }}>
               <strong style={{ color: '#D4A843' }}>$550 Minimum</strong> — covers 8–10 guests at standard rate
             </span>
-            <span style={{ width: 1, height: 20, background: 'rgba(245,239,224,0.15)' }} />
-            <span style={{ fontSize: '0.8rem', color: 'rgba(245,239,224,0.6)' }}>
+            <span style={{ width: 1, height: 20, background: 'rgba(26,18,9,0.15)' }} />
+            <span style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.6)' }}>
               Travel fees may apply outside metro areas
             </span>
           </div>
@@ -125,8 +125,8 @@ export default function Pricing() {
               <div
                 style={{
                   position: 'relative', overflow: 'hidden',
-                  background: tier.featured ? 'rgba(200,16,46,0.08)' : 'rgba(245,239,224,0.04)',
-                  border: `1px solid ${tier.featured ? 'rgba(200,16,46,0.5)' : 'rgba(245,239,224,0.09)'}`,
+                  background: tier.featured ? 'rgba(200,16,46,0.08)' : '#FFFFFF',
+                  border: `1px solid ${tier.featured ? 'rgba(200,16,46,0.5)' : 'rgba(26,18,9,0.09)'}`,
                   padding: '2.5rem 2rem',
                   transition: 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1)',
                   height: '100%', display: 'flex', flexDirection: 'column',
@@ -138,7 +138,7 @@ export default function Pricing() {
                 {tier.tag && (
                   <div style={{
                     position: 'absolute', top: -1, left: '50%', transform: 'translateX(-50%)',
-                    background: tier.tagColor, color: '#F5EFE0',
+                    background: tier.tagColor, color: '#FFFFFF',
                     fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em',
                     textTransform: 'uppercase', padding: '0.25rem 1rem',
                     whiteSpace: 'nowrap',
@@ -148,25 +148,25 @@ export default function Pricing() {
                 )}
 
                 <div style={{ marginTop: tier.tag ? '1rem' : '0' }}>
-                  <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: tier.featured ? '#C8102E' : 'rgba(245,239,224,0.45)', marginBottom: '1rem' }}>
+                  <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: tier.featured ? '#C8102E' : 'rgba(26,18,9,0.45)', marginBottom: '1rem' }}>
                     {tier.label}
                   </div>
-                  <div className="font-display" style={{ fontSize: '3.5rem', color: '#F5EFE0', lineHeight: 1 }}>
+                  <div className="font-display" style={{ fontSize: '3.5rem', color: '#1A1209', lineHeight: 1 }}>
                     {tier.price}
-                    {tier.unit && <span style={{ fontSize: '1.2rem', color: 'rgba(245,239,224,0.45)' }}>{tier.unit}</span>}
+                    {tier.unit && <span style={{ fontSize: '1.2rem', color: 'rgba(26,18,9,0.45)' }}>{tier.unit}</span>}
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: 'rgba(245,239,224,0.4)', marginTop: '0.3rem', marginBottom: '1.75rem' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.4)', marginTop: '0.3rem', marginBottom: '1.75rem' }}>
                     {tier.child}
                   </div>
                 </div>
 
-                <ul style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.72)', lineHeight: 2.1, flex: 1 }}>
+                <ul style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.72)', lineHeight: 2.1, flex: 1 }}>
                   {tier.features.map((f, j) => (
                     <li key={j}>✓&nbsp;&nbsp;{f}</li>
                   ))}
                 </ul>
 
-                <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: `1px solid ${tier.featured ? 'rgba(200,16,46,0.2)' : 'rgba(245,239,224,0.08)'}` }}>
+                <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: `1px solid ${tier.featured ? 'rgba(200,16,46,0.2)' : 'rgba(26,18,9,0.08)'}` }}>
                   <a
                     href="#book"
                     className={tier.featured ? 'btn-primary' : 'btn-ghost'}
@@ -183,16 +183,16 @@ export default function Pricing() {
         {/* Add-ons */}
         <RevealWrapper delay={0.3}>
           <div style={{
-            background: 'rgba(245,239,224,0.03)', border: '1px solid rgba(245,239,224,0.07)',
+            background: '#FFFFFF', border: '1px solid rgba(26,18,9,0.09)',
             padding: '2rem 2.5rem',
           }}>
-            <div style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(245,239,224,0.45)', marginBottom: '1.25rem' }}>
+            <div style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.45)', marginBottom: '1.25rem' }}>
               Popular Add-Ons
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
               {ADD_ONS.map((a, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: '1px solid rgba(245,239,224,0.06)' }}>
-                  <span style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.75)' }}>{a.name}</span>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: '1px solid rgba(26,18,9,0.08)' }}>
+                  <span style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.72)' }}>{a.name}</span>
                   <span style={{ color: '#D4A843', fontWeight: 600, fontSize: '0.9rem' }}>{a.price}</span>
                 </div>
               ))}

@@ -33,11 +33,11 @@ const WHY_US = [
 
 export default function StateWhyUs({ state }) {
   return (
-    <section style={{ background: 'linear-gradient(180deg,#1E1410,#1A1209)', padding: '4.5rem 1.5rem' }}>
+    <section style={{ background: 'linear-gradient(180deg,#FFFFFF,#F8F5F2)', padding: '4.5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
         <div className="text-center" style={{ marginBottom: '3rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Why Choose Us</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
             Why {state} Families<br />
             <span style={{ color: '#C8102E' }}>Love Hibachi Connect</span>
           </h2>
@@ -55,21 +55,21 @@ export default function StateWhyUs({ state }) {
               key={item.title}
               style={{
                 padding: '1.75rem',
-                background: 'rgba(245,239,224,0.04)',
-                border: '1px solid rgba(245,239,224,0.08)',
+                background: '#FFFFFF',
+                border: '1px solid rgba(26,18,9,0.09)',
                 display: 'flex', gap: '1rem', alignItems: 'flex-start',
               }}
             >
               <div style={{
                 width: 44, height: 44, flexShrink: 0,
-                background: 'rgba(200,16,46,0.1)', border: '1px solid rgba(200,16,46,0.25)',
+                background: 'rgba(200,16,46,0.08)', border: '1px solid rgba(200,16,46,0.25)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem',
               }}>
                 {item.icon}
               </div>
               <div>
-                <div style={{ fontWeight: 600, color: '#F5EFE0', marginBottom: '0.3rem', fontSize: '0.95rem' }}>{item.title}</div>
-                <div style={{ fontSize: '0.85rem', color: 'rgba(245,239,224,0.58)', lineHeight: 1.72 }}>{item.desc}</div>
+                <div style={{ fontWeight: 600, color: '#1A1209', marginBottom: '0.3rem', fontSize: '0.95rem' }}>{item.title}</div>
+                <div style={{ fontSize: '0.85rem', color: 'rgba(26,18,9,0.58)', lineHeight: 1.72 }}>{item.desc}</div>
               </div>
             </div>
           ))}

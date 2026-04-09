@@ -61,15 +61,15 @@ export default function StatePricing({ state }) {
   ]
 
   return (
-    <section id="pricing" style={{ background: '#1A1209', padding: '4.5rem 1.5rem' }}>
+    <section id="pricing" style={{ background: '#F8F5F2', padding: '4.5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
         <div className="text-center" style={{ marginBottom: '3rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Transparent Pricing</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
             Hibachi at Home in {state}<br />
             <span style={{ color: '#C8102E' }}>— What Does It Cost?</span>
           </h2>
-          <p style={{ color: 'rgba(245,239,224,0.55)', maxWidth: '40rem', margin: '1rem auto 0', fontSize: '0.95rem', lineHeight: 1.75 }}>
+          <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '40rem', margin: '1rem auto 0', fontSize: '0.95rem', lineHeight: 1.75 }}>
             All packages include your chef, all equipment, ingredients, setup, and cleanup. No hidden fees. Quoted upfront.
           </p>
         </div>
@@ -81,11 +81,11 @@ export default function StatePricing({ state }) {
           background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.25)',
           padding: '0.85rem 2rem',
         }}>
-          <span style={{ fontSize: '0.8rem', color: 'rgba(245,239,224,0.6)', letterSpacing: '0.06em' }}>
+          <span style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.6)', letterSpacing: '0.06em' }}>
             <strong style={{ color: '#D4A843' }}>$550 Minimum</strong> — covers 8–10 guests at standard rate
           </span>
-          <span style={{ width: 1, height: 20, background: 'rgba(245,239,224,0.15)' }} />
-          <span style={{ fontSize: '0.8rem', color: 'rgba(245,239,224,0.6)' }}>
+          <span style={{ width: 1, height: 20, background: 'rgba(26,18,9,0.15)' }} />
+          <span style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.6)' }}>
             Travel fees may apply outside metro areas in {state}
           </span>
         </div>
@@ -97,8 +97,8 @@ export default function StatePricing({ state }) {
               key={tier.label}
               style={{
                 position: 'relative', overflow: 'hidden',
-                background: tier.featured ? 'rgba(200,16,46,0.08)' : 'rgba(245,239,224,0.04)',
-                border: `1px solid ${tier.featured ? 'rgba(200,16,46,0.5)' : 'rgba(245,239,224,0.09)'}`,
+                background: tier.featured ? 'rgba(200,16,46,0.06)' : '#FFFFFF',
+                border: `1px solid ${tier.featured ? 'rgba(200,16,46,0.5)' : 'rgba(26,18,9,0.09)'}`,
                 padding: '2.5rem 2rem',
                 display: 'flex', flexDirection: 'column', height: '100%',
               }}
@@ -106,7 +106,7 @@ export default function StatePricing({ state }) {
               {tier.tag && (
                 <div style={{
                   position: 'absolute', top: -1, left: '50%', transform: 'translateX(-50%)',
-                  background: tier.tagColor, color: '#F5EFE0',
+                  background: tier.tagColor, color: '#FFFFFF',
                   fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em',
                   textTransform: 'uppercase', padding: '0.25rem 1rem', whiteSpace: 'nowrap',
                 }}>
@@ -114,23 +114,23 @@ export default function StatePricing({ state }) {
                 </div>
               )}
               <div style={{ marginTop: tier.tag ? '1rem' : '0' }}>
-                <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: tier.featured ? '#C8102E' : 'rgba(245,239,224,0.45)', marginBottom: '1rem' }}>
+                <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: tier.featured ? '#C8102E' : 'rgba(26,18,9,0.45)', marginBottom: '1rem' }}>
                   {tier.label}
                 </div>
-                <div className="font-display" style={{ fontSize: '3.5rem', color: '#F5EFE0', lineHeight: 1 }}>
+                <div className="font-display" style={{ fontSize: '3.5rem', color: '#1A1209', lineHeight: 1 }}>
                   {tier.price}
-                  {tier.unit && <span style={{ fontSize: '1.2rem', color: 'rgba(245,239,224,0.45)' }}>{tier.unit}</span>}
+                  {tier.unit && <span style={{ fontSize: '1.2rem', color: 'rgba(26,18,9,0.45)' }}>{tier.unit}</span>}
                 </div>
-                <div style={{ fontSize: '0.8rem', color: 'rgba(245,239,224,0.4)', marginTop: '0.3rem', marginBottom: '1.75rem' }}>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.4)', marginTop: '0.3rem', marginBottom: '1.75rem' }}>
                   {tier.child}
                 </div>
               </div>
-              <ul style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.72)', lineHeight: 2.1, flex: 1 }}>
+              <ul style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.72)', lineHeight: 2.1, flex: 1 }}>
                 {tier.features.map((f) => (
                   <li key={f}>✓&nbsp;&nbsp;{f}</li>
                 ))}
               </ul>
-              <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: `1px solid ${tier.featured ? 'rgba(200,16,46,0.2)' : 'rgba(245,239,224,0.08)'}` }}>
+              <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: `1px solid ${tier.featured ? 'rgba(200,16,46,0.2)' : 'rgba(26,18,9,0.08)'}` }}>
                 <a
                   href="#book"
                   className={tier.featured ? 'btn-primary' : 'btn-ghost'}

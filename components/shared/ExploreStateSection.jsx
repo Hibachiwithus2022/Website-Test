@@ -29,9 +29,9 @@ export default function ExploreStateSection({
   return (
     <section
       style={{
-        background: 'linear-gradient(180deg,#1A1209,#1E1410)',
+        background: 'linear-gradient(180deg,#FFFFFF,#F8F5F2)',
         padding: '4.5rem 1.5rem',
-        borderTop: '1px solid rgba(245,239,224,0.05)',
+        borderTop: '1px solid rgba(26,18,9,0.08)',
       }}
     >
       <div className="max-w-5xl mx-auto">
@@ -43,14 +43,14 @@ export default function ExploreStateSection({
             <div className="red-pill" style={{ marginBottom: '1rem' }}>Explore {stateName}</div>
             <h2
               className="font-display"
-              style={{ fontSize: 'clamp(1.7rem,4vw,2.5rem)', color: '#F5EFE0', lineHeight: 1.05, marginBottom: '0.75rem' }}
+              style={{ fontSize: 'clamp(1.7rem,4vw,2.5rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '0.75rem' }}
             >
               Also Serving Major Cities<br />
               <span style={{ color: '#C8102E' }}>Across {stateName}</span>
             </h2>
 
             {/* Contextual SEO paragraph */}
-            <p style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.48)', lineHeight: 1.82, marginBottom: '1.75rem', maxWidth: '42rem' }}>
+            <p style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.48)', lineHeight: 1.82, marginBottom: '1.75rem', maxWidth: '42rem' }}>
               {contextualSentence || fallbackSentence}
             </p>
 
@@ -79,7 +79,7 @@ export default function ExploreStateSection({
               aria-label={`All hibachi locations in ${stateName}`}
               style={{
                 display: 'block',
-                background: 'rgba(200,16,46,0.07)',
+                background: 'rgba(200,16,46,0.05)',
                 border: '1px solid rgba(200,16,46,0.25)',
                 padding: '1.75rem',
                 textDecoration: 'none',
@@ -94,10 +94,10 @@ export default function ExploreStateSection({
               }}>
                 {stateName} Hub
               </div>
-              <div style={{ fontWeight: 700, color: '#F5EFE0', fontSize: '1rem', marginBottom: '0.4rem' }}>
+              <div style={{ fontWeight: 700, color: '#1A1209', fontSize: '1rem', marginBottom: '0.4rem' }}>
                 Hibachi at Home in {stateName}
               </div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(245,239,224,0.45)', lineHeight: 1.65, marginBottom: '1rem' }}>
+              <div style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.45)', lineHeight: 1.65, marginBottom: '1rem' }}>
                 Browse all cities, availability, and pricing for {stateName}.
               </div>
               <div style={{
@@ -114,13 +114,13 @@ export default function ExploreStateSection({
 
             {/* Quick links panel */}
             <div style={{
-              background: 'rgba(245,239,224,0.04)',
-              border: '1px solid rgba(245,239,224,0.08)',
+              background: '#FFFFFF',
+              border: '1px solid rgba(26,18,9,0.09)',
               padding: '1.5rem',
             }}>
               <div style={{
                 fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.14em',
-                textTransform: 'uppercase', color: 'rgba(245,239,224,0.35)', marginBottom: '1rem',
+                textTransform: 'uppercase', color: 'rgba(26,18,9,0.35)', marginBottom: '1rem',
               }}>
                 Quick Links
               </div>
@@ -136,7 +136,7 @@ export default function ExploreStateSection({
                       href={link.href}
                       style={{
                         fontSize: '0.86rem',
-                        color: link.highlight ? '#C8102E' : 'rgba(245,239,224,0.6)',
+                        color: link.highlight ? '#C8102E' : 'rgba(26,18,9,0.6)',
                         textDecoration: 'none',
                         fontWeight: link.highlight ? 600 : 400,
                         display: 'flex', gap: '0.45rem', alignItems: 'center',
@@ -165,8 +165,8 @@ function MajorCityCard({ city, slug, stateSlug, stateName }) {
       style={{
         display: 'block',
         padding: '1rem 1.25rem',
-        background: 'rgba(245,239,224,0.04)',
-        border: '1px solid rgba(245,239,224,0.08)',
+        background: '#FFFFFF',
+        border: '1px solid rgba(26,18,9,0.09)',
         textDecoration: 'none',
         transition: 'all 0.22s ease',
       }}
@@ -175,15 +175,15 @@ function MajorCityCard({ city, slug, stateSlug, stateName }) {
         e.currentTarget.style.borderColor = 'rgba(200,16,46,0.35)'
       }}
       onMouseLeave={e => {
-        e.currentTarget.style.background = 'rgba(245,239,224,0.04)'
-        e.currentTarget.style.borderColor = 'rgba(245,239,224,0.08)'
+        e.currentTarget.style.background = '#FFFFFF'
+        e.currentTarget.style.borderColor = 'rgba(26,18,9,0.09)'
       }}
     >
       <div style={{ fontSize: '0.68rem', color: '#C8102E', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
         Hibachi at Home
       </div>
-      <div style={{ fontWeight: 600, color: '#F5EFE0', fontSize: '0.92rem' }}>{city}</div>
-      <div style={{ fontSize: '0.7rem', color: 'rgba(245,239,224,0.35)', marginTop: '0.15rem' }}>{stateName}</div>
+      <div style={{ fontWeight: 600, color: '#1A1209', fontSize: '0.92rem' }}>{city}</div>
+      <div style={{ fontSize: '0.7rem', color: 'rgba(26,18,9,0.35)', marginTop: '0.15rem' }}>{stateName}</div>
     </Link>
   )
 }

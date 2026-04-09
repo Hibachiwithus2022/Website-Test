@@ -21,8 +21,8 @@ export default function CityStickyBar({ cityName }) {
         left: 0,
         right: 0,
         zIndex: 999,
-        background: 'linear-gradient(135deg,#1A0A0A,#1E1209)',
-        borderTop: '1px solid rgba(200,16,46,0.3)',
+        background: 'rgba(255,255,255,0.97)',
+        borderTop: '1px solid rgba(26,18,9,0.1)',
         padding: '0.85rem 1.25rem',
         display: 'flex',
         alignItems: 'center',
@@ -30,13 +30,13 @@ export default function CityStickyBar({ cityName }) {
         gap: '0.75rem',
         transform: visible ? 'translateY(0)' : 'translateY(100%)',
         transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)',
-        boxShadow: '0 -8px 32px rgba(0,0,0,0.55)',
+        boxShadow: '0 -4px 24px rgba(0,0,0,0.08)',
       }}
       className="lg:hidden"
     >
       {/* Left: price anchor */}
       <div style={{ flexShrink: 0 }}>
-        <div style={{ fontSize: '0.62rem', color: 'rgba(245,239,224,0.38)', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1 }}>
+        <div style={{ fontSize: '0.62rem', color: 'rgba(26,18,9,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1 }}>
           from
         </div>
         <div style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '1.5rem', color: '#D4A843', letterSpacing: '0.04em', lineHeight: 1 }}>
@@ -46,10 +46,10 @@ export default function CityStickyBar({ cityName }) {
 
       {/* Center: city label */}
       <div style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
-        <div style={{ fontSize: '0.7rem', color: 'rgba(245,239,224,0.35)', letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, marginBottom: '0.15rem' }}>
+        <div style={{ fontSize: '0.7rem', color: 'rgba(26,18,9,0.4)', letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, marginBottom: '0.15rem' }}>
           Hibachi at Home
         </div>
-        <div style={{ fontWeight: 700, color: '#F5EFE0', fontSize: '0.88rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        <div style={{ fontWeight: 700, color: '#1A1209', fontSize: '0.88rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
           {cityName}
         </div>
       </div>
@@ -62,9 +62,9 @@ export default function CityStickyBar({ cityName }) {
           style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             width: 42, height: 42,
-            background: 'rgba(245,239,224,0.08)',
-            border: '1px solid rgba(245,239,224,0.15)',
-            color: '#F5EFE0',
+            background: 'rgba(26,18,9,0.06)',
+            border: '1px solid rgba(26,18,9,0.12)',
+            color: '#1A1209',
             textDecoration: 'none',
             flexShrink: 0,
           }}

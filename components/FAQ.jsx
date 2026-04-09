@@ -38,7 +38,7 @@ export default function FAQ() {
     <section
       id="faq"
       className="section"
-      style={{ background: 'linear-gradient(180deg,#1E1410 0%,#1A1209 100%)' }}
+      style={{ background: '#F8F5F2' }}
     >
       <div className="max-w-4xl mx-auto">
 
@@ -52,7 +52,7 @@ export default function FAQ() {
             </h2>
           </RevealWrapper>
           <RevealWrapper delay={0.2}>
-            <p style={{ color: 'rgba(245,239,224,0.55)', maxWidth: '36rem', margin: '1rem auto 0' }}>
+            <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '36rem', margin: '1rem auto 0' }}>
               Everything you need to know about booking a private hibachi chef at home.
             </p>
           </RevealWrapper>
@@ -63,7 +63,7 @@ export default function FAQ() {
             {FAQS.map((faq, i) => (
               <div
                 key={i}
-                style={{ borderBottom: '1px solid rgba(245,239,224,0.08)' }}
+                style={{ borderBottom: '1px solid rgba(26,18,9,0.09)' }}
               >
                 <button
                   onClick={() => toggle(i)}
@@ -72,7 +72,7 @@ export default function FAQ() {
                     width: '100%', background: 'none', border: 'none', cursor: 'pointer',
                     display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                     padding: '1.4rem 0',
-                    color: openIndex === i ? '#C8102E' : '#F5EFE0',
+                    color: openIndex === i ? '#C8102E' : '#1A1209',
                     fontFamily: 'inherit', fontSize: '1rem', fontWeight: 500, textAlign: 'left',
                     transition: 'color 0.2s',
                   }}
@@ -83,7 +83,7 @@ export default function FAQ() {
                   </h3>
                   <div style={{
                     flexShrink: 0, width: 24, height: 24, marginLeft: '1rem',
-                    border: `1px solid ${openIndex === i ? '#C8102E' : 'rgba(245,239,224,0.25)'}`,
+                    border: `1px solid ${openIndex === i ? '#C8102E' : 'rgba(26,18,9,0.25)'}`,
                     background: openIndex === i ? 'rgba(200,16,46,0.15)' : 'transparent',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     transform: openIndex === i ? 'rotate(45deg)' : 'rotate(0)',
@@ -103,7 +103,7 @@ export default function FAQ() {
                     transition: 'max-height 0.35s ease',
                   }}
                 >
-                  <p style={{ paddingBottom: '1.4rem', color: 'rgba(245,239,224,0.65)', lineHeight: 1.78, fontSize: '0.95rem' }}>
+                  <p style={{ paddingBottom: '1.4rem', color: 'rgba(26,18,9,0.65)', lineHeight: 1.78, fontSize: '0.95rem' }}>
                     {faq.a}
                   </p>
                 </div>

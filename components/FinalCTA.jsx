@@ -6,10 +6,7 @@ export default function FinalCTA() {
       id="book"
       className="section"
       style={{
-        background: `
-          radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,16,46,0.18) 0%, transparent 70%),
-          linear-gradient(180deg, #1A1209 0%, #1E1410 100%)
-        `,
+        background: `radial-gradient(ellipse 60% 50% at 50% 50%, rgba(200,16,46,0.06) 0%, transparent 70%), #F8F5F2`,
         textAlign: 'center',
       }}
     >
@@ -21,8 +18,8 @@ export default function FinalCTA() {
 
         <RevealWrapper delay={0.1}>
           <h2
-            className="font-display leading-none text-brand-cream"
-            style={{ fontSize: 'clamp(2.8rem,7vw,5.5rem)', letterSpacing: '0.02em', marginBottom: '1.25rem' }}
+            className="font-display leading-none"
+            style={{ color: '#1A1209', fontSize: 'clamp(2.8rem,7vw,5.5rem)', letterSpacing: '0.02em', marginBottom: '1.25rem' }}
           >
             Ready to Book Your<br />
             <span style={{ color: '#C8102E' }}>Hibachi Experience?</span>
@@ -30,7 +27,7 @@ export default function FinalCTA() {
         </RevealWrapper>
 
         <RevealWrapper delay={0.2}>
-          <p style={{ color: 'rgba(245,239,224,0.65)', maxWidth: '36rem', margin: '0 auto 2.5rem', fontSize: '1.05rem', lineHeight: 1.75 }}>
+          <p style={{ color: 'rgba(26,18,9,0.6)', maxWidth: '36rem', margin: '0 auto 2.5rem', fontSize: '1.05rem', lineHeight: 1.75 }}>
             Join hundreds of families and event hosts who've made their gatherings unforgettable with Hibachi Connect. Nationwide. Professional. Guaranteed.
           </p>
         </RevealWrapper>
@@ -57,7 +54,7 @@ export default function FinalCTA() {
               { icon: '✓', text: 'Response within 24 hours' },
               { icon: '✓', text: 'Free cancellation 7+ days out' },
             ].map((b, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem', color: 'rgba(245,239,224,0.5)' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem', color: 'rgba(26,18,9,0.45)' }}>
                 <span style={{ color: '#C8102E', fontWeight: 700 }}>{b.icon}</span>
                 {b.text}
               </div>

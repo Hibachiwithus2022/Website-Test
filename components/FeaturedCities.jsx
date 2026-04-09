@@ -5,7 +5,7 @@ import { FEATURED_CITIES } from '../lib/cities'
 
 export default function FeaturedCities() {
   return (
-    <section className="section" style={{ background: '#1A1209' }}>
+    <section className="section" style={{ background: '#F8F5F2' }}>
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-14">
@@ -19,7 +19,7 @@ export default function FeaturedCities() {
             </h2>
           </RevealWrapper>
           <RevealWrapper delay={0.2}>
-            <p style={{ color: 'rgba(245,239,224,0.55)', maxWidth: '38rem', margin: '1rem auto 0' }}>
+            <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '38rem', margin: '1rem auto 0' }}>
               Don't see your city? We likely cover it. Search above or contact us — we have chefs in every state.
             </p>
           </RevealWrapper>
@@ -33,8 +33,8 @@ export default function FeaturedCities() {
                 href={`/locations/${c.stateSlug}/${c.slug}`}
                 style={{
                   display: 'flex', flexDirection: 'column',
-                  background: 'rgba(245,239,224,0.04)',
-                  border: '1px solid rgba(245,239,224,0.09)',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(26,18,9,0.09)',
                   padding: '1.75rem 1.5rem',
                   textDecoration: 'none',
                   position: 'relative', overflow: 'hidden',
@@ -47,8 +47,8 @@ export default function FeaturedCities() {
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.transform   = 'translateY(0)'
-                  e.currentTarget.style.borderColor = 'rgba(245,239,224,0.09)'
-                  e.currentTarget.style.background  = 'rgba(245,239,224,0.04)'
+                  e.currentTarget.style.borderColor = 'rgba(26,18,9,0.09)'
+                  e.currentTarget.style.background  = '#FFFFFF'
                 }}
               >
                 {/* Top bar on hover via pseudo — using inline workaround */}
@@ -56,18 +56,18 @@ export default function FeaturedCities() {
                   <svg width="16" height="16" fill="none" stroke="#C8102E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                   </svg>
-                  <svg width="14" height="14" fill="none" stroke="rgba(245,239,224,0.25)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <svg width="14" height="14" fill="none" stroke="rgba(26,18,9,0.25)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                     <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                   </svg>
                 </div>
 
-                <div className="font-display" style={{ fontSize: '1.5rem', color: '#F5EFE0', lineHeight: 1.1, marginBottom: '0.3rem' }}>
+                <div className="font-display" style={{ fontSize: '1.5rem', color: '#1A1209', lineHeight: 1.1, marginBottom: '0.3rem' }}>
                   {c.city}
                 </div>
-                <div style={{ fontSize: '0.78rem', color: 'rgba(245,239,224,0.45)', marginBottom: '0.75rem' }}>
+                <div style={{ fontSize: '0.78rem', color: 'rgba(26,18,9,0.45)', marginBottom: '0.75rem' }}>
                   {c.state}
                 </div>
-                <div style={{ fontSize: '0.72rem', color: 'rgba(245,239,224,0.3)', marginTop: 'auto' }}>
+                <div style={{ fontSize: '0.72rem', color: 'rgba(26,18,9,0.35)', marginTop: 'auto' }}>
                   {c.pop} residents
                 </div>
 

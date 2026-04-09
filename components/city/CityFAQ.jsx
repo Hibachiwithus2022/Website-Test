@@ -9,12 +9,12 @@ export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], s
   const allFaqs = [...faqSet, ...uniqueSupplemental]
 
   return (
-    <section style={{ background: 'linear-gradient(180deg,#1E1410,#1A1209)', padding: '5rem 1.5rem' }}>
+    <section style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>
       <div className="max-w-3xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>FAQ</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3rem)', color: '#1A1209', lineHeight: 1.05 }}>
             Frequently Asked Questions<br />
             <span style={{ color: '#C8102E' }}>Hibachi at Home in {cityName}, {stateAbbr}</span>
           </h2>
@@ -25,8 +25,8 @@ export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], s
             <div
               key={i}
               style={{
-                background: openIdx === i ? 'rgba(200,16,46,0.06)' : 'rgba(245,239,224,0.04)',
-                border: `1px solid ${openIdx === i ? 'rgba(200,16,46,0.28)' : 'rgba(245,239,224,0.08)'}`,
+                background: openIdx === i ? 'rgba(200,16,46,0.06)' : '#FFFFFF',
+                border: `1px solid ${openIdx === i ? 'rgba(200,16,46,0.28)' : 'rgba(26,18,9,0.09)'}`,
                 overflow: 'hidden',
                 transition: 'border-color 0.2s, background 0.2s',
               }}
@@ -40,7 +40,7 @@ export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], s
                 }}
                 aria-expanded={openIdx === i}
               >
-                <span style={{ fontWeight: 600, color: '#F5EFE0', fontSize: '0.95rem', lineHeight: 1.5 }}>{faq.q}</span>
+                <span style={{ fontWeight: 600, color: '#1A1209', fontSize: '0.95rem', lineHeight: 1.5 }}>{faq.q}</span>
                 <span style={{
                   color: '#C8102E', fontSize: '1.5rem', lineHeight: 1, flexShrink: 0, userSelect: 'none',
                   transform: openIdx === i ? 'rotate(45deg)' : 'rotate(0)',
@@ -48,7 +48,7 @@ export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], s
                 }}>+</span>
               </button>
               {openIdx === i && (
-                <div style={{ padding: '0 1.5rem 1.4rem', fontSize: '0.9rem', color: 'rgba(245,239,224,0.62)', lineHeight: 1.85 }}>
+                <div style={{ padding: '0 1.5rem 1.4rem', fontSize: '0.9rem', color: 'rgba(26,18,9,0.62)', lineHeight: 1.85 }}>
                   {faq.a}
                 </div>
               )}
@@ -57,7 +57,7 @@ export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], s
         </div>
 
         {/* Schema note */}
-        <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.82rem', color: 'rgba(245,239,224,0.3)' }}>
+        <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.82rem', color: 'rgba(26,18,9,0.38)' }}>
           Have more questions? Call or text us at{' '}
           <a href="tel:+16027672965" style={{ color: '#C8102E', textDecoration: 'none' }}>(602) 767-2965</a>
         </p>

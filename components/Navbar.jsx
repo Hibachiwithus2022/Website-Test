@@ -25,9 +25,9 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-[200] transition-all duration-400"
       style={scrolled ? {
-        background: 'rgba(26,18,9,0.97)',
+        background: 'rgba(255,255,255,0.97)',
         backdropFilter: 'blur(16px)',
-        boxShadow: '0 1px 0 rgba(245,239,224,0.06), 0 4px 24px rgba(0,0,0,0.45)',
+        boxShadow: '0 1px 0 rgba(26,18,9,0.08), 0 4px 24px rgba(0,0,0,0.08)',
       } : {}}
     >
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
@@ -61,23 +61,23 @@ export default function Navbar() {
           onClick={() => setMobileOpen(o => !o)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-[22px] h-[2px] bg-brand-cream transition-transform duration-300 ${mobileOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
-          <span className={`block w-[22px] h-[2px] bg-brand-cream transition-opacity duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-[22px] h-[2px] bg-brand-cream transition-transform duration-300 ${mobileOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
+          <span className={`block w-[22px] h-[2px] transition-transform duration-300 ${mobileOpen ? 'translate-y-[7px] rotate-45' : ''}`} style={{ background: scrolled ? '#1A1209' : '#F5EFE0' }} />
+          <span className={`block w-[22px] h-[2px] transition-opacity duration-300 ${mobileOpen ? 'opacity-0' : ''}`} style={{ background: scrolled ? '#1A1209' : '#F5EFE0' }} />
+          <span className={`block w-[22px] h-[2px] transition-transform duration-300 ${mobileOpen ? '-translate-y-[7px] -rotate-45' : ''}`} style={{ background: scrolled ? '#1A1209' : '#F5EFE0' }} />
         </button>
       </div>
 
       {/* Mobile menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? 'max-h-96' : 'max-h-0'}`}
-        style={{ background: 'rgba(26,18,9,0.98)', borderTop: '1px solid rgba(245,239,224,0.08)' }}
+        style={{ background: 'rgba(255,255,255,0.98)', borderTop: '1px solid rgba(26,18,9,0.08)' }}
       >
         <div className="flex flex-col px-6 py-5 gap-5">
           {links.map(l => (
             <a
               key={l.label}
               href={l.href}
-              className="nav-link-item"
+              className="nav-link-item-dark"
               onClick={() => setMobileOpen(false)}
             >
               {l.label}
@@ -91,7 +91,7 @@ export default function Navbar() {
 
       <style jsx>{`
         .nav-link-item {
-          color: rgba(245,239,224,0.85);
+          color: ${scrolled ? 'rgba(26,18,9,0.75)' : 'rgba(245,239,224,0.85)'};
           text-decoration: none;
           font-size: 0.8rem;
           font-weight: 500;
@@ -108,8 +108,21 @@ export default function Navbar() {
           transform: scaleX(0); transform-origin: left;
           transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
         }
-        .nav-link-item:hover { color: #F5EFE0; }
+        .nav-link-item:hover { color: ${scrolled ? '#1A1209' : '#F5EFE0'}; }
         .nav-link-item:hover::after { transform: scaleX(1); }
+
+        .nav-link-item-dark {
+          color: rgba(26,18,9,0.75);
+          text-decoration: none;
+          font-size: 0.8rem;
+          font-weight: 500;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          padding: 0.35rem 0;
+          position: relative;
+          transition: color 0.25s;
+        }
+        .nav-link-item-dark:hover { color: #C8102E; }
       `}</style>
     </nav>
   )

@@ -31,7 +31,7 @@ export default function CityExperience({ cityName, variant = 0 }) {
   const heading = HEADING_VARIANTS[variant % HEADING_VARIANTS.length](cityName)
 
   return (
-    <section style={{ background: '#1A1209', padding: '5rem 1.5rem' }}>
+    <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
         <div style={{ display: 'grid', gap: '4rem', alignItems: 'center' }} className="lg:grid-cols-2">
 
@@ -56,7 +56,7 @@ export default function CityExperience({ cityName, variant = 0 }) {
               className="hidden md:block"
             >
               <div className="font-display" style={{ fontSize: '2.2rem', color: '#F5EFE0', lineHeight: 1 }}>100%</div>
-              <div style={{ fontSize: '0.65rem', color: 'rgba(245,239,224,0.8)', letterSpacing: '0.12em', textTransform: 'uppercase', marginTop: '0.2rem' }}>
+              <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.12em', textTransform: 'uppercase', marginTop: '0.2rem' }}>
                 Guest Satisfaction
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function CityExperience({ cityName, variant = 0 }) {
           {/* Right: content */}
           <div>
             <div className="red-pill" style={{ marginBottom: '1.25rem' }}>The Experience</div>
-            <h2 className="font-display" style={{ fontSize: 'clamp(2rem,4.5vw,3rem)', color: '#F5EFE0', lineHeight: 1.05, marginBottom: '2rem' }}>
+            <h2 className="font-display" style={{ fontSize: 'clamp(2rem,4.5vw,3rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '2rem' }}>
               {heading.split(',')[0]}<br />
               <span style={{ color: '#C8102E' }}>{heading.includes(',') ? heading.slice(heading.indexOf(',') + 1) : ''}</span>
             </h2>
@@ -85,8 +85,8 @@ export default function CityExperience({ cityName, variant = 0 }) {
                     {point.icon}
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, color: '#F5EFE0', marginBottom: '0.25rem', fontSize: '0.95rem' }}>{point.title}</div>
-                    <div style={{ fontSize: '0.86rem', color: 'rgba(245,239,224,0.55)', lineHeight: 1.75 }}>{point.desc}</div>
+                    <div style={{ fontWeight: 700, color: '#1A1209', marginBottom: '0.25rem', fontSize: '0.95rem' }}>{point.title}</div>
+                    <div style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.75 }}>{point.desc}</div>
                   </div>
                 </div>
               ))}

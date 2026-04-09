@@ -29,7 +29,7 @@ export default function Experience() {
   return (
     <section
       className="section"
-      style={{ background: '#1A1209' }}
+      style={{ background: '#FFFFFF' }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -43,7 +43,7 @@ export default function Experience() {
                   alt="Hibachi chef cooking live fire teppanyaki at a backyard party"
                   style={{ width: '100%', display: 'block', objectFit: 'cover', height: 540, filter: 'saturate(1.08)' }}
                 />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,18,9,0.55) 0%, transparent 50%)' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%)' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'rgba(200,16,46,0.06)', mixBlendMode: 'multiply' }} />
               </div>
 
@@ -82,7 +82,7 @@ export default function Experience() {
               </h2>
             </RevealWrapper>
             <RevealWrapper delay={0.15}>
-              <p style={{ color: 'rgba(245,239,224,0.68)', lineHeight: 1.78, marginBottom: '2.5rem' }}>
+              <p style={{ color: 'rgba(26,18,9,0.68)', lineHeight: 1.78, marginBottom: '2.5rem' }}>
                 It's not just dinner — it's a performance. Your private hibachi chef arrives ready to entertain, cook, and create memories your guests will be talking about for years. No restaurants. No waiting. The show comes to you.
               </p>
             </RevealWrapper>
@@ -100,8 +100,8 @@ export default function Experience() {
                       {f.icon}
                     </div>
                     <div>
-                      <div style={{ fontWeight: 600, color: '#F5EFE0', marginBottom: '0.2rem' }}>{f.title}</div>
-                      <div style={{ fontSize: '0.88rem', color: 'rgba(245,239,224,0.58)', lineHeight: 1.7 }}>{f.desc}</div>
+                      <div style={{ fontWeight: 600, color: '#1A1209', marginBottom: '0.2rem' }}>{f.title}</div>
+                      <div style={{ fontSize: '0.88rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.7 }}>{f.desc}</div>
                     </div>
                   </div>
                 </RevealWrapper>

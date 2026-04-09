@@ -29,11 +29,11 @@ export default function StateFAQ({ state, stateData }) {
   const [openIdx, setOpenIdx] = useState(null)
 
   return (
-    <section style={{ background: 'linear-gradient(180deg,#1E1410,#1A1209)', padding: '4.5rem 1.5rem' }}>
+    <section style={{ background: 'linear-gradient(180deg,#F8F5F2,#FFFFFF)', padding: '4.5rem 1.5rem' }}>
       <div className="max-w-3xl mx-auto">
         <div className="text-center" style={{ marginBottom: '3rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>FAQ</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3rem)', color: '#1A1209', lineHeight: 1.05 }}>
             Hibachi in {state}<br />
             <span style={{ color: '#C8102E' }}>Common Questions</span>
           </h2>
@@ -44,8 +44,8 @@ export default function StateFAQ({ state, stateData }) {
             <div
               key={i}
               style={{
-                background: openIdx === i ? 'rgba(200,16,46,0.06)' : 'rgba(245,239,224,0.04)',
-                border: `1px solid ${openIdx === i ? 'rgba(200,16,46,0.3)' : 'rgba(245,239,224,0.08)'}`,
+                background: openIdx === i ? 'rgba(200,16,46,0.06)' : '#FFFFFF',
+                border: `1px solid ${openIdx === i ? 'rgba(200,16,46,0.3)' : 'rgba(26,18,9,0.09)'}`,
                 transition: 'border-color 0.2s, background 0.2s',
                 overflow: 'hidden',
               }}
@@ -58,7 +58,7 @@ export default function StateFAQ({ state, stateData }) {
                   textAlign: 'left', gap: '1rem',
                 }}
               >
-                <span style={{ fontWeight: 600, color: '#F5EFE0', fontSize: '0.95rem', lineHeight: 1.5 }}>{faq.q}</span>
+                <span style={{ fontWeight: 600, color: '#1A1209', fontSize: '0.95rem', lineHeight: 1.5 }}>{faq.q}</span>
                 <span style={{
                   color: '#C8102E', fontSize: '1.4rem', lineHeight: 1, flexShrink: 0,
                   transform: openIdx === i ? 'rotate(45deg)' : 'rotate(0)',
@@ -66,7 +66,7 @@ export default function StateFAQ({ state, stateData }) {
                 }}>+</span>
               </button>
               {openIdx === i && (
-                <div style={{ padding: '0 1.5rem 1.5rem', fontSize: '0.9rem', color: 'rgba(245,239,224,0.65)', lineHeight: 1.82 }}>
+                <div style={{ padding: '0 1.5rem 1.5rem', fontSize: '0.9rem', color: 'rgba(26,18,9,0.65)', lineHeight: 1.82 }}>
                   {faq.a}
                 </div>
               )}

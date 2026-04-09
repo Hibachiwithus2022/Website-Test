@@ -29,7 +29,7 @@ export default function SocialProof() {
   return (
     <section
       className="section"
-      style={{ background: 'linear-gradient(180deg,#1E1410 0%,#1A1209 100%)' }}
+      style={{ background: '#FFFFFF' }}
     >
       <div className="max-w-7xl mx-auto">
 
@@ -48,7 +48,7 @@ export default function SocialProof() {
               Thousands of Backyard<br />
               <span style={{ color: '#C8102E' }}>Hibachi Parties Hosted</span>
             </h2>
-            <p className="mt-4" style={{ color: 'rgba(245,239,224,0.55)', maxWidth: '36rem', margin: '1rem auto 0' }}>
+            <p className="mt-4" style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '36rem', margin: '1rem auto 0' }}>
               5.0 average across 200+ events nationwide. Real guests. Real hibachi. Real memories.
             </p>
           </div>
@@ -60,8 +60,8 @@ export default function SocialProof() {
             <RevealWrapper key={i} delay={i * 0.12}>
               <article
                 style={{
-                  background: 'rgba(245,239,224,0.04)',
-                  border: '1px solid rgba(245,239,224,0.08)',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(26,18,9,0.09)',
                   padding: '2.25rem 2rem',
                   position: 'relative',
                   transition: 'transform 0.3s ease',
@@ -72,7 +72,7 @@ export default function SocialProof() {
                 {/* Quote mark */}
                 <div style={{
                   fontFamily: '"Playfair Display", Georgia, serif',
-                  fontSize: '5rem', color: '#C8102E', opacity: 0.35,
+                  fontSize: '5rem', color: '#C8102E', opacity: 0.25,
                   position: 'absolute', top: '0.25rem', left: '1.25rem', lineHeight: 1,
                 }}>
                   &#8220;
@@ -87,7 +87,7 @@ export default function SocialProof() {
                   ))}
                 </div>
 
-                <p style={{ fontSize: '0.93rem', color: 'rgba(245,239,224,0.78)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                <p style={{ fontSize: '0.93rem', color: 'rgba(26,18,9,0.72)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                   {t.text}
                 </p>
 
@@ -102,8 +102,8 @@ export default function SocialProof() {
                       {t.initials}
                     </div>
                     <div>
-                      <div style={{ fontWeight: 600, fontSize: '0.88rem', color: '#F5EFE0' }}>{t.name}</div>
-                      <div style={{ fontSize: '0.72rem', color: 'rgba(245,239,224,0.4)' }}>{t.city}</div>
+                      <div style={{ fontWeight: 600, fontSize: '0.88rem', color: '#1A1209' }}>{t.name}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'rgba(26,18,9,0.38)' }}>{t.city}</div>
                     </div>
                   </div>
                   <span style={{

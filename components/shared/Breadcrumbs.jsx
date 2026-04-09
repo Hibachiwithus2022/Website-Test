@@ -22,7 +22,7 @@ export default function Breadcrumbs({ items = [], style = {} }) {
       aria-label="Breadcrumb"
       style={{
         fontSize: '0.75rem',
-        color: 'rgba(245,239,224,0.4)',
+        color: 'rgba(26,18,9,0.4)',
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
@@ -47,7 +47,7 @@ export default function Breadcrumbs({ items = [], style = {} }) {
               </Link>
             ) : (
               <span
-                style={{ color: isLast ? 'rgba(245,239,224,0.65)' : 'inherit' }}
+                style={{ color: isLast ? 'rgba(26,18,9,0.65)' : 'inherit' }}
                 aria-current={isLast ? 'page' : undefined}
               >
                 {item.label}

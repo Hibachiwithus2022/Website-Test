@@ -16,7 +16,7 @@ export default function StateFeaturedCities({ stateName, stateSlug, featuredCiti
   if (!featuredCities.length) return null
 
   return (
-    <section style={{ background: '#1A1209', padding: '5rem 1.5rem' }}>
+    <section style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
@@ -25,7 +25,7 @@ export default function StateFeaturedCities({ stateName, stateSlug, featuredCiti
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
             <h2
               className="font-display"
-              style={{ fontSize: 'clamp(1.9rem,4.5vw,2.8rem)', color: '#F5EFE0', lineHeight: 1.05 }}
+              style={{ fontSize: 'clamp(1.9rem,4.5vw,2.8rem)', color: '#1A1209', lineHeight: 1.05 }}
             >
               Featured Cities in<br />
               <span style={{ color: '#C8102E' }}>{stateName}</span>
@@ -34,7 +34,7 @@ export default function StateFeaturedCities({ stateName, stateSlug, featuredCiti
               href={`/locations/${stateSlug}#cities`}
               style={{
                 fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.08em',
-                textTransform: 'uppercase', color: 'rgba(245,239,224,0.45)',
+                textTransform: 'uppercase', color: 'rgba(26,18,9,0.45)',
                 textDecoration: 'none', display: 'flex', gap: '0.4rem', alignItems: 'center', flexShrink: 0,
               }}
             >
@@ -65,7 +65,7 @@ export default function StateFeaturedCities({ stateName, stateSlug, featuredCiti
           <p style={{
             marginTop: '2.25rem',
             fontSize: '0.88rem',
-            color: 'rgba(245,239,224,0.38)',
+            color: 'rgba(26,18,9,0.38)',
             lineHeight: 1.8,
             textAlign: 'center',
           }}>
@@ -87,8 +87,8 @@ function FeaturedCityCard({ city, slug, desc, stateSlug, stateName }) {
         display: 'flex',
         flexDirection: 'column',
         padding: '1.75rem',
-        background: 'rgba(245,239,224,0.04)',
-        border: '1px solid rgba(245,239,224,0.08)',
+        background: '#FFFFFF',
+        border: '1px solid rgba(26,18,9,0.09)',
         textDecoration: 'none',
         transition: 'border-color 0.22s ease, transform 0.22s ease',
         position: 'relative',
@@ -99,7 +99,7 @@ function FeaturedCityCard({ city, slug, desc, stateSlug, stateName }) {
         e.currentTarget.style.transform = 'translateY(-3px)'
       }}
       onMouseLeave={e => {
-        e.currentTarget.style.borderColor = 'rgba(245,239,224,0.08)'
+        e.currentTarget.style.borderColor = 'rgba(26,18,9,0.09)'
         e.currentTarget.style.transform = 'translateY(0)'
       }}
     >
@@ -123,12 +123,12 @@ function FeaturedCityCard({ city, slug, desc, stateSlug, stateName }) {
       </div>
 
       {/* City name */}
-      <div style={{ fontWeight: 700, color: '#F5EFE0', fontSize: '1.05rem', marginBottom: '0.3rem' }}>
+      <div style={{ fontWeight: 700, color: '#1A1209', fontSize: '1.05rem', marginBottom: '0.3rem' }}>
         Hibachi at Home in {city}
       </div>
 
       {/* Description */}
-      <div style={{ fontSize: '0.8rem', color: 'rgba(245,239,224,0.42)', lineHeight: 1.65, flex: 1 }}>
+      <div style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.42)', lineHeight: 1.65, flex: 1 }}>
         {desc}
       </div>
 

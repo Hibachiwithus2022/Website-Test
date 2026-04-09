@@ -5,12 +5,12 @@ export default function CityWhyUs({ cityName, uniqueWhyUsVariant = 0 }) {
   const v = { headline: variant.headline, items: variant.items(cityName) }
 
   return (
-    <section style={{ background: 'linear-gradient(180deg,#1E1410,#1A1209)', padding: '5rem 1.5rem' }}>
+    <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Why Choose Us</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
             {v.headline(cityName)}
           </h2>
         </div>
@@ -21,8 +21,8 @@ export default function CityWhyUs({ cityName, uniqueWhyUsVariant = 0 }) {
               key={item.title}
               style={{
                 padding: '1.75rem',
-                background: 'rgba(245,239,224,0.04)',
-                border: '1px solid rgba(245,239,224,0.07)',
+                background: '#FFFFFF',
+                border: '1px solid rgba(26,18,9,0.09)',
                 display: 'flex', gap: '1rem', alignItems: 'flex-start',
               }}
             >
@@ -34,8 +34,8 @@ export default function CityWhyUs({ cityName, uniqueWhyUsVariant = 0 }) {
                 {item.icon}
               </div>
               <div>
-                <div style={{ fontWeight: 700, color: '#F5EFE0', marginBottom: '0.3rem', fontSize: '0.95rem' }}>{item.title}</div>
-                <div style={{ fontSize: '0.84rem', color: 'rgba(245,239,224,0.55)', lineHeight: 1.72 }}>{item.desc}</div>
+                <div style={{ fontWeight: 700, color: '#1A1209', marginBottom: '0.3rem', fontSize: '0.95rem' }}>{item.title}</div>
+                <div style={{ fontSize: '0.84rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.72 }}>{item.desc}</div>
               </div>
             </div>
           ))}

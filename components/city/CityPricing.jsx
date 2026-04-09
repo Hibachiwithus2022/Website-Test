@@ -12,16 +12,16 @@ const ADD_ONS = [
 
 export default function CityPricing({ cityName, stateName }) {
   return (
-    <section id="pricing" style={{ background: '#1A1209', padding: '5rem 1.5rem' }}>
+    <section id="pricing" style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Transparent Pricing</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
             How Much Does Hibachi<br />
             <span style={{ color: '#C8102E' }}>at Home Cost in {cityName}?</span>
           </h2>
-          <p style={{ color: 'rgba(245,239,224,0.5)', maxWidth: '38rem', margin: '1rem auto 0', fontSize: '0.95rem', lineHeight: 1.75 }}>
+          <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '38rem', margin: '1rem auto 0', fontSize: '0.95rem', lineHeight: 1.75 }}>
             All packages include your chef, full propane grill, ingredients, sauces, plates, and cleanup. No surprises.
           </p>
         </div>
@@ -101,15 +101,15 @@ export default function CityPricing({ cityName, stateName }) {
           border: '1px solid rgba(212,168,67,0.22)',
         }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ fontSize: '0.82rem', color: 'rgba(245,239,224,0.65)' }}>
+            <span style={{ fontSize: '0.82rem', color: 'rgba(26,18,9,0.65)' }}>
               <strong style={{ color: '#D4A843' }}>$550 minimum</strong> — covers 8–10 guests at standard rate
             </span>
-            <span style={{ width: 1, height: 18, background: 'rgba(245,239,224,0.12)', flexShrink: 0 }} />
-            <span style={{ fontSize: '0.82rem', color: 'rgba(245,239,224,0.55)' }}>
+            <span style={{ width: 1, height: 18, background: 'rgba(26,18,9,0.12)', flexShrink: 0 }} />
+            <span style={{ fontSize: '0.82rem', color: 'rgba(26,18,9,0.55)' }}>
               Children ages 0–3 eat free
             </span>
-            <span style={{ width: 1, height: 18, background: 'rgba(245,239,224,0.12)', flexShrink: 0 }} />
-            <span style={{ fontSize: '0.82rem', color: 'rgba(245,239,224,0.55)' }}>
+            <span style={{ width: 1, height: 18, background: 'rgba(26,18,9,0.12)', flexShrink: 0 }} />
+            <span style={{ fontSize: '0.82rem', color: 'rgba(26,18,9,0.55)' }}>
               Travel fees may apply depending on location within {stateName}
             </span>
           </div>
@@ -119,23 +119,23 @@ export default function CityPricing({ cityName, stateName }) {
         <div style={{
           marginTop: '1rem',
           padding: '1.25rem 2rem',
-          background: 'rgba(245,239,224,0.03)',
-          border: '1px solid rgba(245,239,224,0.06)',
-          fontSize: '0.82rem', color: 'rgba(245,239,224,0.4)',
+          background: '#FFFFFF',
+          border: '1px solid rgba(26,18,9,0.08)',
+          fontSize: '0.82rem', color: 'rgba(26,18,9,0.45)',
           textAlign: 'center', lineHeight: 1.8,
         }}>
-          <strong style={{ color: 'rgba(245,239,224,0.55)' }}>Not included:</strong> Tables, chairs, drinks, and additional tableware. Chef arrives 5–10 minutes before event start to begin setup.
+          <strong style={{ color: 'rgba(26,18,9,0.65)' }}>Not included:</strong> Tables, chairs, drinks, and additional tableware. Chef arrives 5–10 minutes before event start to begin setup.
         </div>
 
         {/* Add-ons */}
-        <div style={{ marginTop: '2.5rem', padding: '2rem 2.5rem', background: 'rgba(245,239,224,0.03)', border: '1px solid rgba(245,239,224,0.07)' }}>
-          <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(245,239,224,0.4)', marginBottom: '1.25rem' }}>
+        <div style={{ marginTop: '2.5rem', padding: '2rem 2.5rem', background: '#FFFFFF', border: '1px solid rgba(26,18,9,0.09)' }}>
+          <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.45)', marginBottom: '1.25rem' }}>
             Popular Add-Ons
           </div>
           <div style={{ display: 'grid', gap: '0.6rem' }} className="sm:grid-cols-2 lg:grid-cols-4">
             {ADD_ONS.map((a) => (
-              <div key={a.name} style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.5rem', borderBottom: '1px solid rgba(245,239,224,0.06)' }}>
-                <span style={{ fontSize: '0.88rem', color: 'rgba(245,239,224,0.72)' }}>{a.name}</span>
+              <div key={a.name} style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.5rem', borderBottom: '1px solid rgba(26,18,9,0.08)' }}>
+                <span style={{ fontSize: '0.88rem', color: 'rgba(26,18,9,0.72)' }}>{a.name}</span>
                 <span style={{ color: '#D4A843', fontWeight: 600, fontSize: '0.88rem' }}>{a.price}</span>
               </div>
             ))}
@@ -152,8 +152,8 @@ function PricingCard({ label, price, unit, sub, featured, tag, tagColor, feature
     <div
       style={{
         position: 'relative', overflow: 'hidden',
-        background: featured ? 'rgba(200,16,46,0.08)' : 'rgba(245,239,224,0.04)',
-        border: `1px solid ${featured ? 'rgba(200,16,46,0.5)' : 'rgba(245,239,224,0.09)'}`,
+        background: featured ? 'rgba(200,16,46,0.05)' : '#FFFFFF',
+        border: `1px solid ${featured ? 'rgba(200,16,46,0.5)' : 'rgba(26,18,9,0.09)'}`,
         padding: '2.5rem 2rem',
         display: 'flex', flexDirection: 'column', height: '100%',
       }}
@@ -161,7 +161,7 @@ function PricingCard({ label, price, unit, sub, featured, tag, tagColor, feature
       {tag && (
         <div style={{
           position: 'absolute', top: -1, left: '50%', transform: 'translateX(-50%)',
-          background: tagColor, color: '#F5EFE0',
+          background: tagColor, color: '#FFFFFF',
           fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em',
           textTransform: 'uppercase', padding: '0.25rem 1rem', whiteSpace: 'nowrap',
         }}>
@@ -169,19 +169,19 @@ function PricingCard({ label, price, unit, sub, featured, tag, tagColor, feature
         </div>
       )}
       <div style={{ marginTop: tag ? '1rem' : 0 }}>
-        <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: featured ? '#C8102E' : 'rgba(245,239,224,0.4)', marginBottom: '1rem' }}>
+        <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: featured ? '#C8102E' : 'rgba(26,18,9,0.45)', marginBottom: '1rem' }}>
           {label}
         </div>
-        <div className="font-display" style={{ fontSize: '3.5rem', color: '#F5EFE0', lineHeight: 1 }}>
+        <div className="font-display" style={{ fontSize: '3.5rem', color: '#1A1209', lineHeight: 1 }}>
           {price}
-          {unit && <span style={{ fontSize: '1.1rem', color: 'rgba(245,239,224,0.4)' }}>{unit}</span>}
+          {unit && <span style={{ fontSize: '1.1rem', color: 'rgba(26,18,9,0.45)' }}>{unit}</span>}
         </div>
-        <div style={{ fontSize: '0.78rem', color: 'rgba(245,239,224,0.38)', marginTop: '0.3rem', marginBottom: '1.75rem' }}>{sub}</div>
+        <div style={{ fontSize: '0.78rem', color: 'rgba(26,18,9,0.38)', marginTop: '0.3rem', marginBottom: '1.75rem' }}>{sub}</div>
       </div>
-      <ul style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.7)', lineHeight: 2.1, flex: 1 }}>
+      <ul style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.7)', lineHeight: 2.1, flex: 1 }}>
         {features.map((f) => <li key={f}>✓&nbsp;&nbsp;{f}</li>)}
       </ul>
-      <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: `1px solid ${featured ? 'rgba(200,16,46,0.2)' : 'rgba(245,239,224,0.08)'}` }}>
+      <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: `1px solid ${featured ? 'rgba(200,16,46,0.2)' : 'rgba(26,18,9,0.09)'}` }}>
         <a href="#book" className={featured ? 'btn-primary' : 'btn-ghost'} style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
           {cta}
         </a>

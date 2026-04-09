@@ -14,7 +14,7 @@ const OCCASIONS = [
 
 export default function Occasions() {
   return (
-    <section className="section" style={{ background: '#1A1209' }}>
+    <section className="section" style={{ background: '#F8F5F2' }}>
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-14">
@@ -36,8 +36,8 @@ export default function Occasions() {
                 href="#book"
                 style={{
                   display: 'flex', flexDirection: 'column',
-                  background: 'rgba(245,239,224,0.04)',
-                  border: '1px solid rgba(245,239,224,0.08)',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(26,18,9,0.09)',
                   padding: '2rem 1.5rem',
                   textDecoration: 'none',
                   transition: 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s ease, background 0.3s ease',
@@ -50,18 +50,18 @@ export default function Occasions() {
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.transform    = 'translateY(0)'
-                  e.currentTarget.style.borderColor  = 'rgba(245,239,224,0.08)'
-                  e.currentTarget.style.background   = 'rgba(245,239,224,0.04)'
+                  e.currentTarget.style.borderColor  = 'rgba(26,18,9,0.09)'
+                  e.currentTarget.style.background   = '#FFFFFF'
                 }}
               >
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{o.emoji}</div>
                 <div
                   className="font-display"
-                  style={{ fontSize: '1.3rem', color: '#F5EFE0', lineHeight: 1.2, marginBottom: '0.5rem' }}
+                  style={{ fontSize: '1.3rem', color: '#1A1209', lineHeight: 1.2, marginBottom: '0.5rem' }}
                 >
                   {o.label}
                 </div>
-                <p style={{ fontSize: '0.83rem', color: 'rgba(245,239,224,0.52)', lineHeight: 1.65 }}>
+                <p style={{ fontSize: '0.83rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.65 }}>
                   {o.desc}
                 </p>
                 <div style={{ marginTop: '1.25rem', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#C8102E' }}>

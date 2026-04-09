@@ -62,7 +62,7 @@ export default function WhyChoose() {
   return (
     <section
       className="section"
-      style={{ background: 'linear-gradient(180deg,#1E1410 0%,#1A1209 100%)' }}
+      style={{ background: '#FFFFFF' }}
     >
       <div className="max-w-7xl mx-auto">
 
@@ -77,7 +77,7 @@ export default function WhyChoose() {
             </h2>
           </RevealWrapper>
           <RevealWrapper delay={0.2}>
-            <p style={{ color: 'rgba(245,239,224,0.55)', maxWidth: '38rem', margin: '1rem auto 0' }}>
+            <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '38rem', margin: '1rem auto 0' }}>
               We're not just a catering service. We're a platform built to connect you with the best private hibachi chefs, wherever you live.
             </p>
           </RevealWrapper>
@@ -95,10 +95,10 @@ export default function WhyChoose() {
                   {r.icon}
                 </div>
                 <div>
-                  <h3 style={{ fontWeight: 600, fontSize: '1rem', color: '#F5EFE0', marginBottom: '0.4rem' }}>
+                  <h3 style={{ fontWeight: 600, fontSize: '1rem', color: '#1A1209', marginBottom: '0.4rem' }}>
                     {r.title}
                   </h3>
-                  <p style={{ fontSize: '0.88rem', color: 'rgba(245,239,224,0.58)', lineHeight: 1.7 }}>
+                  <p style={{ fontSize: '0.88rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.7 }}>
                     {r.desc}
                   </p>
                 </div>

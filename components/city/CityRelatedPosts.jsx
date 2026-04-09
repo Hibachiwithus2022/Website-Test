@@ -7,7 +7,7 @@ const TAG_COLORS = {
   Planning:   { bg: 'rgba(100,160,100,0.10)', border: 'rgba(100,160,100,0.3)', text: '#80c080' },
   Occasions:  { bg: 'rgba(200,16,46,0.10)',   border: 'rgba(200,16,46,0.3)',   text: '#C8102E' },
   Corporate:  { bg: 'rgba(212,168,67,0.12)',  border: 'rgba(212,168,67,0.3)',  text: '#D4A843' },
-  Guide:      { bg: 'rgba(245,239,224,0.06)', border: 'rgba(245,239,224,0.15)',text: 'rgba(245,239,224,0.6)' },
+  Guide:      { bg: 'rgba(26,18,9,0.06)', border: 'rgba(26,18,9,0.15)',text: 'rgba(26,18,9,0.55)' },
   Menu:       { bg: 'rgba(200,16,46,0.10)',   border: 'rgba(200,16,46,0.3)',   text: '#C8102E' },
 }
 
@@ -21,14 +21,14 @@ export default function CityRelatedPosts({ cityName, posts = [] }) {
   return (
     <section
       aria-label="Related articles"
-      style={{ background: '#1A1209', padding: '4.5rem 1.5rem', borderTop: '1px solid rgba(245,239,224,0.05)' }}
+      style={{ background: '#F8F5F2', padding: '4.5rem 1.5rem', borderTop: '1px solid rgba(26,18,9,0.07)' }}
     >
       <div className="max-w-5xl mx-auto">
 
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
           <div>
             <div className="red-pill" style={{ marginBottom: '0.75rem' }}>From the Blog</div>
-            <h2 className="font-display" style={{ fontSize: 'clamp(1.7rem,4vw,2.4rem)', color: '#F5EFE0', lineHeight: 1.05 }}>
+            <h2 className="font-display" style={{ fontSize: 'clamp(1.7rem,4vw,2.4rem)', color: '#1A1209', lineHeight: 1.05 }}>
               Helpful Guides for Your<br />
               <span style={{ color: '#C8102E' }}>{cityName} Hibachi Event</span>
             </h2>
@@ -38,7 +38,7 @@ export default function CityRelatedPosts({ cityName, posts = [] }) {
             href="/blog"
             style={{
               fontSize: '0.82rem', fontWeight: 600, letterSpacing: '0.08em',
-              textTransform: 'uppercase', color: 'rgba(245,239,224,0.45)',
+              textTransform: 'uppercase', color: 'rgba(26,18,9,0.45)',
               textDecoration: 'none', display: 'flex', gap: '0.4rem', alignItems: 'center',
               flexShrink: 0,
             }}
@@ -57,7 +57,7 @@ export default function CityRelatedPosts({ cityName, posts = [] }) {
         </div>
 
         {/* Internal link reinforcement */}
-        <p style={{ marginTop: '2rem', fontSize: '0.82rem', color: 'rgba(245,239,224,0.35)', lineHeight: 1.7, textAlign: 'center' }}>
+        <p style={{ marginTop: '2rem', fontSize: '0.82rem', color: 'rgba(26,18,9,0.45)', lineHeight: 1.7, textAlign: 'center' }}>
           Looking for pricing details?{' '}
           <a href="#pricing" style={{ color: '#C8102E', textDecoration: 'none' }}>See our {cityName} packages</a>{' '}
           or{' '}
@@ -75,8 +75,8 @@ function PostCard({ post, cityName }) {
   return (
     <article
       style={{
-        background: 'rgba(245,239,224,0.04)',
-        border: '1px solid rgba(245,239,224,0.08)',
+        background: '#FFFFFF',
+        border: '1px solid rgba(26,18,9,0.09)',
         padding: '2rem',
         display: 'flex', flexDirection: 'column',
         transition: 'border-color 0.22s ease, transform 0.22s ease',
@@ -87,7 +87,7 @@ function PostCard({ post, cityName }) {
         e.currentTarget.style.transform = 'translateY(-3px)'
       }}
       onMouseLeave={e => {
-        e.currentTarget.style.borderColor = 'rgba(245,239,224,0.08)'
+        e.currentTarget.style.borderColor = 'rgba(26,18,9,0.09)'
         e.currentTarget.style.transform = 'translateY(0)'
       }}
     >
@@ -108,16 +108,16 @@ function PostCard({ post, cityName }) {
         }}>
           {post.tag}
         </span>
-        <span style={{ fontSize: '0.72rem', color: 'rgba(245,239,224,0.35)' }}>{post.readTime}</span>
+        <span style={{ fontSize: '0.72rem', color: 'rgba(26,18,9,0.38)' }}>{post.readTime}</span>
       </div>
 
       {/* Title */}
-      <h3 style={{ fontWeight: 700, color: '#F5EFE0', fontSize: '0.97rem', lineHeight: 1.5, marginBottom: '0.75rem', flex: 1 }}>
+      <h3 style={{ fontWeight: 700, color: '#1A1209', fontSize: '0.97rem', lineHeight: 1.5, marginBottom: '0.75rem', flex: 1 }}>
         {post.title}
       </h3>
 
       {/* Excerpt */}
-      <p style={{ fontSize: '0.84rem', color: 'rgba(245,239,224,0.52)', lineHeight: 1.72, marginBottom: '1.5rem' }}>
+      <p style={{ fontSize: '0.84rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.72, marginBottom: '1.5rem' }}>
         {post.excerpt}
       </p>
 

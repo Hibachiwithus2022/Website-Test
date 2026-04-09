@@ -15,7 +15,7 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
     <section
       id="book"
       style={{
-        background: 'linear-gradient(135deg,rgba(200,16,46,0.18) 0%,transparent 60%), #1A1209',
+        background: 'linear-gradient(135deg,rgba(200,16,46,0.07) 0%,transparent 60%), #FFFFFF',
         padding: '5.5rem 1.5rem',
         position: 'relative',
         overflow: 'hidden',
@@ -33,10 +33,10 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
         {/* Header */}
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1.5rem' }}>Ready to Book?</div>
-          <h2 className="font-display leading-none text-brand-cream" style={{ fontSize: 'clamp(2.8rem,7vw,5rem)', marginBottom: '1.25rem' }}>
+          <h2 className="font-display leading-none" style={{ fontSize: 'clamp(2.8rem,7vw,5rem)', color: '#1A1209', marginBottom: '1.25rem' }}>
             {v.headline(cityName)}
           </h2>
-          <p style={{ color: 'rgba(245,239,224,0.6)', fontSize: '1.05rem', lineHeight: 1.78, maxWidth: '38rem', margin: '0 auto 1.25rem' }}>
+          <p style={{ color: 'rgba(26,18,9,0.6)', fontSize: '1.05rem', lineHeight: 1.78, maxWidth: '38rem', margin: '0 auto 1.25rem' }}>
             {v.sub(cityName)}
           </p>
           <div style={{
@@ -56,16 +56,16 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
             <form
               onSubmit={handleSubmit}
               style={{
-                background: 'rgba(245,239,224,0.04)',
-                border: '1px solid rgba(245,239,224,0.1)',
+                background: '#F8F5F2',
+                border: '1px solid rgba(26,18,9,0.09)',
                 padding: '2.5rem',
               }}
             >
               <div style={{ marginBottom: '1.5rem' }}>
-                <div className="font-display" style={{ fontSize: '1.4rem', color: '#F5EFE0', marginBottom: '0.3rem' }}>
+                <div className="font-display" style={{ fontSize: '1.4rem', color: '#1A1209', marginBottom: '0.3rem' }}>
                   Get Your Free Quote
                 </div>
-                <div style={{ fontSize: '0.82rem', color: 'rgba(245,239,224,0.4)' }}>
+                <div style={{ fontSize: '0.82rem', color: 'rgba(26,18,9,0.45)' }}>
                   Response within a few hours · No commitment required
                 </div>
               </div>
@@ -77,7 +77,7 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
                 <FormField label="# of Guests" type="number" placeholder="Minimum 10" min="10" />
                 <FormField label="Event Date" type="date" fullWidth style={{ colorScheme: 'dark' }} />
                 <div className="sm:col-span-2">
-                  <label style={{ fontSize: '0.72rem', color: 'rgba(245,239,224,0.45)', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
+                  <label style={{ fontSize: '0.72rem', color: 'rgba(26,18,9,0.45)', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
                     Occasion (optional)
                   </label>
                   <select
@@ -99,7 +99,7 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
                 </svg>
               </button>
 
-              <p style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.3)', textAlign: 'center', marginTop: '1rem', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.75rem', color: 'rgba(26,18,9,0.38)', textAlign: 'center', marginTop: '1rem', lineHeight: 1.6 }}>
                 By submitting you agree to be contacted by Hibachi Connect regarding your event.
               </p>
             </form>
@@ -109,13 +109,13 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
               padding: '3rem', textAlign: 'center',
             }}>
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎉</div>
-              <div className="font-display" style={{ fontSize: '2rem', color: '#F5EFE0', marginBottom: '0.75rem' }}>
+              <div className="font-display" style={{ fontSize: '2rem', color: '#1A1209', marginBottom: '0.75rem' }}>
                 Request Received!
               </div>
-              <p style={{ color: 'rgba(245,239,224,0.65)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
+              <p style={{ color: 'rgba(26,18,9,0.65)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
                 We'll reach out within a few hours to confirm availability and build your custom quote for {cityName}.
               </p>
-              <div style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.45)' }}>
+              <div style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.45)' }}>
                 Questions? Call or text:{' '}
                 <a href="tel:+16027672965" style={{ color: '#C8102E', fontWeight: 600, textDecoration: 'none' }}>
                   (602) 767-2965
@@ -127,21 +127,21 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
           {/* Side panel */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {/* Contact */}
-            <div style={{ background: 'rgba(245,239,224,0.04)', border: '1px solid rgba(245,239,224,0.08)', padding: '1.75rem' }}>
-              <div style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(245,239,224,0.38)', marginBottom: '1rem' }}>
+            <div style={{ background: '#F8F5F2', border: '1px solid rgba(26,18,9,0.09)', padding: '1.75rem' }}>
+              <div style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.38)', marginBottom: '1rem' }}>
                 Prefer to Call?
               </div>
               <a href="tel:+16027672965" style={{ display: 'block', fontFamily: 'var(--font-bebas), sans-serif', fontSize: '1.6rem', color: '#C8102E', textDecoration: 'none', letterSpacing: '0.04em', marginBottom: '0.4rem' }}>
                 (602) 767-2965
               </a>
-              <div style={{ fontSize: '0.82rem', color: 'rgba(245,239,224,0.45)' }}>Call or text anytime. We respond fast.</div>
-              <a href="mailto:info@hibachiconnect.com" style={{ display: 'block', marginTop: '0.75rem', fontSize: '0.85rem', color: 'rgba(245,239,224,0.55)', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.82rem', color: 'rgba(26,18,9,0.45)' }}>Call or text anytime. We respond fast.</div>
+              <a href="mailto:info@hibachiconnect.com" style={{ display: 'block', marginTop: '0.75rem', fontSize: '0.85rem', color: 'rgba(26,18,9,0.55)', textDecoration: 'none' }}>
                 info@hibachiconnect.com
               </a>
             </div>
 
             {/* Trust badges */}
-            <div style={{ background: 'rgba(245,239,224,0.03)', border: '1px solid rgba(245,239,224,0.07)', padding: '1.5rem' }}>
+            <div style={{ background: '#F8F5F2', border: '1px solid rgba(26,18,9,0.09)', padding: '1.5rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[
                   '✓ No deposit to inquire',
@@ -150,7 +150,7 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
                   '✓ 5.0 star service guarantee',
                   '✓ Full setup & cleanup included',
                 ].map((badge) => (
-                  <div key={badge} style={{ fontSize: '0.83rem', color: 'rgba(245,239,224,0.55)', display: 'flex', gap: '0.4rem' }}>
+                  <div key={badge} style={{ fontSize: '0.83rem', color: 'rgba(26,18,9,0.55)', display: 'flex', gap: '0.4rem' }}>
                     <span style={{ color: '#C8102E' }}>{badge.split(' ')[0]}</span>
                     <span>{badge.slice(2)}</span>
                   </div>
@@ -168,7 +168,7 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
 function FormField({ label, type, placeholder, required, min, fullWidth, style: extraStyle }) {
   return (
     <div className={fullWidth ? 'sm:col-span-2' : ''}>
-      <label style={{ fontSize: '0.72rem', color: 'rgba(245,239,224,0.45)', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
+      <label style={{ fontSize: '0.72rem', color: 'rgba(26,18,9,0.45)', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
         {label}
       </label>
       <input

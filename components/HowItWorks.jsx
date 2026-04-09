@@ -50,7 +50,7 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       className="section"
-      style={{ background: '#1A1209' }}
+      style={{ background: '#F8F5F2' }}
     >
       <div className="max-w-7xl mx-auto">
 
@@ -63,7 +63,7 @@ export default function HowItWorks() {
             <h2 className="section-title">How Hibachi at Home Works</h2>
           </RevealWrapper>
           <RevealWrapper delay={0.2}>
-            <p style={{ color: 'rgba(245,239,224,0.58)', maxWidth: '36rem', margin: '1rem auto 0' }}>
+            <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '36rem', margin: '1rem auto 0' }}>
               Four steps and you're on your way to the most unforgettable dinner party of the year.
             </p>
           </RevealWrapper>
@@ -96,11 +96,11 @@ export default function HowItWorks() {
                 {/* Text */}
                 <h3
                   className="font-display mb-3"
-                  style={{ fontSize: '1.45rem', color: '#F5EFE0', lineHeight: 1.2 }}
+                  style={{ fontSize: '1.45rem', color: '#1A1209', lineHeight: 1.2 }}
                 >
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '0.88rem', color: 'rgba(245,239,224,0.58)', lineHeight: 1.7, flex: 1 }}>
+                <p style={{ fontSize: '0.88rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.7, flex: 1 }}>
                   {step.desc}
                 </p>
               </div>
