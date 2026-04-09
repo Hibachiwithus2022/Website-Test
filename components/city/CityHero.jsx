@@ -94,8 +94,8 @@ export default function CityHero({ cityName, stateName, stateSlug, variant = 0, 
           paddingTop: '2rem', borderTop: '1px solid rgba(245,239,224,0.08)',
         }}>
           {[
-            { val: '$55', label: 'Per Adult' },
-            { val: '$550', label: 'Event Minimum' },
+            { val: '$60', label: 'Per Adult' },
+            { val: '$600', label: 'Event Minimum' },
             { val: '5.0★', label: 'Avg Rating' },
             { val: '10+', label: 'Min Guests' },
           ].map((item) => (

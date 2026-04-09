@@ -4,7 +4,7 @@ import { useState } from 'react'
 const SHARED_FAQS = [
   {
     q: 'How much does a private hibachi chef cost?',
-    a: 'Our standard rate is $55 per adult and $30 per child (12 and under). The minimum event total is $550, which typically covers 8–10 guests. Premium and Elite packages are available for larger budgets or groups.',
+    a: 'Our standard rate is $60 per adult and $30 per child (12 and under). The minimum event total is $550, which typically covers 8–10 guests. Premium and Elite packages are available for larger budgets or groups.',
   },
   {
     q: 'What do I need to provide for the event?',

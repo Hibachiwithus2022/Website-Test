@@ -22,7 +22,7 @@ const jsonLd = {
   telephone:  '+16027672965',
   email:      'info@hibachiconnect.com',
   areaServed: 'United States (50 states)',
-  priceRange: '$55 – $65+ per person',
+  priceRange: '$60 per person',
   serviceType:'Private Hibachi Chef / Teppanyaki Catering',
   aggregateRating: {
     '@type':       'AggregateRating',

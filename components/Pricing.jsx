@@ -1,74 +1,21 @@
 'use client'
 import RevealWrapper from './RevealWrapper'
 
-const TIERS = [
-  {
-    label:    'Standard',
-    price:    '$55',
-    unit:     '/adult',
-    child:    '$30/child',
-    tag:      null,
-    tagColor: null,
-    features: [
-      'Choose 2 proteins per person',
-      'Hibachi fried rice',
-      'Grilled vegetables',
-      'Salad & miso soup',
-      'Yum yum & ginger sauce',
-      'Full setup & cleanup',
-    ],
-    cta: 'Get a Quote',
-    featured: false,
-  },
-  {
-    label:    'Premium',
-    price:    '$65',
-    unit:     '/adult',
-    child:    '$35/child',
-    tag:      'Most Popular',
-    tagColor: '#C8102E',
-    features: [
-      'Choose 3 proteins per person',
-      'Hibachi fried rice & noodles',
-      'Grilled vegetables',
-      'Salad & miso soup',
-      'Edamame starter',
-      'All sauces included',
-      'Full setup & cleanup',
-      'Priority booking',
-    ],
-    cta: 'Book Premium',
-    featured: true,
-  },
-  {
-    label:    'Elite',
-    price:    'Custom',
-    unit:     '',
-    child:    'Corporate & large events',
-    tag:      'Enterprise',
-    tagColor: '#D4A843',
-    features: [
-      'Unlimited protein selection',
-      'Filet mignon & lobster tail',
-      'Multiple chef stations',
-      'Full premium spread',
-      'Gyoza & specialty appetizers',
-      'Dedicated event coordinator',
-      '200+ guest capacity',
-      'Flexible scheduling',
-    ],
-    cta: 'Contact Us',
-    featured: false,
-  },
+const PROTEINS = [
+  'Chicken', 'Steak', 'Shrimp', 'Scallops', 'Salmon', 'Tofu',
+  'Filet Mignon (+$5)', 'Lobster Tail (+$10)',
 ]
 
 const ADD_ONS = [
-  { name: 'Scallops',        price: '+$5/person'  },
-  { name: 'Lobster Tail',    price: '+$15/person' },
-  { name: 'Filet Mignon',    price: '+$10/person' },
-  { name: 'Gyoza (6 pc)',    price: '+$10/person' },
-  { name: 'Yakisoba Noodles',price: '+$5/person'  },
-  { name: 'Extra Fried Rice', price: '+$5/person' },
+  { name: 'Extra Protein (any)',  price: '$15/order' },
+  { name: 'Filet Mignon',        price: '$20/order'  },
+  { name: 'Lobster Tail',        price: '$25/order'  },
+  { name: 'Yakisoba Noodles',    price: '$5/order'   },
+]
+
+const APPETIZERS = [
+  { name: 'Gyoza (8 pc)',   price: '$10' },
+  { name: 'Edamame',        price: '$6'  },
 ]
 
 export default function Pricing() {
@@ -78,10 +25,10 @@ export default function Pricing() {
       className="section"
       style={{ background: '#F8F5F2' }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <RevealWrapper>
             <div className="red-pill" style={{ display: 'inline-block' }}>Transparent Pricing</div>
           </RevealWrapper>
@@ -92,113 +39,163 @@ export default function Pricing() {
             </h2>
           </RevealWrapper>
           <RevealWrapper delay={0.2}>
-            <p style={{ color: 'rgba(26,18,9,0.58)', maxWidth: '40rem', margin: '1rem auto 0' }}>
-              All packages include chef, equipment, setup, and full cleanup. You provide the space — we bring everything else.
+            <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '40rem', margin: '1rem auto 0' }}>
+              One simple rate. Everything included — chef, grill, ingredients, full setup and cleanup.
             </p>
           </RevealWrapper>
         </div>
 
-        {/* Minimum notice */}
-        <RevealWrapper>
-          <div
-            style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem',
-              flexWrap: 'wrap', marginBottom: '2.5rem',
-              background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.25)',
-              padding: '0.85rem 2rem',
-            }}
-          >
-            <span style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.6)', letterSpacing: '0.06em' }}>
-              <strong style={{ color: '#D4A843' }}>$550 Minimum</strong> — covers 8–10 guests at standard rate
-            </span>
-            <span style={{ width: 1, height: 20, background: 'rgba(26,18,9,0.15)' }} />
-            <span style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.6)' }}>
-              Travel fees may apply outside metro areas
-            </span>
-          </div>
-        </RevealWrapper>
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
 
-        {/* Tier cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          {TIERS.map((tier, i) => (
-            <RevealWrapper key={i} delay={i * 0.1}>
-              <div
-                style={{
-                  position: 'relative', overflow: 'hidden',
-                  background: tier.featured ? 'rgba(200,16,46,0.08)' : '#FFFFFF',
-                  border: `1px solid ${tier.featured ? 'rgba(200,16,46,0.5)' : 'rgba(26,18,9,0.09)'}`,
-                  padding: '2.5rem 2rem',
-                  transition: 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1)',
-                  height: '100%', display: 'flex', flexDirection: 'column',
-                }}
-                onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-5px)'}
-                onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
-              >
-                {/* Tag badge */}
-                {tier.tag && (
-                  <div style={{
-                    position: 'absolute', top: -1, left: '50%', transform: 'translateX(-50%)',
-                    background: tier.tagColor, color: '#FFFFFF',
-                    fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em',
-                    textTransform: 'uppercase', padding: '0.25rem 1rem',
-                    whiteSpace: 'nowrap',
-                  }}>
-                    {tier.tag}
-                  </div>
-                )}
+          {/* ── Left: Main pricing card ── */}
+          <RevealWrapper>
+            <div style={{
+              background: '#FFFFFF',
+              border: '2px solid rgba(200,16,46,0.2)',
+              padding: '2.5rem',
+              position: 'relative',
+              overflow: 'hidden',
+              boxShadow: '0 4px 32px rgba(200,16,46,0.08), 0 1px 4px rgba(26,18,9,0.06)',
+            }}>
+              {/* Top accent bar */}
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(to right, #C8102E, #D4A843)' }} />
 
-                <div style={{ marginTop: tier.tag ? '1rem' : '0' }}>
-                  <div style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: tier.featured ? '#C8102E' : 'rgba(26,18,9,0.45)', marginBottom: '1rem' }}>
-                    {tier.label}
+              <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1.5rem' }}>Per Person Rate</div>
+
+              {/* Pricing */}
+              <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+                <div>
+                  <div className="font-display" style={{ fontSize: '4rem', color: '#1A1209', lineHeight: 1 }}>
+                    $60<span style={{ fontSize: '1.25rem', color: 'rgba(26,18,9,0.4)' }}>/person</span>
                   </div>
-                  <div className="font-display" style={{ fontSize: '3.5rem', color: '#1A1209', lineHeight: 1 }}>
-                    {tier.price}
-                    {tier.unit && <span style={{ fontSize: '1.2rem', color: 'rgba(26,18,9,0.45)' }}>{tier.unit}</span>}
-                  </div>
-                  <div style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.4)', marginTop: '0.3rem', marginBottom: '1.75rem' }}>
-                    {tier.child}
-                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(26,18,9,0.5)', marginTop: '0.25rem' }}>Adults</div>
                 </div>
+                <div style={{ width: 1, background: 'rgba(26,18,9,0.08)', alignSelf: 'stretch', flexShrink: 0 }} />
+                <div>
+                  <div className="font-display" style={{ fontSize: '4rem', color: '#1A1209', lineHeight: 1 }}>
+                    $30<span style={{ fontSize: '1.25rem', color: 'rgba(26,18,9,0.4)' }}>/child</span>
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(26,18,9,0.5)', marginTop: '0.25rem' }}>12 &amp; under</div>
+                </div>
+              </div>
 
-                <ul style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.72)', lineHeight: 2.1, flex: 1 }}>
-                  {tier.features.map((f, j) => (
-                    <li key={j}>✓&nbsp;&nbsp;{f}</li>
+              {/* Minimum */}
+              <div style={{
+                background: 'rgba(212,168,67,0.08)',
+                border: '1px solid rgba(212,168,67,0.28)',
+                padding: '0.85rem 1.25rem',
+                marginBottom: '2rem',
+                display: 'flex', alignItems: 'center', gap: '0.6rem',
+              }}>
+                <span style={{ color: '#D4A843', fontSize: '1rem' }}>★</span>
+                <span style={{ fontSize: '0.85rem', color: 'rgba(26,18,9,0.7)' }}>
+                  <strong style={{ color: '#1A1209' }}>$600 minimum</strong> for all parties
+                </span>
+              </div>
+
+              {/* Includes */}
+              <div style={{ marginBottom: '2rem' }}>
+                <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.4)', marginBottom: '0.85rem' }}>
+                  What's Included
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+                  {[
+                    'Choose 2 proteins per person',
+                    'Salad, fried rice & grilled vegetables',
+                    'All sauces & condiments',
+                    'Full setup & cleanup',
+                    'Professional chef with live show',
+                  ].map((f, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.9rem', color: 'rgba(26,18,9,0.75)' }}>
+                      <span style={{ color: '#C8102E', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                      {f}
+                    </li>
                   ))}
                 </ul>
+              </div>
 
-                <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: `1px solid ${tier.featured ? 'rgba(200,16,46,0.2)' : 'rgba(26,18,9,0.08)'}` }}>
-                  <a
-                    href="#book"
-                    className={tier.featured ? 'btn-primary' : 'btn-ghost'}
-                    style={{ width: '100%', justifyContent: 'center', display: 'flex' }}
-                  >
-                    {tier.cta}
-                  </a>
+              {/* Disclaimers */}
+              <div style={{ borderTop: '1px solid rgba(26,18,9,0.08)', paddingTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.4rem', marginBottom: '2rem' }}>
+                {[
+                  'Gratuity is not included',
+                  'Travel fees depend on location',
+                ].map((note, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: 'rgba(26,18,9,0.5)' }}>
+                    <span style={{ color: 'rgba(26,18,9,0.3)', fontSize: '0.7rem' }}>ⓘ</span>
+                    {note}
+                  </div>
+                ))}
+              </div>
+
+              <a href="#book" className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+                Book Your Chef
+              </a>
+            </div>
+          </RevealWrapper>
+
+          {/* ── Right: Proteins + Add-ons + Appetizers ── */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+
+            {/* Proteins */}
+            <RevealWrapper delay={0.1}>
+              <div style={{ background: '#FFFFFF', border: '1px solid rgba(26,18,9,0.09)', padding: '2rem' }}>
+                <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.4)', marginBottom: '1rem' }}>
+                  Protein Choices — Pick 2
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  {PROTEINS.map((p, i) => (
+                    <span key={i} style={{
+                      display: 'inline-block',
+                      padding: '0.35rem 0.9rem',
+                      fontSize: '0.82rem',
+                      fontWeight: 500,
+                      background: p.includes('+$') ? 'rgba(212,168,67,0.08)' : 'rgba(200,16,46,0.06)',
+                      border: `1px solid ${p.includes('+$') ? 'rgba(212,168,67,0.25)' : 'rgba(200,16,46,0.18)'}`,
+                      color: p.includes('+$') ? '#9A7B2B' : 'rgba(26,18,9,0.75)',
+                    }}>
+                      {p}
+                    </span>
+                  ))}
                 </div>
               </div>
             </RevealWrapper>
-          ))}
-        </div>
 
-        {/* Add-ons */}
-        <RevealWrapper delay={0.3}>
-          <div style={{
-            background: '#FFFFFF', border: '1px solid rgba(26,18,9,0.09)',
-            padding: '2rem 2.5rem',
-          }}>
-            <div style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.45)', marginBottom: '1.25rem' }}>
-              Popular Add-Ons
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
-              {ADD_ONS.map((a, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: '1px solid rgba(26,18,9,0.08)' }}>
-                  <span style={{ fontSize: '0.9rem', color: 'rgba(26,18,9,0.72)' }}>{a.name}</span>
-                  <span style={{ color: '#D4A843', fontWeight: 600, fontSize: '0.9rem' }}>{a.price}</span>
+            {/* Add-ons */}
+            <RevealWrapper delay={0.15}>
+              <div style={{ background: '#FFFFFF', border: '1px solid rgba(26,18,9,0.09)', padding: '2rem' }}>
+                <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.4)', marginBottom: '1rem' }}>
+                  Add-Ons (per order)
                 </div>
-              ))}
-            </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  {ADD_ONS.map((a, i) => (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: i < ADD_ONS.length - 1 ? '1px solid rgba(26,18,9,0.07)' : 'none' }}>
+                      <span style={{ fontSize: '0.88rem', color: 'rgba(26,18,9,0.72)' }}>{a.name}</span>
+                      <span style={{ color: '#D4A843', fontWeight: 700, fontSize: '0.88rem' }}>{a.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </RevealWrapper>
+
+            {/* Appetizers */}
+            <RevealWrapper delay={0.2}>
+              <div style={{ background: '#FFFFFF', border: '1px solid rgba(26,18,9,0.09)', padding: '2rem' }}>
+                <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.4)', marginBottom: '1rem' }}>
+                  Appetizers
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  {APPETIZERS.map((a, i) => (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: i < APPETIZERS.length - 1 ? '1px solid rgba(26,18,9,0.07)' : 'none' }}>
+                      <span style={{ fontSize: '0.88rem', color: 'rgba(26,18,9,0.72)' }}>{a.name}</span>
+                      <span style={{ color: '#D4A843', fontWeight: 700, fontSize: '0.88rem' }}>{a.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </RevealWrapper>
+
           </div>
-        </RevealWrapper>
+        </div>
 
       </div>
     </section>

@@ -22,7 +22,7 @@ const WHY_US = [
   {
     icon: '📋',
     title: 'Transparent Pricing',
-    desc: 'No surprise fees. $55/adult, $30/child, $550 minimum. Quoted upfront, invoiced clearly.',
+    desc: 'No surprise fees. $60/adult, $30/child, $600 minimum. Quoted upfront, invoiced clearly.',
   },
   {
     icon: '🎉',

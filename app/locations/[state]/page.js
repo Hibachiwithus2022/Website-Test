@@ -27,7 +27,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title:       `Private Hibachi Chef in ${state} | Hibachi Connect`,
-    description: `Book a private hibachi chef anywhere in ${state}. Professional teppanyaki at your home or backyard starting at $55/person. Serving all ${state} cities — contact Hibachi Connect today.`,
+    description: `Book a private hibachi chef anywhere in ${state}. Professional teppanyaki at your home or backyard starting at $60/person. Serving all ${state} cities — contact Hibachi Connect today.`,
     keywords:    `hibachi ${state}, private hibachi chef ${state}, hibachi at home ${state}, hibachi catering ${state}, backyard hibachi ${state}, teppanyaki ${state}`,
     alternates:  { canonical: `https://hibachiconnect.com/locations/${params.state}` },
     openGraph: {
@@ -52,7 +52,7 @@ export default function StatePage({ params }) {
     provider:   { '@type': 'Organization', name: 'Hibachi Connect', url: 'https://hibachiconnect.com' },
     areaServed: { '@type': 'State', name: state, containedInPlace: { '@type': 'Country', name: 'United States' } },
     description: `Professional private hibachi chef experience throughout ${state}. We bring the teppanyaki grill, all ingredients, and full entertainment to your home or event venue.`,
-    offers: { '@type': 'Offer', price: '55', priceCurrency: 'USD', description: 'Per adult, minimum $550' },
+    offers: { '@type': 'Offer', price: '60', priceCurrency: 'USD', description: 'Per adult, minimum $600' },
     telephone: '+16027672965',
     email: 'info@hibachiconnect.com',
   }

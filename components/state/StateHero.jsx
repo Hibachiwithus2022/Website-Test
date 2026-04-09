@@ -64,8 +64,8 @@ export default function StateHero({ state, stateSlug, stateData }) {
           paddingTop: '2rem', borderTop: '1px solid rgba(245,239,224,0.08)',
         }}>
           {[
-            { val: '$55', label: 'Per Adult' },
-            { val: '$550', label: 'Minimum' },
+            { val: '$60', label: 'Per Adult' },
+            { val: '$600', label: 'Minimum' },
             { val: '5.0★', label: 'Rating' },
             { val: '50', label: 'States Served' },
           ].map((item) => (

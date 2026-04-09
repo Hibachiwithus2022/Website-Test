@@ -66,10 +66,10 @@ export async function generateMetadata({ params }) {
   // Fallback metadata for cities not in cityData.js yet
   return {
     title:       `Private Hibachi Chef in ${cityName}, ${stateName} | Hibachi Connect`,
-    description: `Book a private hibachi chef in ${cityName}, ${stateName}. Professional teppanyaki at your home starting at $55/person. Full setup & cleanup. Contact Hibachi Connect today.`,
+    description: `Book a private hibachi chef in ${cityName}, ${stateName}. Professional teppanyaki at your home starting at $60/person. Full setup & cleanup. Contact Hibachi Connect today.`,
     keywords:    `hibachi ${cityName}, private hibachi chef ${cityName}, hibachi at home ${cityName} ${stateAbbr}, hibachi catering ${cityName}`,
     alternates:  { canonical: `https://hibachiconnect.com/locations/${params.state}/${citySlug}` },
-    openGraph:   { title: `Hibachi at Home in ${cityName}, ${stateName} | Hibachi Connect`, description: `Professional private hibachi chef in ${cityName}. We bring the grill, ingredients & entertainment to your home. Starting at $55/adult.` },
+    openGraph:   { title: `Hibachi at Home in ${cityName}, ${stateName} | Hibachi Connect`, description: `Professional private hibachi chef in ${cityName}. We bring the grill, ingredients & entertainment to your home. Starting at $60/adult.` },
   }
 }
 
@@ -100,7 +100,7 @@ export default function CityPage({ params }) {
   const lbSchema  = generateLocalBusinessSchema({ cityName, stateName, stateSlug: params.state })
   const faqSchema = generateFAQSchema(faqSet.length > 0 ? faqSet : [
     { q: `Do you serve ${cityName}, ${stateName}?`,          a: `Yes — we serve ${cityName} and all surrounding areas in ${stateName}. Our chefs travel to your location with a full teppan grill, all ingredients, and complete setup.` },
-    { q: 'How much does a private hibachi chef cost?',       a: 'Our standard rate is $55 per adult and $30 per child (12 and under). The minimum event total is $550.' },
+    { q: 'How much does a private hibachi chef cost?',       a: 'Our standard rate is $60 per adult and $30 per child (12 and under). The minimum event total is $550.' },
     { q: 'Can hibachi be done indoors?',                     a: 'Yes — in large spaces with adequate ventilation. Most events are outdoors, but covered patios, large garages, and open indoor spaces work well.' },
     { q: 'What do I need to provide?',                       a: 'Tables and chairs for your guests. We bring everything else: grill, propane, all food, sauces, plates, and cleanup.' },
   ])

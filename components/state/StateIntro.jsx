@@ -31,7 +31,7 @@ export default function StateIntro({ state, stateData }) {
               Quick Facts
             </div>
             {[
-              { label: 'Starting Price', value: '$55/adult' },
+              { label: 'Starting Price', value: '$60/adult' },
               { label: 'Children (12 & under)', value: '$30/child' },
               { label: 'Event Minimum', value: '$550' },
               { label: 'Min. Guest Count', value: '10 guests' },

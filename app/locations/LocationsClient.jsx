@@ -53,7 +53,7 @@ export default function LocationsClient({ allStates, citiesByState }) {
           <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem', flexWrap: 'wrap' }}>
             {[
               { val: '50', label: 'States' },
-              { val: '$55', label: 'Per Adult' },
+              { val: '$60', label: 'Per Adult' },
               { val: '5.0★', label: 'Rating' },
               { val: '200+', label: 'Events' },
             ].map((item) => (
