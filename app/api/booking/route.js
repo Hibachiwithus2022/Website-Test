@@ -12,19 +12,20 @@ export async function POST(req) {
       },
     });
 
-    // EMAIL TO YOU
+    // EMAIL TO YOU (owner)
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: "🔥 New Hibachi Booking",
+      subject: `🔥 New Hibachi Booking — ${data.name} (${data.date} at ${data.time})`,
       html: `
         <h2>New Booking Request</h2>
         <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Phone:</strong> ${data.phone}</p>
         <p><strong>Date:</strong> ${data.date}</p>
+        <p><strong>Time:</strong> ${data.time}</p>
         <p><strong>Guests:</strong> ${data.guests}</p>
-        <p><strong>Message:</strong> ${data.message}</p>
+        <p><strong>Message:</strong> ${data.message || '—'}</p>
       `,
     });
 
@@ -37,10 +38,11 @@ export async function POST(req) {
         <h2>Hi ${data.name},</h2>
         <p>Thanks for booking with <strong>Hibachi Connect</strong>!</p>
 
-        <p>Here are your details:</p>
+        <p>Here are your event details:</p>
         <ul>
-          <li>Date: ${data.date}</li>
-          <li>Guests: ${data.guests}</li>
+          <li><strong>Date:</strong> ${data.date}</li>
+          <li><strong>Time:</strong> ${data.time}</li>
+          <li><strong>Guests:</strong> ${data.guests}</li>
         </ul>
 
         <p>We will contact you shortly to confirm your event.</p>
