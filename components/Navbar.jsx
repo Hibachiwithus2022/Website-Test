@@ -17,7 +17,7 @@ export default function Navbar() {
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Menu',         href: '#menu' },
     { label: 'Pricing',      href: '#pricing' },
-    { label: 'Locations',    href: '#locations' },
+    { label: 'Locations',    href: '/locations' },
     { label: 'FAQ',          href: '#faq' },
   ]
 
