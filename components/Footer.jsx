@@ -123,9 +123,20 @@ export default function Footer() {
           <p style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.25)' }}>
             © {year} Hibachi Connect — hibachiconnect.com. All rights reserved.
           </p>
-          <p style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.25)' }}>
-            Not serving Hawaii or Alaska.
-          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+            <Link
+              href="/terms"
+              style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.35)', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={e => e.currentTarget.style.color = '#C8102E'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,239,224,0.35)'}
+            >
+              Terms &amp; Conditions
+            </Link>
+            <span style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.15)' }}>·</span>
+            <p style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.25)', margin: 0 }}>
+              Not serving Hawaii or Alaska.
+            </p>
+          </div>
         </div>
 
       </div>
