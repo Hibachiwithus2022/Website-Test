@@ -85,7 +85,7 @@ export default function CityHero({ cityName, stateName, stateSlug, variant = 0, 
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
-          <a href="#pricing" className="btn-ghost">Get a Quote</a>
+          <a href="/estimation" className="btn-ghost">Get a Quote</a>
         </div>
 
         {/* Trust strip */}

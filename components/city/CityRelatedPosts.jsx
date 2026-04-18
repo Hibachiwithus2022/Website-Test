@@ -61,7 +61,7 @@ export default function CityRelatedPosts({ cityName, posts = [] }) {
           Looking for pricing details?{' '}
           <a href="#pricing" style={{ color: '#C8102E', textDecoration: 'none' }}>See our {cityName} packages</a>{' '}
           or{' '}
-          <a href="#book" style={{ color: '#C8102E', textDecoration: 'none' }}>get a free quote</a> today.
+          <a href="/estimation" style={{ color: '#C8102E', textDecoration: 'none' }}>get a free quote</a> today.
         </p>
 
       </div>

@@ -40,7 +40,7 @@ export default function FinalCTA() {
               </svg>
               Book Now — (602) 767-2965
             </a>
-            <a href="mailto:info@hibachiconnect.com" className="btn-ghost">
+            <a href="/estimation" className="btn-ghost">
               Get a Free Quote
             </a>
           </div>

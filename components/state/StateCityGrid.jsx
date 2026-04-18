@@ -46,7 +46,7 @@ export default function StateCityGrid({ state, stateSlug, cities }) {
             <div style={{ fontWeight: 600, color: '#1A1209', fontSize: '0.92rem' }}>Don't see your city?</div>
             <div style={{ fontSize: '0.82rem', color: 'rgba(26,18,9,0.5)', marginTop: '0.2rem' }}>We serve all of {state} — contact us for availability in your area.</div>
           </div>
-          <a href="#book" className="btn-primary" style={{ fontSize: '0.8rem', padding: '0.75rem 1.5rem' }}>
+          <a href="/estimation" className="btn-primary" style={{ fontSize: '0.8rem', padding: '0.75rem 1.5rem' }}>
             Request a Quote
           </a>
         </div>
