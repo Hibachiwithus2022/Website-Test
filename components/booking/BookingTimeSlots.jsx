@@ -1,78 +1,67 @@
 'use client'
 
-// ── Time slot config ──────────────────────────────────────────────────────────
-// To add real availability in the future, replace this array with a fetch call:
-// const slots = await fetch(`/api/availability?date=${date}`)
 export const TIME_SLOTS = [
-  { id: '12pm', label: '12:00 PM', period: 'Afternoon' },
-  { id: '2pm',  label: '2:00 PM',  period: 'Afternoon' },
-  { id: '4pm',  label: '4:00 PM',  period: 'Evening'   },
-  { id: '6pm',  label: '6:00 PM',  period: 'Evening'   },
+  '11:00 AM','12:00 PM','1:00 PM','2:00 PM',
+  '3:00 PM','4:00 PM','5:00 PM','6:00 PM',
+  '7:00 PM','8:00 PM','9:00 PM','10:00 PM',
 ]
 
-export default function BookingTimeSlots({ selected, onSelect }) {
+const SHORT_DAYS   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+const SHORT_MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+function formatShortDate(iso) {
+  if (!iso) return ''
+  const [y,m,d] = iso.split('-').map(Number)
+  const date = new Date(y, m-1, d)
+  return `${SHORT_DAYS[date.getDay()]}, ${SHORT_MONTHS[m-1]} ${d}`
+}
+
+export default function BookingTimeSlots({ selected, onSelect, date }) {
   return (
-    <div>
-      <p style={{ fontSize: '0.8rem', color: 'rgba(26,18,9,0.45)', marginBottom: '1.25rem' }}>
-        All times are approximate start times. Chef arrives 30 min early to set up.
-      </p>
+    <div style={{ background:'#fff', borderRadius:16, padding:'1.5rem', boxShadow:'0 2px 12px rgba(0,0,0,0.06)' }}>
+      {/* Header */}
+      <div className="flex items-center gap-2 mb-5">
+        <svg width="20" height="20" fill="none" stroke="#C8102E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span style={{ fontWeight:700, fontSize:'1.05rem', color:'#1A1209' }}>
+          Select time{date ? ` for ${formatShortDate(date)}` : ''}
+        </span>
+      </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      {/* Slot grid */}
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'0.5rem' }}
+        className="sm:grid-cols-6-slots">
         {TIME_SLOTS.map(slot => {
-          const isSelected = selected === slot.label
-
+          const active = selected === slot
           return (
-            <button
-              key={slot.id}
-              onClick={() => onSelect(slot.label)}
-              className="flex flex-col items-center justify-center transition-all duration-150"
+            <button key={slot} onClick={() => onSelect(slot)}
               style={{
-                padding: '1rem',
-                border: isSelected ? '2px solid #C8102E' : '1px solid rgba(26,18,9,0.14)',
-                background: isSelected ? 'rgba(200,16,46,0.06)' : '#FFFFFF',
-                cursor: 'pointer',
-                outline: 'none',
-                position: 'relative',
+                padding:'0.9rem 0.5rem',
+                borderRadius:10,
+                border: active ? '2px solid #C8102E' : '1.5px solid rgba(26,18,9,0.12)',
+                background: active ? 'rgba(200,16,46,0.07)' : '#fff',
+                color: active ? '#C8102E' : '#1A1209',
+                fontWeight: active ? 700 : 500,
+                fontSize:'0.88rem',
+                cursor:'pointer',
+                transition:'all 0.15s ease',
+                whiteSpace:'nowrap',
               }}
-              onMouseEnter={e => { if (!isSelected) e.currentTarget.style.borderColor = 'rgba(200,16,46,0.4)' }}
-              onMouseLeave={e => { if (!isSelected) e.currentTarget.style.borderColor = 'rgba(26,18,9,0.14)' }}
+              onMouseEnter={e => { if (!active) { e.currentTarget.style.borderColor='rgba(200,16,46,0.4)'; e.currentTarget.style.background='rgba(200,16,46,0.04)' }}}
+              onMouseLeave={e => { if (!active) { e.currentTarget.style.borderColor='rgba(26,18,9,0.12)'; e.currentTarget.style.background='#fff' }}}
             >
-              {isSelected && (
-                <span style={{
-                  position: 'absolute', top: 8, right: 8,
-                  width: 18, height: 18, borderRadius: '50%',
-                  background: '#C8102E',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                }}>
-                  <svg width="10" height="10" fill="none" stroke="#fff" strokeWidth="2.5" viewBox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </span>
-              )}
-              <div style={{
-                fontSize: '1.2rem',
-                fontWeight: 700,
-                color: isSelected ? '#C8102E' : '#1A1209',
-                fontFamily: 'var(--font-bebas, sans-serif)',
-                letterSpacing: '0.04em',
-                lineHeight: 1,
-                marginBottom: '0.3rem',
-              }}>
-                {slot.label}
-              </div>
-              <div style={{
-                fontSize: '0.65rem',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: isSelected ? 'rgba(200,16,46,0.7)' : 'rgba(26,18,9,0.35)',
-              }}>
-                {slot.period}
-              </div>
+              {slot}
             </button>
           )
         })}
       </div>
+
+      <style>{`
+        @media (min-width: 640px) {
+          .sm\\:grid-cols-6-slots { grid-template-columns: repeat(6, 1fr) !important; }
+        }
+      `}</style>
     </div>
   )
 }

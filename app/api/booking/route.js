@@ -25,7 +25,9 @@ export async function POST(req) {
         <p><strong>Date:</strong> ${data.date}</p>
         <p><strong>Time:</strong> ${data.time}</p>
         <p><strong>Guests:</strong> ${data.guests}</p>
-        <p><strong>Message:</strong> ${data.message || '—'}</p>
+        <p><strong>Event Address:</strong> ${data.address || '—'}</p>
+        <p><strong>Occasion:</strong> ${data.occasion || '—'}</p>
+        <p><strong>Special Requests:</strong> ${data.message || '—'}</p>
       `,
     });
 
@@ -43,11 +45,13 @@ export async function POST(req) {
           <li><strong>Date:</strong> ${data.date}</li>
           <li><strong>Time:</strong> ${data.time}</li>
           <li><strong>Guests:</strong> ${data.guests}</li>
+          <li><strong>Address:</strong> ${data.address || '—'}</li>
+          ${data.occasion ? `<li><strong>Occasion:</strong> ${data.occasion}</li>` : ''}
         </ul>
 
         <p>We will contact you shortly to confirm your event.</p>
-
         <p>🔥 Get ready for an amazing hibachi experience!</p>
+        <p style="color:#888;font-size:13px;">Cash or Zelle only · Travel fee may apply based on distance</p>
       `,
     });
 
