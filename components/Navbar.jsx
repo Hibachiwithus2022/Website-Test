@@ -19,6 +19,7 @@ export default function Navbar() {
     { label: 'Menu',         href: '#menu' },
     { label: 'Pricing',      href: '#pricing' },
     { label: 'Locations',    href: '/locations' },
+    { label: 'Estimation',   href: '/estimation' },
     { label: 'FAQ',          href: '#faq' },
   ]
 
