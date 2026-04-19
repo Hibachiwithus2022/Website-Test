@@ -109,7 +109,7 @@ export default function CityPricing({ cityName, stateName }) {
               ))}
             </div>
 
-            <a href="#book" className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+            <a href="/booking" className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
               Book Your Chef in {cityName}
             </a>
           </div>

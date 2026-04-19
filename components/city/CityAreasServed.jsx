@@ -19,7 +19,7 @@ export default function CityAreasServed({ cityName, stateName, nearbyCities = []
             </p>
 
             <div style={{ marginTop: '2rem' }}>
-              <a href="#book" className="btn-primary">Check Availability in My Area</a>
+              <a href="/booking" className="btn-primary">Check Availability in My Area</a>
             </div>
           </div>
 

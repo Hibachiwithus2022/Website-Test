@@ -79,7 +79,7 @@ export default function CityHero({ cityName, stateName, stateSlug, variant = 0, 
 
         {/* CTAs */}
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
-          <a href="#book" className="btn-primary">
+          <a href="/booking" className="btn-primary">
             Book Now
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>

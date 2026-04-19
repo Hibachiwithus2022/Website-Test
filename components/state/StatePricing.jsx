@@ -105,7 +105,7 @@ export default function StatePricing({ state }) {
               ))}
             </div>
 
-            <a href="#book" className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+            <a href="/booking" className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
               Book Your Chef in {state}
             </a>
           </div>

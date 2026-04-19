@@ -58,7 +58,7 @@ export default function Footer() {
                 { label: 'Locations',    href: '#locations' },
                 { label: 'Reviews',      href: '#reviews' },
                 { label: 'FAQ',          href: '#faq' },
-                { label: 'Book Now',     href: '#book' },
+                { label: 'Book Now',     href: '/booking' },
                 { label: 'Blog',         href: '/blog' },
               ].map(l => (
                 <a
@@ -90,7 +90,7 @@ export default function Footer() {
                 All 50 U.S. States
               </div>
               <div style={{ marginTop: '0.5rem' }}>
-                <a href="#book" className="btn-primary" style={{ padding: '0.65rem 1.5rem', fontSize: '0.8rem', display: 'inline-flex' }}>
+                <a href="/booking" className="btn-primary" style={{ padding: '0.65rem 1.5rem', fontSize: '0.8rem', display: 'inline-flex' }}>
                   Book Now
                 </a>
               </div>

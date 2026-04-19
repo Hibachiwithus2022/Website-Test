@@ -74,7 +74,7 @@ export default function CityStickyBar({ cityName }) {
           </svg>
         </a>
         <a
-          href="#book"
+          href="/booking"
           style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
             background: '#C8102E',

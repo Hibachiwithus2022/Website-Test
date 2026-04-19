@@ -50,7 +50,7 @@ export default function StateHero({ state, stateSlug, stateData }) {
 
         {/* CTAs */}
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <a href="#book" className="btn-primary">
+          <a href="/booking" className="btn-primary">
             Book in {state}
           </a>
           <Link href="/#pricing" className="btn-ghost">

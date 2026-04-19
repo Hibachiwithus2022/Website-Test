@@ -33,7 +33,7 @@ export default function Occasions() {
           {OCCASIONS.map((o, i) => (
             <RevealWrapper key={i} delay={i * 0.07}>
               <a
-                href="#book"
+                href="/booking"
                 style={{
                   display: 'flex', flexDirection: 'column',
                   background: '#FFFFFF',

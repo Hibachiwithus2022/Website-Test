@@ -88,7 +88,7 @@ export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearby
                 </a>
               </li>
               <li>
-                <a href="#book" style={{ fontSize: '0.88rem', color: '#C8102E', textDecoration: 'none', fontWeight: 600, display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <a href="/booking" style={{ fontSize: '0.88rem', color: '#C8102E', textDecoration: 'none', fontWeight: 600, display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                   <span>›</span> Book Now
                 </a>
               </li>
