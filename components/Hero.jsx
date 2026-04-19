@@ -90,7 +90,7 @@ export default function Hero() {
             }}
           >
             Backyard Parties&nbsp;•&nbsp;Private Chef Experience&nbsp;•&nbsp;Hibachi Near You.<br />
-            Professional teppanyaki chefs travel to your home — anywhere in the lower&nbsp;48.
+            Professional teppanyaki chefs travel to your home — anywhere in the United State &nbsp;.
           </p>
 
           {/* CTAs */}
