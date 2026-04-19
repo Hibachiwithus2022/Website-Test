@@ -59,6 +59,7 @@ export default function Footer() {
                 { label: 'Reviews',      href: '#reviews' },
                 { label: 'FAQ',          href: '#faq' },
                 { label: 'Book Now',     href: '#book' },
+                { label: 'Blog',         href: '/blog' },
               ].map(l => (
                 <a
                   key={l.label}
@@ -131,6 +132,15 @@ export default function Footer() {
               onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,239,224,0.35)'}
             >
               Terms &amp; Conditions
+            </Link>
+            <span style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.15)' }}>·</span>
+            <Link
+              href="/blog"
+              style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.35)', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={e => e.currentTarget.style.color = '#C8102E'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,239,224,0.35)'}
+            >
+              Blog
             </Link>
             <span style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.15)' }}>·</span>
             <p style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.25)', margin: 0 }}>
