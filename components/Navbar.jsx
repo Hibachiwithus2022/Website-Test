@@ -14,13 +14,13 @@ export default function Navbar() {
   }, [])
 
   const links = [
-    { label: 'Home',         href: '/' },
+    { label: 'Home',       href: '/' },
     { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Menu',         href: '#menu' },
-    { label: 'Pricing',      href: '#pricing' },
-    { label: 'Locations',    href: '/locations' },
-    { label: 'Estimation',   href: '/estimation' },
-    { label: 'FAQ',          href: '#faq' },
+    { label: 'Menu',       href: '#menu' },
+    { label: 'Locations',  href: '/locations' },
+    { label: 'Estimation', href: '/estimation' },
+    { label: 'Blog',       href: '/blog' },
+    { label: 'FAQ',        href: '#faq' },
   ]
 
   return (
@@ -46,7 +46,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {links.map(l => (
             <a key={l.label} href={l.href} className="nav-link-item">
               {l.label}
