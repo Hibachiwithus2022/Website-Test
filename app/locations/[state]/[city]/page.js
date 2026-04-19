@@ -100,7 +100,7 @@ export default function CityPage({ params }) {
   const lbSchema  = generateLocalBusinessSchema({ cityName, stateName, stateSlug: params.state })
   const faqSchema = generateFAQSchema(faqSet.length > 0 ? faqSet : [
     { q: `Do you serve ${cityName}, ${stateName}?`,          a: `Yes — we serve ${cityName} and all surrounding areas in ${stateName}. Our chefs travel to your location with a full teppan grill, all ingredients, and complete setup.` },
-    { q: 'How much does a private hibachi chef cost?',       a: 'Our standard rate is $60 per adult and $30 per child (12 and under). The minimum event total is $550.' },
+    { q: 'How much does a private hibachi chef cost?',       a: 'Our rate is $60 per adult and $30 per child (ages 4–12). Children 3 and under eat free. The event minimum is $600.' },
     { q: 'Can hibachi be done indoors?',                     a: 'Yes — in large spaces with adequate ventilation. Most events are outdoors, but covered patios, large garages, and open indoor spaces work well.' },
     { q: 'What do I need to provide?',                       a: 'Tables and chairs for your guests. We bring everything else: grill, propane, all food, sauces, plates, and cleanup.' },
   ])

@@ -4,7 +4,7 @@ import { useState } from 'react'
 const SHARED_FAQS = [
   {
     q: 'How much does a private hibachi chef cost?',
-    a: 'Our standard rate is $60 per adult and $30 per child (12 and under). The minimum event total is $550, which typically covers 8–10 guests. Premium and Elite packages are available for larger budgets or groups.',
+    a: 'Our rate is $60 per adult and $30 per child (ages 4–12). Children 3 and under eat free. The event minimum is $600. Travel fees may apply based on distance.',
   },
   {
     q: 'What do I need to provide for the event?',
@@ -16,7 +16,7 @@ const SHARED_FAQS = [
   },
   {
     q: 'Can we customize the menu?',
-    a: 'Yes — our Standard package includes 2 protein choices per person, Premium includes 3, and Elite is fully custom. Add-ons (lobster tail, filet mignon, scallops, gyoza, etc.) are available at any tier.',
+    a: 'Yes — every event includes 2 protein choices per person. Add-ons like lobster tail, filet mignon, noodles, gyoza, and edamame are available at an additional cost.',
   },
   {
     q: 'What if it rains or weather is bad?',

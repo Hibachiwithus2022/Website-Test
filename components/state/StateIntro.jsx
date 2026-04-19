@@ -32,8 +32,9 @@ export default function StateIntro({ state, stateData }) {
             </div>
             {[
               { label: 'Starting Price', value: '$60/adult' },
-              { label: 'Children (12 & under)', value: '$30/child' },
-              { label: 'Event Minimum', value: '$550' },
+              { label: 'Children (Ages 4–12)', value: '$30/child' },
+              { label: 'Under 3', value: 'Free' },
+              { label: 'Event Minimum', value: '$600' },
               { label: 'Min. Guest Count', value: '10 guests' },
               { label: 'Setup Time', value: '~30 min' },
               { label: 'Cleanup Included', value: 'Yes' },

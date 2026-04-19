@@ -5,7 +5,7 @@ import RevealWrapper from './RevealWrapper'
 const FAQS = [
   {
     q: 'How much does hibachi at home cost?',
-    a: 'Our standard rate is $60 per adult and $30 per child (under 12). There\'s a minimum order of $550, which covers approximately 8–10 guests. Premium packages start at $65/adult and include more proteins and extras. Travel fees may apply outside major metro areas. We provide a full, itemized quote before you confirm.',
+    a: 'Our rate is $60 per adult and $30 per child (ages 4–12). Children 3 and under eat free. The event minimum is $600. Travel fees may apply based on distance. Use our estimation tool for an instant quote.',
   },
   {
     q: 'Do you travel to my city? Do you serve my area?',

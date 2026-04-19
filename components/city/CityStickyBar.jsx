@@ -40,7 +40,7 @@ export default function CityStickyBar({ cityName }) {
           from
         </div>
         <div style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '1.5rem', color: '#D4A843', letterSpacing: '0.04em', lineHeight: 1 }}>
-          $55<span style={{ fontSize: '0.8rem', color: 'rgba(212,168,67,0.6)' }}>/adult</span>
+          $60<span style={{ fontSize: '0.8rem', color: 'rgba(212,168,67,0.6)' }}>/adult</span>
         </div>
       </div>
 
