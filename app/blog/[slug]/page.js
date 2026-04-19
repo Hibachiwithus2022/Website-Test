@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllPosts, getPostBySlug } from '@/lib/blog';
+import { getAllPosts, getPostBySlug } from '../../../lib/blog';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
