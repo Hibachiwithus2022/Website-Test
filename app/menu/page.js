@@ -30,8 +30,8 @@ const SIDES = [
 const SAUCES = ['Yum Yum Sauce', 'Ginger Sauce', 'Teriyaki Glaze', 'Soy Sauce']
 
 const EXTRAS = [
-  { name: 'Yakisoba Noodles', price: '$5/order', desc: 'Stir-fried noodles — one order feeds 3–4 guests.' },
-  { name: 'Gyoza (8 pcs)', price: '$10/order', desc: 'Pan-seared pork dumplings — one order feeds 4–6 guests.' },
+  { name: 'Yakisoba Noodles', price: '$5/order', desc: 'Stir-fried noodles — one order feeds 1 guest.' },
+  { name: 'Gyoza (8 pcs)', price: '$10/order', desc: 'Pan-seared pork dumplings — one order feeds 1-2 guests.' },
   { name: 'Edamame', price: '$6/order', desc: 'Salted edamame — great starter while the chef sets up.' },
   { name: 'Extra Protein (standard)', price: '$15/order', desc: 'Add an extra order of any standard protein.' },
   { name: 'Extra Filet Mignon', price: '$20/order', desc: 'Additional filet mignon order.' },
