@@ -60,6 +60,7 @@ export default function Footer() {
                 { label: 'FAQ',          href: '#faq' },
                 { label: 'Book Now',     href: '/booking' },
                 { label: 'Blog',         href: '/blog' },
+                { label: 'Contact Us',   href: '/contact' },
               ].map(l => (
                 <a
                   key={l.label}

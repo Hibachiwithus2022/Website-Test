@@ -21,6 +21,7 @@ export default function Navbar() {
     { label: 'Estimation', href: '/estimation' },
     { label: 'Blog',       href: '/blog' },
     { label: 'FAQ',        href: '/faq' },
+    { label: 'Contact Us', href: '/contact' },
   ]
 
   return (
