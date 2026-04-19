@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import { getAllPosts } from '../../lib/blog';
 
 export const metadata = {
@@ -20,6 +22,8 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
+    <>
+    <Navbar />
     <main style={{ background: '#F5EFE0', minHeight: '100vh' }}>
       <style>{`
         .blog-card {
@@ -151,5 +155,7 @@ export default function BlogPage() {
         </div>
       </section>
     </main>
+    <Footer />
+    </>
   );
 }

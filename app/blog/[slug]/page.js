@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { getAllPosts, getPostBySlug } from '../../../lib/blog';
 import { notFound } from 'next/navigation';
+import Navbar from '../../../components/Navbar';
+import Footer from '../../../components/Footer';
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -40,6 +42,8 @@ export default async function BlogPostPage({ params }) {
   const catColor = CATEGORY_COLORS[post.category] || '#C8102E';
 
   return (
+    <>
+    <Navbar />
     <main style={{ background: '#F5EFE0', minHeight: '100vh' }}>
       {/* Hero */}
       <section style={{
@@ -220,5 +224,7 @@ export default async function BlogPostPage({ params }) {
         </div>
       </section>
     </main>
+    <Footer />
+    </>
   );
 }

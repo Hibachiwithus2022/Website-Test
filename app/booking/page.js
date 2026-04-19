@@ -1,4 +1,6 @@
 import BookingForm from '../../components/BookingForm';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 export const metadata = {
   title: 'Book Your Private Hibachi Chef | Hibachi Connect',
@@ -7,6 +9,8 @@ export const metadata = {
 
 export default function BookingPage() {
   return (
+    <>
+    <Navbar />
     <main style={{ background: '#F5EFE0', minHeight: '100vh' }}>
       {/* Header */}
       <section style={{
@@ -38,5 +42,7 @@ export default function BookingPage() {
         </p>
       </section>
     </main>
+    <Footer />
+    </>
   );
 }
