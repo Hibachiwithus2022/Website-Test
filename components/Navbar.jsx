@@ -20,7 +20,7 @@ export default function Navbar() {
     { label: 'Locations',  href: '/locations' },
     { label: 'Estimation', href: '/estimation' },
     { label: 'Blog',       href: '/blog' },
-    { label: 'FAQ',        href: '#faq' },
+    { label: 'FAQ',        href: '/faq' },
   ]
 
   return (
