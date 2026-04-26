@@ -158,6 +158,12 @@ export default function BookingForm() {
   const [updateLoading, setUpdateLoading] = useState(false)
   const [updateSuccess, setUpdateSuccess] = useState(false)
   const [updateError,   setUpdateError]   = useState('')
+  const [showReschedule,      setShowReschedule]      = useState(false)
+  const [rescheduleDate,      setRescheduleDate]      = useState('')
+  const [rescheduleTime,      setRescheduleTime]      = useState('')
+  const [rescheduleLoading,   setRescheduleLoading]   = useState(false)
+  const [rescheduleSuccess,   setRescheduleSuccess]   = useState(false)
+  const [rescheduleError,     setRescheduleError]     = useState('')
 
   const [form, setForm] = useState({
     firstName:'', lastName:'', email:'', phone:'',
@@ -371,7 +377,7 @@ export default function BookingForm() {
               }}>
                 ✏️ Edit Info
               </button>
-              <button onClick={() => { setPrevDate(date); setPrevTime(time); setDate(''); setTime(''); setStep(1) }} style={{
+              <button onClick={() => { setRescheduleDate(date); setRescheduleTime(time); setRescheduleSuccess(false); setRescheduleError(''); setShowReschedule(true) }} style={{
                 padding:'0.65rem 0.5rem', borderRadius:8, border:'1.5px solid #E8DFC8',
                 background:'#F5EFE0', color:'#1A1209', fontSize:'0.78rem', fontWeight:600, cursor:'pointer',
               }}>
@@ -622,6 +628,72 @@ export default function BookingForm() {
                     display:'flex', alignItems:'center', justifyContent:'center', gap:'0.5rem',
                   }}>
                     {updateLoading ? 'Updating…' : <>Update Appointment <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></>}
+                  </button>
+
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Reschedule modal */}
+          {showReschedule && (
+            <div onClick={() => setShowReschedule(false)} style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.45)', zIndex:1000,
+              display:'flex', alignItems:'center', justifyContent:'center', padding:'1rem' }}>
+              <div onClick={e => e.stopPropagation()} style={{ background:'#fff', borderRadius:16, width:'100%', maxWidth:560,
+                maxHeight:'90vh', overflowY:'auto', boxShadow:'0 16px 48px rgba(0,0,0,0.2)' }}>
+
+                {/* Header */}
+                <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between',
+                  padding:'1.25rem 1.5rem', borderBottom:'1px solid rgba(26,18,9,0.1)' }}>
+                  <h3 style={{ margin:0, fontSize:'1.1rem', fontWeight:800, color:'#1A1209' }}>Reschedule Appointment</h3>
+                  <button onClick={() => setShowReschedule(false)} style={{ background:'none', border:'none', cursor:'pointer',
+                    color:'rgba(26,18,9,0.4)', fontSize:'1.2rem', lineHeight:1, padding:'0.25rem' }}>✕</button>
+                </div>
+
+                <div style={{ padding:'1.5rem', display:'flex', flexDirection:'column', gap:'1rem' }}>
+                  <div style={{ fontSize:'0.82rem', color:'rgba(26,18,9,0.5)', lineHeight:1.5 }}>
+                    Current appointment: <strong style={{ color:'#1A1209' }}>{formatLong(date)} at {time}</strong>
+                  </div>
+
+                  <BookingCalendar selected={rescheduleDate} onSelect={d => { setRescheduleDate(d); setRescheduleTime('') }} />
+
+                  {rescheduleDate && (
+                    <BookingTimeSlots selected={rescheduleTime} onSelect={setRescheduleTime} date={rescheduleDate} />
+                  )}
+
+                  {rescheduleError && <p style={{ color:'#C8102E', fontSize:'0.85rem', margin:0 }}>{rescheduleError}</p>}
+                  {rescheduleSuccess && <p style={{ color:'#2a7a2a', fontSize:'0.85rem', fontWeight:600, margin:0 }}>✓ Your appointment has been rescheduled.</p>}
+
+                  <button disabled={rescheduleLoading || !rescheduleDate || !rescheduleTime} onClick={async () => {
+                    setRescheduleLoading(true); setRescheduleError(''); setRescheduleSuccess(false);
+                    const guests = `${form.adults} adult${form.adults!==1?'s':''}, ${form.children} child${form.children!==1?'ren':''}`;
+                    try {
+                      const res = await fetch('/api/reschedule', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          name: `${form.firstName} ${form.lastName}`.trim(),
+                          email: form.email, phone: form.phone, guests,
+                          oldDate: formatLong(date), oldTime: time,
+                          newDate: formatLong(rescheduleDate), newTime: rescheduleTime,
+                        }),
+                      });
+                      if (res.ok) {
+                        setDate(rescheduleDate); setTime(rescheduleTime);
+                        setRescheduleSuccess(true);
+                        setTimeout(() => setShowReschedule(false), 1200);
+                      } else { setRescheduleError('Something went wrong. Please try again.'); }
+                    } catch { setRescheduleError('Network error. Please try again.'); }
+                    finally { setRescheduleLoading(false); }
+                  }} style={{
+                    width:'100%', padding:'0.9rem', borderRadius:10, border:'none',
+                    background: (rescheduleLoading || !rescheduleDate || !rescheduleTime) ? 'rgba(200,16,46,0.4)' : '#C8102E',
+                    color:'#fff', fontWeight:700, fontSize:'0.95rem',
+                    cursor: (rescheduleLoading || !rescheduleDate || !rescheduleTime) ? 'not-allowed' : 'pointer',
+                    boxShadow:'0 4px 14px rgba(200,16,46,0.25)',
+                    display:'flex', alignItems:'center', justifyContent:'center', gap:'0.5rem',
+                  }}>
+                    {rescheduleLoading ? 'Updating…' : !rescheduleDate ? 'Select a date to continue' : !rescheduleTime ? 'Select a time to continue' : <>Update Time <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></>}
                   </button>
 
                 </div>
