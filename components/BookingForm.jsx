@@ -193,29 +193,99 @@ export default function BookingForm() {
 
   // ── Step 3: Success ─────────────────────────────────────────────────────────
   if (step === 3) {
+    const refNum = 'HC-' + Date.now().toString(36).toUpperCase().slice(-6)
+    const fullName = `${form.firstName} ${form.lastName}`.trim()
+    const address = [form.streetAddress, form.city, form.state, form.zip].filter(Boolean).join(', ')
+    const guestSummary = `${form.adults} adult${form.adults!==1?'s':''}, ${form.children} child${form.children!==1?'ren':''}`
+
+    const NEXT_STEPS = [
+      { n:1, label:'Select Your Menu',        desc:'Browse proteins, sides, and add-ons before the event.' },
+      { n:2, label:'Confirm Details',          desc:'Your chef will contact you 24–48 hrs before to confirm everything.' },
+      { n:3, label:'Chef Arrives & Prepares',  desc:'Chef arrives 30–45 min early to set up the teppan grill.' },
+      { n:4, label:'Party Time',               desc:'Sit back and enjoy the live hibachi show with your guests.' },
+      { n:5, label:'Payment',                  desc:'Cash or Zelle only, collected day-of before service begins.' },
+    ]
+
     return (
       <div style={{ background:'#F5F5F7', borderRadius:16, overflow:'hidden' }}>
         <StepBar step={3} />
-        <div style={{ padding:'4rem 2rem', textAlign:'center', background:'#fff', borderRadius:'0 0 16px 16px' }}>
-          <div style={{ width:72, height:72, borderRadius:'50%', background:'rgba(200,16,46,0.08)',
-            border:'2px solid rgba(200,16,46,0.25)', display:'flex', alignItems:'center',
-            justifyContent:'center', margin:'0 auto 1.5rem' }}>
-            <svg width="30" height="30" fill="none" stroke="#C8102E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
+        <div style={{ background:'#fff', borderRadius:'0 0 16px 16px', padding:'2.5rem 1.5rem' }}>
+
+          {/* Hero check */}
+          <div style={{ textAlign:'center', marginBottom:'2rem' }}>
+            <div style={{ width:80, height:80, borderRadius:'50%', background:'#C8102E',
+              display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 1.25rem',
+              boxShadow:'0 8px 24px rgba(200,16,46,0.35)' }}>
+              <svg width="36" height="36" fill="none" stroke="#fff" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <h3 style={{ fontFamily:'var(--font-bebas,sans-serif)', fontSize:'2.4rem', color:'#1A1209', margin:'0 0 0.4rem', letterSpacing:'0.03em' }}>
+              Booking Request Sent!
+            </h3>
+            <p style={{ color:'rgba(26,18,9,0.55)', fontSize:'0.95rem', lineHeight:1.7, maxWidth:'26rem', margin:'0 auto' }}>
+              We received your request and will confirm within <strong>1 business day</strong>. Check your email for a copy.
+            </p>
           </div>
-          <h3 style={{ fontFamily:'var(--font-bebas,sans-serif)', fontSize:'2.2rem', color:'#1A1209', marginBottom:'0.5rem', letterSpacing:'0.03em' }}>
-            Booking Request Sent!
-          </h3>
-          <p style={{ color:'rgba(26,18,9,0.55)', lineHeight:1.75, maxWidth:'28rem', margin:'0 auto 0.5rem' }}>
-            Your hibachi event is confirmed for <strong>{formatLong(date)}</strong> at <strong>{time}</strong>. Check your email for confirmation.
-          </p>
-          <p style={{ fontSize:'0.85rem', color:'rgba(26,18,9,0.4)', marginBottom:'2rem' }}>
-            We'll follow up within 1 business day.
-          </p>
-          <a href="tel:+16027672965" style={{ color:'#C8102E', fontWeight:600, textDecoration:'none', fontSize:'0.9rem' }}>
-            Questions? Call (602) 767-2965
+
+          {/* Summary card */}
+          <div style={{ background:'#F5EFE0', borderRadius:12, padding:'1.25rem 1.5rem', marginBottom:'1.5rem', border:'1px solid #E8DFC8' }}>
+            <div style={{ fontSize:'0.7rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(26,18,9,0.4)', marginBottom:'1rem' }}>
+              Booking Summary
+            </div>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'0.85rem 1.5rem' }}>
+              {[
+                { label:'📅 When',   value:`${formatLong(date)} · ${time}` },
+                { label:'📍 Where',  value: address || '—' },
+                { label:'👤 Name',   value: fullName || '—' },
+                { label:'📞 Phone',  value: form.phone || '—' },
+                { label:'👥 Guests', value: guestSummary },
+                { label:'🔖 Ref #',  value: refNum },
+              ].map(({ label, value }) => (
+                <div key={label}>
+                  <div style={{ fontSize:'0.72rem', fontWeight:600, color:'rgba(26,18,9,0.45)', marginBottom:'2px' }}>{label}</div>
+                  <div style={{ fontSize:'0.88rem', fontWeight:600, color:'#1A1209', wordBreak:'break-word' }}>{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* What's Next */}
+          <div style={{ marginBottom:'1.75rem' }}>
+            <div style={{ fontSize:'0.7rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(26,18,9,0.4)', marginBottom:'1rem' }}>
+              What's Next?
+            </div>
+            <div style={{ display:'flex', flexDirection:'column', gap:'0.6rem' }}>
+              {NEXT_STEPS.map(({ n, label, desc }) => (
+                <div key={n} style={{ display:'flex', gap:'0.85rem', alignItems:'flex-start' }}>
+                  <div style={{ width:28, height:28, borderRadius:'50%', background:'#C8102E', color:'#fff',
+                    display:'flex', alignItems:'center', justifyContent:'center', fontSize:'0.75rem',
+                    fontWeight:700, flexShrink:0, marginTop:1 }}>
+                    {n}
+                  </div>
+                  <div>
+                    <div style={{ fontWeight:700, fontSize:'0.9rem', color:'#1A1209' }}>{label}</div>
+                    <div style={{ fontSize:'0.82rem', color:'rgba(26,18,9,0.55)', lineHeight:1.5 }}>{desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA + contact */}
+          <a href="/menu" style={{ display:'block', width:'100%', textAlign:'center',
+            background:'#C8102E', color:'#fff', fontWeight:700, fontSize:'0.95rem',
+            padding:'0.9rem', borderRadius:10, textDecoration:'none', marginBottom:'1rem',
+            boxShadow:'0 4px 14px rgba(200,16,46,0.3)' }}>
+            Select Menu &amp; View Cost →
           </a>
+          <p style={{ textAlign:'center', fontSize:'0.85rem', color:'rgba(26,18,9,0.45)', margin:0 }}>
+            Questions? Call{' '}
+            <a href="tel:+16027672965" style={{ color:'#C8102E', fontWeight:600, textDecoration:'none' }}>
+              (602) 767-2965
+            </a>
+          </p>
+
         </div>
       </div>
     )
