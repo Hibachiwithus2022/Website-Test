@@ -404,7 +404,24 @@ export default function BookingForm() {
                   }}>
                     Keep Booking
                   </button>
-                  <button onClick={() => { setShowCancel(false); setCancelled(true) }} style={{
+                  <button onClick={() => {
+                    setShowCancel(false); setCancelled(true);
+                    const fullName = `${form.firstName} ${form.lastName}`.trim();
+                    const guestSummary = `${form.adults} adult${form.adults!==1?'s':''}, ${form.children} child${form.children!==1?'ren':''}`;
+                    fetch('/api/cancel', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        name: fullName,
+                        email: form.email,
+                        phone: form.phone,
+                        date: formatLong(date),
+                        time,
+                        guests: guestSummary,
+                        message: form.specialRequests || '',
+                      }),
+                    });
+                  }} style={{
                     flex:1, padding:'0.75rem', borderRadius:8, border:'none',
                     background:'#C8102E', color:'#fff', fontWeight:700, fontSize:'0.88rem', cursor:'pointer',
                   }}>
