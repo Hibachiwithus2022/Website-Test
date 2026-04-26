@@ -284,19 +284,24 @@ export default function BookingForm() {
 
           {/* Action buttons */}
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'0.6rem', marginBottom:'1rem' }}>
-            {[
-              { label:'✏️ Edit Info',   color:'#1A1209', bg:'#F5EFE0', border:'#E8DFC8' },
-              { label:'📅 Reschedule', color:'#1A1209', bg:'#F5EFE0', border:'#E8DFC8' },
-              { label:'✕ Cancel',      color:'#C8102E', bg:'rgba(200,16,46,0.06)', border:'rgba(200,16,46,0.25)' },
-            ].map(({ label, color, bg, border }) => (
-              <button key={label} disabled style={{
-                padding:'0.65rem 0.5rem', borderRadius:8, border:`1.5px solid ${border}`,
-                background:bg, color, fontSize:'0.78rem', fontWeight:600,
-                cursor:'not-allowed', opacity:0.8,
+              <button onClick={() => setStep(2)} style={{
+                padding:'0.65rem 0.5rem', borderRadius:8, border:'1.5px solid #E8DFC8',
+                background:'#F5EFE0', color:'#1A1209', fontSize:'0.78rem', fontWeight:600, cursor:'pointer',
               }}>
-                {label}
+                ✏️ Edit Info
               </button>
-            ))}
+              {[
+                { label:'📅 Reschedule', color:'#1A1209', bg:'#F5EFE0', border:'#E8DFC8' },
+                { label:'✕ Cancel',      color:'#C8102E', bg:'rgba(200,16,46,0.06)', border:'rgba(200,16,46,0.25)' },
+              ].map(({ label, color, bg, border }) => (
+                <button key={label} disabled style={{
+                  padding:'0.65rem 0.5rem', borderRadius:8, border:`1.5px solid ${border}`,
+                  background:bg, color, fontSize:'0.78rem', fontWeight:600,
+                  cursor:'not-allowed', opacity:0.8,
+                }}>
+                  {label}
+                </button>
+              ))}
           </div>
 
           {/* CTA + contact */}
