@@ -153,6 +153,11 @@ export default function BookingForm() {
   const [cancelled,     setCancelled]     = useState(false)
   const [cancelLoading, setCancelLoading] = useState(false)
   const [cancelError,   setCancelError]   = useState('')
+  const [showEdit,      setShowEdit]      = useState(false)
+  const [editForm,      setEditForm]      = useState(null)
+  const [updateLoading, setUpdateLoading] = useState(false)
+  const [updateSuccess, setUpdateSuccess] = useState(false)
+  const [updateError,   setUpdateError]   = useState('')
 
   const [form, setForm] = useState({
     firstName:'', lastName:'', email:'', phone:'',
@@ -360,7 +365,7 @@ export default function BookingForm() {
 
           {/* Action buttons */}
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'0.6rem', marginBottom:'1rem' }}>
-              <button onClick={() => setStep(2)} style={{
+              <button onClick={() => { setEditForm({...form}); setUpdateSuccess(false); setUpdateError(''); setShowEdit(true) }} style={{
                 padding:'0.65rem 0.5rem', borderRadius:8, border:'1.5px solid #E8DFC8',
                 background:'#F5EFE0', color:'#1A1209', fontSize:'0.78rem', fontWeight:600, cursor:'pointer',
               }}>
@@ -438,6 +443,174 @@ export default function BookingForm() {
                     {cancelError}
                   </p>
                 )}
+              </div>
+            </div>
+          )}
+
+          {/* Edit Info modal */}
+          {showEdit && editForm && (
+            <div onClick={() => setShowEdit(false)} style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.45)', zIndex:1000,
+              display:'flex', alignItems:'center', justifyContent:'center', padding:'1rem' }}>
+              <div onClick={e => e.stopPropagation()} style={{ background:'#fff', borderRadius:16, width:'100%', maxWidth:600,
+                maxHeight:'90vh', overflowY:'auto', boxShadow:'0 16px 48px rgba(0,0,0,0.2)' }}>
+
+                {/* Modal header */}
+                <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between',
+                  padding:'1.25rem 1.5rem', borderBottom:'1px solid rgba(26,18,9,0.1)' }}>
+                  <h3 style={{ margin:0, fontSize:'1.1rem', fontWeight:800, color:'#1A1209' }}>Edit Appointment Information</h3>
+                  <button onClick={() => setShowEdit(false)} style={{ background:'none', border:'none', cursor:'pointer',
+                    color:'rgba(26,18,9,0.4)', fontSize:'1.2rem', lineHeight:1, padding:'0.25rem' }}>✕</button>
+                </div>
+
+                <div style={{ padding:'1.5rem', display:'flex', flexDirection:'column', gap:'1.25rem' }}>
+
+                  {/* Contact Information */}
+                  <div style={{ border:'1px solid rgba(26,18,9,0.1)', borderRadius:12, padding:'1.25rem' }}>
+                    <SectionHeader icon={<svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>} title="Contact Information" />
+                    <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'0.85rem' }}>
+                      {[
+                        { label:'First Name', key:'firstName', placeholder:'Enter first name' },
+                        { label:'Last Name',  key:'lastName',  placeholder:'Enter last name' },
+                        { label:'Email Address', key:'email', placeholder:'example@email.com', type:'email' },
+                        { label:'Phone Number',  key:'phone', placeholder:'Enter phone number', type:'tel' },
+                      ].map(({ label, key, placeholder, type='text' }) => (
+                        <div key={key}>
+                          <label style={{ display:'block', fontSize:'0.8rem', fontWeight:600, color:'rgba(26,18,9,0.55)', marginBottom:'0.4rem' }}>{label} <span style={{color:'#C8102E'}}>*</span></label>
+                          <input type={type} value={editForm[key]} placeholder={placeholder}
+                            onChange={e => setEditForm(p => ({...p, [key]: e.target.value}))}
+                            style={{ width:'100%', padding:'0.75rem 1rem', border:'1.5px solid rgba(26,18,9,0.15)',
+                              borderRadius:8, background:'#fff', color:'#1A1209', fontSize:'0.92rem',
+                              outline:'none', boxSizing:'border-box', fontFamily:'inherit' }}
+                            onFocus={e => e.target.style.borderColor='#C8102E'}
+                            onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Event Address */}
+                  <div style={{ border:'1px solid rgba(26,18,9,0.1)', borderRadius:12, padding:'1.25rem' }}>
+                    <SectionHeader icon={<svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>} title="Event Address" />
+                    <div style={{ display:'flex', flexDirection:'column', gap:'0.85rem' }}>
+                      <div>
+                        <label style={{ display:'block', fontSize:'0.8rem', fontWeight:600, color:'rgba(26,18,9,0.55)', marginBottom:'0.4rem' }}>Street Address <span style={{color:'#C8102E'}}>*</span></label>
+                        <input value={editForm.streetAddress} placeholder="Enter street address"
+                          onChange={e => setEditForm(p => ({...p, streetAddress: e.target.value}))}
+                          style={{ width:'100%', padding:'0.75rem 1rem', border:'1.5px solid rgba(26,18,9,0.15)',
+                            borderRadius:8, background:'#fff', color:'#1A1209', fontSize:'0.92rem',
+                            outline:'none', boxSizing:'border-box', fontFamily:'inherit' }}
+                          onFocus={e => e.target.style.borderColor='#C8102E'}
+                          onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'} />
+                      </div>
+                      <div style={{ display:'grid', gridTemplateColumns:'1fr 0.6fr 0.8fr', gap:'0.85rem' }}>
+                        {[
+                          { label:'City', key:'city', placeholder:'Enter city' },
+                          { label:'State', key:'state', placeholder:'e.g. CA' },
+                          { label:'ZIP Code', key:'zip', placeholder:'Enter ZIP code' },
+                        ].map(({ label, key, placeholder }) => (
+                          <div key={key}>
+                            <label style={{ display:'block', fontSize:'0.8rem', fontWeight:600, color:'rgba(26,18,9,0.55)', marginBottom:'0.4rem' }}>{label} <span style={{color:'#C8102E'}}>*</span></label>
+                            <input value={editForm[key]} placeholder={placeholder}
+                              onChange={e => setEditForm(p => ({...p, [key]: e.target.value}))}
+                              style={{ width:'100%', padding:'0.75rem 1rem', border:'1.5px solid rgba(26,18,9,0.15)',
+                                borderRadius:8, background:'#fff', color:'#1A1209', fontSize:'0.92rem',
+                                outline:'none', boxSizing:'border-box', fontFamily:'inherit' }}
+                              onFocus={e => e.target.style.borderColor='#C8102E'}
+                              onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'} />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Guest Information */}
+                  <div style={{ border:'1px solid rgba(26,18,9,0.1)', borderRadius:12, padding:'1.25rem' }}>
+                    <SectionHeader icon={<svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>} title="Guest Information" />
+                    <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1rem' }}>
+                      <GuestCounter label="Number of Adults" value={editForm.adults} options={ADULT_OPTIONS} onChange={v => setEditForm(p => ({...p, adults: v}))} />
+                      <GuestCounter label="Number of Children" value={editForm.children} options={CHILD_OPTIONS} onChange={v => setEditForm(p => ({...p, children: v}))} />
+                    </div>
+                  </div>
+
+                  {/* Occasion */}
+                  <div style={{ border:'1px solid rgba(26,18,9,0.1)', borderRadius:12, padding:'1.25rem' }}>
+                    <SectionHeader icon={<svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>} title="Occasion" />
+                    <div style={{ display:'flex', flexWrap:'wrap', gap:'0.5rem', marginBottom:'0.85rem' }}>
+                      {OCCASIONS.map(o => {
+                        const active = editForm.occasion === o
+                        return (
+                          <button key={o} type="button" onClick={() => setEditForm(p => ({...p, occasion: active ? '' : o}))}
+                            style={{ padding:'0.45rem 1rem', borderRadius:999,
+                              border: active ? '1.5px solid #C8102E' : '1.5px solid rgba(26,18,9,0.18)',
+                              background: active ? 'rgba(200,16,46,0.07)' : '#fff',
+                              color: active ? '#C8102E' : '#1A1209',
+                              fontWeight: active ? 600 : 400, fontSize:'0.85rem', cursor:'pointer' }}>
+                            {o}
+                          </button>
+                        )
+                      })}
+                    </div>
+                    <input placeholder="Or type a custom occasion..." value={editForm.customOccasion}
+                      onChange={e => setEditForm(p => ({...p, customOccasion: e.target.value}))}
+                      style={{ width:'100%', padding:'0.75rem 1rem', border:'1.5px solid rgba(26,18,9,0.15)',
+                        borderRadius:8, background:'#fff', color:'#1A1209', fontSize:'0.92rem',
+                        outline:'none', boxSizing:'border-box', fontFamily:'inherit' }}
+                      onFocus={e => e.target.style.borderColor='#C8102E'}
+                      onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'} />
+                  </div>
+
+                  {/* Special Requests */}
+                  <div style={{ border:'1px solid rgba(26,18,9,0.1)', borderRadius:12, padding:'1.25rem' }}>
+                    <SectionHeader icon={<svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>} title="Special Requests" />
+                    <textarea placeholder="Any special requests..." rows={3} value={editForm.specialRequests}
+                      onChange={e => setEditForm(p => ({...p, specialRequests: e.target.value}))}
+                      style={{ width:'100%', padding:'0.75rem 1rem', border:'1.5px solid rgba(26,18,9,0.15)',
+                        borderRadius:8, background:'#fff', color:'#1A1209', fontSize:'0.92rem',
+                        outline:'none', resize:'vertical', minHeight:90, boxSizing:'border-box', fontFamily:'inherit' }}
+                      onFocus={e => e.target.style.borderColor='#C8102E'}
+                      onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'} />
+                  </div>
+
+                  {/* Error / success */}
+                  {updateError && <p style={{ color:'#C8102E', fontSize:'0.85rem', margin:0 }}>{updateError}</p>}
+                  {updateSuccess && <p style={{ color:'#2a7a2a', fontSize:'0.85rem', fontWeight:600, margin:0 }}>✓ Your booking has been updated.</p>}
+
+                  {/* Update button */}
+                  <button disabled={updateLoading} onClick={async () => {
+                    setUpdateLoading(true); setUpdateError(''); setUpdateSuccess(false);
+                    const oldName    = `${form.firstName} ${form.lastName}`.trim();
+                    const newName    = `${editForm.firstName} ${editForm.lastName}`.trim();
+                    const oldGuests  = `${form.adults} adult${form.adults!==1?'s':''}, ${form.children} child${form.children!==1?'ren':''}`;
+                    const newGuests  = `${editForm.adults} adult${editForm.adults!==1?'s':''}, ${editForm.children} child${editForm.children!==1?'ren':''}`;
+                    const oldAddress = [form.streetAddress, form.city, form.state, form.zip].filter(Boolean).join(', ');
+                    const newAddress = [editForm.streetAddress, editForm.city, editForm.state, editForm.zip].filter(Boolean).join(', ');
+                    try {
+                      const res = await fetch('/api/update', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          email: editForm.email,
+                          date: formatLong(date), time,
+                          oldName, oldPhone: form.phone, oldAddress, oldGuests, oldNotes: form.specialRequests,
+                          newName, newPhone: editForm.phone, newAddress, newGuests, newNotes: editForm.specialRequests,
+                        }),
+                      });
+                      if (res.ok) { setForm({...editForm}); setUpdateSuccess(true); setTimeout(() => setShowEdit(false), 1200); }
+                      else { setUpdateError('Something went wrong. Please try again.'); }
+                    } catch { setUpdateError('Network error. Please try again.'); }
+                    finally { setUpdateLoading(false); }
+                  }} style={{
+                    width:'100%', padding:'0.9rem', borderRadius:10, border:'none',
+                    background: updateLoading ? 'rgba(200,16,46,0.6)' : '#C8102E',
+                    color:'#fff', fontWeight:700, fontSize:'0.95rem',
+                    cursor: updateLoading ? 'not-allowed' : 'pointer',
+                    boxShadow:'0 4px 14px rgba(200,16,46,0.3)',
+                    display:'flex', alignItems:'center', justifyContent:'center', gap:'0.5rem',
+                  }}>
+                    {updateLoading ? 'Updating…' : <>Update Appointment <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></>}
+                  </button>
+
+                </div>
               </div>
             </div>
           )}
