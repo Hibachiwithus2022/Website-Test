@@ -228,6 +228,16 @@ export default function BookingForm() {
             </p>
           </div>
 
+          {/* Schedule another */}
+          <div style={{ textAlign:'center', marginBottom:'1rem' }}>
+            <button onClick={() => { setStep(1); setDate(''); setTime('') }} style={{
+              background:'none', border:'none', cursor:'pointer',
+              color:'#C8102E', fontWeight:600, fontSize:'0.88rem', textDecoration:'underline', padding:0,
+            }}>
+              + Schedule Another Appointment
+            </button>
+          </div>
+
           {/* Summary card */}
           <div style={{ background:'#F5EFE0', borderRadius:12, padding:'1.25rem 1.5rem', marginBottom:'1.5rem', border:'1px solid #E8DFC8' }}>
             <div style={{ fontSize:'0.7rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(26,18,9,0.4)', marginBottom:'1rem' }}>
