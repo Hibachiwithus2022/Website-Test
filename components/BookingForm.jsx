@@ -142,11 +142,13 @@ function Input({ label, required, ...props }) {
 
 // ── Main component ────────────────────────────────────────────────────────────
 export default function BookingForm() {
-  const [step,    setStep]    = useState(1)
-  const [date,    setDate]    = useState('')
-  const [time,    setTime]    = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error,   setError]   = useState('')
+  const [step,     setStep]    = useState(1)
+  const [date,     setDate]    = useState('')
+  const [time,     setTime]    = useState('')
+  const [prevDate, setPrevDate] = useState('')
+  const [prevTime, setPrevTime] = useState('')
+  const [loading,  setLoading] = useState(false)
+  const [error,    setError]   = useState('')
 
   const [form, setForm] = useState({
     firstName:'', lastName:'', email:'', phone:'',
@@ -174,6 +176,7 @@ export default function BookingForm() {
       address: `${form.streetAddress}, ${form.city}, ${form.state} ${form.zip}`,
       occasion: form.customOccasion || form.occasion,
       message: form.specialRequests,
+      ...(prevDate && prevTime ? { prevDate: formatLong(prevDate), prevTime } : {}),
     }
 
     try {
@@ -290,7 +293,7 @@ export default function BookingForm() {
               }}>
                 ✏️ Edit Info
               </button>
-              <button onClick={() => { setDate(''); setTime(''); setStep(1) }} style={{
+              <button onClick={() => { setPrevDate(date); setPrevTime(time); setDate(''); setTime(''); setStep(1) }} style={{
                 padding:'0.65rem 0.5rem', borderRadius:8, border:'1.5px solid #E8DFC8',
                 background:'#F5EFE0', color:'#1A1209', fontSize:'0.78rem', fontWeight:600, cursor:'pointer',
               }}>
