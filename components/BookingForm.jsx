@@ -290,18 +290,19 @@ export default function BookingForm() {
               }}>
                 ✏️ Edit Info
               </button>
-              {[
-                { label:'📅 Reschedule', color:'#1A1209', bg:'#F5EFE0', border:'#E8DFC8' },
-                { label:'✕ Cancel',      color:'#C8102E', bg:'rgba(200,16,46,0.06)', border:'rgba(200,16,46,0.25)' },
-              ].map(({ label, color, bg, border }) => (
-                <button key={label} disabled style={{
-                  padding:'0.65rem 0.5rem', borderRadius:8, border:`1.5px solid ${border}`,
-                  background:bg, color, fontSize:'0.78rem', fontWeight:600,
-                  cursor:'not-allowed', opacity:0.8,
-                }}>
-                  {label}
-                </button>
-              ))}
+              <button onClick={() => { setDate(''); setTime(''); setStep(1) }} style={{
+                padding:'0.65rem 0.5rem', borderRadius:8, border:'1.5px solid #E8DFC8',
+                background:'#F5EFE0', color:'#1A1209', fontSize:'0.78rem', fontWeight:600, cursor:'pointer',
+              }}>
+                📅 Reschedule
+              </button>
+              <button disabled style={{
+                padding:'0.65rem 0.5rem', borderRadius:8, border:'1.5px solid rgba(200,16,46,0.25)',
+                background:'rgba(200,16,46,0.06)', color:'#C8102E', fontSize:'0.78rem', fontWeight:600,
+                cursor:'not-allowed', opacity:0.8,
+              }}>
+                ✕ Cancel
+              </button>
           </div>
 
           {/* CTA + contact */}
