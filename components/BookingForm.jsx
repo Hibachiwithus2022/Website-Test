@@ -147,8 +147,9 @@ export default function BookingForm() {
   const [time,     setTime]    = useState('')
   const [prevDate, setPrevDate] = useState('')
   const [prevTime, setPrevTime] = useState('')
-  const [loading,  setLoading] = useState(false)
-  const [error,    setError]   = useState('')
+  const [loading,     setLoading]     = useState(false)
+  const [error,       setError]       = useState('')
+  const [showCancel,  setShowCancel]  = useState(false)
 
   const [form, setForm] = useState({
     firstName:'', lastName:'', email:'', phone:'',
@@ -299,14 +300,50 @@ export default function BookingForm() {
               }}>
                 📅 Reschedule
               </button>
-              <button disabled style={{
+              <button onClick={() => setShowCancel(true)} style={{
                 padding:'0.65rem 0.5rem', borderRadius:8, border:'1.5px solid rgba(200,16,46,0.25)',
-                background:'rgba(200,16,46,0.06)', color:'#C8102E', fontSize:'0.78rem', fontWeight:600,
-                cursor:'not-allowed', opacity:0.8,
+                background:'rgba(200,16,46,0.06)', color:'#C8102E', fontSize:'0.78rem', fontWeight:600, cursor:'pointer',
               }}>
                 ✕ Cancel
               </button>
           </div>
+
+          {/* Cancel confirmation modal */}
+          {showCancel && (
+            <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.5)', zIndex:1000,
+              display:'flex', alignItems:'center', justifyContent:'center', padding:'1rem' }}>
+              <div style={{ background:'#fff', borderRadius:16, padding:'2rem', maxWidth:360, width:'100%',
+                boxShadow:'0 16px 48px rgba(0,0,0,0.2)', textAlign:'center' }}>
+                <div style={{ width:52, height:52, borderRadius:'50%', background:'rgba(200,16,46,0.08)',
+                  border:'2px solid rgba(200,16,46,0.2)', display:'flex', alignItems:'center',
+                  justifyContent:'center', margin:'0 auto 1rem' }}>
+                  <svg width="22" height="22" fill="none" stroke="#C8102E" strokeWidth="2.2" strokeLinecap="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                  </svg>
+                </div>
+                <h3 style={{ color:'#1A1209', fontSize:'1.1rem', fontWeight:800, margin:'0 0 0.5rem' }}>
+                  Cancel This Request?
+                </h3>
+                <p style={{ color:'rgba(26,18,9,0.55)', fontSize:'0.88rem', lineHeight:1.6, margin:'0 0 1.5rem' }}>
+                  Are you sure you want to cancel this booking request?
+                </p>
+                <div style={{ display:'flex', gap:'0.75rem' }}>
+                  <button onClick={() => setShowCancel(false)} style={{
+                    flex:1, padding:'0.75rem', borderRadius:8, border:'1.5px solid #E8DFC8',
+                    background:'#F5EFE0', color:'#1A1209', fontWeight:700, fontSize:'0.88rem', cursor:'pointer',
+                  }}>
+                    Keep Booking
+                  </button>
+                  <button onClick={() => setShowCancel(false)} style={{
+                    flex:1, padding:'0.75rem', borderRadius:8, border:'none',
+                    background:'#C8102E', color:'#fff', fontWeight:700, fontSize:'0.88rem', cursor:'pointer',
+                  }}>
+                    Cancel Request
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* CTA + contact */}
           <a href="/menu" style={{ display:'block', width:'100%', textAlign:'center',
