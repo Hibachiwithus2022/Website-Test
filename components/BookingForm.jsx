@@ -150,6 +150,7 @@ export default function BookingForm() {
   const [loading,     setLoading]     = useState(false)
   const [error,       setError]       = useState('')
   const [showCancel,  setShowCancel]  = useState(false)
+  const [cancelled,   setCancelled]   = useState(false)
 
   const [form, setForm] = useState({
     firstName:'', lastName:'', email:'', phone:'',
@@ -193,6 +194,75 @@ export default function BookingForm() {
     } finally {
       setLoading(false)
     }
+  }
+
+  // ── Cancelled screen ────────────────────────────────────────────────────────
+  if (cancelled) {
+    const fullName = `${form.firstName} ${form.lastName}`.trim()
+    const guestSummary = `${form.adults} adult${form.adults!==1?'s':''}, ${form.children} child${form.children!==1?'ren':''}`
+    return (
+      <div style={{ background:'#F5F5F7', borderRadius:16, overflow:'hidden' }}>
+        <div style={{ background:'linear-gradient(135deg,#C8102E 0%,#E8304A 100%)', borderRadius:'16px 16px 0 0', padding:'1.25rem 2rem', textAlign:'center' }}>
+          <span style={{ fontSize:'0.75rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(255,255,255,0.75)' }}>
+            Booking Cancelled
+          </span>
+        </div>
+        <div style={{ background:'#fff', borderRadius:'0 0 16px 16px', padding:'2.5rem 1.5rem', textAlign:'center' }}>
+
+          {/* Icon */}
+          <div style={{ width:80, height:80, borderRadius:'50%', background:'rgba(200,16,46,0.08)',
+            border:'2px solid rgba(200,16,46,0.2)',
+            display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 1.25rem' }}>
+            <svg width="36" height="36" fill="none" stroke="#C8102E" strokeWidth="2.2" strokeLinecap="round" viewBox="0 0 24 24">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </div>
+
+          <h3 style={{ fontFamily:'var(--font-bebas,sans-serif)', fontSize:'2.2rem', color:'#1A1209', margin:'0 0 0.4rem', letterSpacing:'0.03em' }}>
+            Appointment Cancelled
+          </h3>
+          <p style={{ color:'rgba(26,18,9,0.55)', fontSize:'0.95rem', lineHeight:1.7, maxWidth:'26rem', margin:'0 auto 2rem' }}>
+            Your hibachi booking has been successfully cancelled.
+          </p>
+
+          {/* Booking details */}
+          <div style={{ background:'#F5EFE0', borderRadius:12, padding:'1.25rem 1.5rem', marginBottom:'1.75rem', border:'1px solid #E8DFC8', textAlign:'left' }}>
+            <div style={{ fontSize:'0.7rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(26,18,9,0.4)', marginBottom:'1rem' }}>
+              Cancelled Booking
+            </div>
+            <div style={{ display:'flex', flexDirection:'column', gap:'0.6rem' }}>
+              {[
+                { label:'👤 Name',   value: fullName || '—' },
+                { label:'📅 Date',   value: formatLong(date) || '—' },
+                { label:'🕐 Time',   value: time || '—' },
+                { label:'👥 Guests', value: guestSummary },
+              ].map(({ label, value }) => (
+                <div key={label} style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+                  <span style={{ fontSize:'0.82rem', fontWeight:600, color:'rgba(26,18,9,0.45)' }}>{label}</span>
+                  <span style={{ fontSize:'0.88rem', fontWeight:600, color:'#1A1209' }}>{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button onClick={() => {
+            setCancelled(false); setStep(1);
+            setDate(''); setTime(''); setPrevDate(''); setPrevTime('');
+            setForm({ firstName:'', lastName:'', email:'', phone:'',
+              streetAddress:'', city:'', state:'', zip:'',
+              adults:10, children:0, occasion:'', customOccasion:'', specialRequests:'', agreed:false });
+          }} style={{
+            display:'block', width:'100%', textAlign:'center',
+            background:'#C8102E', color:'#fff', fontWeight:700, fontSize:'0.95rem',
+            padding:'0.9rem', borderRadius:10, border:'none', cursor:'pointer',
+            boxShadow:'0 4px 14px rgba(200,16,46,0.3)',
+          }}>
+            Book Another Appointment
+          </button>
+
+        </div>
+      </div>
+    )
   }
 
   // ── Step 3: Success ─────────────────────────────────────────────────────────
@@ -334,7 +404,7 @@ export default function BookingForm() {
                   }}>
                     Keep Booking
                   </button>
-                  <button onClick={() => setShowCancel(false)} style={{
+                  <button onClick={() => { setShowCancel(false); setCancelled(true) }} style={{
                     flex:1, padding:'0.75rem', borderRadius:8, border:'none',
                     background:'#C8102E', color:'#fff', fontWeight:700, fontSize:'0.88rem', cursor:'pointer',
                   }}>
