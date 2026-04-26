@@ -571,12 +571,26 @@ export default function BookingForm() {
                       onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'} />
                   </div>
 
+                  {/* Terms */}
+                  <div style={{ background:'#F5F5F7', borderRadius:12, padding:'1.25rem 1.5rem', display:'flex', alignItems:'center', gap:'0.85rem' }}>
+                    <input type="checkbox" id="editTerms" checked={editForm.agreed}
+                      onChange={e => setEditForm(p => ({...p, agreed: e.target.checked}))}
+                      style={{ width:18, height:18, cursor:'pointer', accentColor:'#C8102E', flexShrink:0 }} />
+                    <label htmlFor="editTerms" style={{ fontSize:'0.88rem', color:'rgba(26,18,9,0.7)', cursor:'pointer', lineHeight:1.5 }}>
+                      I have read and agree to the{' '}
+                      <span style={{ color:'#1A1209', fontWeight:600, textDecoration:'underline' }}>Terms of Service</span>
+                      {' '}and{' '}
+                      <span style={{ color:'#1A1209', fontWeight:600, textDecoration:'underline' }}>Privacy Policy</span>.
+                    </label>
+                  </div>
+
                   {/* Error / success */}
                   {updateError && <p style={{ color:'#C8102E', fontSize:'0.85rem', margin:0 }}>{updateError}</p>}
                   {updateSuccess && <p style={{ color:'#2a7a2a', fontSize:'0.85rem', fontWeight:600, margin:0 }}>✓ Your booking has been updated.</p>}
 
                   {/* Update button */}
                   <button disabled={updateLoading} onClick={async () => {
+                    if (!editForm.agreed) { setUpdateError('Please agree to the Terms of Service to continue.'); return; }
                     setUpdateLoading(true); setUpdateError(''); setUpdateSuccess(false);
                     const oldName    = `${form.firstName} ${form.lastName}`.trim();
                     const newName    = `${editForm.firstName} ${editForm.lastName}`.trim();
