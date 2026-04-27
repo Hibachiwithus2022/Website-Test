@@ -93,6 +93,7 @@ export async function POST(req) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          action: 'create',
           bookingId,
           name: data.name,
           email: data.email,
