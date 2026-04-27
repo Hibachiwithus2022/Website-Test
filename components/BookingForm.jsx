@@ -427,6 +427,7 @@ export default function BookingForm() {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
+                          bookingId,
                           name: fullName, email: form.email, phone: form.phone,
                           date: formatLong(date), time, guests: guestSummary,
                           message: form.specialRequests || '',

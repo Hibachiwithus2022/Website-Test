@@ -47,6 +47,15 @@ export async function POST(req) {
       `,
     });
 
+    // UPDATE GOOGLE SHEETS
+    if (process.env.SHEETS_WEBHOOK_URL) {
+      fetch(process.env.SHEETS_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'cancel', bookingId: data.bookingId }),
+      }).catch(() => {});
+    }
+
     return Response.json({ success: true });
 
   } catch (error) {
