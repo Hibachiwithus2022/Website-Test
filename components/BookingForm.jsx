@@ -149,6 +149,7 @@ export default function BookingForm() {
   const [prevTime, setPrevTime] = useState('')
   const [loading,     setLoading]     = useState(false)
   const [error,       setError]       = useState('')
+  const [bookingId,   setBookingId]   = useState('')
   const [showCancel,    setShowCancel]    = useState(false)
   const [cancelled,     setCancelled]     = useState(false)
   const [cancelLoading, setCancelLoading] = useState(false)
@@ -200,7 +201,7 @@ export default function BookingForm() {
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify(payload),
       })
-      if (res.ok) { setStep(3) }
+      if (res.ok) { const json = await res.json(); setBookingId(json.bookingId || ''); setStep(3) }
       else { setError('Something went wrong. Please try again or call us directly.') }
     } catch {
       setError('Network error. Please check your connection.')
@@ -280,7 +281,7 @@ export default function BookingForm() {
 
   // ── Step 3: Success ─────────────────────────────────────────────────────────
   if (step === 3) {
-    const refNum = 'HC-' + Date.now().toString(36).toUpperCase().slice(-6)
+    const refNum = bookingId
     const fullName = `${form.firstName} ${form.lastName}`.trim()
     const address = [form.streetAddress, form.city, form.state, form.zip].filter(Boolean).join(', ')
     const guestSummary = `${form.adults} adult${form.adults!==1?'s':''}, ${form.children} child${form.children!==1?'ren':''}`

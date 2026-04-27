@@ -3,6 +3,7 @@ import nodemailer from "nodemailer";
 export async function POST(req) {
   try {
     const data = await req.json();
+    const bookingId = 'HIB-' + Date.now().toString(36).toUpperCase().slice(-6);
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -23,6 +24,7 @@ export async function POST(req) {
         : `🔥 New Hibachi Booking — ${data.name} (${data.date} at ${data.time})`,
       html: isReschedule ? `
         <h2>Booking Rescheduled</h2>
+        <p><strong>Booking ID:</strong> ${bookingId}</p>
         <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Phone:</strong> ${data.phone}</p>
@@ -34,6 +36,7 @@ export async function POST(req) {
         <p><strong>Special Requests:</strong> ${data.message || '—'}</p>
       ` : `
         <h2>New Booking Request</h2>
+        <p><strong>Booking ID:</strong> ${bookingId}</p>
         <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Phone:</strong> ${data.phone}</p>
@@ -56,6 +59,7 @@ export async function POST(req) {
       html: isReschedule ? `
         <h2>Hi ${data.name},</h2>
         <p>Your <strong>Hibachi Connect</strong> booking has been rescheduled.</p>
+        <p><strong>Booking ID:</strong> ${bookingId}</p>
         <p><strong>Previous Date:</strong> ${data.prevDate} at ${data.prevTime}</p>
         <p><strong>New Date:</strong> ${data.date} at ${data.time}</p>
         <ul>
@@ -68,6 +72,7 @@ export async function POST(req) {
       ` : `
         <h2>Hi ${data.name},</h2>
         <p>Thanks for booking with <strong>Hibachi Connect</strong>!</p>
+        <p><strong>Booking ID:</strong> ${bookingId}</p>
         <p>Here are your event details:</p>
         <ul>
           <li><strong>Date:</strong> ${data.date}</li>
@@ -88,6 +93,7 @@ export async function POST(req) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          bookingId,
           name: data.name,
           email: data.email,
           phone: data.phone,
@@ -99,7 +105,7 @@ export async function POST(req) {
       }).catch(() => {});
     }
 
-    return Response.json({ success: true });
+    return Response.json({ success: true, bookingId });
 
   } catch (error) {
     console.error(error);
