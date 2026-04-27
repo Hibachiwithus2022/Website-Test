@@ -58,21 +58,23 @@ export async function POST(req) {
 
     // UPDATE GOOGLE SHEETS
     if (process.env.SHEETS_WEBHOOK_URL) {
-      fetch(process.env.SHEETS_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'update',
-          bookingId: data.bookingId,
-          name: data.newName,
-          email: data.email,
-          phone: data.newPhone,
-          date: data.date,
-          time: data.time,
-          guests: data.newGuests,
-          message: data.newNotes || '',
-        }),
-      }).catch(() => {});
+      try {
+        await fetch(process.env.SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'update',
+            bookingId: data.bookingId,
+            name: data.newName,
+            email: data.email,
+            phone: data.newPhone,
+            date: data.date,
+            time: data.time,
+            guests: data.newGuests,
+            message: data.newNotes || '',
+          }),
+        });
+      } catch (err) { console.error('[Sheets] Update error:', err); }
     }
 
     return Response.json({ success: true });
