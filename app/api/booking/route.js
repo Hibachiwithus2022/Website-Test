@@ -82,6 +82,23 @@ export async function POST(req) {
       `,
     });
 
+    // LOG TO GOOGLE SHEETS
+    if (process.env.SHEETS_WEBHOOK_URL) {
+      fetch(process.env.SHEETS_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          date: data.date,
+          time: data.time,
+          guests: data.guests,
+          message: data.message || '',
+        }),
+      }).catch(() => {});
+    }
+
     return Response.json({ success: true });
 
   } catch (error) {
