@@ -89,21 +89,15 @@ export async function POST(req) {
 
     // LOG TO GOOGLE SHEETS
     if (process.env.SHEETS_WEBHOOK_URL) {
+      const payload = { action: 'create', bookingId, name: data.name, email: data.email, phone: data.phone, date: data.date, time: data.time, guests: data.guests, message: data.message || '' };
+      console.log('[Sheets] Sending payload:', JSON.stringify(payload));
       fetch(process.env.SHEETS_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'create',
-          bookingId,
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          date: data.date,
-          time: data.time,
-          guests: data.guests,
-          message: data.message || '',
-        }),
-      }).catch(() => {});
+        body: JSON.stringify(payload),
+      }).then(r => r.text()).then(t => console.log('[Sheets] Response:', t)).catch(err => console.error('[Sheets] Error:', err));
+    } else {
+      console.warn('[Sheets] SHEETS_WEBHOOK_URL is not set');
     }
 
     return Response.json({ success: true, bookingId });
