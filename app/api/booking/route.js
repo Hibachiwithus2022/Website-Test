@@ -93,7 +93,7 @@ export async function POST(req) {
         const sheetsRes = await fetch(process.env.SHEETS_WEBHOOK_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ action: 'create', bookingId, name: data.name, email: data.email, phone: data.phone, date: data.date, time: data.time, guests: data.guests, message: data.message || '' }),
+          body: JSON.stringify({ action: 'create', bookingId, name: data.name, email: data.email, phone: data.phone, date: data.date, time: data.time, guests: data.guests, message: data.message || '', address: data.address || '' }),
         });
         console.log('[Sheets] Response:', await sheetsRes.text());
       } catch (err) {
