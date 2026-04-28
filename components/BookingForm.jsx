@@ -172,6 +172,7 @@ export default function BookingForm() {
     streetAddress:'', city:'', state:'', zip:'',
     adults:10, children:0,
     occasion:'', customOccasion:'', specialRequests:'',
+    adultProteinText:'', childrenProteinText:'', proteinUnknown: false,
     agreed: false,
   })
 
@@ -193,6 +194,8 @@ export default function BookingForm() {
       address: `${form.streetAddress}, ${form.city}, ${form.state} ${form.zip}`,
       occasion: form.customOccasion || form.occasion,
       message: form.specialRequests,
+      proteins: form.proteinUnknown ? 'TBD — will confirm closer to event' :
+        [form.adultProteinText && `Adults: ${form.adultProteinText}`, form.childrenProteinText && `Children: ${form.childrenProteinText}`].filter(Boolean).join(' | '),
       ...(prevDate && prevTime ? { prevDate: formatLong(prevDate), prevTime } : {}),
     }
 
@@ -831,6 +834,79 @@ export default function BookingForm() {
                   <GuestCounter label="Number of Children" value={form.children}
                     options={CHILD_OPTIONS} onChange={v => set('children', v)} />
                 </div>
+              </div>
+
+              {/* Protein Selection */}
+              <div style={{ background: form.proteinUnknown ? '#FFFBEB' : '#fff', borderRadius:12, padding:'1.5rem',
+                border: form.proteinUnknown ? '1px solid #F5D97A' : 'none', transition:'background 0.2s' }}>
+                <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'1.25rem' }}>
+                  <div className="flex items-center gap-2">
+                    <span style={{ color:'#C8102E' }}>
+                      <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                        <path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+                      </svg>
+                    </span>
+                    <span style={{ fontWeight:700, fontSize:'1.05rem', color:'#1A1209' }}>Protein Selection</span>
+                  </div>
+                  <button type="button" onClick={() => set('proteinUnknown', !form.proteinUnknown)}
+                    style={{ padding:'0.35rem 0.85rem', borderRadius:999, fontSize:'0.8rem', fontWeight:600, cursor:'pointer',
+                      border: form.proteinUnknown ? '1.5px solid #D4A843' : '1.5px solid rgba(26,18,9,0.2)',
+                      background: form.proteinUnknown ? 'rgba(212,168,67,0.08)' : '#fff',
+                      color: form.proteinUnknown ? '#B8860B' : 'rgba(26,18,9,0.55)' }}>
+                    {form.proteinUnknown ? 'I know my proteins' : "Don't know yet?"}
+                  </button>
+                </div>
+
+                {form.proteinUnknown ? (
+                  <div style={{ background:'#FFFBEB', border:'1px solid #F5D97A', borderRadius:8,
+                    padding:'0.75rem 1rem', display:'flex', gap:'0.5rem', alignItems:'flex-start' }}>
+                    <svg width="16" height="16" fill="none" stroke="#B8860B" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink:0, marginTop:2 }}>
+                      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <span style={{ fontSize:'0.85rem', color:'#92660A', lineHeight:1.5 }}>
+                      No worries — we will reach out closer to your event to confirm final headcount and protein selections.
+                    </span>
+                  </div>
+                ) : (
+                  <div style={{ display:'flex', flexDirection:'column', gap:'0.85rem' }}>
+                    <div>
+                      <label style={{ display:'block', fontSize:'0.8rem', fontWeight:600, color:'rgba(26,18,9,0.55)', marginBottom:'0.4rem' }}>
+                        Adults Protein Selection
+                      </label>
+                      <input value={form.adultProteinText}
+                        onChange={e => set('adultProteinText', e.target.value)}
+                        placeholder="e.g., 5 chicken, 4 steak, 2 shrimp"
+                        style={{ width:'100%', padding:'0.75rem 1rem', border:'1.5px solid rgba(26,18,9,0.15)',
+                          borderRadius:8, background:'#fff', color:'#1A1209', fontSize:'0.92rem',
+                          outline:'none', boxSizing:'border-box', fontFamily:'inherit' }}
+                        onFocus={e => e.target.style.borderColor='#C8102E'}
+                        onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'} />
+                    </div>
+                    <div>
+                      <label style={{ display:'block', fontSize:'0.8rem', fontWeight:600, color:'rgba(26,18,9,0.55)', marginBottom:'0.4rem' }}>
+                        Children Protein Selection
+                      </label>
+                      <input value={form.childrenProteinText}
+                        onChange={e => set('childrenProteinText', e.target.value)}
+                        placeholder="e.g., 2 chicken, 1 steak"
+                        style={{ width:'100%', padding:'0.75rem 1rem', border:'1.5px solid rgba(26,18,9,0.15)',
+                          borderRadius:8, background:'#fff', color:'#1A1209', fontSize:'0.92rem',
+                          outline:'none', boxSizing:'border-box', fontFamily:'inherit' }}
+                        onFocus={e => e.target.style.borderColor='#C8102E'}
+                        onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'} />
+                    </div>
+                    <p style={{ fontSize:'0.78rem', color:'rgba(26,18,9,0.4)', margin:0 }}>
+                      Enter protein quantities separated by commas (e.g., 5 chicken, 3 steak).
+                    </p>
+                    {(form.adultProteinText || form.childrenProteinText) && (
+                      <p style={{ fontSize:'0.82rem', color:'rgba(26,18,9,0.45)', margin:0, fontStyle:'italic' }}>
+                        {form.adultProteinText && `Adults: ${form.adultProteinText.trim()}`}
+                        {form.adultProteinText && form.childrenProteinText && ' | '}
+                        {form.childrenProteinText && `Children: ${form.childrenProteinText.trim()}`}
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Occasion */}
