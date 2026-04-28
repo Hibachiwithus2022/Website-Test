@@ -159,6 +159,7 @@ export default function BookingForm() {
   const [updateLoading, setUpdateLoading] = useState(false)
   const [updateSuccess, setUpdateSuccess] = useState(false)
   const [updateError,   setUpdateError]   = useState('')
+  const [approxMode,          setApproxMode]          = useState(false)
   const [showReschedule,      setShowReschedule]      = useState(false)
   const [rescheduleDate,      setRescheduleDate]      = useState('')
   const [rescheduleTime,      setRescheduleTime]      = useState('')
@@ -773,13 +774,40 @@ export default function BookingForm() {
 
               {/* Event Address */}
               <div style={{ background:'#fff', borderRadius:12, padding:'1.5rem' }}>
-                <SectionHeader
-                  icon={<svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>}
-                  title="Event Address"
-                />
+                <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'1.25rem' }}>
+                  <div className="flex items-center gap-2">
+                    <span style={{ color:'#C8102E' }}><svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                    <span style={{ fontWeight:700, fontSize:'1.05rem', color:'#1A1209' }}>Event Address</span>
+                  </div>
+                  <button type="button" onClick={() => { setApproxMode(p => !p); set('streetAddress', '') }}
+                    style={{ padding:'0.35rem 0.85rem', borderRadius:999, fontSize:'0.8rem', fontWeight:600, cursor:'pointer',
+                      border: approxMode ? '1.5px solid #D4A843' : '1.5px solid rgba(26,18,9,0.2)',
+                      background: approxMode ? 'rgba(212,168,67,0.08)' : '#fff',
+                      color: approxMode ? '#B8860B' : 'rgba(26,18,9,0.55)' }}>
+                    {approxMode ? 'Enter exact address' : "Don't know yet?"}
+                  </button>
+                </div>
+
+                {approxMode && (
+                  <div style={{ background:'#FFFBEB', border:'1px solid #F5D97A', borderRadius:8,
+                    padding:'0.75rem 1rem', marginBottom:'0.85rem', display:'flex', gap:'0.5rem', alignItems:'flex-start' }}>
+                    <svg width="16" height="16" fill="none" stroke="#B8860B" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink:0, marginTop:2 }}>
+                      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <span style={{ fontSize:'0.85rem', color:'#92660A', lineHeight:1.5 }}>
+                      No problem — just describe the approximate area. You can update the exact address any time from your booking confirmation page.
+                    </span>
+                  </div>
+                )}
+
                 <div style={{ display:'flex', flexDirection:'column', gap:'0.85rem' }}>
-                  <Input label="Street Address" required placeholder="Enter street address"
-                    value={form.streetAddress} onChange={e => set('streetAddress', e.target.value)} />
+                  {approxMode ? (
+                    <Input label="Approximate Location" required placeholder="e.g., South Austin area, near downtown"
+                      value={form.streetAddress} onChange={e => set('streetAddress', e.target.value)} />
+                  ) : (
+                    <Input label="Street Address" required placeholder="Enter street address"
+                      value={form.streetAddress} onChange={e => set('streetAddress', e.target.value)} />
+                  )}
                   <div style={{ display:'grid', gridTemplateColumns:'1fr 0.6fr 0.8fr', gap:'0.85rem' }}>
                     <Input label="City" required placeholder="Enter city"
                       value={form.city} onChange={e => set('city', e.target.value)} />
