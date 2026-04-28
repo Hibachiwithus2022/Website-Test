@@ -957,6 +957,9 @@ export default function BookingForm() {
                   onFocus={e => e.target.style.borderColor='#C8102E'}
                   onBlur={e => e.target.style.borderColor='rgba(26,18,9,0.15)'}
                 />
+                <p style={{ margin:'0.4rem 0 0', fontSize:'0.78rem', color:'rgba(26,18,9,0.38)' }}>
+                  e.g., food allergies, dietary restrictions, special instructions
+                </p>
               </div>
 
               {/* Policy notes */}
