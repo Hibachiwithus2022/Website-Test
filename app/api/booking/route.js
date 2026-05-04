@@ -277,9 +277,9 @@ export async function POST(req) {
 
     // EMAIL TO OWNER (admin view with raw form data + customer email below)
     await transporter.sendMail({
-      from: 'Hibachi Connect <info@hibachiconnect.com>',
+      from: `${data.name} <info@hibachiconnect.com>`,
       to: 'info@hibachiconnect.com',
-      replyTo: data.email,
+      replyTo: `${data.name} <${data.email}>`,
       subject: isReschedule
         ? `📅 Rescheduled | ${data.name} | ${data.date} at ${data.time}`
         : `🔥 New Booking | ${data.name} | ${data.date} at ${data.time}`,

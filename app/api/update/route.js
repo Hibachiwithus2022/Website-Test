@@ -29,9 +29,9 @@ export async function POST(req) {
 
     // EMAIL TO ADMIN
     await transporter.sendMail({
-      from: 'Hibachi Connect <info@hibachiconnect.com>',
+      from: `${data.newName} <info@hibachiconnect.com>`,
       to: 'info@hibachiconnect.com',
-      replyTo: data.email,
+      replyTo: `${data.newName} <${data.email}>`,
       subject: `✏️ Updated | ${data.newName} | ${data.date} at ${data.time}`,
       html: `
         <h2>Booking Updated</h2>

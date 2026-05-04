@@ -112,9 +112,9 @@ export async function POST(req) {
 
     // EMAIL TO ADMIN
     await transporter.sendMail({
-      from: 'Hibachi Connect <info@hibachiconnect.com>',
+      from: `${data.name} <info@hibachiconnect.com>`,
       to: 'info@hibachiconnect.com',
-      replyTo: data.email,
+      replyTo: `${data.name} <${data.email}>`,
       subject: `❌ Cancelled | ${data.name} | ${data.date} at ${data.time}`,
       html: sharedHtml,
     });
