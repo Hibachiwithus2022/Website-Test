@@ -29,8 +29,8 @@ export async function POST(req) {
 
     // EMAIL TO ADMIN
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+      from: 'Hibachi Connect <info@hibachiconnect.com>',
+      to: 'info@hibachiconnect.com',
       subject: `Booking Updated – ${data.newName} – ${data.date}`,
       html: `
         <h2>Booking Updated</h2>
@@ -42,7 +42,7 @@ export async function POST(req) {
 
     // EMAIL TO CUSTOMER
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: data.email,
       subject: "Your Hibachi Booking Has Been Updated",
       html: `

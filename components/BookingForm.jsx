@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import BookingCalendar from './booking/BookingCalendar'
 import BookingTimeSlots from './booking/BookingTimeSlots'
 
@@ -141,7 +141,7 @@ function Input({ label, required, ...props }) {
 }
 
 // ── Main component ────────────────────────────────────────────────────────────
-export default function BookingForm() {
+export default function BookingForm({ initialData } = {}) {
   const [step,     setStep]    = useState(1)
   const [date,     setDate]    = useState('')
   const [time,     setTime]    = useState('')
@@ -178,6 +178,30 @@ export default function BookingForm() {
 
   function set(key, val) { setForm(p => ({...p, [key]: val})) }
 
+  useEffect(() => {
+    if (!initialData?.bid) return
+    const { bid, name = '', email = '', phone = '', dateIso = '', time: initTime = '',
+      adults: initAdults = 10, children: initChildren = 0,
+      street = '', city = '', state = '', zip = '',
+      occasion = '', notes = '' } = initialData
+    const nameParts = name.trim().split(' ')
+    const firstName = nameParts[0] || ''
+    const lastName = nameParts.slice(1).join(' ')
+    setForm(p => ({
+      ...p,
+      firstName, lastName, email, phone,
+      streetAddress: street, city, state, zip,
+      adults: parseInt(initAdults) || 10,
+      children: parseInt(initChildren) || 0,
+      occasion, specialRequests: notes,
+      agreed: true,
+    }))
+    setDate(dateIso)
+    setTime(initTime)
+    setBookingId(bid)
+    setStep(3)
+  }, [])
+
   async function handleSubmit(e) {
     e.preventDefault()
     if (!form.agreed) { setError('Please agree to the Terms of Service to continue.'); return }
@@ -192,10 +216,17 @@ export default function BookingForm() {
       time,
       guests: `${form.adults} adult${form.adults!==1?'s':''}, ${form.children} child${form.children!==1?'ren':''}`,
       address: `${form.streetAddress}, ${form.city}, ${form.state} ${form.zip}`,
+      streetAddress: form.streetAddress,
+      city: form.city,
+      state: form.state,
+      zip: form.zip,
       occasion: form.customOccasion || form.occasion,
       message: form.specialRequests,
       proteins: form.proteinUnknown ? 'TBD — will confirm closer to event' :
         [form.adultProteinText && `Adults: ${form.adultProteinText}`, form.childrenProteinText && `Children: ${form.childrenProteinText}`].filter(Boolean).join(' | '),
+      dateIso: date,
+      adults: form.adults,
+      children: form.children,
       ...(prevDate && prevTime ? { prevDate: formatLong(prevDate), prevTime } : {}),
     }
 

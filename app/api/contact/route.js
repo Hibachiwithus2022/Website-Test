@@ -13,8 +13,8 @@ export async function POST(req) {
     });
 
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+      from: 'Hibachi Connect <info@hibachiconnect.com>',
+      to: 'info@hibachiconnect.com',
       subject: `New Contact Message — ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>

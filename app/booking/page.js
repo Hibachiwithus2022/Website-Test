@@ -1,4 +1,5 @@
-import BookingForm from '../../components/BookingForm';
+import { Suspense } from 'react';
+import BookingFormLoader from './BookingFormLoader';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -32,7 +33,9 @@ export default function BookingPage() {
 
       {/* Booking Form */}
       <section style={{ maxWidth: '760px', margin: '0 auto', padding: '48px 24px 80px' }}>
-        <BookingForm />
+        <Suspense fallback={null}>
+          <BookingFormLoader />
+        </Suspense>
 
         <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.85rem', color: 'rgba(26,18,9,0.45)' }}>
           Prefer to call?{' '}
