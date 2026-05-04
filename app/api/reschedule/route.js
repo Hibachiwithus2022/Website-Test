@@ -115,7 +115,8 @@ export async function POST(req) {
     await transporter.sendMail({
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: 'info@hibachiconnect.com',
-      subject: `📅 Booking Rescheduled — ${data.name} → ${data.newDate} at ${data.newTime}`,
+      replyTo: data.email,
+      subject: `📅 Rescheduled | ${data.name} | ${data.newDate} at ${data.newTime}`,
       html: sharedHtml,
     });
 
@@ -123,7 +124,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: data.email,
-      subject: "📅 Your Hibachi Booking Has Been Rescheduled",
+      subject: `📅 Rescheduled | ${data.name} | ${data.newDate} at ${data.newTime}`,
       html: sharedHtml,
     });
 

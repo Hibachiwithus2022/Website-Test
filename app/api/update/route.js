@@ -31,7 +31,8 @@ export async function POST(req) {
     await transporter.sendMail({
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: 'info@hibachiconnect.com',
-      subject: `Booking Updated – ${data.newName} – ${data.date}`,
+      replyTo: data.email,
+      subject: `✏️ Updated | ${data.newName} | ${data.date} at ${data.time}`,
       html: `
         <h2>Booking Updated</h2>
         <p><strong>Date:</strong> ${data.date} at ${data.time}</p>
@@ -44,7 +45,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: data.email,
-      subject: "Your Hibachi Booking Has Been Updated",
+      subject: `✏️ Updated | ${data.newName} | ${data.date} at ${data.time}`,
       html: `
         <h2>Hi ${data.newName},</h2>
         <p>Your <strong>Hibachi Connect</strong> booking details have been updated.</p>

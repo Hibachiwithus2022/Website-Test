@@ -114,7 +114,8 @@ export async function POST(req) {
     await transporter.sendMail({
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: 'info@hibachiconnect.com',
-      subject: `❌ Booking Cancelled — ${data.name} (${data.date} at ${data.time})`,
+      replyTo: data.email,
+      subject: `❌ Cancelled | ${data.name} | ${data.date} at ${data.time}`,
       html: sharedHtml,
     });
 
@@ -122,7 +123,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: data.email,
-      subject: "Your Hibachi Booking Has Been Cancelled",
+      subject: `❌ Cancelled | ${data.name} | ${data.date} at ${data.time}`,
       html: sharedHtml,
     });
 

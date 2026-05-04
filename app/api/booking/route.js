@@ -279,9 +279,10 @@ export async function POST(req) {
     await transporter.sendMail({
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: 'info@hibachiconnect.com',
+      replyTo: data.email,
       subject: isReschedule
-        ? `📅 Booking Rescheduled — ${data.name} (${data.date} at ${data.time})`
-        : `🔥 New Booking — ${data.name} (${data.date} at ${data.time})`,
+        ? `📅 Rescheduled | ${data.name} | ${data.date} at ${data.time}`
+        : `🔥 New Booking | ${data.name} | ${data.date} at ${data.time}`,
       html: ownerEmailHtml({
         bookingId,
         isReschedule,
@@ -309,8 +310,8 @@ export async function POST(req) {
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: data.email,
       subject: isReschedule
-        ? "📅 Your Hibachi Booking Has Been Rescheduled"
-        : "🔥 Your Hibachi Booking Request Received – " + bookingId,
+        ? `📅 Rescheduled | ${data.name} | ${data.date} at ${data.time}`
+        : `🔥 Booking Request Received | ${data.name} | ${data.date} at ${data.time}`,
       html: customerHtml,
     });
 

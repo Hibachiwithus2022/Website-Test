@@ -15,6 +15,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: 'Hibachi Connect <info@hibachiconnect.com>',
       to: 'info@hibachiconnect.com',
+      replyTo: email,
       subject: `New Contact Message — ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
