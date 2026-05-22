@@ -1,4 +1,3 @@
-import BookingForm from '../BookingForm'
 import { CLOSING_VARIANTS } from '../../lib/cityData'
 
 export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClosingVariant = 0 }) {
@@ -42,7 +41,16 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
         </div>
 
         {/* Booking calendar */}
-        <BookingForm />
+        <iframe
+          src="https://app.acuityscheduling.com/schedule.php?owner=39391414&ref=embedded_csp"
+          title="Schedule Appointment"
+          width="100%"
+          height="800"
+          frameBorder="0"
+          allow="payment"
+          style={{ display: 'block', border: 'none', borderRadius: '12px', minHeight: '800px' }}
+        />
+        <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript" async />
 
         {/* Contact fallback */}
         <p className="text-center" style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(26,18,9,0.4)' }}>
