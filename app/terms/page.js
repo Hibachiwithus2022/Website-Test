@@ -5,12 +5,13 @@ export const metadata = {
   title: 'Terms & Conditions | Hibachi Connect',
   description: 'Terms and Conditions for Hibachi Connect private hibachi chef services. Read our policies on bookings, cancellations, liability, and independent contractor relationships.',
   robots: { index: true, follow: true },
+  alternates: { canonical: 'https://hibachiconnect.com/terms' },
 }
 
 const EFFECTIVE_DATE = 'April 18, 2026'
 const COMPANY = 'Hibachi Connect'
 const EMAIL = 'info@hibachiconnect.com'
-const PHONE = '(602) 767-2965'
+const PHONE = '(201) 565-3878'
 
 const sections = [
   {
@@ -231,7 +232,7 @@ export default function TermsPage() {
                 By using Hibachi Connect's services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. These Terms were last updated on {EFFECTIVE_DATE}. For questions, contact us at{' '}
                 <a href={`mailto:${EMAIL}`} style={{ color: '#C8102E', textDecoration: 'none', fontWeight: 600 }}>{EMAIL}</a>{' '}
                 or{' '}
-                <a href={`tel:+16027672965`} style={{ color: '#C8102E', textDecoration: 'none', fontWeight: 600 }}>{PHONE}</a>.
+                <a href={`tel:+12015653878`} style={{ color: '#C8102E', textDecoration: 'none', fontWeight: 600 }}>{PHONE}</a>.
               </p>
             </div>
 

@@ -145,8 +145,8 @@ export default function FAQPage() {
               Call us or book online — we respond within 1 business day.
             </p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="tel:+16027672965" style={{ background: '#D4A843', color: '#1A1209', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, fontSize: '14px', textDecoration: 'none' }}>
-                (602) 767-2965
+              <a href="tel:+12015653878" style={{ background: '#D4A843', color: '#1A1209', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, fontSize: '14px', textDecoration: 'none' }}>
+                (201) 565-3878
               </a>
               <a href="/booking" style={{ background: '#C8102E', color: '#fff', padding: '12px 24px', borderRadius: '8px', fontWeight: 700, fontSize: '14px', textDecoration: 'none' }}>
                 Book Now

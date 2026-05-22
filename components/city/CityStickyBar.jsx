@@ -57,7 +57,7 @@ export default function CityStickyBar({ cityName }) {
       {/* Right: CTAs */}
       <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0 }}>
         <a
-          href="tel:+16027672965"
+          href="tel:+12015653878"
           aria-label="Call Hibachi Connect"
           style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',

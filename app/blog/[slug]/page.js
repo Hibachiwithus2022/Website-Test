@@ -15,6 +15,7 @@ export async function generateMetadata({ params }) {
     return {
       title: `${post.title} | Hibachi Connect Blog`,
       description: post.description,
+      alternates: { canonical: `https://hibachiconnect.com/blog/${params.slug}` },
     };
   } catch {
     return { title: 'Blog | Hibachi Connect' };

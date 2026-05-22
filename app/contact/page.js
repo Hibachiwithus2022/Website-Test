@@ -52,7 +52,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <div style={{ color: '#888', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '4px' }}>Phone</div>
-                <a href="tel:+16027672965" style={{ color: '#1A1209', fontSize: '16px', fontWeight: 700, textDecoration: 'none' }}>(602) 767-2965</a>
+                <a href="tel:+12015653878" style={{ color: '#1A1209', fontSize: '16px', fontWeight: 700, textDecoration: 'none' }}>(201) 565-3878</a>
                 <p style={{ color: '#888', fontSize: '13px', margin: '4px 0 0' }}>Mon–Sun, 9am–9pm</p>
               </div>
             </div>

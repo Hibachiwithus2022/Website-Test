@@ -59,7 +59,7 @@ export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], s
         {/* Schema note */}
         <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.82rem', color: 'rgba(26,18,9,0.38)' }}>
           Have more questions? Call or text us at{' '}
-          <a href="tel:+16027672965" style={{ color: '#C8102E', textDecoration: 'none' }}>(602) 767-2965</a>
+          <a href="tel:+12015653878" style={{ color: '#C8102E', textDecoration: 'none' }}>(201) 565-3878</a>
         </p>
 
       </div>

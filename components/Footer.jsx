@@ -24,7 +24,9 @@ export default function Footer() {
               ].map(s => (
                 <a
                   key={s.label}
-                  href="#"
+                  href="https://www.instagram.com/hibachiconnect"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
                   style={{
                     width: 38, height: 38,
@@ -52,12 +54,12 @@ export default function Footer() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {[
-                { label: 'How It Works', href: '#how-it-works' },
-                { label: 'Menu',         href: '#menu' },
-                { label: 'Pricing',      href: '#pricing' },
-                { label: 'Locations',    href: '#locations' },
-                { label: 'Reviews',      href: '#reviews' },
-                { label: 'FAQ',          href: '#faq' },
+                { label: 'How It Works', href: '/#how-it-works' },
+                { label: 'Menu',         href: '/menu' },
+                { label: 'Pricing',      href: '/#pricing' },
+                { label: 'Locations',    href: '/locations' },
+                { label: 'Reviews',      href: '/#reviews' },
+                { label: 'FAQ',          href: '/faq' },
                 { label: 'Book Now',     href: '/booking' },
                 { label: 'Blog',         href: '/blog' },
                 { label: 'Contact Us',   href: '/contact' },
@@ -81,8 +83,8 @@ export default function Footer() {
               Contact
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <a href="tel:+16027672965" style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.6)', textDecoration: 'none' }}>
-                (602) 767-2965
+              <a href="tel:+12015653878" style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.6)', textDecoration: 'none' }}>
+                (201) 565-3878
               </a>
               <a href="mailto:info@hibachiconnect.com" style={{ fontSize: '0.9rem', color: 'rgba(245,239,224,0.6)', textDecoration: 'none' }}>
                 info@hibachiconnect.com

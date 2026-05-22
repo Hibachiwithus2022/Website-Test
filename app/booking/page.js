@@ -1,11 +1,10 @@
-import { Suspense } from 'react';
-import BookingFormLoader from './BookingFormLoader';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 export const metadata = {
   title: 'Book Your Private Hibachi Chef | Hibachi Connect',
   description: 'Reserve your private hibachi chef. Select your date, time, and guest count — we confirm within 1 business day. $60/adult, $600 minimum.',
+  alternates: { canonical: 'https://hibachiconnect.com/booking' },
 };
 
 export default function BookingPage() {
@@ -32,15 +31,22 @@ export default function BookingPage() {
       </section>
 
       {/* Booking Form */}
-      <section style={{ maxWidth: '760px', margin: '0 auto', padding: '48px 24px 80px' }}>
-        <Suspense fallback={null}>
-          <BookingFormLoader />
-        </Suspense>
+      <section style={{ maxWidth: '900px', margin: '0 auto', padding: '48px 24px 80px' }}>
+        <iframe
+          src="https://app.acuityscheduling.com/schedule.php?owner=39391414&ref=embedded_csp"
+          title="Schedule Appointment"
+          width="100%"
+          height="800"
+          frameBorder="0"
+          allow="payment"
+          style={{ display: 'block', border: 'none', borderRadius: '12px', minHeight: '800px' }}
+        />
+        <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript" async />
 
         <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.85rem', color: 'rgba(26,18,9,0.45)' }}>
           Prefer to call?{' '}
-          <a href="tel:+16027672965" style={{ color: '#C8102E', fontWeight: 600, textDecoration: 'none' }}>
-            (602) 767-2965
+          <a href="tel:+12015653878" style={{ color: '#C8102E', fontWeight: 600, textDecoration: 'none' }}>
+            (201) 565-3878
           </a>
         </p>
       </section>

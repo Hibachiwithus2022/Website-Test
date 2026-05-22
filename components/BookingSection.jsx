@@ -22,8 +22,8 @@ export default function BookingSection() {
         {/* Contact fallback */}
         <p className="text-center mt-8" style={{ fontSize: '0.85rem', color: 'rgba(26,18,9,0.4)' }}>
           Prefer to call?{' '}
-          <a href="tel:+16027672965" style={{ color: '#C8102E', fontWeight: 600, textDecoration: 'none' }}>
-            (602) 767-2965
+          <a href="tel:+12015653878" style={{ color: '#C8102E', fontWeight: 600, textDecoration: 'none' }}>
+            (201) 565-3878
           </a>
         </p>
 

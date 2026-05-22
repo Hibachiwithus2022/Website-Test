@@ -5,6 +5,7 @@ import Footer from '../../components/Footer'
 export const metadata = {
   title: 'Hibachi Menu | Hibachi Connect',
   description: 'Full hibachi menu: proteins, premium add-ons, sides, and extras. Every guest picks 2 proteins. Starting at $60/adult.',
+  alternates: { canonical: 'https://hibachiconnect.com/menu' },
 }
 
 const PROTEINS = [

@@ -53,7 +53,7 @@ export default function StatePage({ params }) {
     areaServed: { '@type': 'State', name: state, containedInPlace: { '@type': 'Country', name: 'United States' } },
     description: `Professional private hibachi chef experience throughout ${state}. We bring the teppanyaki grill, all ingredients, and full entertainment to your home or event venue.`,
     offers: { '@type': 'Offer', price: '60', priceCurrency: 'USD', description: 'Per adult, minimum $600' },
-    telephone: '+16027672965',
+    telephone: '+12015653878',
     email: 'info@hibachiconnect.com',
   }
 

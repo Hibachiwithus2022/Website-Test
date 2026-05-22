@@ -6,6 +6,7 @@ import { getAllPosts } from '../../lib/blog';
 export const metadata = {
   title: 'Blog | Hibachi Connect',
   description: 'Tips, guides, and inspiration for private hibachi events — from backyard parties to corporate dinners.',
+  alternates: { canonical: 'https://hibachiconnect.com/blog' },
 };
 
 const CATEGORY_COLORS = {

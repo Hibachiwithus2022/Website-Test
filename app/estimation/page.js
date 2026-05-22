@@ -5,6 +5,7 @@ import EstimationTool from '../../components/EstimationTool'
 export const metadata = {
   title: 'Price Estimator | Hibachi Connect',
   description: 'Estimate the cost of your private hibachi chef event. $60 per adult, $30 per child (ages 4–12). $600 minimum. Instant pricing calculator.',
+  alternates: { canonical: 'https://hibachiconnect.com/estimation' },
 }
 
 export default function EstimationPage() {

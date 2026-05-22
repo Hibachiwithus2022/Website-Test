@@ -36,9 +36,6 @@ export const metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  alternates: {
-    canonical: 'https://hibachiconnect.com',
-  },
 }
 
 export default function RootLayout({ children }) {

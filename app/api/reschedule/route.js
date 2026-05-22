@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-const SITE_URL = 'https://website-test-theta-lac.vercel.app';
+const SITE_URL = 'https://hibachiconnect.com';
 const LOGO_URL = `${SITE_URL}/brand/logo.png`;
 
 function rescheduleEmailHtml({ name, bookingId, oldDate, oldTime, newDate, newTime, guests, phone, email }) {
@@ -76,7 +76,7 @@ function rescheduleEmailHtml({ name, bookingId, oldDate, oldTime, newDate, newTi
     <p style="margin:0;font-size:13px;color:#888;">
       📧 <a href="mailto:info@hibachiconnect.com" style="color:#C8102E;text-decoration:none;">info@hibachiconnect.com</a>
       &nbsp;·&nbsp;
-      📞 <a href="tel:+16027672965" style="color:#C8102E;text-decoration:none;">(602) 767-2965</a>
+      📞 <a href="tel:+12015653878" style="color:#C8102E;text-decoration:none;">(201) 565-3878</a>
     </p>
     <p style="margin:10px 0 0;font-size:11px;color:#bbb;">Cash or Zelle only · Travel fee may apply based on distance</p>
   </td></tr>

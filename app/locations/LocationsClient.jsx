@@ -195,7 +195,7 @@ export default function LocationsClient({ allStates, citiesByState }) {
             We serve communities across all 50 states. Contact us directly — if you have the space, we'll find a way to bring hibachi to you.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="tel:+16027672965" className="btn-primary">(602) 767-2965</a>
+            <a href="tel:+12015653878" className="btn-primary">(201) 565-3878</a>
             <a href="mailto:info@hibachiconnect.com" className="btn-ghost">Email Us</a>
           </div>
         </div>

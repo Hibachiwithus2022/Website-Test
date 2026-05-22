@@ -1,3 +1,7 @@
+export const metadata = {
+  alternates: { canonical: 'https://hibachiconnect.com' },
+}
+
 import Navbar       from '../components/Navbar'
 import Hero         from '../components/Hero'
 import LocationSearch from '../components/LocationSearch'
@@ -20,7 +24,7 @@ const jsonLd = {
   name:       'Hibachi Connect',
   description:'Private hibachi chef service connecting customers with professional teppanyaki chefs across the United States.',
   url:        'https://hibachiconnect.com',
-  telephone:  '+16027672965',
+  telephone:  '+12015653878',
   email:      'info@hibachiconnect.com',
   areaServed: 'United States (50 states)',
   priceRange: '$60 per person',
