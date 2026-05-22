@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
+import { getAllPosts } from '../../../lib/blog'
 import StateHero           from '../../../components/state/StateHero'
 import StateIntro          from '../../../components/state/StateIntro'
 import StateFeaturedCities from '../../../components/state/StateFeaturedCities'
@@ -44,6 +45,7 @@ export default function StatePage({ params }) {
   const stateData    = getStateData(params.state)
   const cities       = CITIES_BY_STATE[params.state] || []
   const stateLinkData = getStateLinkData(params.state)
+  const blogPosts    = getAllPosts().slice(0, 3)
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -104,6 +106,27 @@ export default function StatePage({ params }) {
 
         {/* Final CTA + booking form */}
         <StateFinalCTA state={state} />
+
+        {/* Related blog posts */}
+        <section style={{ background: '#F5EFE0', padding: '3rem 1.5rem', borderTop: '1px solid rgba(26,18,9,0.07)' }}>
+          <div className="max-w-5xl mx-auto">
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <h3 className="font-display" style={{ fontSize: 'clamp(1.4rem,3vw,1.8rem)', color: '#1A1209', margin: 0 }}>
+                Helpful Guides for Your {state} Event
+              </h3>
+              <Link href="/blog" style={{ fontSize: '0.82rem', fontWeight: 600, color: '#C8102E', textDecoration: 'none' }}>All Articles →</Link>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' }}>
+              {blogPosts.map(post => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} style={{ background: '#fff', borderRadius: '12px', padding: '20px 22px', textDecoration: 'none', display: 'block', boxShadow: '0 2px 8px rgba(26,18,9,0.06)', border: '1px solid rgba(26,18,9,0.06)' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C8102E' }}>{post.category}</span>
+                  <p style={{ color: '#1A1209', fontSize: '15px', fontWeight: 700, lineHeight: 1.4, margin: '6px 0 8px' }}>{post.title}</p>
+                  <span style={{ color: '#C8102E', fontSize: '12px', fontWeight: 600 }}>Read →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Internal linking — other state pages */}
         {nearbyStates.length > 0 && (

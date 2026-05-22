@@ -161,6 +161,24 @@ export default function MenuPage() {
             </div>
           </Section>
 
+          {/* Related resources */}
+          <div style={{ marginBottom: '32px', padding: '20px 24px', background: '#fff', borderRadius: '12px', boxShadow: '0 2px 8px rgba(26,18,9,0.06)' }}>
+            <p style={{ color: '#1A1209', fontSize: '14px', fontWeight: 700, margin: '0 0 12px' }}>Explore More</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {[
+                { label: 'How much does it cost?', href: '/estimation' },
+                { label: 'Hibachi Menu Proteins Guide', href: '/blog/hibachi-menu-proteins-guide' },
+                { label: 'Low-Carb Hibachi Guide', href: '/blog/low-carb-hibachi-at-home-guide' },
+                { label: 'FAQ — Dietary & Allergies', href: '/faq' },
+                { label: 'Find a Chef Near You', href: '/locations' },
+              ].map(l => (
+                <Link key={l.href} href={l.href} style={{ background: '#F5EFE0', border: '1px solid #E8DFC8', borderRadius: '20px', padding: '6px 14px', fontSize: '13px', color: '#C8102E', textDecoration: 'none', fontWeight: 600 }}>
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* CTA */}
           <div style={{ background: '#1A1209', borderRadius: '16px', padding: '40px 32px', textAlign: 'center' }}>
             <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 800, margin: '0 0 10px' }}>

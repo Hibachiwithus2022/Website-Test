@@ -40,6 +40,9 @@ export default async function BlogPostPage({ params }) {
     notFound();
   }
 
+  const allPosts = getAllPosts();
+  const related = allPosts.filter(p => p.slug !== params.slug).slice(0, 3);
+
   const catColor = CATEGORY_COLORS[post.category] || '#C8102E';
 
   return (
@@ -184,13 +187,37 @@ export default async function BlogPostPage({ params }) {
           />
         </article>
 
+        {/* Related Articles */}
+        {related.length > 0 && (
+          <div style={{ marginTop: '56px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+              <h3 style={{ color: '#1A1209', fontSize: '18px', fontWeight: 800, margin: 0 }}>Related Articles</h3>
+              <Link href="/blog" style={{ color: '#C8102E', fontSize: '13px', fontWeight: 600, textDecoration: 'none' }}>All Articles →</Link>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
+              {related.map(p => (
+                <Link key={p.slug} href={`/blog/${p.slug}`} style={{ background: '#fff', borderRadius: '10px', padding: '16px 18px', textDecoration: 'none', display: 'block', boxShadow: '0 2px 8px rgba(26,18,9,0.06)', border: '1px solid rgba(26,18,9,0.06)' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C8102E' }}>{p.category}</span>
+                  <p style={{ color: '#1A1209', fontSize: '14px', fontWeight: 600, lineHeight: 1.4, margin: '6px 0 8px' }}>{p.title}</p>
+                  <span style={{ color: '#C8102E', fontSize: '12px', fontWeight: 600 }}>Read →</span>
+                </Link>
+              ))}
+            </div>
+            <p style={{ marginTop: '16px', fontSize: '13px', color: 'rgba(26,18,9,0.45)', textAlign: 'center' }}>
+              Browse our <Link href="/menu" style={{ color: '#C8102E', textDecoration: 'none' }}>full hibachi menu</Link>,{' '}
+              <Link href="/faq" style={{ color: '#C8102E', textDecoration: 'none' }}>read the FAQ</Link>, or{' '}
+              <Link href="/locations" style={{ color: '#C8102E', textDecoration: 'none' }}>find a chef near you</Link>.
+            </p>
+          </div>
+        )}
+
         {/* CTA */}
         <div style={{
           background: '#1A1209',
           borderRadius: '16px',
           padding: '40px 32px',
           textAlign: 'center',
-          marginTop: '56px',
+          marginTop: '40px',
         }}>
           <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 800, margin: '0 0 10px' }}>
             Ready to book your event?

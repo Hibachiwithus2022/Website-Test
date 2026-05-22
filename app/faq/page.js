@@ -1,12 +1,13 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
 const FAQS = [
   {
     q: 'How much does hibachi at home cost?',
-    a: '$60 per adult · $30 per child (ages 4–12) · Free for ages 3 and under. A $600 event minimum applies to all bookings. Travel fees may apply for locations more than 30 miles from our nearest chef. Use our Estimation page for an instant quote.',
+    a: <span>$60 per adult · $30 per child (ages 4–12) · Free for ages 3 and under. A $600 event minimum applies to all bookings. Travel fees may apply for locations more than 30 miles from our nearest chef. Use our <Link href="/estimation" style={{ color: '#C8102E', textDecoration: 'none', fontWeight: 600 }}>Price Estimator</Link> for an instant quote.</span>,
   },
   {
     q: 'Do you bring tables and chairs?',
@@ -30,7 +31,7 @@ const FAQS = [
   },
   {
     q: 'How far do you travel?',
-    a: 'We serve all 50 U.S. states (excluding Hawaii and Alaska). Travel fees may apply for locations more than 30 miles from our nearest chef base. All travel fees are disclosed upfront before you confirm your booking.',
+    a: <span>We serve all 50 U.S. states (excluding Hawaii and Alaska). Travel fees may apply for locations more than 30 miles from our nearest chef. All fees are disclosed upfront. <Link href="/locations" style={{ color: '#C8102E', textDecoration: 'none', fontWeight: 600 }}>Find a chef in your city →</Link></span>,
   },
   {
     q: 'How far in advance should I book?',
@@ -38,7 +39,7 @@ const FAQS = [
   },
   {
     q: 'What proteins can guests choose from?',
-    a: 'Every guest picks 2 proteins from the standard menu: chicken, steak (sirloin), shrimp, scallops, salmon, or tofu. Premium upgrades are also available: Filet Mignon (+$5/person) and Lobster Tail (+$10/person).',
+    a: <span>Every guest picks 2 proteins from the standard menu: chicken, steak (sirloin), shrimp, scallops, salmon, or tofu. Premium upgrades (Filet Mignon, Lobster Tail) are also available. See the <Link href="/menu" style={{ color: '#C8102E', textDecoration: 'none', fontWeight: 600 }}>full hibachi menu</Link> for details and pricing.</span>,
   },
   {
     q: 'Can you accommodate dietary restrictions or allergies?',
@@ -136,8 +137,23 @@ export default function FAQPage() {
             ))}
           </div>
 
+          {/* Quick links */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginTop: '40px' }}>
+            {[
+              { label: 'View Full Menu', href: '/menu' },
+              { label: 'Get a Price Estimate', href: '/estimation' },
+              { label: 'Read Our Blog', href: '/blog' },
+              { label: 'Find Locations', href: '/locations' },
+              { label: 'Book Now', href: '/booking' },
+            ].map(l => (
+              <Link key={l.href} href={l.href} style={{ background: '#fff', border: '1px solid rgba(26,18,9,0.1)', borderRadius: '8px', padding: '9px 18px', fontSize: '13px', fontWeight: 600, color: '#1A1209', textDecoration: 'none' }}>
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
           {/* CTA */}
-          <div style={{ background: '#1A1209', borderRadius: '16px', padding: '40px 32px', textAlign: 'center', marginTop: '56px' }}>
+          <div style={{ background: '#1A1209', borderRadius: '16px', padding: '40px 32px', textAlign: 'center', marginTop: '24px' }}>
             <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 800, margin: '0 0 10px' }}>
               Still have questions?
             </h3>
