@@ -123,6 +123,7 @@ export default function CityPage({ params }) {
           stateSlug={params.state}
           variant={variant}
           heroImage={heroImage}
+          heroSubtitle={cityData?.heroSubtitle}
         />
 
         {/* 2. Unique intro + local highlights */}

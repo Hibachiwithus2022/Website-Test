@@ -2,8 +2,8 @@
 import Link from 'next/link'
 import { HERO_SUBTITLES } from '../../lib/cityData'
 
-export default function CityHero({ cityName, stateName, stateSlug, variant = 0, heroImage }) {
-  const subtitle = HERO_SUBTITLES[variant % HERO_SUBTITLES.length](cityName, stateName)
+export default function CityHero({ cityName, stateName, stateSlug, variant = 0, heroImage, heroSubtitle }) {
+  const subtitle = heroSubtitle ?? HERO_SUBTITLES[variant % HERO_SUBTITLES.length](cityName, stateName)
 
   return (
     <section
