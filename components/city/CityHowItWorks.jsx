@@ -1,4 +1,6 @@
-const STEPS = [
+'use client'
+
+const DEFAULT_STEPS = [
   {
     num: '01',
     title: 'Book Your Date',
@@ -21,20 +23,30 @@ const STEPS = [
   },
 ]
 
-export default function CityHowItWorks({ cityName }) {
+export default function CityHowItWorks({ cityName, howItWorksData }) {
+  const steps      = howItWorksData?.steps      ?? DEFAULT_STEPS
+  const headline   = howItWorksData?.headline   ? howItWorksData.headline(cityName)   : null
+  const footerNote = howItWorksData?.footerNote ? howItWorksData.footerNote(cityName) : null
+
   return (
     <section style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>How It Works</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
-            From Booking to<br />
-            <span style={{ color: '#C8102E' }}>Your Backyard in {cityName}</span>
-          </h2>
+          {headline ? (
+            <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
+              {headline}
+            </h2>
+          ) : (
+            <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
+              From Booking to<br />
+              <span style={{ color: '#C8102E' }}>Your Backyard in {cityName}</span>
+            </h2>
+          )}
         </div>
 
         <div style={{ display: 'grid', gap: '1.5rem' }} className="md:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map((step, i) => (
+          {steps.map((step, i) => (
             <div
               key={i}
               style={{
@@ -44,7 +56,6 @@ export default function CityHowItWorks({ cityName }) {
                 border: '1px solid rgba(26,18,9,0.09)',
               }}
             >
-              {/* Step number */}
               <div
                 className="font-display"
                 style={{
@@ -55,7 +66,6 @@ export default function CityHowItWorks({ cityName }) {
               >
                 {step.num}
               </div>
-              {/* Accent bar */}
               <div style={{ width: 32, height: 2, background: '#C8102E', marginBottom: '1.25rem' }} />
               <div style={{ fontWeight: 700, color: '#1A1209', fontSize: '0.97rem', marginBottom: '0.6rem' }}>{step.title}</div>
               <div style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.78 }}>{step.desc}</div>
@@ -63,9 +73,8 @@ export default function CityHowItWorks({ cityName }) {
           ))}
         </div>
 
-        {/* Footer note */}
         <p style={{ textAlign: 'center', marginTop: '2.5rem', fontSize: '0.88rem', color: 'rgba(26,18,9,0.45)', fontStyle: 'italic' }}>
-          Whether you're planning a dinner party in {cityName} or hosting friends in the suburbs, we make the entire experience simple.
+          {footerNote ?? `Whether you're planning a dinner party in ${cityName} or hosting friends in the suburbs, we make the entire experience simple.`}
         </p>
       </div>
     </section>

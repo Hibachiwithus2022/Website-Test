@@ -9,7 +9,7 @@ import {
   getBlogPostsForCity,
   HERO_IMAGES,
 } from '../../../../lib/cityData'
-import { getTexasCityData, getTexasBlogPosts } from '../../../../lib/texasData'
+import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks } from '../../../../lib/texasData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -96,6 +96,7 @@ export default function CityPage({ params }) {
   const relatedPosts      = params.state === 'texas'
     ? getTexasBlogPosts(variant, 3)
     : getBlogPostsForCity(variant, 3)
+  const howItWorksData    = params.state === 'texas' ? getTexasHowItWorks(citySlug) : null
   const cityLinkData      = getCityLinkData(citySlug)
   const otherMajorCities  = getOtherMajorCities(params.state, citySlug)
 
@@ -138,7 +139,7 @@ export default function CityPage({ params }) {
         />
 
         {/* 3. How It Works */}
-        <CityHowItWorks cityName={cityName} />
+        <CityHowItWorks cityName={cityName} howItWorksData={howItWorksData} />
 
         {/* 4. Pricing */}
         <CityPricing cityName={cityName} stateName={stateName} />
