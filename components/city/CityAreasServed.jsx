@@ -1,4 +1,10 @@
-export default function CityAreasServed({ cityName, stateName, nearbyCities = [] }) {
+export default function CityAreasServed({ cityName, stateName, nearbyCities = [], areasPill, areasHeadline, areasIntro, areasButton }) {
+  const pill     = areasPill ?? 'Areas We Serve'
+  const headline = areasHeadline ?? null
+  const para1    = areasIntro?.[0] ?? `Hibachi Connect operates throughout ${cityName} and all surrounding neighborhoods, suburbs, and communities. Whether you're in the heart of the city or 20 miles out in the suburbs, our chefs come to you.`
+  const para2    = areasIntro?.[1] ?? `Service may extend beyond the areas listed below depending on chef availability. Contact us with your exact location — we always try to accommodate every request. Travel fees may apply for locations more than 30 miles from ${cityName}.`
+  const btnLabel = areasButton ?? 'Check Availability in My Area'
+
   return (
     <section style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
@@ -6,20 +12,29 @@ export default function CityAreasServed({ cityName, stateName, nearbyCities = []
 
           {/* Left: copy */}
           <div>
-            <div className="red-pill" style={{ marginBottom: '1.25rem' }}>Areas We Serve</div>
+            <div className="red-pill" style={{ marginBottom: '1.25rem' }}>{pill}</div>
             <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '1.25rem' }}>
-              We Proudly Serve<br />
-              <span style={{ color: '#C8102E' }}>{cityName} & Surrounding Areas</span>
+              {headline ? (
+                <>
+                  {headline.split('—')[0].trim()}<br />
+                  <span style={{ color: '#C8102E' }}>{headline.includes('—') ? headline.slice(headline.indexOf('—') + 1).trim() : cityName}</span>
+                </>
+              ) : (
+                <>
+                  We Proudly Serve<br />
+                  <span style={{ color: '#C8102E' }}>{cityName} &amp; Surrounding Areas</span>
+                </>
+              )}
             </h2>
             <p style={{ color: 'rgba(26,18,9,0.65)', lineHeight: 1.82, fontSize: '0.95rem', marginBottom: '1.25rem' }}>
-              Hibachi Connect operates throughout {cityName} and all surrounding neighborhoods, suburbs, and communities. Whether you're in the heart of the city or 20 miles out in the suburbs, our chefs come to you.
+              {para1}
             </p>
             <p style={{ color: 'rgba(26,18,9,0.5)', lineHeight: 1.82, fontSize: '0.88rem' }}>
-              Service may extend beyond the areas listed below depending on chef availability. Contact us with your exact location — we always try to accommodate every request. Travel fees may apply for locations more than 30 miles from {cityName}.
+              {para2}
             </p>
 
             <div style={{ marginTop: '2rem' }}>
-              <a href="/booking" className="btn-primary">Check Availability in My Area</a>
+              <a href="/booking" className="btn-primary">{btnLabel}</a>
             </div>
           </div>
 

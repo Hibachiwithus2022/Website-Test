@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], supplementalFaqs = [] }) {
+export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], supplementalFaqs = [], faqPill, faqHeadline }) {
   const [openIdx, setOpenIdx] = useState(null)
   // City-specific FAQs first, then supplemental pool (de-duped by question)
   const cityQs = faqSet.map(f => f.q.toLowerCase())
@@ -13,10 +13,19 @@ export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], s
       <div className="max-w-3xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
-          <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>FAQ</div>
+          <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>{faqPill ?? 'FAQ'}</div>
           <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3rem)', color: '#1A1209', lineHeight: 1.05 }}>
-            Frequently Asked Questions<br />
-            <span style={{ color: '#C8102E' }}>Hibachi at Home in {cityName}, {stateAbbr}</span>
+            {faqHeadline ? (
+              <>
+                {faqHeadline.split('—')[0].trim()}<br />
+                <span style={{ color: '#C8102E' }}>{faqHeadline.includes('—') ? faqHeadline.split('—').slice(1).join('—').trim() : ''}</span>
+              </>
+            ) : (
+              <>
+                Frequently Asked Questions<br />
+                <span style={{ color: '#C8102E' }}>Hibachi at Home in {cityName}, {stateAbbr}</span>
+              </>
+            )}
           </h2>
         </div>
 

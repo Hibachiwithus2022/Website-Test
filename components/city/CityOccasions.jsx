@@ -51,25 +51,34 @@ function getIcon(occasion) {
   return '🍽️'
 }
 
-export default function CityOccasions({ cityName, featuredOccasions = [] }) {
+export default function CityOccasions({ cityName, featuredOccasions = [], occasionPill, occasionHeadline, occasionSubtext }) {
   const occasions = featuredOccasions.length > 0 ? featuredOccasions : [
     'Birthday Parties','Bachelorette Parties','Anniversary Dinners',
     'Corporate Events','Graduation Parties','Family Reunions',
     'Date Nights','Holiday Gatherings','Neighborhood Cookouts','Bachelor Parties',
   ]
+  const pill    = occasionPill ?? 'Perfect For Any Occasion'
+  const rawH2   = occasionHeadline ?? null
+  const subtext = occasionSubtext ?? 'From intimate dinners to 200-person parties — our chefs adapt to the occasion, every time.'
 
   return (
     <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
-          <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Perfect For Any Occasion</div>
-          <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
-            Every Celebration in {cityName}<br />
-            <span style={{ color: '#C8102E' }}>Deserves Hibachi</span>
-          </h2>
+          <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>{pill}</div>
+          {rawH2 ? (
+            <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
+              {rawH2}
+            </h2>
+          ) : (
+            <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
+              Every Celebration in {cityName}<br />
+              <span style={{ color: '#C8102E' }}>Deserves Hibachi</span>
+            </h2>
+          )}
           <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '36rem', margin: '1rem auto 0', fontSize: '0.93rem', lineHeight: 1.75 }}>
-            From intimate dinners to 200-person parties — our chefs adapt to the occasion, every time.
+            {subtext}
           </p>
         </div>
 

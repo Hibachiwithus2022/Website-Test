@@ -25,8 +25,8 @@ const DEFAULT_STEPS = [
 
 export default function CityHowItWorks({ cityName, howItWorksData }) {
   const steps      = howItWorksData?.steps      ?? DEFAULT_STEPS
-  const headline   = howItWorksData?.headline   ? howItWorksData.headline(cityName)   : null
-  const footerNote = howItWorksData?.footerNote ? howItWorksData.footerNote(cityName) : null
+  const headline   = howItWorksData?.headline   ?? null
+  const footerNote = howItWorksData?.footerNote ?? null
 
   return (
     <section style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>

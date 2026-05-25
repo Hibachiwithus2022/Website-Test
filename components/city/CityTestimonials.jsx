@@ -1,6 +1,6 @@
 'use client'
 
-export default function CityTestimonials({ cityName, testimonials = [] }) {
+export default function CityTestimonials({ cityName, testimonials = [], subheading }) {
   const displayTestimonials = testimonials.length >= 3 ? testimonials : [
     ...testimonials,
     {
@@ -45,7 +45,7 @@ export default function CityTestimonials({ cityName, testimonials = [] }) {
             <span style={{ color: '#C8102E' }}>Are Saying</span>
           </h2>
           <p style={{ color: 'rgba(26,18,9,0.5)', maxWidth: '36rem', margin: '1rem auto 0', fontSize: '0.9rem', lineHeight: 1.75 }}>
-            5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.
+            {subheading ?? '5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.'}
           </p>
         </div>
 

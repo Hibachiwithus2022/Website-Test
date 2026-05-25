@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { HERO_SUBTITLES } from '../../lib/cityData'
 
-export default function CityHero({ cityName, stateName, stateSlug, variant = 0, heroImage, heroSubtitle }) {
+export default function CityHero({ cityName, stateName, stateSlug, variant = 0, heroImage, heroSubtitle, heroPill }) {
   const subtitle = heroSubtitle ?? HERO_SUBTITLES[variant % HERO_SUBTITLES.length](cityName, stateName)
 
   return (
@@ -60,7 +60,7 @@ export default function CityHero({ cityName, stateName, stateSlug, variant = 0, 
         </nav>
 
         {/* Red pill tag */}
-        <div className="red-pill" style={{ marginBottom: '1.25rem' }}>Private Hibachi Chef</div>
+        <div className="red-pill" style={{ marginBottom: '1.25rem' }}>{heroPill ?? 'Private Hibachi Chef'}</div>
 
         {/* H1 */}
         <h1

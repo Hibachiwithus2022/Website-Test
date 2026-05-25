@@ -9,7 +9,7 @@ import {
   getBlogPostsForCity,
   HERO_IMAGES,
 } from '../../../../lib/cityData'
-import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks } from '../../../../lib/texasData'
+import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectionVariant } from '../../../../lib/texasData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -96,7 +96,31 @@ export default function CityPage({ params }) {
   const relatedPosts      = params.state === 'texas'
     ? getTexasBlogPosts(variant, 3)
     : getBlogPostsForCity(variant, 3)
-  const howItWorksData    = params.state === 'texas' ? getTexasHowItWorks(citySlug) : null
+  // Pre-resolve Texas-specific data (call all functions server-side — client components cannot receive functions as props)
+  const _howItWorksRaw  = params.state === 'texas' ? getTexasHowItWorks(citySlug) : null
+  const howItWorksData  = _howItWorksRaw ? {
+    steps:      _howItWorksRaw.steps,
+    headline:   _howItWorksRaw.headline?.(cityName)   ?? null,
+    footerNote: _howItWorksRaw.footerNote?.(cityName) ?? null,
+  } : null
+
+  const _sectionRaw     = params.state === 'texas' ? getTexasSectionVariant(citySlug) : null
+  const sectionVariant  = _sectionRaw ? {
+    heroPill:              _sectionRaw.heroPill,
+    experiencePill:        _sectionRaw.experiencePill,
+    experiencePoints:      _sectionRaw.experiencePoints,
+    areasPill:             _sectionRaw.areasPill,
+    areasHeadline:         _sectionRaw.areasHeadline(cityName),
+    areasIntro:            [_sectionRaw.areasIntro[0](cityName, stateName), _sectionRaw.areasIntro[1](cityName)],
+    areasButton:           _sectionRaw.areasButton,
+    occasionPill:          _sectionRaw.occasionPill,
+    occasionHeadline:      _sectionRaw.occasionHeadline(cityName),
+    occasionSubtext:       _sectionRaw.occasionSubtext,
+    faqPill:               _sectionRaw.faqPill,
+    faqHeadline:           _sectionRaw.faqHeadline(cityName, stateAbbr),
+    testimonialSubheading: _sectionRaw.testimonialSubheading,
+  } : null
+
   const cityLinkData      = getCityLinkData(citySlug)
   const otherMajorCities  = getOtherMajorCities(params.state, citySlug)
 
@@ -128,6 +152,7 @@ export default function CityPage({ params }) {
           variant={variant}
           heroImage={heroImage}
           heroSubtitle={cityData?.heroSubtitle}
+          heroPill={sectionVariant?.heroPill}
         />
 
         {/* 2. Unique intro + local highlights */}
@@ -151,20 +176,39 @@ export default function CityPage({ params }) {
         />
 
         {/* 6. Occasions grid */}
-        <CityOccasions cityName={cityName} featuredOccasions={featuredOccasions} />
+        <CityOccasions
+          cityName={cityName}
+          featuredOccasions={featuredOccasions}
+          occasionPill={sectionVariant?.occasionPill}
+          occasionHeadline={sectionVariant?.occasionHeadline}
+          occasionSubtext={sectionVariant?.occasionSubtext}
+        />
 
         {/* 7. Areas served */}
         <CityAreasServed
           cityName={cityName}
           stateName={stateName}
           nearbyCities={nearbyCities}
+          areasPill={sectionVariant?.areasPill}
+          areasHeadline={sectionVariant?.areasHeadline}
+          areasIntro={sectionVariant?.areasIntro}
+          areasButton={sectionVariant?.areasButton}
         />
 
         {/* 8. Experience / differentiator */}
-        <CityExperience cityName={cityName} variant={variant} />
+        <CityExperience
+          cityName={cityName}
+          variant={variant}
+          experiencePill={sectionVariant?.experiencePill}
+          experiencePoints={sectionVariant?.experiencePoints}
+        />
 
         {/* 9. Testimonials */}
-        <CityTestimonials cityName={cityName} testimonials={testimonials} />
+        <CityTestimonials
+          cityName={cityName}
+          testimonials={testimonials}
+          subheading={sectionVariant?.testimonialSubheading}
+        />
 
         {/* 10. FAQ */}
         <CityFAQ
@@ -173,6 +217,8 @@ export default function CityPage({ params }) {
           stateAbbr={stateAbbr}
           faqSet={faqSet}
           supplementalFaqs={supplementalFaqs}
+          faqPill={sectionVariant?.faqPill}
+          faqHeadline={sectionVariant?.faqHeadline}
         />
 
         {/* 11. Internal links to nearby cities + state */}

@@ -27,8 +27,9 @@ const EXPERIENCE_POINTS = [
   },
 ]
 
-export default function CityExperience({ cityName, variant = 0 }) {
+export default function CityExperience({ cityName, variant = 0, experiencePill, experiencePoints }) {
   const heading = HEADING_VARIANTS[variant % HEADING_VARIANTS.length](cityName)
+  const points  = experiencePoints ?? EXPERIENCE_POINTS
 
   return (
     <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
@@ -69,13 +70,13 @@ export default function CityExperience({ cityName, variant = 0 }) {
 
           {/* Right: content */}
           <div>
-            <div className="red-pill" style={{ marginBottom: '1.25rem' }}>The Experience</div>
+            <div className="red-pill" style={{ marginBottom: '1.25rem' }}>{experiencePill ?? 'The Experience'}</div>
             <h2 className="font-display" style={{ fontSize: 'clamp(2rem,4.5vw,3rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '2rem' }}>
               {heading.split(',')[0]}<br />
               <span style={{ color: '#C8102E' }}>{heading.includes(',') ? heading.slice(heading.indexOf(',') + 1) : ''}</span>
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {EXPERIENCE_POINTS.map((point) => (
+              {points.map((point) => (
                 <div key={point.title} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                   <div style={{
                     width: 44, height: 44, flexShrink: 0,
