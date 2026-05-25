@@ -9,6 +9,7 @@ import {
   getBlogPostsForCity,
   HERO_IMAGES,
 } from '../../../../lib/cityData'
+import { getTexasCityData } from '../../../../lib/texasData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -45,7 +46,7 @@ export async function generateStaticParams() {
 // ── Dynamic metadata ──────────────────────────────────────────────────────────
 export async function generateMetadata({ params }) {
   const citySlug  = params.city
-  const cityData  = getCityData(citySlug)
+  const cityData  = getCityData(citySlug) ?? (params.state === 'texas' ? getTexasCityData(citySlug, slugToCity(citySlug)) : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -78,7 +79,7 @@ export default function CityPage({ params }) {
   const citySlug    = params.city
   const stateEntry  = ALL_STATES.find(s => s.slug === params.state)
   const stateName   = stateEntry?.state || slugToCity(params.state)
-  const cityData    = getCityData(citySlug)
+  const cityData    = getCityData(citySlug) ?? (params.state === 'texas' ? getTexasCityData(citySlug, slugToCity(citySlug)) : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || params.state.toUpperCase().slice(0, 2)
 
