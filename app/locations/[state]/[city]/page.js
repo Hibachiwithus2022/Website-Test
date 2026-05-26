@@ -9,7 +9,7 @@ import {
   getBlogPostsForCity,
   HERO_IMAGES,
 } from '../../../../lib/cityData'
-import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectionVariant } from '../../../../lib/texasData'
+import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectionVariant, getTexasCityImage } from '../../../../lib/texasData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -105,12 +105,13 @@ export default function CityPage({ params }) {
   } : null
 
   const _sectionRaw     = params.state === 'texas' ? getTexasSectionVariant(citySlug) : null
+  const _cityImg        = params.state === 'texas' ? getTexasCityImage(citySlug) : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
     experiencePill:        _sectionRaw.experiencePill,
     experiencePoints:      _sectionRaw.experiencePoints,
-    experienceImage:       _sectionRaw.experienceImage,
-    experienceImageAlt:    _sectionRaw.experienceImageAlt(cityName),
+    experienceImage:       _cityImg?.src ?? _sectionRaw.experienceImage,
+    experienceImageAlt:    _cityImg ? _cityImg.alt(cityName) : _sectionRaw.experienceImageAlt(cityName),
     areasPill:             _sectionRaw.areasPill,
     areasHeadline:         _sectionRaw.areasHeadline(cityName),
     areasIntro:            [_sectionRaw.areasIntro[0](cityName, stateName), _sectionRaw.areasIntro[1](cityName)],
