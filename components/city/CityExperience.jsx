@@ -27,9 +27,11 @@ const EXPERIENCE_POINTS = [
   },
 ]
 
-export default function CityExperience({ cityName, variant = 0, experiencePill, experiencePoints }) {
-  const heading = HEADING_VARIANTS[variant % HEADING_VARIANTS.length](cityName)
-  const points  = experiencePoints ?? EXPERIENCE_POINTS
+export default function CityExperience({ cityName, variant = 0, experiencePill, experiencePoints, experienceImage, experienceImageAlt }) {
+  const heading  = HEADING_VARIANTS[variant % HEADING_VARIANTS.length](cityName)
+  const points   = experiencePoints ?? EXPERIENCE_POINTS
+  const imgSrc   = experienceImage ?? '/brand/hero-bg.jpg'
+  const imgAlt   = experienceImageAlt ?? `Private hibachi chef cooking at a backyard event in ${cityName}`
 
   return (
     <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
@@ -40,8 +42,8 @@ export default function CityExperience({ cityName, variant = 0, experiencePill, 
           <div style={{ position: 'relative' }}>
             <div style={{ position: 'relative', overflow: 'hidden' }}>
               <img
-                src="/brand/hero-bg.jpg"
-                alt={`Private hibachi chef cooking at a backyard event in ${cityName}`}
+                src={imgSrc}
+                alt={imgAlt}
                 style={{ width: '100%', display: 'block', objectFit: 'cover', height: 480, filter: 'saturate(1.06)' }}
               />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,18,9,0.6) 0%, transparent 50%)' }} />

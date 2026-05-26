@@ -109,6 +109,8 @@ export default function CityPage({ params }) {
     heroPill:              _sectionRaw.heroPill,
     experiencePill:        _sectionRaw.experiencePill,
     experiencePoints:      _sectionRaw.experiencePoints,
+    experienceImage:       _sectionRaw.experienceImage,
+    experienceImageAlt:    _sectionRaw.experienceImageAlt(cityName),
     areasPill:             _sectionRaw.areasPill,
     areasHeadline:         _sectionRaw.areasHeadline(cityName),
     areasIntro:            [_sectionRaw.areasIntro[0](cityName, stateName), _sectionRaw.areasIntro[1](cityName)],
@@ -201,6 +203,8 @@ export default function CityPage({ params }) {
           variant={variant}
           experiencePill={sectionVariant?.experiencePill}
           experiencePoints={sectionVariant?.experiencePoints}
+          experienceImage={sectionVariant?.experienceImage}
+          experienceImageAlt={sectionVariant?.experienceImageAlt}
         />
 
         {/* 9. Testimonials */}
