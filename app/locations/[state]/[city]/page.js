@@ -15,7 +15,7 @@ import {
   getBlogPostsForCity,
   HERO_IMAGES,
 } from '../../../../lib/cityData'
-import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectionVariant, getTexasCityImage } from '../../../../lib/texasData'
+import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectionVariant, getTexasCityImage, getTexasSupportImages } from '../../../../lib/texasData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -32,6 +32,7 @@ import CityFAQ           from '../../../../components/city/CityFAQ'
 import CityNearbyLinks   from '../../../../components/city/CityNearbyLinks'
 import CityRelatedPosts  from '../../../../components/city/CityRelatedPosts'
 import CityFinalCTA      from '../../../../components/city/CityFinalCTA'
+import CitySupportImage  from '../../../../components/city/CitySupportImage'
 import CityStickyBar        from '../../../../components/city/CityStickyBar'
 import ExploreStateSection  from '../../../../components/shared/ExploreStateSection'
 
@@ -133,6 +134,21 @@ export default function CityPage({ params }) {
   const cityLinkData      = getCityLinkData(citySlug)
   const otherMajorCities  = getOtherMajorCities(params.state, citySlug)
 
+  // Pre-resolve support images (above testimonials + above final CTA)
+  const _supportRaw    = params.state === 'texas' ? getTexasSupportImages(citySlug, variant) : null
+  const supportImages  = _supportRaw ? {
+    testimonial: {
+      src:     _supportRaw.testimonial.src,
+      alt:     _supportRaw.testimonial.alt(cityName),
+      caption: _supportRaw.testimonial.caption,
+    },
+    cta: {
+      src:     _supportRaw.cta.src,
+      alt:     _supportRaw.cta.alt(cityName),
+      caption: _supportRaw.cta.caption,
+    },
+  } : null
+
   // JSON-LD schemas
   const lbSchema  = generateLocalBusinessSchema({ cityName, stateName, stateSlug: params.state })
   const faqSchema = generateFAQSchema(faqSet.length > 0 ? faqSet : [
@@ -214,6 +230,15 @@ export default function CityPage({ params }) {
           experienceImageAlt={sectionVariant?.experienceImageAlt}
         />
 
+        {/* Support image — above Testimonials */}
+        {supportImages?.testimonial && (
+          <CitySupportImage
+            src={supportImages.testimonial.src}
+            alt={supportImages.testimonial.alt}
+            caption={supportImages.testimonial.caption}
+          />
+        )}
+
         {/* 9. Testimonials */}
         <CityTestimonials
           cityName={cityName}
@@ -257,6 +282,15 @@ export default function CityPage({ params }) {
           cityName={cityName}
           posts={relatedPosts}
         />
+
+        {/* Support image — above Final CTA */}
+        {supportImages?.cta && (
+          <CitySupportImage
+            src={supportImages.cta.src}
+            alt={supportImages.cta.alt}
+            caption={supportImages.cta.caption}
+          />
+        )}
 
         {/* 13. Final CTA + booking form */}
         <CityFinalCTA
