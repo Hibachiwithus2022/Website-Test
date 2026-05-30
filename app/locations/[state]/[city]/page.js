@@ -32,7 +32,6 @@ import CityFAQ           from '../../../../components/city/CityFAQ'
 import CityNearbyLinks   from '../../../../components/city/CityNearbyLinks'
 import CityRelatedPosts  from '../../../../components/city/CityRelatedPosts'
 import CityFinalCTA      from '../../../../components/city/CityFinalCTA'
-import CitySupportImage  from '../../../../components/city/CitySupportImage'
 import CityStickyBar        from '../../../../components/city/CityStickyBar'
 import ExploreStateSection  from '../../../../components/shared/ExploreStateSection'
 
@@ -230,21 +229,13 @@ export default function CityPage({ params }) {
           experienceImageAlt={sectionVariant?.experienceImageAlt}
         />
 
-        {/* Support image — above Testimonials */}
-        {supportImages?.testimonial && (
-          <CitySupportImage
-            src={supportImages.testimonial.src}
-            alt={supportImages.testimonial.alt}
-            caption={supportImages.testimonial.caption}
-          />
-        )}
-
-        {/* 9. Testimonials */}
+        {/* 9. Testimonials (supportImage integrated inside when present) */}
         <CityTestimonials
           cityName={cityName}
           testimonials={testimonials}
           subheading={sectionVariant?.testimonialSubheading}
           variant={variant}
+          supportImage={supportImages?.testimonial ?? null}
         />
 
         {/* 10. FAQ */}
@@ -283,21 +274,13 @@ export default function CityPage({ params }) {
           posts={relatedPosts}
         />
 
-        {/* Support image — above Final CTA */}
-        {supportImages?.cta && (
-          <CitySupportImage
-            src={supportImages.cta.src}
-            alt={supportImages.cta.alt}
-            caption={supportImages.cta.caption}
-          />
-        )}
-
-        {/* 13. Final CTA + booking form */}
+        {/* 13. Final CTA + booking form (supportImage integrated inside when present) */}
         <CityFinalCTA
           cityName={cityName}
           stateName={stateName}
           stateAbbr={stateAbbr}
           uniqueClosingVariant={cityData?.uniqueClosingVariant ?? variant}
+          supportImage={supportImages?.cta ?? null}
         />
       </main>
 
