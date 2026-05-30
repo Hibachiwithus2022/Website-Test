@@ -43,12 +43,23 @@ export default function BookingPage() {
         />
         <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript" async />
 
-        <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.85rem', color: 'rgba(26,18,9,0.45)' }}>
-          Prefer to call?{' '}
-          <a href="tel:+12015653878" style={{ color: '#C8102E', fontWeight: 600, textDecoration: 'none' }}>
-            (201) 565-3878
+        <div style={{ textAlign: 'center', marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <p style={{ fontSize: '0.85rem', fontWeight: 600, color: 'rgba(26,18,9,0.55)', marginBottom: '0.25rem' }}>
+            Questions before booking?
+          </p>
+          <a
+            href="tel:+12015653878"
+            style={{ fontSize: '0.875rem', color: '#C8102E', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+          >
+            📞 Call or Text: (201) 565-3878
           </a>
-        </p>
+          <a
+            href="mailto:info@hibachiconnect.com"
+            style={{ fontSize: '0.875rem', color: '#C8102E', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+          >
+            ✉️ Email: info@hibachiconnect.com
+          </a>
+        </div>
       </section>
     </main>
     <Footer />
