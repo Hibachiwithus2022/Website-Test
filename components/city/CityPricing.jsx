@@ -1,6 +1,6 @@
 const PROTEINS = [
   'Chicken', 'Steak', 'Shrimp', 'Scallops', 'Salmon', 'Tofu',
-  'Filet Mignon (+$5)', 'Lobster Tail (+$10)',
+  'Filet Mignon (+$10)', 'Lobster Tail (+$15)',
 ]
 
 const ADD_ONS = [

@@ -1,4 +1,10 @@
 import { CITIES_BY_STATE, ALL_STATES, slugToCity } from '../../../../lib/cities'
+
+const STATE_ABBR = {
+  texas: 'TX', florida: 'FL', california: 'CA', 'new-york': 'NY',
+  colorado: 'CO', georgia: 'GA', arizona: 'AZ', illinois: 'IL',
+  nevada: 'NV', washington: 'WA', virginia: 'VA', 'north-carolina': 'NC',
+}
 import {
   getCityData,
   generateCityMeta,
@@ -50,7 +56,7 @@ export async function generateMetadata({ params }) {
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
-  const stateAbbr = cityData?.stateAbbr || params.state.toUpperCase().slice(0, 2)
+  const stateAbbr = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
   if (cityData) {
     const meta = generateCityMeta(cityData)
@@ -81,7 +87,7 @@ export default function CityPage({ params }) {
   const stateName   = stateEntry?.state || slugToCity(params.state)
   const cityData    = getCityData(citySlug) ?? (params.state === 'texas' ? getTexasCityData(citySlug, slugToCity(citySlug)) : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
-  const stateAbbr   = cityData?.stateAbbr || params.state.toUpperCase().slice(0, 2)
+  const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
   // Build props — use cityData if available, fall back to generic
   const variant           = cityData?.variant ?? 0
