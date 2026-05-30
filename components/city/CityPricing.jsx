@@ -1,3 +1,19 @@
+const PRICING_VARIANTS = [
+  { pill: 'Transparent Pricing',  h2a: 'How Much Does Hibachi',       h2b: (city) => `at Home Cost in ${city}?` },
+  { pill: 'Simple Flat Rate',     h2a: 'Private Hibachi Chef in',     h2b: (city) => `${city} — Starting at $60` },
+  { pill: 'No Hidden Fees',       h2a: 'What Does a Hibachi Chef',    h2b: (city) => `Cost in ${city}?` },
+  { pill: 'Event Pricing',        h2a: 'Your Hibachi Party in',       h2b: (city) => `${city} Starts at $60/Person` },
+  { pill: 'Chef Pricing',         h2a: 'Teppanyaki at Home in',       h2b: (city) => `${city} — One Clear Rate` },
+]
+
+const PRICING_SUBTEXT = [
+  'One simple rate. Everything included — chef, grill, ingredients, full setup and cleanup. No surprises.',
+  'A single per-person rate covers your chef, grill, all ingredients, setup, and full cleanup.',
+  'Flat rate pricing with nothing hidden — your quote is locked before the event, no add-ons required.',
+  'All-inclusive pricing from arrival to cleanup. Your chef brings everything; you just enjoy the night.',
+  'One rate. Full service. Your teppanyaki chef arrives with everything — and leaves the space spotless.',
+]
+
 const PROTEINS = [
   'Chicken', 'Steak', 'Shrimp', 'Scallops', 'Salmon', 'Tofu',
   'Filet Mignon (+$10)', 'Lobster Tail (+$15)',
@@ -15,19 +31,20 @@ const APPETIZERS = [
   { name: 'Edamame',        price: '$6'  },
 ]
 
-export default function CityPricing({ cityName, stateName }) {
+export default function CityPricing({ cityName, stateName, variant = 0 }) {
+  const pv = PRICING_VARIANTS[variant % PRICING_VARIANTS.length]
   return (
     <section id="pricing" style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
-          <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Transparent Pricing</div>
+          <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>{pv.pill}</div>
           <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
-            How Much Does Hibachi<br />
-            <span style={{ color: '#C8102E' }}>at Home Cost in {cityName}?</span>
+            {pv.h2a}<br />
+            <span style={{ color: '#C8102E' }}>{pv.h2b(cityName)}</span>
           </h2>
           <p style={{ color: 'rgba(26,18,9,0.55)', maxWidth: '38rem', margin: '1rem auto 0', fontSize: '0.95rem', lineHeight: 1.75 }}>
-            One simple rate. Everything included — chef, grill, ingredients, full setup and cleanup. No surprises.
+            {PRICING_SUBTEXT[variant % PRICING_SUBTEXT.length]}
           </p>
         </div>
 

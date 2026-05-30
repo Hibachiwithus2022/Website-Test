@@ -1,6 +1,15 @@
 'use client'
 
-export default function CityTestimonials({ cityName, testimonials = [], subheading }) {
+const TESTIMONIAL_H2 = [
+  (city) => [`What ${city} Guests`, 'Are Saying'],
+  (city) => ['Real Reviews from', `${city} Hosts`],
+  (city) => [`${city} Reviews`, '& Testimonials'],
+  (city) => ['Straight from', `${city} Hosts & Guests`],
+  (city) => ['What Guests Say About', `Hibachi Connect in ${city}`],
+]
+
+export default function CityTestimonials({ cityName, testimonials = [], subheading, variant = 0 }) {
+  const [h2Line1, h2Line2] = TESTIMONIAL_H2[variant % TESTIMONIAL_H2.length](cityName)
   const displayTestimonials = testimonials.length >= 3 ? testimonials : [
     ...testimonials,
     {
@@ -41,8 +50,8 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
           </div>
           <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Verified Reviews</div>
           <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
-            What {cityName} Guests<br />
-            <span style={{ color: '#C8102E' }}>Are Saying</span>
+            {h2Line1}<br />
+            <span style={{ color: '#C8102E' }}>{h2Line2}</span>
           </h2>
           <p style={{ color: 'rgba(26,18,9,0.5)', maxWidth: '36rem', margin: '1rem auto 0', fontSize: '0.9rem', lineHeight: 1.75 }}>
             {subheading ?? '5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.'}

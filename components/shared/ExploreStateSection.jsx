@@ -1,6 +1,20 @@
 'use client'
 import Link from 'next/link'
 
+const CARD_LABELS = [
+  'Hibachi at Home',
+  'Private Hibachi Chef',
+  'Teppanyaki at Home',
+  'Backyard Hibachi',
+  'Mobile Hibachi Chef',
+]
+
+function cityLabelIndex(city) {
+  let h = 5381
+  for (let i = 0; i < city.length; i++) h = ((h << 5) + h) ^ city.charCodeAt(i)
+  return Math.abs(h) % CARD_LABELS.length
+}
+
 /**
  * ExploreStateSection — City page "More in [State]" internal linking block.
  * Placed after the FAQ, before the Final CTA. Combines:
@@ -180,7 +194,7 @@ function MajorCityCard({ city, slug, stateSlug, stateName }) {
       }}
     >
       <div style={{ fontSize: '0.68rem', color: '#C8102E', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
-        Hibachi at Home
+        {CARD_LABELS[cityLabelIndex(city)]}
       </div>
       <div style={{ fontWeight: 600, color: '#1A1209', fontSize: '0.92rem' }}>{city}</div>
       <div style={{ fontSize: '0.7rem', color: 'rgba(26,18,9,0.35)', marginTop: '0.15rem' }}>{stateName}</div>

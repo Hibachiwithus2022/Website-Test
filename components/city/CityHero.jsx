@@ -2,8 +2,17 @@
 import Link from 'next/link'
 import { HERO_SUBTITLES } from '../../lib/cityData'
 
+const HERO_ALT_VARIANTS = [
+  (city, state) => `Private hibachi chef cooking at a backyard event in ${city}, ${state}`,
+  (city, state) => `Backyard hibachi party in ${city} with live teppanyaki chef`,
+  (city, state) => `Teppanyaki chef performing at a home event in ${city}, ${state}`,
+  (city, state) => `Mobile hibachi grill setup at a ${city} backyard gathering`,
+  (city, state) => `Live hibachi chef entertaining guests at a private ${city} event`,
+]
+
 export default function CityHero({ cityName, stateName, stateSlug, variant = 0, heroImage, heroSubtitle, heroPill }) {
   const subtitle = heroSubtitle ?? HERO_SUBTITLES[variant % HERO_SUBTITLES.length](cityName, stateName)
+  const imgAlt   = HERO_ALT_VARIANTS[variant % HERO_ALT_VARIANTS.length](cityName, stateName)
 
   return (
     <section
@@ -20,7 +29,7 @@ export default function CityHero({ cityName, stateName, stateSlug, variant = 0, 
         <div style={{ position: 'absolute', inset: 0 }}>
           <img
             src={heroImage}
-            alt={`Private hibachi chef in ${cityName}, ${stateName}`}
+            alt={imgAlt}
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
           />
           {/* Dark overlay layers */}

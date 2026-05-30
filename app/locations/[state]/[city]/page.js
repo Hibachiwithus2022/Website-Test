@@ -176,7 +176,7 @@ export default function CityPage({ params }) {
         <CityHowItWorks cityName={cityName} howItWorksData={howItWorksData} />
 
         {/* 4. Pricing */}
-        <CityPricing cityName={cityName} stateName={stateName} />
+        <CityPricing cityName={cityName} stateName={stateName} variant={variant} />
 
         {/* 5. Why us (rotating) */}
         <CityWhyUs
@@ -219,6 +219,7 @@ export default function CityPage({ params }) {
           cityName={cityName}
           testimonials={testimonials}
           subheading={sectionVariant?.testimonialSubheading}
+          variant={variant}
         />
 
         {/* 10. FAQ */}

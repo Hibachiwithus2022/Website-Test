@@ -9,7 +9,7 @@ export default function CityWhyUs({ cityName, uniqueWhyUsVariant = 0 }) {
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
-          <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>Why Choose Us</div>
+          <div className="red-pill" style={{ display: 'inline-block', marginBottom: '1rem' }}>{variant.pill ?? 'Why Choose Us'}</div>
           <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05 }}>
             {v.headline(cityName)}
           </h2>

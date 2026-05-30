@@ -1,7 +1,16 @@
 import { INTRO_VARIANTS } from '../../lib/cityData'
 
+const INTRO_PILLS = [
+  (city) => `Hibachi at Home in ${city}`,
+  (city) => `Private Teppanyaki in ${city}`,
+  (city) => `Backyard Hibachi in ${city}`,
+  (city) => `Private Chef Experience in ${city}`,
+  (city) => `Live Hibachi Catering in ${city}`,
+]
+
 export default function CityIntro({ cityName, stateName, localHighlights = [], uniqueIntroVariant = 0 }) {
-  const v = INTRO_VARIANTS[uniqueIntroVariant % INTRO_VARIANTS.length]
+  const v    = INTRO_VARIANTS[uniqueIntroVariant % INTRO_VARIANTS.length]
+  const pill = INTRO_PILLS[uniqueIntroVariant % INTRO_PILLS.length](cityName)
 
   return (
     <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
@@ -11,7 +20,7 @@ export default function CityIntro({ cityName, stateName, localHighlights = [], u
           {/* Main copy */}
           <div>
             <div className="red-pill" style={{ marginBottom: '1.25rem' }}>
-              Hibachi at Home in {cityName}
+              {pill}
             </div>
             <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '1.75rem' }}>
               {v.headline(cityName, stateName)}

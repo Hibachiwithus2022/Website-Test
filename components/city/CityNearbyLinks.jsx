@@ -5,6 +5,20 @@ function cityToSlug(city) {
   return city.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 }
 
+const CARD_LABELS = [
+  'Hibachi at Home',
+  'Private Hibachi Chef',
+  'Teppanyaki at Home',
+  'Backyard Hibachi',
+  'Mobile Hibachi Chef',
+]
+
+function cityLabelIndex(city) {
+  let h = 5381
+  for (let i = 0; i < city.length; i++) h = ((h << 5) + h) ^ city.charCodeAt(i)
+  return Math.abs(h) % CARD_LABELS.length
+}
+
 export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearbyMajorCities = [], nearbyCities = [] }) {
   // Show up to 6 nearby cities (major cities first)
   const displayCities = [
@@ -47,7 +61,7 @@ export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearby
                     e.currentTarget.style.borderColor = 'rgba(26,18,9,0.09)'
                   }}
                 >
-                  <div style={{ fontSize: '0.72rem', color: '#C8102E', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>Hibachi at Home</div>
+                  <div style={{ fontSize: '0.72rem', color: '#C8102E', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>{CARD_LABELS[cityLabelIndex(city)]}</div>
                   <div style={{ fontWeight: 600, color: '#1A1209', fontSize: '0.95rem' }}>{city}</div>
                   <div style={{ fontSize: '0.72rem', color: 'rgba(26,18,9,0.38)', marginTop: '0.15rem' }}>{stateName}</div>
                 </Link>
