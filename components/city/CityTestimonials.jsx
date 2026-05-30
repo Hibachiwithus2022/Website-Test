@@ -35,76 +35,69 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
     },
   ].slice(0, 3)
 
-  // ── With support image: 2-column layout ──────────────────────────────────────
+  // ── With support image: heading first, then [image | cards] below ────────────
   if (supportImage) {
     return (
-      <section style={{ background: '#F8F5F2', padding: '5rem 1.5rem' }}>
+      <section style={{ background: '#F8F5F2', padding: '4.5rem 1.5rem' }}>
         <div className="max-w-5xl mx-auto">
 
-          {/* Mobile: compact image strip above heading */}
-          <div
-            className="lg:hidden"
-            style={{ position: 'relative', overflow: 'hidden', marginBottom: '2rem' }}
-          >
-            <img
-              src={supportImage.src}
-              alt={supportImage.alt}
-              loading="lazy"
-              style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block', filter: 'saturate(1.06)' }}
-            />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,18,9,0.45) 0%, transparent 55%)' }} />
+          {/* 1. Full-width heading — always the focal point */}
+          <div style={{ marginBottom: '2.5rem' }}>
+            <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1rem' }}>
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} width="22" height="22" viewBox="0 0 24 24" fill="#D4A843">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              ))}
+            </div>
+            <div className="red-pill" style={{ display: 'inline-block', marginBottom: '0.85rem' }}>Verified Reviews</div>
+            <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '0.75rem' }}>
+              {h2Line1}<br />
+              <span style={{ color: '#C8102E' }}>{h2Line2}</span>
+            </h2>
+            <p style={{ color: 'rgba(26,18,9,0.5)', fontSize: '0.9rem', lineHeight: 1.75, maxWidth: '44rem' }}>
+              {subheading ?? '5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.'}
+            </p>
           </div>
 
-          {/* 2-column grid: image left, content right */}
-          <div style={{ display: 'grid', gap: '3.5rem', alignItems: 'start' }} className="lg:grid-cols-[290px_1fr]">
+          {/* 2. Two-column: image left, cards right */}
+          <div style={{ display: 'grid', gap: '2rem', alignItems: 'start' }} className="lg:grid-cols-[260px_1fr]">
 
-            {/* Left: framed image — desktop only */}
-            <div className="hidden lg:block" style={{ position: 'relative' }}>
-              <div style={{ position: 'relative', overflow: 'hidden' }}>
+            {/* Left column: image — desktop only */}
+            <div className="hidden lg:block">
+              <img
+                src={supportImage.src}
+                alt={supportImage.alt}
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  height: 340,
+                  objectFit: 'cover',
+                  display: 'block',
+                  filter: 'saturate(1.06)',
+                  boxShadow: '0 2px 16px rgba(26,18,9,0.1), 0 0 0 1px rgba(26,18,9,0.06)',
+                }}
+              />
+            </div>
+
+            {/* Right column: mobile image first, then cards */}
+            <div>
+              {/* Mobile: image between heading and cards */}
+              <div className="lg:hidden" style={{ marginBottom: '1.5rem', overflow: 'hidden' }}>
                 <img
                   src={supportImage.src}
                   alt={supportImage.alt}
                   loading="lazy"
-                  style={{ width: '100%', height: 460, objectFit: 'cover', display: 'block', filter: 'saturate(1.06)' }}
+                  style={{
+                    width: '100%',
+                    height: 200,
+                    objectFit: 'cover',
+                    display: 'block',
+                    filter: 'saturate(1.06)',
+                    boxShadow: '0 2px 12px rgba(26,18,9,0.08)',
+                  }}
                 />
-                <div style={{ position: 'absolute', inset: 0, background: 'rgba(200,16,46,0.04)', mixBlendMode: 'multiply' }} />
               </div>
-              {/* Offset border frame */}
-              <div style={{
-                position: 'absolute', top: -10, left: -10, right: 10, bottom: 10,
-                border: '1px solid rgba(200,16,46,0.22)', pointerEvents: 'none',
-              }} />
-              {/* Red accent bar */}
-              <div style={{ position: 'absolute', bottom: 10, left: -10, width: 52, height: 3, background: '#C8102E' }} />
-              {supportImage.caption && (
-                <p style={{
-                  marginTop: '1.5rem', paddingLeft: '0.25rem',
-                  fontSize: '0.76rem', color: 'rgba(26,18,9,0.43)',
-                  fontStyle: 'italic', lineHeight: 1.65,
-                }}>
-                  {supportImage.caption}
-                </p>
-              )}
-            </div>
-
-            {/* Right: heading + stacked cards */}
-            <div>
-              {/* Stars */}
-              <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1rem' }}>
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#D4A843">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                  </svg>
-                ))}
-              </div>
-              <div className="red-pill" style={{ display: 'inline-block', marginBottom: '0.85rem' }}>Verified Reviews</div>
-              <h2 className="font-display" style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '0.75rem' }}>
-                {h2Line1}<br />
-                <span style={{ color: '#C8102E' }}>{h2Line2}</span>
-              </h2>
-              <p style={{ color: 'rgba(26,18,9,0.5)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '2rem', maxWidth: '38rem' }}>
-                {subheading ?? '5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.'}
-              </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {displayTestimonials.map((t, i) => <TestimonialCard key={i} t={t} />)}
               </div>
