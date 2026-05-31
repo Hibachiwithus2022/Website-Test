@@ -1,6 +1,14 @@
 import { getAllPosts } from '../../lib/blog';
 import { CITIES_BY_STATE, ALL_STATES } from '../../lib/cities';
 
+// High-traffic city slugs that earn a higher sitemap priority
+const MAJOR_CITY_SLUGS = new Set([
+  'dallas','houston','austin','san-antonio','fort-worth',
+  'miami','orlando','tampa','jacksonville','fort-lauderdale',
+  'new-york','los-angeles','chicago','phoenix','philadelphia',
+  'san-antonio','san-diego','san-jose','seattle','denver',
+]);
+
 export const dynamic = 'force-dynamic';
 
 const BASE_URL = 'https://hibachiconnect.com';
@@ -43,11 +51,12 @@ export async function GET() {
 
   // 3. Location pages — dynamic from lib/cities
   const locationEntries = ALL_STATES.flatMap(({ slug: stateSlug }) => {
-    const stateEntry = entry(`/locations/${stateSlug}`, today, 'monthly', '0.5');
+    const stateEntry = entry(`/locations/${stateSlug}`, today, 'monthly', '0.6');
     const cities = CITIES_BY_STATE[stateSlug] ?? [];
     const cityEntries = cities.map(city => {
       const citySlug = city.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      return entry(`/locations/${stateSlug}/${citySlug}`, today, 'monthly', '0.4');
+      const priority = MAJOR_CITY_SLUGS.has(citySlug) ? '0.7' : '0.6';
+      return entry(`/locations/${stateSlug}/${citySlug}`, today, 'monthly', priority);
     });
     return [stateEntry, ...cityEntries];
   });

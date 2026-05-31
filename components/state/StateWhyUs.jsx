@@ -12,7 +12,7 @@ const WHY_US = [
   {
     icon: '✅',
     title: 'Full Setup & Cleanup',
-    desc: 'Arrive 30 minutes early, set everything up, cook the show, and completely clean up. Zero work on your end.',
+    desc: 'Arrive 5–10 minutes before the scheduled start, set everything up, cook the show, and completely clean up. Zero work on your end.',
   },
   {
     icon: '💯',

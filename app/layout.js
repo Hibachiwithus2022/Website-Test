@@ -25,11 +25,13 @@ export const metadata = {
     type:        'website',
     url:         'https://hibachiconnect.com',
     siteName:    'Hibachi Connect',
+    images: [{ url: 'https://hibachiconnect.com/pics/hero-1.jpg', width: 1200, height: 630, alt: 'Private hibachi chef cooking at a backyard event' }],
   },
   twitter: {
     card:  'summary_large_image',
     title: 'Hibachi Connect | Private Hibachi Chef at Home',
     description: 'Book a private hibachi chef for your next event. Nationwide coverage.',
+    images: ['https://hibachiconnect.com/pics/hero-1.jpg'],
   },
   robots: {
     index:  true,

@@ -34,7 +34,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title:       `Hibachi at Home in ${state} | Hibachi Connect`,
       description: `Professional private hibachi chef in ${state}. We bring the grill, all ingredients, and live entertainment to your backyard or event venue.`,
+      images: [{ url: 'https://hibachiconnect.com/pics/hero-1.jpg', width: 1200, height: 630, alt: `Private hibachi chef serving ${state}` }],
     },
+    twitter: { card: 'summary_large_image', images: ['https://hibachiconnect.com/pics/hero-1.jpg'] },
   }
 }
 

@@ -14,7 +14,7 @@ const DEFAULT_STEPS = [
   {
     num: '03',
     title: 'Chef Arrives with Everything',
-    desc: 'Your chef shows up ~30 minutes early with a full propane grill, all ingredients, sauces, plates, and chopsticks. You provide chairs and table space.',
+    desc: 'Your chef shows up 5–10 minutes before your scheduled start time with a full propane grill, all ingredients, sauces, plates, and chopsticks. You provide chairs and table space.',
   },
   {
     num: '04',

@@ -36,7 +36,7 @@ export default function StateIntro({ state, stateData }) {
               { label: 'Under 3', value: 'Free' },
               { label: 'Event Minimum', value: '$600' },
               { label: 'Min. Guest Count', value: '10 guests' },
-              { label: 'Setup Time', value: '~30 min' },
+              { label: 'Chef Arrival', value: '5–10 min before' },
               { label: 'Cleanup Included', value: 'Yes' },
             ].map((f) => (
               <div key={f.label} style={{

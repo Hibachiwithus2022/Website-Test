@@ -52,7 +52,7 @@ export default function StateCoverage({ state, stateData }) {
                 {[
                   'Professional teppan grill + all equipment',
                   'All ingredients (proteins, rice, veggies, sauces)',
-                  'Full setup — arrive 30 min early',
+                  'Full setup — chef arrives 5–10 min before start',
                   'Complete cleanup when the show is over',
                   'Entertainment: fire tricks, onion volcano & more',
                   'You provide: table/chairs, outdoor space',

@@ -13,7 +13,7 @@ const FAQS = [
   },
   {
     q: 'What do I need to provide?',
-    a: 'Just tables, chairs, and dinnerware for your guests. We bring everything else: the portable teppan grill, cooking equipment, all ingredients, sauces, and the chef. Setup takes about 30 minutes. We also handle full cleanup when we\'re done.',
+    a: 'Just tables, chairs, and dinnerware for your guests. We bring everything else: the portable teppan grill, cooking equipment, all ingredients, sauces, and the chef. The chef arrives 5–10 minutes before your scheduled start time, handles all setup, and does full cleanup when we\'re done.',
   },
   {
     q: 'Can hibachi be done indoors?',

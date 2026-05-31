@@ -65,8 +65,8 @@ export async function generateMetadata({ params }) {
       description: meta.description,
       keywords:    meta.keywords,
       alternates:  { canonical: meta.canonical },
-      openGraph:   { title: meta.og.title, description: meta.og.description },
-      twitter:     { card: 'summary_large_image', title: meta.twitter.title, description: meta.twitter.description },
+      openGraph:   { title: meta.og.title, description: meta.og.description, images: [{ url: meta.og.image, width: 1200, height: 630, alt: `Private hibachi chef in ${cityName}, ${stateName}` }] },
+      twitter:     { card: 'summary_large_image', title: meta.twitter.title, description: meta.twitter.description, images: [meta.twitter.image] },
     }
   }
 

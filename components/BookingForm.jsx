@@ -324,7 +324,7 @@ export default function BookingForm({ initialData } = {}) {
     const NEXT_STEPS = [
       { n:1, label:'Select Your Menu',        desc:'Browse proteins, sides, and add-ons before the event.' },
       { n:2, label:'Confirm Details',          desc:'Your chef will contact you 24–48 hrs before to confirm everything.' },
-      { n:3, label:'Chef Arrives & Prepares',  desc:'Chef arrives 30–45 min early to set up the teppan grill.' },
+      { n:3, label:'Chef Arrives & Prepares',  desc:'Chef arrives 5–10 min before your scheduled start time to set up the teppan grill.' },
       { n:4, label:'Party Time',               desc:'Sit back and enjoy the live hibachi show with your guests.' },
       { n:5, label:'Payment',                  desc:'Cash or Zelle only, collected day-of before service begins.' },
     ]
