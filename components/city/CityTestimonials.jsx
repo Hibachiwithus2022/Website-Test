@@ -35,16 +35,21 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
     },
   ].slice(0, 3)
 
-  // ── With support image: mirrors Experience section layout exactly ────────────
-  // Desktop: [content left | framed image right]  Mobile: content → image
+  // ── With support image: heading+image top, 3-col cards below ────────────────
+  // Desktop: [stars+pill+h2+intro | framed image] then full-width 3-col cards
+  // Mobile:  heading → image → 3 stacked cards
   if (supportImage) {
     const introText = supportImage.intro ?? subheading ?? '5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.'
     return (
       <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
         <div className="max-w-5xl mx-auto">
-          <div style={{ display: 'grid', gap: '4rem', alignItems: 'start' }} className="lg:grid-cols-2">
 
-            {/* LEFT: stars + pill + h2 + intro + review cards */}
+          {/* Top: 2-col heading + image */}
+          <div
+            style={{ display: 'grid', gap: '4rem', alignItems: 'center', marginBottom: '4rem' }}
+            className="lg:grid-cols-2"
+          >
+            {/* LEFT: stars + pill + h2 + intro */}
             <div>
               <div style={{ display: 'flex', gap: '0.3rem', marginBottom: '1.25rem' }}>
                 {[...Array(5)].map((_, i) => (
@@ -58,59 +63,53 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
                 {h2Line1}<br />
                 <span style={{ color: '#C8102E' }}>{h2Line2}</span>
               </h2>
-              <p style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.78, marginBottom: '2rem' }}>
+              <p style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.78 }}>
                 {introText}
               </p>
-
-              {/* Mobile: image between intro and cards */}
-              <div className="lg:hidden" style={{ position: 'relative', marginBottom: '2rem' }}>
-                <img
-                  src={supportImage.src}
-                  alt={supportImage.alt}
-                  loading="lazy"
-                  style={{ width: '100%', height: 240, objectFit: 'cover', display: 'block', filter: 'saturate(1.06)' }}
-                />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,18,9,0.5) 0%, transparent 50%)' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'rgba(200,16,46,0.05)', mixBlendMode: 'multiply' }} />
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {displayTestimonials.map((t, i) => <TestimonialCard key={i} t={t} />)}
-              </div>
             </div>
 
-            {/* RIGHT: framed image + badge — mirrors Experience section */}
+            {/* RIGHT: framed image + badge — same treatment as Experience section */}
             <div style={{ position: 'relative' }} className="hidden lg:block">
               <div style={{ position: 'relative', overflow: 'hidden' }}>
                 <img
                   src={supportImage.src}
                   alt={supportImage.alt}
                   loading="lazy"
-                  style={{ width: '100%', display: 'block', objectFit: 'cover', height: 480, filter: 'saturate(1.06)' }}
+                  style={{ width: '100%', display: 'block', objectFit: 'cover', height: 420, filter: 'saturate(1.06)' }}
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,18,9,0.6) 0%, transparent 50%)' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'rgba(200,16,46,0.05)', mixBlendMode: 'multiply' }} />
               </div>
-              {/* Floating badge — same style as Experience section */}
-              <div
-                style={{
-                  position: 'absolute', bottom: '-1.5rem', right: '-1.5rem',
-                  background: '#C8102E', padding: '1.5rem 2rem',
-                  boxShadow: '0 4px 8px rgba(200,16,46,0.15), 0 16px 40px rgba(200,16,46,0.1), 0 24px 48px rgba(0,0,0,0.4)',
-                }}
-              >
+              <div style={{
+                position: 'absolute', bottom: '-1.5rem', right: '-1.5rem',
+                background: '#C8102E', padding: '1.5rem 2rem',
+                boxShadow: '0 4px 8px rgba(200,16,46,0.15), 0 16px 40px rgba(200,16,46,0.1), 0 24px 48px rgba(0,0,0,0.4)',
+              }}>
                 <div className="font-display" style={{ fontSize: '2.2rem', color: '#F5EFE0', lineHeight: 1 }}>5.0★</div>
                 <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.12em', textTransform: 'uppercase', marginTop: '0.2rem' }}>
                   5-Star Experiences
                 </div>
               </div>
-              {/* Decorative offset border — same as Experience section */}
-              <div
-                style={{ position: 'absolute', top: '-1rem', left: '-1rem', width: '100%', height: '100%', border: '1px solid rgba(200,16,46,0.18)', pointerEvents: 'none' }}
-              />
+              <div style={{ position: 'absolute', top: '-1rem', left: '-1rem', width: '100%', height: '100%', border: '1px solid rgba(200,16,46,0.18)', pointerEvents: 'none' }} />
             </div>
 
+            {/* Mobile: image shown between heading and cards */}
+            <div className="lg:hidden" style={{ position: 'relative', overflow: 'hidden' }}>
+              <img
+                src={supportImage.src}
+                alt={supportImage.alt}
+                loading="lazy"
+                style={{ width: '100%', height: 240, objectFit: 'cover', display: 'block', filter: 'saturate(1.06)' }}
+              />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,18,9,0.5) 0%, transparent 50%)' }} />
+            </div>
           </div>
+
+          {/* Bottom: 3-column review cards — full width */}
+          <div style={{ display: 'grid', gap: '1.25rem' }} className="md:grid-cols-3">
+            {displayTestimonials.map((t, i) => <TestimonialCard key={i} t={t} />)}
+          </div>
+
         </div>
       </section>
     )
