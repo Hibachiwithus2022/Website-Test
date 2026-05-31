@@ -46,7 +46,7 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
 
           {/* Top: 2-col heading + image */}
           <div
-            style={{ display: 'grid', gap: '4rem', alignItems: 'center', marginBottom: '4rem' }}
+            style={{ display: 'grid', gap: '4rem', alignItems: 'flex-start', marginBottom: '4rem' }}
             className="lg:grid-cols-2"
           >
             {/* LEFT: stars + pill + h2 + intro */}
