@@ -281,7 +281,7 @@ export default function CityPage({ params }) {
           stateName={stateName}
           stateAbbr={stateAbbr}
           uniqueClosingVariant={cityData?.uniqueClosingVariant ?? variant}
-          supportImage={supportImages?.cta ?? null}
+          supportImage={null}
         />
       </main>
 
