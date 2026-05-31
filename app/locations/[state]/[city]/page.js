@@ -140,6 +140,7 @@ export default function CityPage({ params }) {
       src:     _supportRaw.testimonial.src,
       alt:     _supportRaw.testimonial.alt(cityName),
       caption: _supportRaw.testimonial.caption,
+      intro:   _supportRaw.testimonial.intro ? _supportRaw.testimonial.intro(cityName) : null,
     },
     cta: {
       src:     _supportRaw.cta.src,

@@ -35,72 +35,79 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
     },
   ].slice(0, 3)
 
-  // ── With support image: heading first, then [image | cards] below ────────────
+  // ── With support image: mirrors Experience section layout exactly ────────────
+  // Desktop: [content left | framed image right]  Mobile: content → image
   if (supportImage) {
+    const introText = supportImage.intro ?? subheading ?? '5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.'
     return (
-      <section style={{ background: '#F8F5F2', padding: '4.5rem 1.5rem' }}>
+      <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
         <div className="max-w-5xl mx-auto">
+          <div style={{ display: 'grid', gap: '4rem', alignItems: 'start' }} className="lg:grid-cols-2">
 
-          {/* 1. Full-width heading — always the focal point */}
-          <div style={{ marginBottom: '2.5rem' }}>
-            <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1rem' }}>
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} width="22" height="22" viewBox="0 0 24 24" fill="#D4A843">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                </svg>
-              ))}
-            </div>
-            <div className="red-pill" style={{ display: 'inline-block', marginBottom: '0.85rem' }}>Verified Reviews</div>
-            <h2 className="font-display" style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '0.75rem' }}>
-              {h2Line1}<br />
-              <span style={{ color: '#C8102E' }}>{h2Line2}</span>
-            </h2>
-            <p style={{ color: 'rgba(26,18,9,0.5)', fontSize: '0.9rem', lineHeight: 1.75, maxWidth: '44rem' }}>
-              {subheading ?? '5.0 average rating across all events nationwide. Real hosts. Real chefs. Real experiences.'}
-            </p>
-          </div>
-
-          {/* 2. Two-column: image left, cards right */}
-          <div style={{ display: 'grid', gap: '2rem', alignItems: 'start' }} className="lg:grid-cols-[260px_1fr]">
-
-            {/* Left column: image — desktop only */}
-            <div className="hidden lg:block">
-              <img
-                src={supportImage.src}
-                alt={supportImage.alt}
-                loading="lazy"
-                style={{
-                  width: '100%',
-                  height: 340,
-                  objectFit: 'cover',
-                  display: 'block',
-                  filter: 'saturate(1.06)',
-                  boxShadow: '0 2px 16px rgba(26,18,9,0.1), 0 0 0 1px rgba(26,18,9,0.06)',
-                }}
-              />
-            </div>
-
-            {/* Right column: mobile image first, then cards */}
+            {/* LEFT: stars + pill + h2 + intro + review cards */}
             <div>
-              {/* Mobile: image between heading and cards */}
-              <div className="lg:hidden" style={{ marginBottom: '1.5rem', overflow: 'hidden' }}>
+              <div style={{ display: 'flex', gap: '0.3rem', marginBottom: '1.25rem' }}>
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="22" height="22" viewBox="0 0 24 24" fill="#D4A843">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                ))}
+              </div>
+              <div className="red-pill" style={{ marginBottom: '1.25rem' }}>Verified Reviews</div>
+              <h2 className="font-display" style={{ fontSize: 'clamp(2rem,4.5vw,3rem)', color: '#1A1209', lineHeight: 1.05, marginBottom: '1.5rem' }}>
+                {h2Line1}<br />
+                <span style={{ color: '#C8102E' }}>{h2Line2}</span>
+              </h2>
+              <p style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.78, marginBottom: '2rem' }}>
+                {introText}
+              </p>
+
+              {/* Mobile: image between intro and cards */}
+              <div className="lg:hidden" style={{ position: 'relative', marginBottom: '2rem' }}>
                 <img
                   src={supportImage.src}
                   alt={supportImage.alt}
                   loading="lazy"
-                  style={{
-                    width: '100%',
-                    height: 200,
-                    objectFit: 'cover',
-                    display: 'block',
-                    filter: 'saturate(1.06)',
-                    boxShadow: '0 2px 12px rgba(26,18,9,0.08)',
-                  }}
+                  style={{ width: '100%', height: 240, objectFit: 'cover', display: 'block', filter: 'saturate(1.06)' }}
                 />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,18,9,0.5) 0%, transparent 50%)' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'rgba(200,16,46,0.05)', mixBlendMode: 'multiply' }} />
               </div>
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {displayTestimonials.map((t, i) => <TestimonialCard key={i} t={t} />)}
               </div>
+            </div>
+
+            {/* RIGHT: framed image + badge — mirrors Experience section */}
+            <div style={{ position: 'relative' }} className="hidden lg:block">
+              <div style={{ position: 'relative', overflow: 'hidden' }}>
+                <img
+                  src={supportImage.src}
+                  alt={supportImage.alt}
+                  loading="lazy"
+                  style={{ width: '100%', display: 'block', objectFit: 'cover', height: 480, filter: 'saturate(1.06)' }}
+                />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,18,9,0.6) 0%, transparent 50%)' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'rgba(200,16,46,0.05)', mixBlendMode: 'multiply' }} />
+              </div>
+              {/* Floating badge — same style as Experience section */}
+              <div
+                style={{
+                  position: 'absolute', bottom: '-1.5rem', right: '-1.5rem',
+                  background: '#C8102E', padding: '1.5rem 2rem',
+                  boxShadow: '0 4px 8px rgba(200,16,46,0.15), 0 16px 40px rgba(200,16,46,0.1), 0 24px 48px rgba(0,0,0,0.4)',
+                }}
+              >
+                <div className="font-display" style={{ fontSize: '2.2rem', color: '#F5EFE0', lineHeight: 1 }}>5.0★</div>
+                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.12em', textTransform: 'uppercase', marginTop: '0.2rem' }}>
+                  5-Star Experiences
+                </div>
+              </div>
+              {/* Decorative offset border — same as Experience section */}
+              <div
+                style={{ position: 'absolute', top: '-1rem', left: '-1rem', width: '100%', height: '100%', border: '1px solid rgba(200,16,46,0.18)', pointerEvents: 'none' }}
+              />
             </div>
 
           </div>
