@@ -16,6 +16,7 @@ import {
   HERO_IMAGES,
 } from '../../../../lib/cityData'
 import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectionVariant, getTexasCityImage, getTexasSupportImages } from '../../../../lib/texasData'
+import { getFloridaCityData, getFloridaBlogPosts, getFloridaHowItWorks, getFloridaSectionVariant, getFloridaCityImage, getFloridaSupportImages } from '../../../../lib/floridaData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -52,7 +53,9 @@ export async function generateStaticParams() {
 // ── Dynamic metadata ──────────────────────────────────────────────────────────
 export async function generateMetadata({ params }) {
   const citySlug  = params.city
-  const cityData  = getCityData(citySlug) ?? (params.state === 'texas' ? getTexasCityData(citySlug, slugToCity(citySlug)) : null)
+  const cityData  = getCityData(citySlug)
+    ?? (params.state === 'texas'   ? getTexasCityData(citySlug, slugToCity(citySlug))   : null)
+    ?? (params.state === 'florida' ? getFloridaCityData(citySlug, slugToCity(citySlug)) : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -99,19 +102,29 @@ export default function CityPage({ params }) {
   const testimonials      = cityData?.testimonials      ?? []
   const heroImage         = cityData?.heroImage         ?? HERO_IMAGES[variant % HERO_IMAGES.length]
   const supplementalFaqs  = getSupplementalFAQs(faqSet, 4)
-  const relatedPosts      = params.state === 'texas'
-    ? getTexasBlogPosts(variant, 3)
-    : getBlogPostsForCity(variant, 3)
-  // Pre-resolve Texas-specific data (call all functions server-side — client components cannot receive functions as props)
-  const _howItWorksRaw  = params.state === 'texas' ? getTexasHowItWorks(citySlug) : null
+  const isTexas   = params.state === 'texas'
+  const isFlorida = params.state === 'florida'
+
+  const relatedPosts = isTexas   ? getTexasBlogPosts(variant, 3)
+                     : isFlorida ? getFloridaBlogPosts(variant, 3)
+                     : getBlogPostsForCity(variant, 3)
+
+  // Pre-resolve state-specific data server-side (client components cannot receive functions as props)
+  const _howItWorksRaw  = isTexas   ? getTexasHowItWorks(citySlug)
+                        : isFlorida ? getFloridaHowItWorks(citySlug)
+                        : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
     headline:   _howItWorksRaw.headline?.(cityName)   ?? null,
     footerNote: _howItWorksRaw.footerNote?.(cityName) ?? null,
   } : null
 
-  const _sectionRaw     = params.state === 'texas' ? getTexasSectionVariant(citySlug) : null
-  const _cityImg        = params.state === 'texas' ? getTexasCityImage(citySlug) : null
+  const _sectionRaw = isTexas   ? getTexasSectionVariant(citySlug)
+                    : isFlorida ? getFloridaSectionVariant(citySlug)
+                    : null
+  const _cityImg    = isTexas   ? getTexasCityImage(citySlug)
+                    : isFlorida ? getFloridaCityImage(citySlug)
+                    : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
     experiencePill:        _sectionRaw.experiencePill,
@@ -134,7 +147,9 @@ export default function CityPage({ params }) {
   const otherMajorCities  = getOtherMajorCities(params.state, citySlug)
 
   // Pre-resolve support images (above testimonials + above final CTA)
-  const _supportRaw    = params.state === 'texas' ? getTexasSupportImages(citySlug, variant) : null
+  const _supportRaw   = isTexas   ? getTexasSupportImages(citySlug, variant)
+                      : isFlorida ? getFloridaSupportImages(citySlug, variant)
+                      : null
   const supportImages  = _supportRaw ? {
     testimonial: {
       src:     _supportRaw.testimonial.src,

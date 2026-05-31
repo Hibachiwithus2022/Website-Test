@@ -3,10 +3,16 @@ import { CITIES_BY_STATE, ALL_STATES } from '../../lib/cities';
 
 // High-traffic city slugs that earn a higher sitemap priority
 const MAJOR_CITY_SLUGS = new Set([
+  // Texas
   'dallas','houston','austin','san-antonio','fort-worth',
+  'katy','sugar-land','the-woodlands','frisco',
+  // Florida
   'miami','orlando','tampa','jacksonville','fort-lauderdale',
+  'sarasota','naples','west-palm-beach','destin','st-petersburg',
+  'boca-raton','cape-coral','key-west','clearwater',
+  // National
   'new-york','los-angeles','chicago','phoenix','philadelphia',
-  'san-antonio','san-diego','san-jose','seattle','denver',
+  'san-diego','san-jose','seattle','denver','las-vegas',
 ]);
 
 export const dynamic = 'force-dynamic';
