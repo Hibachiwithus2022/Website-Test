@@ -63,9 +63,12 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
                 {h2Line1}<br />
                 <span style={{ color: '#C8102E' }}>{h2Line2}</span>
               </h2>
-              <p style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.78 }}>
+              <p style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.78, marginBottom: '1.75rem' }}>
                 {introText}
               </p>
+              <a href="#book" className="btn-primary" style={{ display: 'inline-block', textDecoration: 'none' }}>
+                Check Availability
+              </a>
             </div>
 
             {/* RIGHT: framed image + badge — same treatment as Experience section */}
