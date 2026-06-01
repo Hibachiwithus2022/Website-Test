@@ -117,6 +117,11 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
             >
               ✉️ Email: info@hibachiconnect.com
             </a>
+            <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '0.5rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(26,18,9,0.08)' }}>
+              <a href="/menu" style={{ fontSize: '0.82rem', color: 'rgba(26,18,9,0.5)', textDecoration: 'none' }}>View Full Menu</a>
+              <span style={{ color: 'rgba(26,18,9,0.2)', fontSize: '0.82rem' }}>·</span>
+              <a href="/estimation" style={{ fontSize: '0.82rem', color: 'rgba(26,18,9,0.5)', textDecoration: 'none' }}>Estimate Your Price</a>
+            </div>
           </div>
         </div>
 

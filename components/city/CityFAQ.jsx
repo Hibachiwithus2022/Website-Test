@@ -65,8 +65,18 @@ export default function CityFAQ({ cityName, stateName, stateAbbr, faqSet = [], s
           ))}
         </div>
 
+        {/* Resource links */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(26,18,9,0.08)' }}>
+          <a href="/menu" style={{ fontSize: '0.85rem', color: '#C8102E', fontWeight: 600, textDecoration: 'none' }}>
+            Browse Full Menu →
+          </a>
+          <a href="/estimation" style={{ fontSize: '0.85rem', color: '#C8102E', fontWeight: 600, textDecoration: 'none' }}>
+            Get a Free Price Estimate →
+          </a>
+        </div>
+
         {/* Schema note */}
-        <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.82rem', color: 'rgba(26,18,9,0.38)' }}>
+        <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.82rem', color: 'rgba(26,18,9,0.38)' }}>
           Have more questions? Call or text us at{' '}
           <a href="tel:+12015653878" style={{ color: '#C8102E', textDecoration: 'none' }}>(201) 565-3878</a>
         </p>
