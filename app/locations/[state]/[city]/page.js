@@ -17,6 +17,7 @@ import {
 } from '../../../../lib/cityData'
 import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectionVariant, getTexasCityImage, getTexasSupportImages } from '../../../../lib/texasData'
 import { getFloridaCityData, getFloridaBlogPosts, getFloridaHowItWorks, getFloridaSectionVariant, getFloridaCityImage, getFloridaSupportImages } from '../../../../lib/floridaData'
+import { getNcCityData, getNcBlogPosts, getNcHowItWorks, getNcSectionVariant, getNcCityImage, getNcSupportImages } from '../../../../lib/ncData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -54,8 +55,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const citySlug  = params.city
   const cityData  = getCityData(citySlug)
-    ?? (params.state === 'texas'   ? getTexasCityData(citySlug, slugToCity(citySlug))   : null)
-    ?? (params.state === 'florida' ? getFloridaCityData(citySlug, slugToCity(citySlug)) : null)
+    ?? (params.state === 'texas'          ? getTexasCityData(citySlug, slugToCity(citySlug))   : null)
+    ?? (params.state === 'florida'        ? getFloridaCityData(citySlug, slugToCity(citySlug)) : null)
+    ?? (params.state === 'north-carolina' ? getNcCityData(citySlug, slugToCity(citySlug))      : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -89,8 +91,9 @@ export default function CityPage({ params }) {
   const stateEntry  = ALL_STATES.find(s => s.slug === params.state)
   const stateName   = stateEntry?.state || slugToCity(params.state)
   const cityData    = getCityData(citySlug)
-    ?? (params.state === 'texas'   ? getTexasCityData(citySlug, slugToCity(citySlug))   : null)
-    ?? (params.state === 'florida' ? getFloridaCityData(citySlug, slugToCity(citySlug)) : null)
+    ?? (params.state === 'texas'          ? getTexasCityData(citySlug, slugToCity(citySlug))   : null)
+    ?? (params.state === 'florida'        ? getFloridaCityData(citySlug, slugToCity(citySlug)) : null)
+    ?? (params.state === 'north-carolina' ? getNcCityData(citySlug, slugToCity(citySlug))      : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -104,16 +107,19 @@ export default function CityPage({ params }) {
   const testimonials      = cityData?.testimonials      ?? []
   const heroImage         = cityData?.heroImage         ?? HERO_IMAGES[variant % HERO_IMAGES.length]
   const supplementalFaqs  = getSupplementalFAQs(faqSet, 4)
-  const isTexas   = params.state === 'texas'
-  const isFlorida = params.state === 'florida'
+  const isTexas          = params.state === 'texas'
+  const isFlorida        = params.state === 'florida'
+  const isNorthCarolina  = params.state === 'north-carolina'
 
-  const relatedPosts = isTexas   ? getTexasBlogPosts(variant, 3)
-                     : isFlorida ? getFloridaBlogPosts(variant, 3)
+  const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
+                     : isFlorida       ? getFloridaBlogPosts(variant, 3)
+                     : isNorthCarolina ? getNcBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
 
   // Pre-resolve state-specific data server-side (client components cannot receive functions as props)
-  const _howItWorksRaw  = isTexas   ? getTexasHowItWorks(citySlug)
-                        : isFlorida ? getFloridaHowItWorks(citySlug)
+  const _howItWorksRaw  = isTexas         ? getTexasHowItWorks(citySlug)
+                        : isFlorida       ? getFloridaHowItWorks(citySlug)
+                        : isNorthCarolina ? getNcHowItWorks(citySlug)
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -121,11 +127,13 @@ export default function CityPage({ params }) {
     footerNote: _howItWorksRaw.footerNote?.(cityName) ?? null,
   } : null
 
-  const _sectionRaw = isTexas   ? getTexasSectionVariant(citySlug)
-                    : isFlorida ? getFloridaSectionVariant(citySlug)
+  const _sectionRaw = isTexas         ? getTexasSectionVariant(citySlug)
+                    : isFlorida       ? getFloridaSectionVariant(citySlug)
+                    : isNorthCarolina ? getNcSectionVariant(citySlug)
                     : null
-  const _cityImg    = isTexas   ? getTexasCityImage(citySlug)
-                    : isFlorida ? getFloridaCityImage(citySlug)
+  const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
+                    : isFlorida       ? getFloridaCityImage(citySlug)
+                    : isNorthCarolina ? getNcCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -149,8 +157,9 @@ export default function CityPage({ params }) {
   const otherMajorCities  = getOtherMajorCities(params.state, citySlug)
 
   // Pre-resolve support images (above testimonials + above final CTA)
-  const _supportRaw   = isTexas   ? getTexasSupportImages(citySlug, variant)
-                      : isFlorida ? getFloridaSupportImages(citySlug, variant)
+  const _supportRaw   = isTexas         ? getTexasSupportImages(citySlug, variant)
+                      : isFlorida       ? getFloridaSupportImages(citySlug, variant)
+                      : isNorthCarolina ? getNcSupportImages(citySlug, variant)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {

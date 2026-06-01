@@ -13,6 +13,10 @@ const MAJOR_CITY_SLUGS = new Set([
   // National
   'new-york','los-angeles','chicago','phoenix','philadelphia',
   'san-diego','san-jose','seattle','denver','las-vegas',
+  // North Carolina
+  'charlotte','raleigh','durham','asheville','outer-banks',
+  'wilmington','greensboro','cary','winston-salem','lake-norman',
+  'wrightsville-beach','nags-head','kill-devil-hills',
 ]);
 
 export const dynamic = 'force-dynamic';
