@@ -88,7 +88,9 @@ export default function CityPage({ params }) {
   const citySlug    = params.city
   const stateEntry  = ALL_STATES.find(s => s.slug === params.state)
   const stateName   = stateEntry?.state || slugToCity(params.state)
-  const cityData    = getCityData(citySlug) ?? (params.state === 'texas' ? getTexasCityData(citySlug, slugToCity(citySlug)) : null)
+  const cityData    = getCityData(citySlug)
+    ?? (params.state === 'texas'   ? getTexasCityData(citySlug, slugToCity(citySlug))   : null)
+    ?? (params.state === 'florida' ? getFloridaCityData(citySlug, slugToCity(citySlug)) : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
