@@ -75,13 +75,19 @@ export async function generateMetadata({ params }) {
     }
   }
 
-  // Fallback metadata for cities not in cityData.js yet
+  // Fallback metadata for cities not in a state-specific data module
+  const ogImage = `https://hibachiconnect.com/og?type=city&city=${encodeURIComponent(cityName)}&state=${encodeURIComponent(stateName)}`
   return {
     title:       `Private Hibachi Chef in ${cityName}, ${stateName} | Hibachi Connect`,
     description: `Book a private hibachi chef in ${cityName}, ${stateName}. Professional teppanyaki at your home starting at $60/person. Full setup & cleanup. Contact Hibachi Connect today.`,
     keywords:    `hibachi ${cityName}, private hibachi chef ${cityName}, hibachi at home ${cityName} ${stateAbbr}, hibachi catering ${cityName}`,
     alternates:  { canonical: `https://hibachiconnect.com/locations/${params.state}/${citySlug}` },
-    openGraph:   { title: `Hibachi at Home in ${cityName}, ${stateName} | Hibachi Connect`, description: `Professional private hibachi chef in ${cityName}. We bring the grill, ingredients & entertainment to your home. Starting at $60/adult.` },
+    openGraph:   {
+      title:       `Hibachi at Home in ${cityName}, ${stateName} | Hibachi Connect`,
+      description: `Professional private hibachi chef in ${cityName}. We bring the grill, ingredients & entertainment to your home. Starting at $60/adult.`,
+      images:      [{ url: ogImage, width: 1200, height: 630, alt: `Private hibachi chef in ${cityName}, ${stateName}` }],
+    },
+    twitter:     { card: 'summary_large_image', images: [ogImage] },
   }
 }
 
