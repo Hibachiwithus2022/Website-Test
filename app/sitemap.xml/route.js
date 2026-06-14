@@ -17,6 +17,10 @@ const MAJOR_CITY_SLUGS = new Set([
   'charlotte','raleigh','durham','asheville','outer-banks',
   'wilmington','greensboro','cary','winston-salem','lake-norman',
   'wrightsville-beach','nags-head','kill-devil-hills',
+  // New Jersey
+  'jersey-city','hoboken','princeton','cherry-hill','edison',
+  'morristown','montclair','asbury-park','cape-may','red-bank',
+  'stone-harbor','avalon','spring-lake',
 ]);
 
 export const dynamic = 'force-dynamic';
