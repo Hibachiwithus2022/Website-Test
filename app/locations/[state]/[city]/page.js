@@ -20,6 +20,7 @@ import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectio
 import { getFloridaCityData, getFloridaBlogPosts, getFloridaHowItWorks, getFloridaSectionVariant, getFloridaCityImage, getFloridaSupportImages } from '../../../../lib/floridaData'
 import { getNcCityData, getNcBlogPosts, getNcHowItWorks, getNcSectionVariant, getNcCityImage, getNcSupportImages } from '../../../../lib/ncData'
 import { getNjCityData, getNjBlogPosts, getNjHowItWorks, getNjSectionVariant, getNjCityImage, getNjSupportImages } from '../../../../lib/njData'
+import { getNyCityData, getNyBlogPosts, getNyHowItWorks, getNySectionVariant, getNyCityImage, getNySupportImages } from '../../../../lib/nyData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -61,6 +62,7 @@ export async function generateMetadata({ params }) {
     ?? (params.state === 'florida'        ? getFloridaCityData(citySlug, slugToCity(citySlug)) : null)
     ?? (params.state === 'north-carolina' ? getNcCityData(citySlug, slugToCity(citySlug))      : null)
     ?? (params.state === 'new-jersey'     ? getNjCityData(citySlug, slugToCity(citySlug))      : null)
+    ?? (params.state === 'new-york'       ? getNyCityData(citySlug, slugToCity(citySlug))      : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -104,6 +106,7 @@ export default function CityPage({ params }) {
     ?? (params.state === 'florida'        ? getFloridaCityData(citySlug, slugToCity(citySlug)) : null)
     ?? (params.state === 'north-carolina' ? getNcCityData(citySlug, slugToCity(citySlug))      : null)
     ?? (params.state === 'new-jersey'     ? getNjCityData(citySlug, slugToCity(citySlug))      : null)
+    ?? (params.state === 'new-york'       ? getNyCityData(citySlug, slugToCity(citySlug))      : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -121,11 +124,13 @@ export default function CityPage({ params }) {
   const isFlorida        = params.state === 'florida'
   const isNorthCarolina  = params.state === 'north-carolina'
   const isNewJersey      = params.state === 'new-jersey'
+  const isNewYork        = params.state === 'new-york'
 
   const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
                      : isFlorida       ? getFloridaBlogPosts(variant, 3)
                      : isNorthCarolina ? getNcBlogPosts(variant, 3)
                      : isNewJersey     ? getNjBlogPosts(variant, 3)
+                     : isNewYork       ? getNyBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
 
   // Pre-resolve state-specific data server-side (client components cannot receive functions as props)
@@ -133,6 +138,7 @@ export default function CityPage({ params }) {
                         : isFlorida       ? getFloridaHowItWorks(citySlug)
                         : isNorthCarolina ? getNcHowItWorks(citySlug)
                         : isNewJersey     ? getNjHowItWorks(citySlug)
+                        : isNewYork       ? getNyHowItWorks(citySlug)
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -144,11 +150,13 @@ export default function CityPage({ params }) {
                     : isFlorida       ? getFloridaSectionVariant(citySlug)
                     : isNorthCarolina ? getNcSectionVariant(citySlug)
                     : isNewJersey     ? getNjSectionVariant(citySlug)
+                    : isNewYork       ? getNySectionVariant(citySlug)
                     : null
   const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
                     : isFlorida       ? getFloridaCityImage(citySlug)
                     : isNorthCarolina ? getNcCityImage(citySlug)
                     : isNewJersey     ? getNjCityImage(citySlug)
+                    : isNewYork       ? getNyCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -176,6 +184,7 @@ export default function CityPage({ params }) {
                       : isFlorida       ? getFloridaSupportImages(citySlug, variant)
                       : isNorthCarolina ? getNcSupportImages(citySlug, variant)
                       : isNewJersey     ? getNjSupportImages(citySlug, variant)
+                      : isNewYork       ? getNySupportImages(citySlug, variant)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {

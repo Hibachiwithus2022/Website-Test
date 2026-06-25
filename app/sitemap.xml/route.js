@@ -21,6 +21,11 @@ const MAJOR_CITY_SLUGS = new Set([
   'jersey-city','hoboken','princeton','cherry-hill','edison',
   'morristown','montclair','asbury-park','cape-may','red-bank',
   'stone-harbor','avalon','spring-lake',
+  // New York
+  'new-york-city','brooklyn','queens','the-bronx','staten-island',
+  'white-plains','scarsdale','bronxville','southampton','east-hampton',
+  'montauk','lake-george','lake-placid','saratoga-springs','buffalo',
+  'rochester','albany','rhinebeck','woodstock','great-neck',
 ]);
 
 export const dynamic = 'force-dynamic';
