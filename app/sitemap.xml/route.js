@@ -26,6 +26,9 @@ const MAJOR_CITY_SLUGS = new Set([
   'white-plains','scarsdale','bronxville','southampton','east-hampton',
   'montauk','lake-george','lake-placid','saratoga-springs','buffalo',
   'rochester','albany','rhinebeck','woodstock','great-neck',
+  // Delaware
+  'wilmington','newark','dover','rehoboth-beach','lewes','bethany-beach',
+  'hockessin','greenville','middletown','bear','pike-creek','dewey-beach',
 ]);
 
 export const dynamic = 'force-dynamic';

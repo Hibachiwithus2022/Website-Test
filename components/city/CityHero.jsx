@@ -10,7 +10,7 @@ const HERO_ALT_VARIANTS = [
   (city, state) => `Live hibachi chef entertaining guests at a private ${city} event`,
 ]
 
-export default function CityHero({ cityName, stateName, stateSlug, variant = 0, heroImage, heroSubtitle, heroPill }) {
+export default function CityHero({ cityName, stateName, stateSlug, variant = 0, heroImage, heroSubtitle, heroPill, heroH1Prefix }) {
   const subtitle = heroSubtitle ?? HERO_SUBTITLES[variant % HERO_SUBTITLES.length](cityName, stateName)
   const imgAlt   = HERO_ALT_VARIANTS[variant % HERO_ALT_VARIANTS.length](cityName, stateName)
 
@@ -76,7 +76,7 @@ export default function CityHero({ cityName, stateName, stateSlug, variant = 0, 
           className="font-display leading-none text-brand-cream"
           style={{ fontSize: 'clamp(3.2rem,9vw,6.5rem)', marginBottom: '1rem', letterSpacing: '0.015em' }}
         >
-          Hibachi at Home in<br />
+          {heroH1Prefix ?? 'Hibachi at Home in'}<br />
           <span style={{ color: '#C8102E' }}>{cityName},</span>{' '}
           <span style={{ color: 'rgba(245,239,224,0.55)', fontSize: '0.65em' }}>{stateName}</span>
         </h1>
