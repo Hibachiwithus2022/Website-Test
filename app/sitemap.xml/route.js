@@ -29,6 +29,9 @@ const MAJOR_CITY_SLUGS = new Set([
   // Delaware
   'wilmington','newark','dover','rehoboth-beach','lewes','bethany-beach',
   'hockessin','greenville','middletown','bear','pike-creek','dewey-beach',
+  // Oregon
+  'portland','bend','eugene','salem','lake-oswego','cannon-beach',
+  'beaverton','hillsboro','mcminnville','lincoln-city',
 ]);
 
 export const dynamic = 'force-dynamic';

@@ -4,7 +4,7 @@ const STATE_ABBR = {
   texas: 'TX', florida: 'FL', california: 'CA', 'new-york': 'NY',
   colorado: 'CO', georgia: 'GA', arizona: 'AZ', illinois: 'IL',
   nevada: 'NV', washington: 'WA', virginia: 'VA', 'north-carolina': 'NC',
-  'new-jersey': 'NJ', delaware: 'DE',
+  'new-jersey': 'NJ', delaware: 'DE', oregon: 'OR',
 }
 import {
   getCityData,
@@ -22,6 +22,7 @@ import { getNcCityData, getNcBlogPosts, getNcHowItWorks, getNcSectionVariant, ge
 import { getNjCityData, getNjBlogPosts, getNjHowItWorks, getNjSectionVariant, getNjCityImage, getNjSupportImages } from '../../../../lib/njData'
 import { getNyCityData, getNyBlogPosts, getNyHowItWorks, getNySectionVariant, getNyCityImage, getNySupportImages } from '../../../../lib/nyData'
 import { getDelawareCityData, getDeBlogPosts, getDeHowItWorks, getDeSectionVariant, getDeCityImage, getDeSupportImages } from '../../../../lib/delawareData'
+import { getOregonCityData, getOrBlogPosts, getOrHowItWorks, getOrSectionVariant, getOrCityImage, getOrSupportImages } from '../../../../lib/oregonData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -65,6 +66,7 @@ export async function generateMetadata({ params }) {
     ?? (params.state === 'new-jersey'     ? getNjCityData(citySlug, slugToCity(citySlug))      : null)
     ?? (params.state === 'new-york'       ? getNyCityData(citySlug, slugToCity(citySlug))      : null)
     ?? (params.state === 'delaware'       ? getDelawareCityData(citySlug, slugToCity(citySlug)) : null)
+    ?? (params.state === 'oregon'         ? getOregonCityData(citySlug, slugToCity(citySlug))   : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -110,6 +112,7 @@ export default function CityPage({ params }) {
     ?? (params.state === 'new-jersey'     ? getNjCityData(citySlug, slugToCity(citySlug))      : null)
     ?? (params.state === 'new-york'       ? getNyCityData(citySlug, slugToCity(citySlug))      : null)
     ?? (params.state === 'delaware'       ? getDelawareCityData(citySlug, slugToCity(citySlug)) : null)
+    ?? (params.state === 'oregon'         ? getOregonCityData(citySlug, slugToCity(citySlug))   : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -129,6 +132,7 @@ export default function CityPage({ params }) {
   const isNewJersey      = params.state === 'new-jersey'
   const isNewYork        = params.state === 'new-york'
   const isDelaware       = params.state === 'delaware'
+  const isOregon         = params.state === 'oregon'
 
   const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
                      : isFlorida       ? getFloridaBlogPosts(variant, 3)
@@ -136,6 +140,7 @@ export default function CityPage({ params }) {
                      : isNewJersey     ? getNjBlogPosts(variant, 3)
                      : isNewYork       ? getNyBlogPosts(variant, 3)
                      : isDelaware      ? getDeBlogPosts(variant, 3)
+                     : isOregon        ? getOrBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
 
   // Pre-resolve state-specific data server-side (client components cannot receive functions as props)
@@ -145,6 +150,7 @@ export default function CityPage({ params }) {
                         : isNewJersey     ? getNjHowItWorks(citySlug)
                         : isNewYork       ? getNyHowItWorks(citySlug)
                         : isDelaware      ? getDeHowItWorks(citySlug)
+                        : isOregon        ? getOrHowItWorks(citySlug)
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -158,6 +164,7 @@ export default function CityPage({ params }) {
                     : isNewJersey     ? getNjSectionVariant(citySlug)
                     : isNewYork       ? getNySectionVariant(citySlug)
                     : isDelaware      ? getDeSectionVariant(citySlug)
+                    : isOregon        ? getOrSectionVariant(citySlug)
                     : null
   const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
                     : isFlorida       ? getFloridaCityImage(citySlug)
@@ -165,6 +172,7 @@ export default function CityPage({ params }) {
                     : isNewJersey     ? getNjCityImage(citySlug)
                     : isNewYork       ? getNyCityImage(citySlug)
                     : isDelaware      ? getDeCityImage(citySlug)
+                    : isOregon        ? getOrCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -194,6 +202,7 @@ export default function CityPage({ params }) {
                       : isNewJersey     ? getNjSupportImages(citySlug, variant)
                       : isNewYork       ? getNySupportImages(citySlug, variant)
                       : isDelaware      ? getDeSupportImages(citySlug, variant)
+                      : isOregon        ? getOrSupportImages(citySlug, variant)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {
