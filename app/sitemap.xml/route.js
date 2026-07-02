@@ -32,6 +32,10 @@ const MAJOR_CITY_SLUGS = new Set([
   // Oregon
   'portland','bend','eugene','salem','lake-oswego','cannon-beach',
   'beaverton','hillsboro','mcminnville','lincoln-city',
+  // Missouri
+  'kansas-city','st-louis','chesterfield','lee-s-summit','o-fallon',
+  'st-charles','blue-springs','lake-of-the-ozarks','branson','columbia',
+  'springfield','kirkwood','joplin',
 ]);
 
 export const dynamic = 'force-dynamic';
