@@ -36,6 +36,12 @@ const MAJOR_CITY_SLUGS = new Set([
   'kansas-city','st-louis','chesterfield','lee-s-summit','o-fallon',
   'st-charles','blue-springs','lake-of-the-ozarks','branson','columbia',
   'springfield','kirkwood','joplin',
+  // Georgia
+  'atlanta','savannah','augusta','columbus','athens','alpharetta','marietta',
+  'roswell','johns-creek','sandy-springs','dunwoody','decatur','st-simons-island',
+  // South Carolina
+  'charleston','mount-pleasant','myrtle-beach','hilton-head-island','columbia',
+  'greenville','bluffton','north-myrtle-beach','pawleys-island','summerville',
 ]);
 
 export const dynamic = 'force-dynamic';
