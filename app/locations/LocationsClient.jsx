@@ -19,6 +19,10 @@ const REGIONS = [
     name: 'Northeast',
     slugs: ['new-york','pennsylvania','new-jersey','massachusetts','connecticut','maine','new-hampshire','rhode-island','vermont','delaware'],
   },
+  {
+    name: 'Canada',
+    slugs: ['ontario'],
+  },
 ]
 
 function cityToSlug(city) {
@@ -48,12 +52,12 @@ export default function LocationsClient({ allStates, citiesByState }) {
             <span style={{ color: '#C8102E' }}>Near You</span>
           </h1>
           <p style={{ color: 'rgba(26,18,9,0.6)', maxWidth: '40rem', margin: '0 auto 2.5rem', fontSize: '1.05rem', lineHeight: 1.78 }}>
-            We serve all 50 U.S. states. Browse your state below, select your city, and book your private hibachi experience.
+            We serve all 50 U.S. states and Ontario, Canada. Browse your location below, select your city, and book your private hibachi experience.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem', flexWrap: 'wrap' }}>
             {[
-              { val: '50', label: 'States' },
-              { val: '$60', label: 'Per Adult' },
+              { val: '50+', label: 'Locations' },
+              { val: '$60+', label: 'Per Adult' },
               { val: '5.0★', label: 'Rating' },
               { val: '200+', label: 'Events' },
             ].map((item) => (
@@ -192,7 +196,7 @@ export default function LocationsClient({ allStates, citiesByState }) {
             Don't See Your City?
           </h2>
           <p style={{ color: 'rgba(26,18,9,0.6)', marginBottom: '2rem', lineHeight: 1.75 }}>
-            We serve communities across all 50 states. Contact us directly — if you have the space, we'll find a way to bring hibachi to you.
+            We serve communities across the U.S. and Canada. Contact us directly — if you have the space, we'll find a way to bring hibachi to you.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:+12015653878" className="btn-primary">(201) 565-3878</a>
