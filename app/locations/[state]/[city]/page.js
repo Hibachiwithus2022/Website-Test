@@ -6,6 +6,7 @@ const STATE_ABBR = {
   nevada: 'NV', washington: 'WA', virginia: 'VA', 'north-carolina': 'NC',
   'new-jersey': 'NJ', delaware: 'DE', oregon: 'OR', missouri: 'MO',
   'south-carolina': 'SC',
+  ontario: 'ON',
 }
 import {
   getCityData,
@@ -27,6 +28,7 @@ import { getOregonCityData, getOrBlogPosts, getOrHowItWorks, getOrSectionVariant
 import { getMissouriCityData, getMoBlogPosts, getMoHowItWorks, getMoSectionVariant, getMoCityImage, getMoSupportImages } from '../../../../lib/missouriData'
 import { getGeorgiaCityData, getGaBlogPosts, getGaHowItWorks, getGaSectionVariant, getGaCityImage, getGaSupportImages } from '../../../../lib/georgiaData'
 import { getSouthCarolinaCityData, getScBlogPosts, getScHowItWorks, getScSectionVariant, getScCityImage, getScSupportImages } from '../../../../lib/southcarolinaData'
+import { getOntarioCityData, getOnBlogPosts, getOnHowItWorks, getOnSectionVariant, getOnCityImage, getOnSupportImages } from '../../../../lib/ontarioData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -74,6 +76,7 @@ export async function generateMetadata({ params }) {
     ?? (params.state === 'missouri'       ? getMissouriCityData(citySlug, slugToCity(citySlug)) : null)
     ?? (params.state === 'georgia'        ? getGeorgiaCityData(citySlug, slugToCity(citySlug))  : null)
     ?? (params.state === 'south-carolina' ? getSouthCarolinaCityData(citySlug, slugToCity(citySlug)) : null)
+    ?? (params.state === 'ontario'        ? getOntarioCityData(citySlug, slugToCity(citySlug))        : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -123,6 +126,7 @@ export default function CityPage({ params }) {
     ?? (params.state === 'missouri'       ? getMissouriCityData(citySlug, slugToCity(citySlug)) : null)
     ?? (params.state === 'georgia'        ? getGeorgiaCityData(citySlug, slugToCity(citySlug))  : null)
     ?? (params.state === 'south-carolina' ? getSouthCarolinaCityData(citySlug, slugToCity(citySlug)) : null)
+    ?? (params.state === 'ontario'        ? getOntarioCityData(citySlug, slugToCity(citySlug))        : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -146,6 +150,7 @@ export default function CityPage({ params }) {
   const isMissouri       = params.state === 'missouri'
   const isGeorgia        = params.state === 'georgia'
   const isSouthCarolina  = params.state === 'south-carolina'
+  const isOntario        = params.state === 'ontario'
 
   const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
                      : isFlorida       ? getFloridaBlogPosts(variant, 3)
@@ -157,6 +162,7 @@ export default function CityPage({ params }) {
                      : isMissouri      ? getMoBlogPosts(variant, 3)
                      : isGeorgia       ? getGaBlogPosts(variant, 3)
                      : isSouthCarolina ? getScBlogPosts(variant, 3)
+                     : isOntario       ? getOnBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
 
   // Pre-resolve state-specific data server-side (client components cannot receive functions as props)
@@ -170,6 +176,7 @@ export default function CityPage({ params }) {
                         : isMissouri      ? getMoHowItWorks(citySlug)
                         : isGeorgia       ? getGaHowItWorks(citySlug)
                         : isSouthCarolina ? getScHowItWorks(citySlug)
+                        : isOntario       ? getOnHowItWorks(citySlug)
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -187,6 +194,7 @@ export default function CityPage({ params }) {
                     : isMissouri      ? getMoSectionVariant(citySlug)
                     : isGeorgia       ? getGaSectionVariant(citySlug)
                     : isSouthCarolina ? getScSectionVariant(citySlug)
+                    : isOntario       ? getOnSectionVariant(citySlug)
                     : null
   const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
                     : isFlorida       ? getFloridaCityImage(citySlug)
@@ -198,6 +206,7 @@ export default function CityPage({ params }) {
                     : isMissouri      ? getMoCityImage(citySlug)
                     : isGeorgia       ? getGaCityImage(citySlug)
                     : isSouthCarolina ? getScCityImage(citySlug)
+                    : isOntario       ? getOnCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -231,6 +240,7 @@ export default function CityPage({ params }) {
                       : isMissouri      ? getMoSupportImages(citySlug)
                       : isGeorgia       ? getGaSupportImages(citySlug)
                       : isSouthCarolina ? getScSupportImages(citySlug)
+                      : isOntario       ? getOnSupportImages(citySlug)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {
@@ -290,12 +300,13 @@ export default function CityPage({ params }) {
         <CityHowItWorks cityName={cityName} howItWorksData={howItWorksData} />
 
         {/* 4. Pricing */}
-        <CityPricing cityName={cityName} stateName={stateName} variant={variant} />
+        <CityPricing cityName={cityName} stateName={stateName} variant={variant} isOntario={isOntario} />
 
         {/* 5. Why us (rotating) */}
         <CityWhyUs
           cityName={cityName}
           uniqueWhyUsVariant={cityData?.uniqueWhyUsVariant ?? variant}
+          isOntario={isOntario}
         />
 
         {/* 6. Occasions grid */}

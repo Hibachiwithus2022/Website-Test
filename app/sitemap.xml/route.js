@@ -42,6 +42,10 @@ const MAJOR_CITY_SLUGS = new Set([
   // South Carolina
   'charleston','mount-pleasant','myrtle-beach','hilton-head-island','columbia',
   'greenville','bluffton','north-myrtle-beach','pawleys-island','summerville',
+  // Ontario
+  'toronto','mississauga','richmond-hill','markham','vaughan',
+  'brampton','oakville','burlington','muskoka','niagara-falls','niagara-on-the-lake',
+  'ottawa','hamilton','newmarket','barrie',
 ]);
 
 export const dynamic = 'force-dynamic';

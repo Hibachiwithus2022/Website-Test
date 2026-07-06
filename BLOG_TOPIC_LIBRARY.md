@@ -24,7 +24,7 @@
 | 4 | Lake Houses | 1 | Needs more |
 | 5 | Cabins | 0 | Untouched |
 | 6 | Birthday Parties | 1 | Needs more |
-| 7 | Graduation Parties | 0 (partial) | Needs standalone |
+| 7 | Graduation Parties | 1 | Needs more |
 | 8 | Corporate Events | 1 | Needs more |
 | 9 | Weddings | 0 | Untouched |
 | 10 | Bachelor Parties | 0 | Untouched |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 8 | Active — expand to new states |
+| 26 | Local Lifestyle | 11 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -181,6 +181,7 @@
 
 ### ✅ Already Published
 - `hibachi-family-celebrations-texas` — mentions graduations but as one of several Texas occasions; not a standalone graduation guide
+- `hibachi-graduation-party-ontario` — Ontario-specific graduation guide; dual-station setup, GTA market, CAD pricing
 
 ### 📋 Topics Still Available
 - Private hibachi for a graduation party: the complete planning guide
@@ -574,6 +575,9 @@
 - `lake-of-the-ozarks-branson-hibachi` — MO lake market guide
 - `private-hibachi-chef-cost-new-york` — NY pricing guide
 - `private-hibachi-chef-vs-restaurant-missouri` — MO comparison guide
+- `hibachi-at-home-ontario-guide` — complete Ontario state guide (CAD pricing, all 6 markets)
+- `cottage-country-hibachi-ontario` — Ontario cottage guide: Muskoka, Barrie, Collingwood
+- `hibachi-graduation-party-ontario` — Ontario graduation party planning guide
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**

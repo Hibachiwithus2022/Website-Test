@@ -1,8 +1,16 @@
 import { WHY_US_VARIANTS } from '../../lib/cityData'
 
-export default function CityWhyUs({ cityName, uniqueWhyUsVariant = 0 }) {
+export default function CityWhyUs({ cityName, uniqueWhyUsVariant = 0, isOntario = false }) {
   const variant = WHY_US_VARIANTS[uniqueWhyUsVariant % WHY_US_VARIANTS.length]
-  const v = { headline: variant.headline, items: variant.items(cityName) }
+  const rawItems = variant.items(cityName)
+  const items = isOntario
+    ? rawItems.map(item => ({
+        ...item,
+        desc: item.desc
+          .replace('$60/adult, $30/child, $600 event minimum', '$78/adult, $40/child, $780 CAD event minimum'),
+      }))
+    : rawItems
+  const v = { headline: variant.headline, items }
 
   return (
     <section style={{ background: '#FFFFFF', padding: '5rem 1.5rem' }}>
