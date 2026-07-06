@@ -211,7 +211,7 @@ export default function CityPage({ params }) {
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
     experiencePill:        _sectionRaw.experiencePill,
-    experiencePoints:      _sectionRaw.experiencePoints,
+    experiencePoints:      typeof _sectionRaw.experiencePoints === 'function' ? _sectionRaw.experiencePoints(cityName) : _sectionRaw.experiencePoints,
     experienceImage:       _cityImg?.src ?? _sectionRaw.experienceImage,
     experienceImageAlt:    _cityImg ? _cityImg.alt(cityName) : _sectionRaw.experienceImageAlt(cityName),
     areasPill:             _sectionRaw.areasPill,
