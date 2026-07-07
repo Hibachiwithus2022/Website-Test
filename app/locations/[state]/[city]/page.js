@@ -16,6 +16,7 @@ import {
   generateBreadcrumbSchema,
   getSupplementalFAQs,
   getBlogPostsForCity,
+  BLOG_POSTS,
   HERO_IMAGES,
 } from '../../../../lib/cityData'
 import { getTexasCityData, getTexasBlogPosts, getTexasHowItWorks, getTexasSectionVariant, getTexasCityImage, getTexasSupportImages } from '../../../../lib/texasData'
@@ -164,6 +165,10 @@ export default function CityPage({ params }) {
                      : isSouthCarolina ? getScBlogPosts(variant, 3)
                      : isOntario       ? getOnBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
+
+  // Enrich relatedPosts with tag/readTime from the shared BLOG_POSTS lookup if missing
+  const _blogMeta = Object.fromEntries(BLOG_POSTS.map(p => [p.slug, { tag: p.tag, readTime: p.readTime }]))
+  const enrichedPosts = relatedPosts.map(p => p.tag ? p : { ...p, ...(_blogMeta[p.slug] || { tag: 'Guide', readTime: '5 min read' }) })
 
   // Pre-resolve state-specific data server-side (client components cannot receive functions as props)
   const _howItWorksRaw  = isTexas         ? getTexasHowItWorks(citySlug)
@@ -381,7 +386,7 @@ export default function CityPage({ params }) {
         {/* 13. Related blog posts */}
         <CityRelatedPosts
           cityName={cityName}
-          posts={relatedPosts}
+          posts={enrichedPosts}
         />
 
         {/* 13. Final CTA + booking form (supportImage integrated inside when present) */}
