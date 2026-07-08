@@ -249,10 +249,11 @@ export default function CityPage({ params }) {
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {
-      src:     _supportRaw.testimonial.src,
-      alt:     _supportRaw.testimonial.alt(cityName),
-      caption: _supportRaw.testimonial.caption,
-      intro:   _supportRaw.testimonial.intro ? _supportRaw.testimonial.intro(cityName) : null,
+      src:        _supportRaw.testimonial.src,
+      alt:        _supportRaw.testimonial.alt(cityName),
+      caption:    _supportRaw.testimonial.caption,
+      intro:      _supportRaw.testimonial.intro ? _supportRaw.testimonial.intro(cityName) : null,
+      trustBadge: _supportRaw.testimonial.trustBadge ?? null,
     },
     cta: {
       src:     _supportRaw.cta.src,

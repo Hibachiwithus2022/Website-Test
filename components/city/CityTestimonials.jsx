@@ -90,7 +90,7 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
               }}>
                 <div className="font-display" style={{ fontSize: '2.2rem', color: '#F5EFE0', lineHeight: 1 }}>5.0★</div>
                 <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.12em', textTransform: 'uppercase', marginTop: '0.2rem' }}>
-                  5-Star Experiences
+                  {supportImage.trustBadge ?? '5-Star Experiences'}
                 </div>
               </div>
               <div style={{ position: 'absolute', top: '-1rem', left: '-1rem', width: '100%', height: '100%', border: '1px solid rgba(200,16,46,0.18)', pointerEvents: 'none' }} />
