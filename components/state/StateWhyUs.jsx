@@ -1,3 +1,5 @@
+import { isCanadaSlug } from '../../lib/cities'
+
 const WHY_US = [
   {
     icon: '🔥',
@@ -23,6 +25,7 @@ const WHY_US = [
     icon: '📋',
     title: 'Transparent Pricing',
     desc: 'No surprise fees. $60/adult, $30/child, $600 minimum. Quoted upfront, invoiced clearly.',
+    descCA: 'No surprise fees. $78 CAD/adult, $40 CAD/child, $780 CAD minimum. Quoted upfront, invoiced clearly.',
   },
   {
     icon: '🎉',
@@ -31,7 +34,8 @@ const WHY_US = [
   },
 ]
 
-export default function StateWhyUs({ state }) {
+export default function StateWhyUs({ state, stateSlug }) {
+  const isCanada = isCanadaSlug(stateSlug)
   return (
     <section style={{ background: 'linear-gradient(180deg,#FFFFFF,#F8F5F2)', padding: '4.5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
@@ -69,7 +73,7 @@ export default function StateWhyUs({ state }) {
               </div>
               <div>
                 <div style={{ fontWeight: 600, color: '#1A1209', marginBottom: '0.3rem', fontSize: '0.95rem' }}>{item.title}</div>
-                <div style={{ fontSize: '0.85rem', color: 'rgba(26,18,9,0.58)', lineHeight: 1.72 }}>{item.desc}</div>
+                <div style={{ fontSize: '0.85rem', color: 'rgba(26,18,9,0.58)', lineHeight: 1.72 }}>{isCanada && item.descCA ? item.descCA : item.desc}</div>
               </div>
             </div>
           ))}

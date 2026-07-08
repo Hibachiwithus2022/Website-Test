@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { HERO_SUBTITLES } from '../../lib/cityData'
+import { isCanadaSlug } from '../../lib/cities'
 
 const HERO_ALT_VARIANTS = [
   (city, state) => `Private hibachi chef cooking at a backyard event in ${city}, ${state}`,
@@ -13,6 +14,7 @@ const HERO_ALT_VARIANTS = [
 export default function CityHero({ cityName, stateName, stateSlug, variant = 0, heroImage, heroSubtitle, heroPill, heroH1Prefix }) {
   const subtitle = heroSubtitle ?? HERO_SUBTITLES[variant % HERO_SUBTITLES.length](cityName, stateName)
   const imgAlt   = HERO_ALT_VARIANTS[variant % HERO_ALT_VARIANTS.length](cityName, stateName)
+  const isCanada = isCanadaSlug(stateSlug)
 
   return (
     <section
@@ -103,8 +105,8 @@ export default function CityHero({ cityName, stateName, stateSlug, variant = 0, 
           paddingTop: '2rem', borderTop: '1px solid rgba(245,239,224,0.08)',
         }}>
           {[
-            { val: '$60', label: 'Per Adult' },
-            { val: '$600', label: 'Event Minimum' },
+            { val: isCanada ? '$78 CAD' : '$60', label: 'Per Adult' },
+            { val: isCanada ? '$780 CAD' : '$600', label: 'Event Minimum' },
             { val: '5.0★', label: 'Avg Rating' },
             { val: '10+', label: 'Min Guests' },
           ].map((item) => (

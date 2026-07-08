@@ -1,4 +1,4 @@
-import { CITIES_BY_STATE, ALL_STATES, slugToCity } from '../../../../lib/cities'
+import { CITIES_BY_STATE, ALL_STATES, slugToCity, isCanadaSlug } from '../../../../lib/cities'
 
 const STATE_ABBR = {
   texas: 'TX', florida: 'FL', california: 'CA', 'new-york': 'NY',
@@ -96,15 +96,18 @@ export async function generateMetadata({ params }) {
   }
 
   // Fallback metadata for cities not in a state-specific data module
+  const isCanada = isCanadaSlug(params.state)
+  const priceLine = isCanada ? '$78 CAD/person' : '$60/person'
+  const priceLineAdult = isCanada ? '$78 CAD/adult' : '$60/adult'
   const ogImage = `https://hibachiconnect.com/og?type=city&city=${encodeURIComponent(cityName)}&state=${encodeURIComponent(stateName)}`
   return {
     title:       `Private Hibachi Chef in ${cityName}, ${stateName} | Hibachi Connect`,
-    description: `Book a private hibachi chef in ${cityName}, ${stateName}. Professional teppanyaki at your home starting at $60/person. Full setup & cleanup. Contact Hibachi Connect today.`,
+    description: `Book a private hibachi chef in ${cityName}, ${stateName}. Professional teppanyaki at your home starting at ${priceLine}. Full setup & cleanup. Contact Hibachi Connect today.`,
     keywords:    `hibachi ${cityName}, private hibachi chef ${cityName}, hibachi at home ${cityName} ${stateAbbr}, hibachi catering ${cityName}`,
     alternates:  { canonical: `https://hibachiconnect.com/locations/${params.state}/${citySlug}` },
     openGraph:   {
       title:       `Hibachi at Home in ${cityName}, ${stateName} | Hibachi Connect`,
-      description: `Professional private hibachi chef in ${cityName}. We bring the grill, ingredients & entertainment to your home. Starting at $60/adult.`,
+      description: `Professional private hibachi chef in ${cityName}. We bring the grill, ingredients & entertainment to your home. Starting at ${priceLineAdult}.`,
       images:      [{ url: ogImage, width: 1200, height: 630, alt: `Private hibachi chef in ${cityName}, ${stateName}` }],
     },
     twitter:     { card: 'summary_large_image', images: [ogImage] },
@@ -266,7 +269,7 @@ export default function CityPage({ params }) {
   const lbSchema  = generateLocalBusinessSchema({ cityName, stateName, stateSlug: params.state })
   const faqSchema = generateFAQSchema(faqSet.length > 0 ? faqSet : [
     { q: `Do you serve ${cityName}, ${stateName}?`,          a: `Yes — we serve ${cityName} and all surrounding areas in ${stateName}. Our chefs travel to your location with a full teppan grill, all ingredients, and complete setup.` },
-    { q: 'How much does a private hibachi chef cost?',       a: 'Our rate is $60 per adult and $30 per child (ages 4–12). Children 3 and under eat free. The event minimum is $600.' },
+    { q: 'How much does a private hibachi chef cost?',       a: isOntario ? 'Our rate is $78 CAD per adult and $40 CAD per child (ages 4–12). Children 3 and under eat free. The event minimum is $780 CAD.' : 'Our rate is $60 per adult and $30 per child (ages 4–12). Children 3 and under eat free. The event minimum is $600.' },
     { q: 'Can hibachi be done indoors?',                     a: 'Yes — in large spaces with adequate ventilation. Most events are outdoors, but covered patios, large garages, and open indoor spaces work well.' },
     { q: 'What do I need to provide?',                       a: 'Tables and chairs for your guests. We bring everything else: grill, propane, all food, sauces, plates, and cleanup.' },
   ])
@@ -403,7 +406,7 @@ export default function CityPage({ params }) {
       <Footer />
 
       {/* Sticky mobile conversion bar */}
-      <CityStickyBar cityName={cityName} />
+      <CityStickyBar cityName={cityName} stateSlug={params.state} />
     </>
   )
 }

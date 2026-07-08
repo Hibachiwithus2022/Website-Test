@@ -11,7 +11,7 @@ import StateWhyUs          from '../../../components/state/StateWhyUs'
 import StatePricing        from '../../../components/state/StatePricing'
 import StateFAQ            from '../../../components/state/StateFAQ'
 import StateFinalCTA       from '../../../components/state/StateFinalCTA'
-import { ALL_STATES, CITIES_BY_STATE } from '../../../lib/cities'
+import { ALL_STATES, CITIES_BY_STATE, isCanadaSlug } from '../../../lib/cities'
 import { getStateData } from '../../../lib/stateData'
 import { getStateLinkData } from '../../../lib/internalLinks'
 
@@ -25,10 +25,12 @@ export async function generateMetadata({ params }) {
   const stateEntry = ALL_STATES.find(s => s.slug === params.state)
   const state      = stateEntry?.state || params.state
   const stateData  = getStateData(params.state)
+  const isCanada   = isCanadaSlug(params.state)
+  const priceLine  = isCanada ? '$78 CAD/person' : '$60/person'
 
   return {
     title:       `Private Hibachi Chef in ${state} | Hibachi Connect`,
-    description: `Book a private hibachi chef anywhere in ${state}. Professional teppanyaki at your home or backyard starting at $60/person. Serving all ${state} cities — contact Hibachi Connect today.`,
+    description: `Book a private hibachi chef anywhere in ${state}. Professional teppanyaki at your home or backyard starting at ${priceLine}. Serving all ${state} cities — contact Hibachi Connect today.`,
     keywords:    `hibachi ${state}, private hibachi chef ${state}, hibachi at home ${state}, hibachi catering ${state}, backyard hibachi ${state}, teppanyaki ${state}`,
     alternates:  { canonical: `https://hibachiconnect.com/locations/${params.state}` },
     openGraph: {
@@ -48,15 +50,18 @@ export default function StatePage({ params }) {
   const cities       = CITIES_BY_STATE[params.state] || []
   const stateLinkData = getStateLinkData(params.state)
   const blogPosts    = getAllPosts().slice(0, 3)
+  const isCanada     = isCanadaSlug(params.state)
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type':    'Service',
     name:       `Private Hibachi Chef in ${state}`,
     provider:   { '@type': 'Organization', name: 'Hibachi Connect', url: 'https://hibachiconnect.com' },
-    areaServed: { '@type': 'State', name: state, containedInPlace: { '@type': 'Country', name: 'United States' } },
+    areaServed: { '@type': 'State', name: state, containedInPlace: { '@type': 'Country', name: isCanada ? 'Canada' : 'United States' } },
     description: `Professional private hibachi chef experience throughout ${state}. We bring the teppanyaki grill, all ingredients, and full entertainment to your home or event venue.`,
-    offers: { '@type': 'Offer', price: '60', priceCurrency: 'USD', description: 'Per adult, minimum $600' },
+    offers: isCanada
+      ? { '@type': 'Offer', price: '78', priceCurrency: 'CAD', description: 'Per adult, minimum $780 CAD' }
+      : { '@type': 'Offer', price: '60', priceCurrency: 'USD', description: 'Per adult, minimum $600' },
     telephone: '+12015653878',
     email: 'info@hibachiconnect.com',
   }
@@ -79,7 +84,7 @@ export default function StatePage({ params }) {
         <StateHero state={state} stateSlug={params.state} stateData={stateData} />
 
         {/* SEO intro + quick facts */}
-        <StateIntro state={state} stateData={stateData} />
+        <StateIntro state={state} stateData={stateData} stateSlug={params.state} />
 
         {/* Featured top cities — rich cards with descriptions */}
         {stateLinkData?.featuredCities?.length > 0 && (
@@ -98,13 +103,13 @@ export default function StatePage({ params }) {
         <StateCoverage state={state} stateData={stateData} />
 
         {/* Why choose us */}
-        <StateWhyUs state={state} />
+        <StateWhyUs state={state} stateSlug={params.state} />
 
         {/* Pricing */}
-        <StatePricing state={state} />
+        <StatePricing state={state} stateSlug={params.state} />
 
         {/* FAQ */}
-        <StateFAQ state={state} stateData={stateData} />
+        <StateFAQ state={state} stateData={stateData} stateSlug={params.state} />
 
         {/* Final CTA + booking form */}
         <StateFinalCTA state={state} />

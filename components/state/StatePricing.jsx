@@ -1,3 +1,5 @@
+import { isCanadaSlug } from '../../lib/cities'
+
 const PROTEINS = [
   'Chicken', 'Steak', 'Shrimp', 'Scallops', 'Salmon', 'Tofu',
   'Filet Mignon (+$5)', 'Lobster Tail (+$10)',
@@ -15,7 +17,28 @@ const APPETIZERS = [
   { name: 'Edamame',        price: '$6'  },
 ]
 
-export default function StatePricing({ state }) {
+const ONTARIO_PROTEINS = [
+  'Chicken', 'Beef Striploin', 'Shrimp', 'Salmon', 'Tofu',
+  'Filet Mignon (+$8 CAD)', 'Lobster Tail (+$15 CAD)',
+]
+
+const ONTARIO_ADD_ONS = [
+  { name: 'Extra Protein (any)',  price: '$20 CAD/order' },
+  { name: 'Filet Mignon',        price: '+$8 CAD/person'  },
+  { name: 'Lobster Tail',        price: '+$15 CAD/person'  },
+  { name: 'Yakisoba Noodles',    price: '$8 CAD/order'   },
+]
+
+const ONTARIO_APPETIZERS = [
+  { name: 'Gyoza (8 pc)',   price: '$15 CAD' },
+  { name: 'Edamame',        price: '$8 CAD'  },
+]
+
+export default function StatePricing({ state, stateSlug }) {
+  const isCanada = isCanadaSlug(stateSlug)
+  const proteins   = isCanada ? ONTARIO_PROTEINS : PROTEINS
+  const addOns     = isCanada ? ONTARIO_ADD_ONS  : ADD_ONS
+  const appetizers = isCanada ? ONTARIO_APPETIZERS : APPETIZERS
   return (
     <section id="pricing" style={{ background: '#F8F5F2', padding: '4.5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
@@ -49,16 +72,16 @@ export default function StatePricing({ state }) {
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
               <div>
                 <div className="font-display" style={{ fontSize: '3.8rem', color: '#1A1209', lineHeight: 1 }}>
-                  $60<span style={{ fontSize: '1.2rem', color: 'rgba(26,18,9,0.4)' }}>/person</span>
+                  {isCanada ? '$78' : '$60'}<span style={{ fontSize: '1.2rem', color: 'rgba(26,18,9,0.4)' }}>/person</span>
                 </div>
-                <div style={{ fontSize: '0.75rem', color: 'rgba(26,18,9,0.5)', marginTop: '0.2rem' }}>Adults</div>
+                <div style={{ fontSize: '0.75rem', color: 'rgba(26,18,9,0.5)', marginTop: '0.2rem' }}>{isCanada ? 'Adults (CAD)' : 'Adults'}</div>
               </div>
               <div style={{ width: 1, background: 'rgba(26,18,9,0.08)', alignSelf: 'stretch', flexShrink: 0 }} />
               <div>
                 <div className="font-display" style={{ fontSize: '3.8rem', color: '#1A1209', lineHeight: 1 }}>
-                  $30<span style={{ fontSize: '1.2rem', color: 'rgba(26,18,9,0.4)' }}>/child</span>
+                  {isCanada ? '$40' : '$30'}<span style={{ fontSize: '1.2rem', color: 'rgba(26,18,9,0.4)' }}>/child</span>
                 </div>
-                <div style={{ fontSize: '0.75rem', color: 'rgba(26,18,9,0.5)', marginTop: '0.2rem' }}>12 &amp; under</div>
+                <div style={{ fontSize: '0.75rem', color: 'rgba(26,18,9,0.5)', marginTop: '0.2rem' }}>{isCanada ? 'Ages 4–12 (CAD)' : '12 & under'}</div>
               </div>
             </div>
 
@@ -69,7 +92,7 @@ export default function StatePricing({ state }) {
             }}>
               <span style={{ color: '#D4A843' }}>★</span>
               <span style={{ fontSize: '0.85rem', color: 'rgba(26,18,9,0.7)' }}>
-                <strong style={{ color: '#1A1209' }}>$600 minimum</strong> for all parties
+                <strong style={{ color: '#1A1209' }}>{isCanada ? '$780 CAD minimum' : '$600 minimum'}</strong> for all parties
               </span>
             </div>
 
@@ -95,7 +118,7 @@ export default function StatePricing({ state }) {
 
             <div style={{ borderTop: '1px solid rgba(26,18,9,0.08)', paddingTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.4rem', marginBottom: '2rem' }}>
               {[
-                'Gratuity is not included',
+                isCanada ? 'All prices in Canadian dollars (CAD)' : 'Gratuity is not included',
                 `Travel fees depend on location in ${state}`,
               ].map((note, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: 'rgba(26,18,9,0.5)' }}>
@@ -118,7 +141,7 @@ export default function StatePricing({ state }) {
                 Protein Choices — Pick 2
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {PROTEINS.map((p, i) => (
+                {proteins.map((p, i) => (
                   <span key={i} style={{
                     display: 'inline-block', padding: '0.35rem 0.9rem',
                     fontSize: '0.82rem', fontWeight: 500,
@@ -137,8 +160,8 @@ export default function StatePricing({ state }) {
                 Add-Ons (per order)
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                {ADD_ONS.map((a, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: i < ADD_ONS.length - 1 ? '1px solid rgba(26,18,9,0.07)' : 'none' }}>
+                {addOns.map((a, i) => (
+                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: i < addOns.length - 1 ? '1px solid rgba(26,18,9,0.07)' : 'none' }}>
                     <span style={{ fontSize: '0.88rem', color: 'rgba(26,18,9,0.72)' }}>{a.name}</span>
                     <span style={{ color: '#D4A843', fontWeight: 700, fontSize: '0.88rem' }}>{a.price}</span>
                   </div>
@@ -151,8 +174,8 @@ export default function StatePricing({ state }) {
                 Appetizers
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                {APPETIZERS.map((a, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: i < APPETIZERS.length - 1 ? '1px solid rgba(26,18,9,0.07)' : 'none' }}>
+                {appetizers.map((a, i) => (
+                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.6rem', borderBottom: i < appetizers.length - 1 ? '1px solid rgba(26,18,9,0.07)' : 'none' }}>
                     <span style={{ fontSize: '0.88rem', color: 'rgba(26,18,9,0.72)' }}>{a.name}</span>
                     <span style={{ color: '#D4A843', fontWeight: 700, fontSize: '0.88rem' }}>{a.price}</span>
                   </div>

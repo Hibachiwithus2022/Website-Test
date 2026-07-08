@@ -10,6 +10,9 @@ export async function GET(request) {
   const state = searchParams.get('state') || ''
 
   // ── Text content ─────────────────────────────────────────────────────────────
+  const isCanada = state === 'Ontario'
+  const priceLine = isCanada ? 'From $78 CAD/adult · $780 CAD minimum' : 'From $60/adult · $600 minimum'
+
   let headline = 'Private Hibachi Chef at Home'
   let subline  = 'Professional Teppanyaki · Nationwide Coverage'
   let eyebrow  = 'HIBACHI CONNECT'
@@ -211,7 +214,7 @@ export async function GET(request) {
                 display: 'flex',
               }}
             >
-              From $60/adult · $600 minimum
+              {priceLine}
             </div>
           </div>
         </div>

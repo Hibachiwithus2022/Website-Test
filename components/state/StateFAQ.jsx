@@ -1,10 +1,12 @@
 'use client'
 import { useState } from 'react'
+import { isCanadaSlug } from '../../lib/cities'
 
 const SHARED_FAQS = [
   {
     q: 'How much does a private hibachi chef cost?',
     a: 'Our rate is $60 per adult and $30 per child (ages 4–12). Children 3 and under eat free. The event minimum is $600. Travel fees may apply based on distance.',
+    aCA: 'Our rate is $78 CAD per adult and $40 CAD per child (ages 4–12). Children 3 and under eat free. The event minimum is $780 CAD. Travel fees may apply based on distance.',
   },
   {
     q: 'What do I need to provide for the event?',
@@ -24,8 +26,11 @@ const SHARED_FAQS = [
   },
 ]
 
-export default function StateFAQ({ state, stateData }) {
-  const allFaqs = [...(stateData.faq || []), ...SHARED_FAQS]
+export default function StateFAQ({ state, stateData, stateSlug }) {
+  const isCanada = isCanadaSlug(stateSlug)
+  const allFaqs = [...(stateData.faq || []), ...SHARED_FAQS].map(faq =>
+    isCanada && faq.aCA ? { ...faq, a: faq.aCA } : faq
+  )
   const [openIdx, setOpenIdx] = useState(null)
 
   return (

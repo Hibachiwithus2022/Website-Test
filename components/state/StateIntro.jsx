@@ -1,4 +1,7 @@
-export default function StateIntro({ state, stateData }) {
+import { isCanadaSlug } from '../../lib/cities'
+
+export default function StateIntro({ state, stateData, stateSlug }) {
+  const isCanada = isCanadaSlug(stateSlug)
   return (
     <section style={{ background: '#FFFFFF', padding: '4.5rem 1.5rem' }}>
       <div className="max-w-5xl mx-auto">
@@ -31,10 +34,10 @@ export default function StateIntro({ state, stateData }) {
               Quick Facts
             </div>
             {[
-              { label: 'Starting Price', value: '$60/adult' },
-              { label: 'Children (Ages 4–12)', value: '$30/child' },
+              { label: 'Starting Price', value: isCanada ? '$78 CAD/adult' : '$60/adult' },
+              { label: 'Children (Ages 4–12)', value: isCanada ? '$40 CAD/child' : '$30/child' },
               { label: 'Under 3', value: 'Free' },
-              { label: 'Event Minimum', value: '$600' },
+              { label: 'Event Minimum', value: isCanada ? '$780 CAD' : '$600' },
               { label: 'Min. Guest Count', value: '10 guests' },
               { label: 'Chef Arrival', value: '5–10 min before' },
               { label: 'Cleanup Included', value: 'Yes' },

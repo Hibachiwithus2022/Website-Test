@@ -1,8 +1,10 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { isCanadaSlug } from '../../lib/cities'
 
-export default function CityStickyBar({ cityName }) {
+export default function CityStickyBar({ cityName, stateSlug }) {
   const [visible, setVisible] = useState(false)
+  const isCanada = isCanadaSlug(stateSlug)
 
   useEffect(() => {
     function onScroll() {
@@ -40,7 +42,7 @@ export default function CityStickyBar({ cityName }) {
           from
         </div>
         <div style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '1.5rem', color: '#D4A843', letterSpacing: '0.04em', lineHeight: 1 }}>
-          $60<span style={{ fontSize: '0.8rem', color: 'rgba(212,168,67,0.6)' }}>/adult</span>
+          {isCanada ? '$78 CAD' : '$60'}<span style={{ fontSize: '0.8rem', color: 'rgba(212,168,67,0.6)' }}>/adult</span>
         </div>
       </div>
 
