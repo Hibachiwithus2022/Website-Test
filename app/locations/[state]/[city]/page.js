@@ -144,7 +144,7 @@ export default function CityPage({ params }) {
   // Build props — use cityData if available, fall back to generic
   const variant           = cityData?.variant ?? 0
   const nearbyCities      = cityData?.nearbyCities      ?? (CITIES_BY_STATE[params.state] || []).filter(c => c !== cityName).slice(0, 10)
-  const nearbyMajorCities = cityData?.nearbyMajorCities ?? []
+  const nearbyMajorCities = (cityData?.nearbyMajorCities ?? []).filter(c => c !== cityName)
   const localHighlights   = cityData?.localHighlights   ?? []
   const featuredOccasions = cityData?.featuredOccasions ?? []
   const faqSet            = cityData?.faqSet            ?? []
