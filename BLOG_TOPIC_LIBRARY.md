@@ -29,11 +29,11 @@
 | 9 | Weddings | 0 | Untouched |
 | 10 | Bachelor Parties | 0 | Untouched |
 | 11 | Bachelorette Parties | 1 | Needs more |
-| 12 | Family Reunions | 0 (partial) | Needs standalone |
+| 12 | Family Reunions | 1 | Needs more |
 | 13 | Holiday Parties | 0 | Untouched |
 | 14 | Summer Parties | 0 | Untouched |
 | 15 | Backyard Parties | 2 | Well covered |
-| 16 | Luxury Dining | 0 | Untouched |
+| 16 | Luxury Dining | 1 | Needs more |
 | 17 | Private Chef Experience | 1 | Needs more |
 | 18 | Hibachi vs Restaurant | 2 | Well covered |
 | 19 | Hibachi vs Catering | 0 (partial) | Needs standalone |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 11 | Active — expand to new states |
+| 26 | Local Lifestyle | 12 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -285,6 +285,7 @@
 
 ### ✅ Already Published
 - `hibachi-family-celebrations-texas` — covers family reunions as one of several TX occasions; no standalone piece
+- `private-hibachi-military-homecoming-hampton-roads` — Hampton Roads military homecomings, retirements, promotions (Family Celebrations category; military-specific)
 
 ### 📋 Topics Still Available
 - Private hibachi for family reunions: the complete planning guide
@@ -365,7 +366,7 @@
 **Search intent:** High-income hosts looking for a premium dining experience — filet mignon, lobster, wagyu — that elevates the private hibachi concept.
 
 ### ✅ Already Published
-- None
+- `private-hibachi-estate-dinner-northern-virginia` — McLean, Leesburg, Charlottesville estate entertaining; premium proteins; NoVA and wine country luxury market
 
 ### 📋 Topics Still Available
 - Premium hibachi proteins: filet mignon, lobster tail, wagyu, and scallops guide
@@ -578,6 +579,7 @@
 - `hibachi-at-home-ontario-guide` — complete Ontario state guide (CAD pricing, all 6 markets)
 - `cottage-country-hibachi-ontario` — Ontario cottage guide: Muskoka, Barrie, Collingwood
 - `hibachi-graduation-party-ontario` — Ontario graduation party planning guide
+- `hibachi-at-home-virginia-guide` — complete Virginia guide (6 regions: NoVA, Richmond, Hampton Roads, Wine Country, Blue Ridge, Fredericksburg corridor)
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
