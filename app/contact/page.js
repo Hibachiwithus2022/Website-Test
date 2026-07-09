@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', zipCode: '', message: '' })
   const [status, setStatus] = useState(null)
 
   async function handleSubmit(e) {
@@ -103,12 +103,13 @@ export default function ContactPage() {
                   { label: 'Your Name', key: 'name', type: 'text', placeholder: 'John Smith' },
                   { label: 'Email Address', key: 'email', type: 'email', placeholder: 'john@example.com' },
                   { label: 'Phone (optional)', key: 'phone', type: 'tel', placeholder: '(555) 000-0000' },
+                  { label: 'Event Zip Code', key: 'zipCode', type: 'text', placeholder: '10001' },
                 ].map(({ label, key, type, placeholder }) => (
                   <div key={key}>
                     <label style={{ display: 'block', color: '#1A1209', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>{label}</label>
                     <input
                       type={type}
-                      required={key !== 'phone'}
+                      required={key !== 'phone' && key !== 'zipCode'}
                       placeholder={placeholder}
                       value={form[key]}
                       onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))}
