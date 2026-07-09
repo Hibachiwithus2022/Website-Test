@@ -580,6 +580,9 @@
 - `cottage-country-hibachi-ontario` — Ontario cottage guide: Muskoka, Barrie, Collingwood
 - `hibachi-graduation-party-ontario` — Ontario graduation party planning guide
 - `hibachi-at-home-virginia-guide` — complete Virginia guide (6 regions: NoVA, Richmond, Hampton Roads, Wine Country, Blue Ridge, Fredericksburg corridor)
+- `hibachi-at-home-michigan-guide` — complete Michigan guide (6 markets: Detroit Metro Luxury, Corporate, Suburban, West Michigan, Lake Michigan Shore, Northern Michigan)
+- `private-hibachi-lake-michigan-shore` — Lake Michigan vacation rental guide: Saugatuck, South Haven, Holland; bachelorette weekends, family reunions, Chicago weekender groups
+- `private-hibachi-northern-michigan-cottage` — Northern Michigan cottage/resort guide: Traverse City wine country, Petoskey Bay Harbor, Old Mission Peninsula, Harbor Springs corridor
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
