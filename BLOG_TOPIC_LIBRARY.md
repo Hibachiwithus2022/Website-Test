@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 12 | Active — expand to new states |
+| 26 | Local Lifestyle | 15 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -583,6 +583,9 @@
 - `hibachi-at-home-michigan-guide` — complete Michigan guide (6 markets: Detroit Metro Luxury, Corporate, Suburban, West Michigan, Lake Michigan Shore, Northern Michigan)
 - `private-hibachi-lake-michigan-shore` — Lake Michigan vacation rental guide: Saugatuck, South Haven, Holland; bachelorette weekends, family reunions, Chicago weekender groups
 - `private-hibachi-northern-michigan-cottage` — Northern Michigan cottage/resort guide: Traverse City wine country, Petoskey Bay Harbor, Old Mission Peninsula, Harbor Springs corridor
+- `hibachi-at-home-maryland-guide` — complete Maryland guide (6 markets: DC Corridor, Montgomery County, Howard County, Baltimore Metro, Capital/Southern MD, Chesapeake Bay & Eastern Shore)
+- `private-hibachi-chesapeake-bay-annapolis` — Annapolis & Chesapeake Bay waterfront guide: USNA graduation weekend, Severn River estates, Severna Park, Kent Island, Anne Arundel County bachelorette weekends
+- `private-hibachi-maryland-shore-ocean-city` — Maryland shore vacation rental guide: Ocean City bachelorette weekends & family reunions, St. Michaels milestone cottage occasions, Eastern Shore premium proteins
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
