@@ -586,6 +586,9 @@
 - `hibachi-at-home-maryland-guide` — complete Maryland guide (6 markets: DC Corridor, Montgomery County, Howard County, Baltimore Metro, Capital/Southern MD, Chesapeake Bay & Eastern Shore)
 - `private-hibachi-chesapeake-bay-annapolis` — Annapolis & Chesapeake Bay waterfront guide: USNA graduation weekend, Severn River estates, Severna Park, Kent Island, Anne Arundel County bachelorette weekends
 - `private-hibachi-maryland-shore-ocean-city` — Maryland shore vacation rental guide: Ocean City bachelorette weekends & family reunions, St. Michaels milestone cottage occasions, Eastern Shore premium proteins
+- `hibachi-at-home-tennessee-guide` — complete Tennessee guide (6 markets: Nashville Core, Nashville South, Nashville East/North, Smoky Mountains, East TN, West/South TN)
+- `private-hibachi-nashville-vacation-rental` — Nashville mobile hibachi: vacation rental & bachelorette weekend guide, all Nashville neighborhoods (Gulch, East Nashville, 12 South, Belle Meade), corporate & birthday groups
+- `private-hibachi-smoky-mountain-cabin-gatlinburg` — Smoky Mountain cabin hibachi: Gatlinburg, Pigeon Forge, Sevierville; self-contained propane setup, no hookups needed, bachelorette cabin weekends, family reunion lodges, planning checklist
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
@@ -598,7 +601,6 @@
 - New Jersey complete state guide
 - Colorado complete state guide
 - Nevada / Las Vegas guide
-- Tennessee / Nashville guide
 
 **City/region-specific:**
 - Hamptons hibachi guide (NY subset, deeper coverage)
