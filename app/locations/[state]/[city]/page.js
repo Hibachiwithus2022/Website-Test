@@ -9,6 +9,7 @@ const STATE_ABBR = {
   ontario: 'ON',
   michigan: 'MI',
   maryland: 'MD',
+  tennessee: 'TN',
 }
 import {
   getCityData,
@@ -35,6 +36,7 @@ import { getOntarioCityData, getOnBlogPosts, getOnHowItWorks, getOnSectionVarian
 import { getVirginiaCityData, getVaBlogPosts, getVaHowItWorks, getVaSectionVariant, getVaCityImage, getVaSupportImages } from '../../../../lib/virginiaData'
 import { getMichiganCityData, getMiBlogPosts, getMiHowItWorks, getMiSectionVariant, getMiCityImage, getMiSupportImages } from '../../../../lib/michiganData'
 import { getMarylandCityData, getMdBlogPosts, getMdHowItWorks, getMdSectionVariant, getMdCityImage, getMdSupportImages } from '../../../../lib/marylandData'
+import { getTennesseeCityData, getTnBlogPosts, getTnHowItWorks, getTnSectionVariant, getTnCityImage, getTnSupportImages } from '../../../../lib/tennesseeData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -86,6 +88,7 @@ export async function generateMetadata({ params }) {
     ?? (params.state === 'virginia'       ? getVirginiaCityData(citySlug, slugToCity(citySlug))       : null)
     ?? (params.state === 'michigan'       ? getMichiganCityData(citySlug, slugToCity(citySlug))       : null)
     ?? (params.state === 'maryland'       ? getMarylandCityData(citySlug, slugToCity(citySlug))       : null)
+    ?? (params.state === 'tennessee'      ? getTennesseeCityData(citySlug, slugToCity(citySlug))      : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -142,6 +145,7 @@ export default function CityPage({ params }) {
     ?? (params.state === 'virginia'       ? getVirginiaCityData(citySlug, slugToCity(citySlug))       : null)
     ?? (params.state === 'michigan'       ? getMichiganCityData(citySlug, slugToCity(citySlug))       : null)
     ?? (params.state === 'maryland'       ? getMarylandCityData(citySlug, slugToCity(citySlug))       : null)
+    ?? (params.state === 'tennessee'      ? getTennesseeCityData(citySlug, slugToCity(citySlug))      : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -169,6 +173,7 @@ export default function CityPage({ params }) {
   const isVirginia       = params.state === 'virginia'
   const isMichigan       = params.state === 'michigan'
   const isMaryland       = params.state === 'maryland'
+  const isTennessee      = params.state === 'tennessee'
 
   const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
                      : isFlorida       ? getFloridaBlogPosts(variant, 3)
@@ -184,6 +189,7 @@ export default function CityPage({ params }) {
                      : isVirginia      ? getVaBlogPosts(variant, 3)
                      : isMichigan      ? getMiBlogPosts(variant, 3)
                      : isMaryland      ? getMdBlogPosts(variant, 3)
+                     : isTennessee     ? getTnBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
 
   // Enrich relatedPosts with tag/readTime from the shared BLOG_POSTS lookup if missing
@@ -205,6 +211,7 @@ export default function CityPage({ params }) {
                         : isVirginia      ? getVaHowItWorks(citySlug)
                         : isMichigan      ? getMiHowItWorks(citySlug)
                         : isMaryland      ? getMdHowItWorks(citySlug)
+                        : isTennessee     ? getTnHowItWorks(citySlug)
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -226,6 +233,7 @@ export default function CityPage({ params }) {
                     : isVirginia      ? getVaSectionVariant(citySlug)
                     : isMichigan      ? getMiSectionVariant(citySlug)
                     : isMaryland      ? getMdSectionVariant(citySlug)
+                    : isTennessee     ? getTnSectionVariant(citySlug)
                     : null
   const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
                     : isFlorida       ? getFloridaCityImage(citySlug)
@@ -241,6 +249,7 @@ export default function CityPage({ params }) {
                     : isVirginia      ? getVaCityImage(citySlug)
                     : isMichigan      ? getMiCityImage(citySlug)
                     : isMaryland      ? getMdCityImage(citySlug)
+                    : isTennessee     ? getTnCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -278,6 +287,7 @@ export default function CityPage({ params }) {
                       : isVirginia      ? getVaSupportImages(citySlug, variant)
                       : isMichigan      ? getMiSupportImages(citySlug)
                       : isMaryland      ? getMdSupportImages(citySlug)
+                      : isTennessee     ? getTnSupportImages(citySlug)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {
