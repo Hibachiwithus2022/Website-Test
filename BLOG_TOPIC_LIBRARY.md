@@ -590,9 +590,12 @@
 - `private-hibachi-nashville-vacation-rental` — Nashville mobile hibachi: vacation rental & bachelorette weekend guide, all Nashville neighborhoods (Gulch, East Nashville, 12 South, Belle Meade), corporate & birthday groups
 - `private-hibachi-smoky-mountain-cabin-gatlinburg` — Smoky Mountain cabin hibachi: Gatlinburg, Pigeon Forge, Sevierville; self-contained propane setup, no hookups needed, bachelorette cabin weekends, family reunion lodges, planning checklist
 
+- `hibachi-at-home-south-carolina-guide` — complete SC state guide (6 markets: Charleston Luxury, Upstate Corporate, Grand Strand Vacation, Lowcountry Coastal, Columbia Midlands, SC Suburban)
+- `private-hibachi-charleston-sc` — Charleston guide: historic homes, Sullivan's Island/Isle of Palms bachelorette weekends, Mount Pleasant graduation parties, Daniel Island corporate events
+- `private-hibachi-myrtle-beach-vacation-rental` — Grand Strand vacation rental guide: Myrtle Beach bachelorette weekends, family reunions, North Myrtle Beach, Pawleys Island
+
 ### 📋 Topics Still Available
 **State guides (none published yet):**
-- South Carolina complete state guide
 - Georgia complete state guide
 - Florida complete state guide
 - North Carolina complete state guide
