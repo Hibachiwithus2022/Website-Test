@@ -22,9 +22,9 @@
 | 2 | Airbnb | 0 | Untouched |
 | 3 | Beach Houses | 0 | Untouched |
 | 4 | Lake Houses | 1 | Needs more |
-| 5 | Cabins | 0 | Untouched |
+| 5 | Cabins | 1 | Needs more |
 | 6 | Birthday Parties | 1 | Needs more |
-| 7 | Graduation Parties | 1 | Needs more |
+| 7 | Graduation Parties | 2 | Needs more |
 | 8 | Corporate Events | 1 | Needs more |
 | 9 | Weddings | 0 | Untouched |
 | 10 | Bachelor Parties | 0 | Untouched |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 15 | Active — expand to new states |
+| 26 | Local Lifestyle | 18 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -139,7 +139,7 @@
 **Search intent:** People renting mountain cabins or rustic retreats who wonder if private hibachi works in that setting.
 
 ### ✅ Already Published
-- None
+- `private-hibachi-brainerd-lakes-cabin` — Minnesota cabin guide: Brainerd Lakes, Duluth/North Shore, Stillwater St. Croix; self-contained propane setup, no hookups required
 
 ### 📋 Topics Still Available
 - Can you book a private hibachi chef at a mountain cabin?
@@ -150,7 +150,7 @@
 
 ### 💡 Next Suggested
 **"Can You Book a Private Hibachi Chef at a Mountain Cabin?"**
-— Answers a real question about space, access, and setup at cabin properties. High organic potential given the explosion of cabin rental bookings.
+— Answers a real question about space, access, and setup at cabin properties. High organic potential given the explosion of cabin rental bookings. Smoky Mountains angle (TN posts) makes this a natural follow-on.
 
 ---
 
@@ -182,9 +182,10 @@
 ### ✅ Already Published
 - `hibachi-family-celebrations-texas` — mentions graduations but as one of several Texas occasions; not a standalone graduation guide
 - `hibachi-graduation-party-ontario` — Ontario-specific graduation guide; dual-station setup, GTA market, CAD pricing
+- `private-hibachi-graduation-party-twin-cities` — Twin Cities graduation party planning guide; Maple Grove, Plymouth, Eagan, Burnsville, Lakeville; booking windows, dual-station setup, group sizes
 
 ### 📋 Topics Still Available
-- Private hibachi for a graduation party: the complete planning guide
+- Private hibachi for a graduation party: the complete planning guide (general, not state-specific)
 - High school graduation hibachi party: how to plan for 30–80 guests
 - College graduation hibachi party ideas
 - How to feed 50 people at a graduation party (without renting a venue)
@@ -193,7 +194,7 @@
 
 ### 💡 Next Suggested
 **"Private Hibachi for a Graduation Party: The Complete Planning Guide"**
-— Peak seasonal intent (April–June), high group sizes, direct conversion path. Should be the definitive standalone graduation post.
+— The definitive standalone graduation post (general, not state-specific). Now that Ontario and Twin Cities versions exist, a general evergreen post closes the content gap for all other markets.
 
 ---
 
@@ -589,6 +590,9 @@
 - `hibachi-at-home-tennessee-guide` — complete Tennessee guide (6 markets: Nashville Core, Nashville South, Nashville East/North, Smoky Mountains, East TN, West/South TN)
 - `private-hibachi-nashville-vacation-rental` — Nashville mobile hibachi: vacation rental & bachelorette weekend guide, all Nashville neighborhoods (Gulch, East Nashville, 12 South, Belle Meade), corporate & birthday groups
 - `private-hibachi-smoky-mountain-cabin-gatlinburg` — Smoky Mountain cabin hibachi: Gatlinburg, Pigeon Forge, Sevierville; self-contained propane setup, no hookups needed, bachelorette cabin weekends, family reunion lodges, planning checklist
+- `hibachi-at-home-minnesota-guide` — complete Minnesota guide (6 markets: Twin Cities Luxury, Minneapolis Urban/Corporate, Twin Cities Suburban/Family, River & Lakes St. Paul, Rochester/Medical, Destination/North Shore)
+- `private-hibachi-brainerd-lakes-cabin` — Minnesota cabin/destination guide: Brainerd Lakes, Duluth/North Shore, Stillwater St. Croix; bachelorette weekends, family reunions, cabin weekend setup
+- `private-hibachi-graduation-party-twin-cities` — Twin Cities graduation party guide: Maple Grove, Plymouth, Eagan, Burnsville, Lakeville; booking windows, dual-station setup, group sizes
 
 - `hibachi-at-home-south-carolina-guide` — complete SC state guide (6 markets: Charleston Luxury, Upstate Corporate, Grand Strand Vacation, Lowcountry Coastal, Columbia Midlands, SC Suburban)
 - `private-hibachi-charleston-sc` — Charleston guide: historic homes, Sullivan's Island/Isle of Palms bachelorette weekends, Mount Pleasant graduation parties, Daniel Island corporate events
@@ -613,8 +617,8 @@
 - Myrtle Beach vacation hibachi guide
 
 ### 💡 Next Suggested
-**"The Ultimate Guide to Booking Hibachi at Home in South Carolina"**
-— SC is the newest state expansion with 14 cities. State guide drives SEO for all SC city pages, establishes topical authority for the region.
+**"The Ultimate Guide to Booking Hibachi at Home in Utah"**
+— Utah is the active in-progress state (Batch 1 live). State guide should follow completion of all 4 batches and full audit, matching the Minnesota/Tennessee/Ontario pattern.
 
 ---
 

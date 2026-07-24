@@ -11,6 +11,8 @@ const STATE_ABBR = {
   maryland: 'MD',
   tennessee: 'TN',
   minnesota: 'MN',
+  utah: 'UT',
+  ohio: 'OH',
 }
 import {
   getCityData,
@@ -39,6 +41,8 @@ import { getMichiganCityData, getMiBlogPosts, getMiHowItWorks, getMiSectionVaria
 import { getMarylandCityData, getMdBlogPosts, getMdHowItWorks, getMdSectionVariant, getMdCityImage, getMdSupportImages } from '../../../../lib/marylandData'
 import { getTennesseeCityData, getTnBlogPosts, getTnHowItWorks, getTnSectionVariant, getTnCityImage, getTnSupportImages } from '../../../../lib/tennesseeData'
 import { getMnCityData, getMnBlogPosts, getMnHowItWorks, getMnSectionVariant, getMnCityImage, getMnSupportImages } from '../../../../lib/minnesotaData'
+import { getUtahCityData, getUtBlogPosts, getUtHowItWorks, getUtSectionVariant, getUtCityImage, getUtSupportImages } from '../../../../lib/utahData'
+import { getOhCityData, getOhBlogPosts, getOhHowItWorks, getOhSectionVariant, getOhCityImage, getOhSupportImages } from '../../../../lib/ohioData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -92,6 +96,8 @@ export async function generateMetadata({ params }) {
     ?? (params.state === 'maryland'       ? getMarylandCityData(citySlug, slugToCity(citySlug))       : null)
     ?? (params.state === 'tennessee'      ? getTennesseeCityData(citySlug, slugToCity(citySlug))      : null)
     ?? (params.state === 'minnesota'      ? getMnCityData(citySlug, slugToCity(citySlug))              : null)
+    ?? (params.state === 'utah'           ? getUtahCityData(citySlug, slugToCity(citySlug))            : null)
+    ?? (params.state === 'ohio'           ? getOhCityData(citySlug, slugToCity(citySlug))              : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -150,6 +156,8 @@ export default function CityPage({ params }) {
     ?? (params.state === 'maryland'       ? getMarylandCityData(citySlug, slugToCity(citySlug))       : null)
     ?? (params.state === 'tennessee'      ? getTennesseeCityData(citySlug, slugToCity(citySlug))      : null)
     ?? (params.state === 'minnesota'      ? getMnCityData(citySlug, slugToCity(citySlug))              : null)
+    ?? (params.state === 'utah'           ? getUtahCityData(citySlug, slugToCity(citySlug))            : null)
+    ?? (params.state === 'ohio'           ? getOhCityData(citySlug, slugToCity(citySlug))              : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -179,6 +187,8 @@ export default function CityPage({ params }) {
   const isMaryland       = params.state === 'maryland'
   const isTennessee      = params.state === 'tennessee'
   const isMinnesota      = params.state === 'minnesota'
+  const isUtah           = params.state === 'utah'
+  const isOhio           = params.state === 'ohio'
 
   const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
                      : isFlorida       ? getFloridaBlogPosts(variant, 3)
@@ -196,6 +206,8 @@ export default function CityPage({ params }) {
                      : isMaryland      ? getMdBlogPosts(variant, 3)
                      : isTennessee     ? getTnBlogPosts(variant, 3)
                      : isMinnesota     ? getMnBlogPosts(variant, 3)
+                     : isUtah          ? getUtBlogPosts(variant, 3)
+                     : isOhio          ? getOhBlogPosts()
                      : getBlogPostsForCity(variant, 3)
 
   // Enrich relatedPosts with tag/readTime from the shared BLOG_POSTS lookup if missing
@@ -219,6 +231,8 @@ export default function CityPage({ params }) {
                         : isMaryland      ? getMdHowItWorks(citySlug)
                         : isTennessee     ? getTnHowItWorks(citySlug)
                         : isMinnesota     ? getMnHowItWorks(citySlug)
+                        : isUtah          ? getUtHowItWorks(citySlug)
+                        : isOhio          ? getOhHowItWorks()
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -242,6 +256,8 @@ export default function CityPage({ params }) {
                     : isMaryland      ? getMdSectionVariant(citySlug)
                     : isTennessee     ? getTnSectionVariant(citySlug)
                     : isMinnesota     ? getMnSectionVariant(citySlug)
+                    : isUtah          ? getUtSectionVariant(citySlug)
+                    : isOhio          ? getOhSectionVariant(citySlug)
                     : null
   const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
                     : isFlorida       ? getFloridaCityImage(citySlug)
@@ -259,6 +275,8 @@ export default function CityPage({ params }) {
                     : isMaryland      ? getMdCityImage(citySlug)
                     : isTennessee     ? getTnCityImage(citySlug)
                     : isMinnesota     ? getMnCityImage(citySlug)
+                    : isUtah          ? getUtCityImage(citySlug)
+                    : isOhio          ? getOhCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -298,6 +316,8 @@ export default function CityPage({ params }) {
                       : isMaryland      ? getMdSupportImages(citySlug)
                       : isTennessee     ? getTnSupportImages(citySlug)
                       : isMinnesota     ? getMnSupportImages(citySlug)
+                      : isUtah          ? getUtSupportImages(citySlug, variant)
+                      : isOhio          ? getOhSupportImages(citySlug)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {
