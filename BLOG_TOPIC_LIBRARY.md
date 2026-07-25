@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 21 | Active — expand to new states |
+| 26 | Local Lifestyle | 24 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -598,6 +598,9 @@
 - `hibachi-at-home-ohio-guide` — complete Ohio guide (6 markets: Columbus Luxury Suburbs, Columbus Urban/Corporate, Cleveland East Side Luxury, Cleveland Metro, Southwest Ohio, Lake Erie & University)
 - `private-hibachi-lake-erie-cedar-point-vacation-rental` — Lake Erie vacation rental guide: Sandusky/Cedar Point area, Avon Lake lakefront, Port Clinton/Put-in-Bay/Kelleys Island island weekends; no-hookup propane setup, family reunions, graduation weekends
 - `private-hibachi-graduation-party-columbus-ohio` — Columbus suburbs graduation party guide: Dublin, New Albany, Upper Arlington, Powell, Beachwood, Hudson; booking windows 4–6 weeks ahead, dual-station setup for 25+ guests, premium protein upgrades
+- `hibachi-at-home-utah-guide` — complete Utah guide (5 markets: Salt Lake Valley Executive, Wasatch Front Family, Park City Ski Luxury, Mountain Resort Communities, Southern Utah Tourism)
+- `private-hibachi-park-city-ski-vacation` — Park City ski luxury guide: Sundance Film Festival week, Deer Valley/Old Town bachelor & bachelorette weekends, Canyons Village corporate retreats, cold-weather setup
+- `private-hibachi-moab-zion-national-park` — Southern Utah national park guide: Moab (Arches/Canyonlands), Springdale (Zion), St. George; vacation rental family reunions, self-contained propane setup, no hookups needed
 
 - `hibachi-at-home-south-carolina-guide` — complete SC state guide (6 markets: Charleston Luxury, Upstate Corporate, Grand Strand Vacation, Lowcountry Coastal, Columbia Midlands, SC Suburban)
 - `private-hibachi-charleston-sc` — Charleston guide: historic homes, Sullivan's Island/Isle of Palms bachelorette weekends, Mount Pleasant graduation parties, Daniel Island corporate events
@@ -622,8 +625,8 @@
 - Myrtle Beach vacation hibachi guide
 
 ### 💡 Next Suggested
-**"The Ultimate Guide to Booking Hibachi at Home in Utah"**
-— Utah is the next state needing a state guide (all 4 batches built; audit and blogs still pending). Follow the Ohio/Minnesota/Tennessee pattern.
+**Georgia, Florida, or North Carolina complete state guide**
+— Utah's trio is now published. These three built states still have no dedicated state guide blog — pick whichever is audited most recently and follow the same guide + 2 regional-post pattern.
 
 ---
 
