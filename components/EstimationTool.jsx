@@ -1,17 +1,7 @@
 'use client'
 import { useState } from 'react'
-
-const RATE_ADULT = 60
-const RATE_CHILD = 30
-const MINIMUM    = 600
-
-const ADD_ONS = [
-  { id: 'filet',   label: 'Filet Mignon upgrade',  price: 5,  per: 'person' },
-  { id: 'lobster', label: 'Lobster Tail upgrade',   price: 10, per: 'person' },
-  { id: 'noodles', label: 'Yakisoba Noodles',       price: 5,  per: 'order'  },
-  { id: 'gyoza',   label: 'Gyoza (8 pc)',            price: 10, per: 'order'  },
-  { id: 'edamame', label: 'Edamame',                 price: 6,  per: 'order'  },
-]
+import { useCountry } from './CountryContext'
+import { formatMoney } from '../lib/pricingConfig'
 
 function Counter({ label, sub, value, min, max, onChange }) {
   return (
@@ -52,6 +42,10 @@ function Counter({ label, sub, value, min, max, onChange }) {
 }
 
 export default function EstimationTool() {
+  const { country, pricing } = useCountry()
+  const { adult: RATE_ADULT, child: RATE_CHILD, minimum: MINIMUM, addOns: ADD_ONS, symbol } = pricing
+  const money = (n) => formatMoney(n, symbol)
+
   const [adults,   setAdults]   = useState(5)
   const [children, setChildren] = useState(0)
   const [addOns,   setAddOns]   = useState({})   // { id: quantity }
@@ -82,20 +76,20 @@ export default function EstimationTool() {
     <div style={{ maxWidth: 680, margin: '0 auto' }}>
 
       {/* Guest counters */}
-      <div style={{ background: 'rgba(200,16,46,0.04)', border: '1px solid rgba(200,16,46,0.12)', borderRadius: 16, padding: '1.5rem', marginBottom: '1.5rem' }}>
+      <div key={`guests-${country}`} className="animate-fade-in" style={{ background: 'rgba(200,16,46,0.04)', border: '1px solid rgba(200,16,46,0.12)', borderRadius: 16, padding: '1.5rem', marginBottom: '1.5rem' }}>
         <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.4)', marginBottom: '1rem' }}>
           Guest Count
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           <Counter
             label="Adults"
-            sub={`$${RATE_ADULT} per person`}
+            sub={`${money(RATE_ADULT)} per person`}
             value={adults} min={1} max={100}
             onChange={setAdults}
           />
           <Counter
             label="Children"
-            sub={`$${RATE_CHILD} per child · Ages 4–12`}
+            sub={`${money(RATE_CHILD)} per child · Ages 4–12`}
             value={children} min={0} max={50}
             onChange={setChildren}
           />
@@ -103,7 +97,7 @@ export default function EstimationTool() {
       </div>
 
       {/* Add-ons */}
-      <div style={{ background: '#fff', border: '1px solid rgba(26,18,9,0.09)', borderRadius: 16, padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+      <div key={`addons-${country}`} className="animate-fade-in" style={{ background: '#fff', border: '1px solid rgba(26,18,9,0.09)', borderRadius: 16, padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
         <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,18,9,0.4)', marginBottom: '1rem' }}>
           Optional Add-Ons
         </div>
@@ -111,7 +105,7 @@ export default function EstimationTool() {
           {ADD_ONS.map(a => {
             const qty     = addOns[a.id] || 0
             const active  = qty > 0
-            const perNote = a.per === 'person' ? `$${a.price} × ${totalPeople} guests` : `$${a.price} per order`
+            const perNote = a.per === 'person' ? `${money(a.price)} × ${totalPeople} guests` : `${money(a.price)} per order`
             return (
               <div key={a.id} style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem',
@@ -143,8 +137,8 @@ export default function EstimationTool() {
                 )}
                 <div style={{ fontWeight: 700, color: active ? '#C8102E' : 'rgba(26,18,9,0.35)', fontSize: '0.9rem', flexShrink: 0 }}>
                   {active
-                    ? `+$${a.per === 'person' ? a.price * totalPeople * qty : a.price * qty}`
-                    : `+$${a.price}`}
+                    ? `+${money(a.per === 'person' ? a.price * totalPeople * qty : a.price * qty)}`
+                    : `+${money(a.price)}`}
                 </div>
               </div>
             )
@@ -153,7 +147,7 @@ export default function EstimationTool() {
       </div>
 
       {/* Summary card */}
-      <div style={{
+      <div key={`summary-${country}`} className="animate-fade-in" style={{
         background: '#1A1209', borderRadius: 16, padding: '2rem',
         boxShadow: '0 8px 40px rgba(26,18,9,0.18)',
         position: 'relative', overflow: 'hidden',
@@ -162,19 +156,19 @@ export default function EstimationTool() {
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(to right, #C8102E, #D4A843)' }} />
 
         <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(245,239,224,0.45)', marginBottom: '1.25rem' }}>
-          Estimated Total
+          Estimated Total{pricing.currency === 'CAD' ? ' (CAD)' : ''}
         </div>
 
         {/* Line items */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', marginBottom: '1.25rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', color: 'rgba(245,239,224,0.65)' }}>
-            <span>{adults} adult{adults !== 1 ? 's' : ''} × ${RATE_ADULT}</span>
-            <span>${baseAdults.toLocaleString()}</span>
+            <span>{adults} adult{adults !== 1 ? 's' : ''} × {money(RATE_ADULT)}</span>
+            <span>{money(baseAdults)}</span>
           </div>
           {children > 0 && (
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', color: 'rgba(245,239,224,0.65)' }}>
-              <span>{children} child{children !== 1 ? 'ren' : ''} × ${RATE_CHILD}</span>
-              <span>${baseChildren.toLocaleString()}</span>
+              <span>{children} child{children !== 1 ? 'ren' : ''} × {money(RATE_CHILD)}</span>
+              <span>{money(baseChildren)}</span>
             </div>
           )}
           {ADD_ONS.filter(a => (addOns[a.id] || 0) > 0).map(a => {
@@ -183,7 +177,7 @@ export default function EstimationTool() {
             return (
               <div key={a.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', color: 'rgba(245,239,224,0.65)' }}>
                 <span>{a.label}{qty > 1 ? ` × ${qty}` : ''}</span>
-                <span>+${cost.toLocaleString()}</span>
+                <span>+{money(cost)}</span>
               </div>
             )
           })}
@@ -196,12 +190,12 @@ export default function EstimationTool() {
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem' }}>
           <div>
             <div style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '3.5rem', color: '#F5EFE0', lineHeight: 1, letterSpacing: '0.02em' }}>
-              ${final.toLocaleString()}
+              {money(final)}
             </div>
             {atMinimum && (
               <div style={{ fontSize: '0.75rem', color: 'rgba(212,168,67,0.85)', marginTop: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                 <span style={{ color: '#D4A843' }}>★</span>
-                $600 minimum applies
+                {money(MINIMUM)} minimum applies
               </div>
             )}
             <div style={{ fontSize: '0.75rem', color: 'rgba(245,239,224,0.35)', marginTop: '0.25rem' }}>
@@ -221,7 +215,7 @@ export default function EstimationTool() {
       <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
         {[
           'This is an estimate only — final price confirmed at booking.',
-          'Children ages 4–12 qualify for the $30 child rate. Under 4 is free.',
+          `Children ages 4–12 qualify for the ${money(RATE_CHILD)} child rate. Under 4 is free.`,
           'Travel fees vary by distance and will be quoted separately.',
         ].map((note, i) => (
           <div key={i} style={{ display: 'flex', gap: '0.5rem', fontSize: '0.78rem', color: 'rgba(26,18,9,0.45)' }}>
