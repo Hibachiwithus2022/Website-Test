@@ -18,13 +18,13 @@
 
 | # | Category | Posts Published | Status |
 |---|----------|----------------|--------|
-| 1 | Vacation Rentals | 1 | Needs more |
+| 1 | Vacation Rentals | 2 | Needs more |
 | 2 | Airbnb | 0 | Untouched |
 | 3 | Beach Houses | 0 | Untouched |
 | 4 | Lake Houses | 1 | Needs more |
 | 5 | Cabins | 1 | Needs more |
 | 6 | Birthday Parties | 1 | Needs more |
-| 7 | Graduation Parties | 2 | Needs more |
+| 7 | Graduation Parties | 3 | Needs more |
 | 8 | Corporate Events | 1 | Needs more |
 | 9 | Weddings | 0 | Untouched |
 | 10 | Bachelor Parties | 0 | Untouched |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 18 | Active — expand to new states |
+| 26 | Local Lifestyle | 21 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -58,6 +58,7 @@
 
 ### ✅ Already Published
 - `lake-of-the-ozarks-branson-hibachi` — Lake of the Ozarks & Branson vacation rental experience
+- `private-hibachi-lake-erie-cedar-point-vacation-rental` — Lake Erie vacation rental guide; Sandusky/Cedar Point area, Avon Lake lakefront, Put-in-Bay/Kelleys Island island weekends
 
 ### 📋 Topics Still Available
 - Private hibachi at a vacation rental: the complete guest guide
@@ -183,6 +184,7 @@
 - `hibachi-family-celebrations-texas` — mentions graduations but as one of several Texas occasions; not a standalone graduation guide
 - `hibachi-graduation-party-ontario` — Ontario-specific graduation guide; dual-station setup, GTA market, CAD pricing
 - `private-hibachi-graduation-party-twin-cities` — Twin Cities graduation party planning guide; Maple Grove, Plymouth, Eagan, Burnsville, Lakeville; booking windows, dual-station setup, group sizes
+- `private-hibachi-graduation-party-columbus-ohio` — Columbus suburbs graduation party guide; Dublin, New Albany, Upper Arlington, Powell, Beachwood, Hudson; booking windows, dual-station setup, premium protein upgrades
 
 ### 📋 Topics Still Available
 - Private hibachi for a graduation party: the complete planning guide (general, not state-specific)
@@ -593,6 +595,9 @@
 - `hibachi-at-home-minnesota-guide` — complete Minnesota guide (6 markets: Twin Cities Luxury, Minneapolis Urban/Corporate, Twin Cities Suburban/Family, River & Lakes St. Paul, Rochester/Medical, Destination/North Shore)
 - `private-hibachi-brainerd-lakes-cabin` — Minnesota cabin/destination guide: Brainerd Lakes, Duluth/North Shore, Stillwater St. Croix; bachelorette weekends, family reunions, cabin weekend setup
 - `private-hibachi-graduation-party-twin-cities` — Twin Cities graduation party guide: Maple Grove, Plymouth, Eagan, Burnsville, Lakeville; booking windows, dual-station setup, group sizes
+- `hibachi-at-home-ohio-guide` — complete Ohio guide (6 markets: Columbus Luxury Suburbs, Columbus Urban/Corporate, Cleveland East Side Luxury, Cleveland Metro, Southwest Ohio, Lake Erie & University)
+- `private-hibachi-lake-erie-cedar-point-vacation-rental` — Lake Erie vacation rental guide: Sandusky/Cedar Point area, Avon Lake lakefront, Port Clinton/Put-in-Bay/Kelleys Island island weekends; no-hookup propane setup, family reunions, graduation weekends
+- `private-hibachi-graduation-party-columbus-ohio` — Columbus suburbs graduation party guide: Dublin, New Albany, Upper Arlington, Powell, Beachwood, Hudson; booking windows 4–6 weeks ahead, dual-station setup for 25+ guests, premium protein upgrades
 
 - `hibachi-at-home-south-carolina-guide` — complete SC state guide (6 markets: Charleston Luxury, Upstate Corporate, Grand Strand Vacation, Lowcountry Coastal, Columbia Midlands, SC Suburban)
 - `private-hibachi-charleston-sc` — Charleston guide: historic homes, Sullivan's Island/Isle of Palms bachelorette weekends, Mount Pleasant graduation parties, Daniel Island corporate events
@@ -618,7 +623,7 @@
 
 ### 💡 Next Suggested
 **"The Ultimate Guide to Booking Hibachi at Home in Utah"**
-— Utah is the active in-progress state (Batch 1 live). State guide should follow completion of all 4 batches and full audit, matching the Minnesota/Tennessee/Ontario pattern.
+— Utah is the next state needing a state guide (all 4 batches built; audit and blogs still pending). Follow the Ohio/Minnesota/Tennessee pattern.
 
 ---
 
