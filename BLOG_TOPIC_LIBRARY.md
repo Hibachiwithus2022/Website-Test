@@ -22,11 +22,11 @@
 | 2 | Airbnb | 0 | Untouched |
 | 3 | Beach Houses | 0 | Untouched |
 | 4 | Lake Houses | 1 | Needs more |
-| 5 | Cabins | 1 | Needs more |
+| 5 | Cabins | 2 | Needs more |
 | 6 | Birthday Parties | 1 | Needs more |
 | 7 | Graduation Parties | 3 | Needs more |
 | 8 | Corporate Events | 1 | Needs more |
-| 9 | Weddings | 0 | Untouched |
+| 9 | Weddings | 1 | Needs more |
 | 10 | Bachelor Parties | 0 | Untouched |
 | 11 | Bachelorette Parties | 1 | Needs more |
 | 12 | Family Reunions | 1 | Needs more |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 27 | Active — expand to new states |
+| 26 | Local Lifestyle | 30 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -141,6 +141,7 @@
 
 ### ✅ Already Published
 - `private-hibachi-brainerd-lakes-cabin` — Minnesota cabin guide: Brainerd Lakes, Duluth/North Shore, Stillwater St. Croix; self-contained propane setup, no hookups required
+- `private-hibachi-pocono-mountains-cabin` — Pocono Mountain vacation rental guide: Stroudsburg, Mount Pocono, Hawley/Lake Wallenpaupack; bachelorette weekends, family reunions, graduation cabin trips
 
 ### 📋 Topics Still Available
 - Can you book a private hibachi chef at a mountain cabin?
@@ -226,10 +227,10 @@
 **Search intent:** Couples and wedding planners looking for non-traditional wedding dining experiences — rehearsal dinners, receptions, day-after brunches.
 
 ### ✅ Already Published
-- None
+- `private-hibachi-lancaster-wedding-weekend` — Lancaster County farm venue wedding weekend guide: rehearsal dinners at farm venues, Amish Country estate properties, destination wedding market; Pennsylvania-specific
 
 ### 📋 Topics Still Available
-- Private hibachi for a wedding rehearsal dinner: why it works
+- Private hibachi for a wedding rehearsal dinner: why it works (general, not PA-specific)
 - Hibachi at a wedding reception: is it realistic?
 - Post-wedding brunch hibachi at the vacation rental
 - Engagement party hibachi ideas
@@ -608,6 +609,12 @@
 - `hibachi-at-home-south-carolina-guide` — complete SC state guide (6 markets: Charleston Luxury, Upstate Corporate, Grand Strand Vacation, Lowcountry Coastal, Columbia Midlands, SC Suburban)
 - `private-hibachi-charleston-sc` — Charleston guide: historic homes, Sullivan's Island/Isle of Palms bachelorette weekends, Mount Pleasant graduation parties, Daniel Island corporate events
 - `private-hibachi-myrtle-beach-vacation-rental` — Grand Strand vacation rental guide: Myrtle Beach bachelorette weekends, family reunions, North Myrtle Beach, Pawleys Island
+- `hibachi-at-home-pennsylvania-guide` — complete PA state guide (6 markets: Main Line Luxury, Philadelphia Metro, Philadelphia Suburbs, Pittsburgh Metro, Pocono Mountains, Central PA)
+- `private-hibachi-pocono-mountains-cabin` — Pocono Mountain vacation rental guide: Stroudsburg, Mount Pocono, Hawley/Lake Wallenpaupack; bachelorette weekends, family reunions, graduation cabin trips
+- `private-hibachi-lancaster-wedding-weekend` — Lancaster County farm venue wedding weekend guide: rehearsal dinners, Amish Country estate properties, destination wedding market; first post in Weddings category
+- `hibachi-at-home-wisconsin-guide` — complete Wisconsin guide (6 markets: Milwaukee Metro North Shore, Madison Metro & Tech Corridor, Lake Country, Wisconsin Destinations & Resorts, Northeast Wisconsin)
+- `private-hibachi-lake-geneva-vacation-rental` — Lake Geneva vacation rental guide: Geneva Lake Shore Path, Grand Geneva Resort-adjacent properties, bachelorette weekends, family reunions, anniversary trips, Williams Bay and Fontana
+- `private-hibachi-uw-madison-graduation-party` — UW-Madison graduation party guide: Commencement weekend booking windows, Dane County communities served, Epic Systems corporate milestones, dual-station setup for large groups
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
