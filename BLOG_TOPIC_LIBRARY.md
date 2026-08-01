@@ -24,8 +24,8 @@
 | 4 | Lake Houses | 1 | Needs more |
 | 5 | Cabins | 2 | Needs more |
 | 6 | Birthday Parties | 1 | Needs more |
-| 7 | Graduation Parties | 3 | Needs more |
-| 8 | Corporate Events | 1 | Needs more |
+| 7 | Graduation Parties | 5 | Needs more |
+| 8 | Corporate Events | 2 | Needs more |
 | 9 | Weddings | 1 | Needs more |
 | 10 | Bachelor Parties | 0 | Untouched |
 | 11 | Bachelorette Parties | 1 | Needs more |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 30 | Active — expand to new states |
+| 26 | Local Lifestyle | 33 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -186,6 +186,7 @@
 - `hibachi-graduation-party-ontario` — Ontario-specific graduation guide; dual-station setup, GTA market, CAD pricing
 - `private-hibachi-graduation-party-twin-cities` — Twin Cities graduation party planning guide; Maple Grove, Plymouth, Eagan, Burnsville, Lakeville; booking windows, dual-station setup, group sizes
 - `private-hibachi-graduation-party-columbus-ohio` — Columbus suburbs graduation party guide; Dublin, New Albany, Upper Arlington, Powell, Beachwood, Hudson; booking windows, dual-station setup, premium protein upgrades
+- `private-hibachi-graduation-party-indiana-college-towns` — Indiana graduation guide; IU Bloomington, Purdue West Lafayette/Lafayette, Hamilton County suburbs Carmel/Fishers/Noblesville/Westfield; booking windows by school
 
 ### 📋 Topics Still Available
 - Private hibachi for a graduation party: the complete planning guide (general, not state-specific)
@@ -207,6 +208,7 @@
 
 ### ✅ Already Published
 - `hibachi-catering-corporate-events` — why hibachi is the best choice for corporate events (general)
+- `private-hibachi-indianapolis-corporate-carmel-estate` — Indianapolis corporate + Carmel/Zionsville estate guide; Salesforce/Eli Lilly/Cummins team events, healthcare/tech/financial segments, Meridian Hills estate milestone dinners
 
 ### 📋 Topics Still Available
 - Team-building hibachi events: how a shared meal builds culture
@@ -615,6 +617,9 @@
 - `hibachi-at-home-wisconsin-guide` — complete Wisconsin guide (6 markets: Milwaukee Metro North Shore, Madison Metro & Tech Corridor, Lake Country, Wisconsin Destinations & Resorts, Northeast Wisconsin)
 - `private-hibachi-lake-geneva-vacation-rental` — Lake Geneva vacation rental guide: Geneva Lake Shore Path, Grand Geneva Resort-adjacent properties, bachelorette weekends, family reunions, anniversary trips, Williams Bay and Fontana
 - `private-hibachi-uw-madison-graduation-party` — UW-Madison graduation party guide: Commencement weekend booking windows, Dane County communities served, Epic Systems corporate milestones, dual-station setup for large groups
+- `hibachi-at-home-indiana-guide` — complete Indiana guide (6 markets: Indianapolis Metro, Luxury Suburbs Carmel/Zionsville, North Indianapolis Suburban Fishers/Westfield/Noblesville, College Towns Bloomington/West Lafayette/Lafayette, Northern Indiana South Bend/Fort Wayne/Mishawaka/Elkhart, Destinations & Southern Warsaw/Evansville/Jeffersonville/New Albany)
+- `private-hibachi-graduation-party-indiana-college-towns` — Indiana graduation guide: IU commencement Bloomington, Purdue commencement West Lafayette/Lafayette, Hamilton County north suburbs Carmel/Fishers/Noblesville/Westfield; booking windows 4–8 weeks ahead by market
+- `private-hibachi-indianapolis-corporate-carmel-estate` — Indianapolis corporate + Carmel/Zionsville estate guide: Salesforce/Eli Lilly/Cummins team events, Meridian Hills estate milestone dinners, Zionsville Boone County intimate estate format, hybrid corporate-estate events
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**

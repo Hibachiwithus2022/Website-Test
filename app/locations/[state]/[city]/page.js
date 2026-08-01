@@ -16,6 +16,7 @@ const STATE_ABBR = {
   massachusetts: 'MA',
   pennsylvania: 'PA',
   wisconsin: 'WI',
+  indiana: 'IN',
 }
 import {
   getCityData,
@@ -49,6 +50,7 @@ import { getOhCityData, getOhBlogPosts, getOhHowItWorks, getOhSectionVariant, ge
 import { getMassachusettsCityData, getMaBlogPosts, getMaHowItWorks, getMaSectionVariant, getMaCityImage, getMaSupportImages } from '../../../../lib/massachusettsData'
 import { getPaCityData, getPaBlogPosts, getPaHowItWorks, getPaSectionVariant, getPaCityImage, getPaSupportImages } from '../../../../lib/pennsylvaniaData'
 import { getWiCityData, getWiBlogPosts, getWiHowItWorks, getWiSectionVariant, getWiCityImage, getWiSupportImages } from '../../../../lib/wisconsinData'
+import { getInCityData, getInBlogPosts, getInHowItWorks, getInSectionVariant, getInCityImage, getInSupportImages } from '../../../../lib/indianaData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -107,6 +109,7 @@ export async function generateMetadata({ params }) {
     ?? (params.state === 'massachusetts'  ? getMassachusettsCityData(citySlug, slugToCity(citySlug))   : null)
     ?? (params.state === 'pennsylvania'   ? getPaCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'wisconsin'      ? getWiCityData(citySlug, slugToCity(citySlug))               : null)
+    ?? (params.state === 'indiana'        ? getInCityData(citySlug, slugToCity(citySlug))               : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -170,6 +173,7 @@ export default function CityPage({ params }) {
     ?? (params.state === 'massachusetts'  ? getMassachusettsCityData(citySlug, slugToCity(citySlug))   : null)
     ?? (params.state === 'pennsylvania'   ? getPaCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'wisconsin'      ? getWiCityData(citySlug, slugToCity(citySlug))               : null)
+    ?? (params.state === 'indiana'        ? getInCityData(citySlug, slugToCity(citySlug))               : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -204,6 +208,7 @@ export default function CityPage({ params }) {
   const isMassachusetts  = params.state === 'massachusetts'
   const isPennsylvania   = params.state === 'pennsylvania'
   const isWisconsin      = params.state === 'wisconsin'
+  const isIndiana        = params.state === 'indiana'
 
   const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
                      : isFlorida       ? getFloridaBlogPosts(variant, 3)
@@ -226,6 +231,7 @@ export default function CityPage({ params }) {
                      : isMassachusetts ? getMaBlogPosts(variant, 3)
                      : isPennsylvania  ? getPaBlogPosts(variant, 3)
                      : isWisconsin     ? getWiBlogPosts(variant, 3)
+                     : isIndiana       ? getInBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
 
   // Enrich relatedPosts with tag/readTime from the shared BLOG_POSTS lookup if missing
@@ -254,6 +260,7 @@ export default function CityPage({ params }) {
                         : isMassachusetts ? getMaHowItWorks(citySlug)
                         : isPennsylvania  ? getPaHowItWorks()
                         : isWisconsin     ? getWiHowItWorks()
+                        : isIndiana       ? getInHowItWorks(citySlug)
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -282,6 +289,7 @@ export default function CityPage({ params }) {
                     : isMassachusetts ? getMaSectionVariant(citySlug)
                     : isPennsylvania  ? getPaSectionVariant(citySlug)
                     : isWisconsin     ? getWiSectionVariant(citySlug)
+                    : isIndiana       ? getInSectionVariant(citySlug)
                     : null
   const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
                     : isFlorida       ? getFloridaCityImage(citySlug)
@@ -304,6 +312,7 @@ export default function CityPage({ params }) {
                     : isMassachusetts ? getMaCityImage(citySlug)
                     : isPennsylvania  ? getPaCityImage(citySlug)
                     : isWisconsin     ? getWiCityImage(citySlug)
+                    : isIndiana       ? getInCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -348,6 +357,7 @@ export default function CityPage({ params }) {
                       : isMassachusetts ? getMaSupportImages(citySlug, variant)
                       : isPennsylvania  ? getPaSupportImages(citySlug)
                       : isWisconsin     ? getWiSupportImages(citySlug)
+                      : isIndiana       ? getInSupportImages(citySlug)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {
