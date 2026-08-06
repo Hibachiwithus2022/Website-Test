@@ -19,15 +19,15 @@
 | # | Category | Posts Published | Status |
 |---|----------|----------------|--------|
 | 1 | Vacation Rentals | 2 | Needs more |
-| 2 | Airbnb | 0 | Untouched |
-| 3 | Beach Houses | 0 | Untouched |
+| 2 | Airbnb | 1 | Needs more |
+| 3 | Beach Houses | 1 | Needs more |
 | 4 | Lake Houses | 1 | Needs more |
 | 5 | Cabins | 2 | Needs more |
-| 6 | Birthday Parties | 1 | Needs more |
+| 6 | Birthday Parties | 2 | Needs more |
 | 7 | Graduation Parties | 5 | Needs more |
-| 8 | Corporate Events | 2 | Needs more |
+| 8 | Corporate Events | 3 | Needs more |
 | 9 | Weddings | 1 | Needs more |
-| 10 | Bachelor Parties | 0 | Untouched |
+| 10 | Bachelor Parties | 1 | Needs more |
 | 11 | Bachelorette Parties | 1 | Needs more |
 | 12 | Family Reunions | 1 | Needs more |
 | 13 | Holiday Parties | 0 | Untouched |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 33 | Active — expand to new states |
+| 26 | Local Lifestyle | 36 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -79,18 +79,17 @@
 **Search intent:** Guests specifically staying at Airbnbs (brand-name search) who want to enhance the stay with a private chef. Slightly different from general vacation rentals due to Airbnb house rules/policies.
 
 ### ✅ Already Published
-- None (NY best-places post mentions Airbnbs but doesn't address the question directly)
+- `private-hibachi-chef-airbnb` — open-flame policy, host communication, setup requirements, cleanup guarantee; links to Newport, Aspen, Vail, Lake Geneva, Gatlinburg, Narragansett
 
 ### 📋 Topics Still Available
-- Private hibachi chef at an Airbnb: what you need to know before booking
 - Does your Airbnb host allow private chefs? How to check and what to ask
 - Airbnb hibachi party: how to set up in a rental without issues
 - Best Airbnb types for private hibachi (what to look for in the listing)
 - Airbnb vs hotel vs rental house: which is best for a private hibachi party?
 
 ### 💡 Next Suggested
-**"Private Hibachi at an Airbnb: What You Need to Know Before Booking"**
-— Covers open-flame policy, communicating with the host, space requirements, cleanup guarantee. Directly answers a pre-booking search query with high commercial intent.
+**"Best Airbnb Types for Private Hibachi (What to Look for in the Listing)"**
+— Deck size, outdoor access, HOA notes, and property types that signal a great setup. Practical guide that earns organic traffic from renters shopping listings.
 
 ---
 
@@ -99,10 +98,9 @@
 **Search intent:** People renting or owning beach houses (oceanfront, coastal) who want a private chef at the property instead of fighting for restaurant reservations.
 
 ### ✅ Already Published
-- None
+- `private-hibachi-beach-house-guide` — deck vs. backyard setup, wind/weather, coastal markets (Newport, Narragansett, Westerly, Cape Cod, Myrtle Beach, Virginia Beach, South Haven, Ocean City)
 
 ### 📋 Topics Still Available
-- Private hibachi at a beach house: the complete vacation experience guide
 - Beach house hibachi party: how to set up on a deck or patio
 - Why private hibachi beats every beachfront restaurant (honest comparison)
 - Bachelorette weekend at a beach house: why hibachi is the best dinner choice
@@ -110,8 +108,8 @@
 - Oceanfront hibachi: top coastal markets (Outer Banks, Myrtle Beach, Hilton Head, Jersey Shore, Hamptons)
 
 ### 💡 Next Suggested
-**"Private Hibachi at a Beach House: The Complete Setup Guide"**
-— Covers deck vs. yard setup, weather contingencies, pack-out guarantee, and why it beats going out. Appeals to the entire East/Gulf Coast beach rental market.
+**"Why Private Hibachi Beats Every Beachfront Restaurant (Honest Comparison)"**
+— Head-to-head vs. the coastal restaurant experience: reservation difficulty, seating, group size, experience quality, price. High-converting comparison post for beach house renters.
 
 ---
 
@@ -162,6 +160,7 @@
 
 ### ✅ Already Published
 - `hibachi-birthday-party-ideas` — 10 hibachi birthday party ideas (general, all ages)
+- `private-hibachi-toronto-birthday-party` — Toronto GTA birthday guide: East End (Leslieville/Riverdale), Leaside/North York, Etobicoke, Scarborough, Mississauga, Markham, Oakville; group sizes by neighbourhood, seasonal booking calendar
 
 ### 📋 Topics Still Available
 - Private hibachi for a milestone birthday: 30th, 40th, 50th, 60th guide
@@ -209,6 +208,7 @@
 ### ✅ Already Published
 - `hibachi-catering-corporate-events` — why hibachi is the best choice for corporate events (general)
 - `private-hibachi-indianapolis-corporate-carmel-estate` — Indianapolis corporate + Carmel/Zionsville estate guide; Salesforce/Eli Lilly/Cummins team events, healthcare/tech/financial segments, Meridian Hills estate milestone dinners
+- `hibachi-corporate-events-gta` — GTA corporate guide: Mississauga Pearson corridor, Markham/Richmond Hill tech corridor (IBM/AMD/Huawei Canada), Waterloo/Kitchener innovation corridor, Vaughan/Woodbridge entrepreneurial community, Toronto Bay Street; holiday season booking windows
 
 ### 📋 Topics Still Available
 - Team-building hibachi events: how a shared meal builds culture
@@ -250,18 +250,17 @@
 **Search intent:** Groomsmen and bachelor party planners looking for a dinner experience that goes beyond a restaurant reservation.
 
 ### ✅ Already Published
-- None (bachelorette covered; bachelor completely uncovered)
+- `private-hibachi-bachelor-party` — group sizes, premium protein guide, city and vacation rental markets (Nashville, Denver, Austin, Indianapolis, Lake Geneva, Gatlinburg, Park City, Newport), booking timeline
 
 ### 📋 Topics Still Available
-- Private hibachi for a bachelor party: why it's the perfect group dinner
 - Bachelor party hibachi planning guide: beach house, lake house, backyard setups
 - Bachelor party dinner ideas: why hibachi beats every steakhouse
 - What to order at a bachelor party hibachi (premium protein guide)
 - Bachelor vs. bachelorette hibachi: same chef, different vibe
 
 ### 💡 Next Suggested
-**"Private Hibachi for a Bachelor Party: The Perfect Group Dinner Setup"**
-— Mirrors the high-performing bachelorette post. Bachelor groups are a major booking segment and a natural pairing post to the existing bachelorette guide.
+**"Bachelor Party Dinner Ideas: Why Private Hibachi Beats Every Steakhouse"**
+— Direct comparison vs. the default bachelor party steakhouse dinner. Group seating, performance entertainment, protein upgrades, cost per head. High commercial intent.
 
 ---
 
@@ -626,6 +625,9 @@
 - `hibachi-at-home-colorado-guide` — complete Colorado guide (6 markets: Cherry Hills Village/Greenwood Village south Denver estate corridor, Denver metro corporate & home, suburban graduation season Highlands Ranch/Centennial/Parker/Castle Rock, Boulder & Northern Front Range CU/CSU graduation, Colorado Springs military homecomings & USAFA graduation, Aspen/Vail/Breckenridge/Steamboat Springs/Telluride mountain resort ski chalet events)
 - `private-hibachi-colorado-ski-resort` — Colorado mountain destination guide: Aspen (Red Mountain/Snowmass), Vail (Vail Village/Beaver Creek), Breckenridge (Peak 8/Blue River), Steamboat Springs (Yampa Valley ranch rentals), Telluride (Mountain Village/festival weekends); self-contained propane setup, no hookup required, per-market peak season booking windows
 - `hibachi-graduation-party-denver-colorado` — Front Range graduation party guide: Highlands Ranch (Thunderridge/Rock Canyon/Mountain Vista), Centennial (Cherry Creek SD), Parker (Chaparral/Legend/Ponderosa), Castle Rock, Boulder (CU commencement), Fort Collins (CSU commencement); dual station thresholds, booking windows by district, group sizing guidance
+- `private-hibachi-niagara-wine-country` — Niagara region guide: Niagara-on-the-Lake wine country bachelorette weekends (NOTL estate rentals, Old Town corridor), Niagara Falls family reunion and celebration events, St. Catharines residential market; peak season booking windows
+- `private-hibachi-toronto-birthday-party` — Toronto GTA birthday guide: Toronto neighbourhoods (Leslieville, Leaside, Etobicoke, Scarborough), Mississauga, Markham, Oakville; group sizes, seasonal booking calendar
+- `hibachi-corporate-events-gta` — GTA corporate guide: Mississauga Pearson corridor, Markham/Richmond Hill tech corridor, Waterloo/Kitchener innovation corridor, Vaughan/Woodbridge, Toronto Bay Street; holiday season booking timeline
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
