@@ -54,6 +54,7 @@ import { getWiCityData, getWiBlogPosts, getWiHowItWorks, getWiSectionVariant, ge
 import { getInCityData, getInBlogPosts, getInHowItWorks, getInSectionVariant, getInCityImage, getInSupportImages } from '../../../../lib/indianaData'
 import { getRiCityData, getRiBlogPosts, getRiHowItWorks, getRiSectionVariant, getRiCityImage, getRiSupportImages } from '../../../../lib/rhodeIslandData'
 import { getCoCityData, getCoBlogPosts, getCoHowItWorks, getCoSectionVariant, getCoCityImage, getCoSupportImages } from '../../../../lib/coloradoData'
+import { getAzCityData, getAzBlogPosts, getAzHowItWorks, getAzSectionVariant, getAzCityImage, getAzSupportImages } from '../../../../lib/arizonaData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -115,6 +116,7 @@ export async function generateMetadata({ params }) {
     ?? (params.state === 'indiana'        ? getInCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'rhode-island'  ? getRiCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'colorado'      ? getCoCityData(citySlug, slugToCity(citySlug))               : null)
+    ?? (params.state === 'arizona'       ? getAzCityData(citySlug, slugToCity(citySlug))               : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -181,6 +183,7 @@ export default function CityPage({ params }) {
     ?? (params.state === 'indiana'        ? getInCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'rhode-island'  ? getRiCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'colorado'      ? getCoCityData(citySlug, slugToCity(citySlug))               : null)
+    ?? (params.state === 'arizona'       ? getAzCityData(citySlug, slugToCity(citySlug))               : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -218,6 +221,7 @@ export default function CityPage({ params }) {
   const isIndiana        = params.state === 'indiana'
   const isRhodeIsland    = params.state === 'rhode-island'
   const isColorado       = params.state === 'colorado'
+  const isArizona        = params.state === 'arizona'
 
   const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
                      : isFlorida       ? getFloridaBlogPosts(variant, 3)
@@ -243,6 +247,7 @@ export default function CityPage({ params }) {
                      : isIndiana       ? getInBlogPosts(variant, 3)
                      : isRhodeIsland   ? getRiBlogPosts(variant, 3)
                      : isColorado      ? getCoBlogPosts(variant, 3)
+                     : isArizona       ? getAzBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
 
   // Enrich relatedPosts with tag/readTime from the shared BLOG_POSTS lookup if missing
@@ -274,6 +279,7 @@ export default function CityPage({ params }) {
                         : isIndiana       ? getInHowItWorks(citySlug)
                         : isRhodeIsland   ? getRiHowItWorks(citySlug)
                         : isColorado      ? getCoHowItWorks(citySlug)
+                        : isArizona       ? getAzHowItWorks(citySlug)
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -305,6 +311,7 @@ export default function CityPage({ params }) {
                     : isIndiana       ? getInSectionVariant(citySlug)
                     : isRhodeIsland   ? getRiSectionVariant(citySlug)
                     : isColorado      ? getCoSectionVariant(citySlug)
+                    : isArizona       ? getAzSectionVariant(citySlug)
                     : null
   const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
                     : isFlorida       ? getFloridaCityImage(citySlug)
@@ -330,6 +337,7 @@ export default function CityPage({ params }) {
                     : isIndiana       ? getInCityImage(citySlug)
                     : isRhodeIsland   ? getRiCityImage(citySlug)
                     : isColorado      ? getCoCityImage(citySlug)
+                    : isArizona       ? getAzCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -377,6 +385,7 @@ export default function CityPage({ params }) {
                       : isIndiana       ? getInSupportImages(citySlug)
                       : isRhodeIsland   ? getRiSupportImages(citySlug)
                       : isColorado      ? getCoSupportImages(citySlug)
+                      : isArizona       ? getAzSupportImages(citySlug)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {
