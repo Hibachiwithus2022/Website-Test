@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 0 | Untouched |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 36 | Active — expand to new states |
+| 26 | Local Lifestyle | 39 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -628,6 +628,9 @@
 - `private-hibachi-niagara-wine-country` — Niagara region guide: Niagara-on-the-Lake wine country bachelorette weekends (NOTL estate rentals, Old Town corridor), Niagara Falls family reunion and celebration events, St. Catharines residential market; peak season booking windows
 - `private-hibachi-toronto-birthday-party` — Toronto GTA birthday guide: Toronto neighbourhoods (Leslieville, Leaside, Etobicoke, Scarborough), Mississauga, Markham, Oakville; group sizes, seasonal booking calendar
 - `hibachi-corporate-events-gta` — GTA corporate guide: Mississauga Pearson corridor, Markham/Richmond Hill tech corridor, Waterloo/Kitchener innovation corridor, Vaughan/Woodbridge, Toronto Bay Street; holiday season booking timeline
+- `hibachi-at-home-illinois-guide` — complete Illinois guide (6 markets: Chicago Executive Gold Coast/River North/Lincoln Park/West Loop, North Shore Premier Lake Forest/Winnetka/Evanston, North Shore Family Highland Park/Northbrook/Barrington, DuPage & Western Naperville/Wheaton/Downers Grove/Hinsdale/Oak Brook, Corporate Corridor Schaumburg, Downstate University Champaign/Bloomington/Peoria/Rockford)
+- `private-hibachi-graduation-party-chicago-suburbs` — Chicago suburbs graduation party guide: Naperville North & Central, Wheaton College + WWSHS/Wheaton North, DG North & South, Highland Park HS, Glenbrook North, Carl Sandburg/Orland Park; booking windows 4–6 weeks ahead by district, dual-station setup for 25+ guests
+- `private-hibachi-chicago-north-shore-estate-corporate` — Chicago corporate + North Shore estate guide: River North/Fulton Market/Gold Coast/Lincoln Park corporate and estate events, Oak Brook Fortune 500 (McDonald's/Ace Hardware HQ), Schaumburg corporate corridor (Motorola/Zurich), Lake Forest/Winnetka estate milestone dinners, Evanston Northwestern corporate + lakefront
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
