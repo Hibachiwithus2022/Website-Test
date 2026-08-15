@@ -42,16 +42,16 @@ Toronto is a city of residential neighbourhoods with outdoor space, and that out
 Leslieville and Riverdale residential properties have outdoor entertaining space — many semi-detached and detached homes in the Broadview–Queen E corridor have backyards that accommodate 12–20 guests easily. [Toronto](/locations/ontario/toronto) birthday parties in East End neighbourhoods book for spring and summer Saturdays 3–4 weeks ahead.
 
 **Leaside and North York:**
-Leaside's detached home stock — Bayview corridor, Laird Drive, Millwood Road — has some of the best backyard entertaining space in the inner city. [North York](/locations/ontario/north-york) (Willowdale, Newtonbrook, Bayview Village) follows the same pattern: large lots, mature outdoor space, ideal for birthday group formats of 15–25.
+Leaside's detached home stock — Bayview corridor, Laird Drive, Millwood Road — has some of the best backyard entertaining space in the inner city. North York (Willowdale, Newtonbrook, Bayview Village) follows the same pattern: large lots, mature outdoor space, ideal for birthday group formats of 15–25.
 
 **West End:**
 Bloor West Village, High Park, and Roncesvalles have the residential lot depth to host 12–20 people. Junction and Parkdale's semi-detached stock can work; confirm deck/yard clearance at booking.
 
 **Etobicoke:**
-[Etobicoke](/locations/ontario/etobicoke) — Sunnylea, Princess-Rosethorn, Humber Valley Village — has the largest single-family home lots in the inner GTA west of the DVP. Birthday parties in Etobicoke commonly run 20–30 guests. Book 3–5 weeks ahead in summer.
+Etobicoke — Sunnylea, Princess-Rosethorn, Humber Valley Village — has the largest single-family home lots in the inner GTA west of the DVP. Birthday parties in Etobicoke commonly run 20–30 guests. Book 3–5 weeks ahead in summer.
 
 **Scarborough:**
-[Scarborough](/locations/ontario/scarborough) — Agincourt, Malvern, Highland Creek, West Hill — has suburban residential lots that serve larger birthday group formats (25–35+). Consistently active summer birthday market. Book 3–4 weeks ahead.
+Scarborough — Agincourt, Malvern, Highland Creek, West Hill — has suburban residential lots that serve larger birthday group formats (25–35+). Consistently active summer birthday market. Book 3–4 weeks ahead.
 
 ---
 
@@ -105,6 +105,6 @@ Toronto birthday party bookings cluster around:
 
 ## Book Your Toronto Birthday Hibachi Event
 
-[Toronto](/locations/ontario/toronto) · [North York](/locations/ontario/north-york) · [Etobicoke](/locations/ontario/etobicoke) · [Scarborough](/locations/ontario/scarborough) · [Mississauga](/locations/ontario/mississauga) · [Markham](/locations/ontario/markham) · [Oakville](/locations/ontario/oakville)
+[Toronto](/locations/ontario/toronto) · North York · Etobicoke · Scarborough · [Mississauga](/locations/ontario/mississauga) · [Markham](/locations/ontario/markham) · [Oakville](/locations/ontario/oakville)
 
 Submit your home address, event date, and guest count via the [booking page](/booking). Same-day quotes on most Toronto and GTA markets. Summer Saturday dates book 3–5 weeks ahead — if your birthday date is set, reserve the chef now.

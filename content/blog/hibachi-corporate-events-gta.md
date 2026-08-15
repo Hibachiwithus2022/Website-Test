@@ -72,7 +72,7 @@ Both work the same way: fully self-contained setup, no hookup required, complete
 
 ## Vaughan, Woodbridge, and the 400 Corridor
 
-[Vaughan](/locations/ontario/vaughan) and [Woodbridge](/locations/ontario/woodbridge) have a dense professional and entrepreneurial community that generates consistent corporate event demand — construction and development company year-end dinners, wealth management client appreciation events, and family business milestone celebrations at residential properties in the upper Vaughan and Woodbridge corridors.
+[Vaughan](/locations/ontario/vaughan) and its Woodbridge community have a dense professional and entrepreneurial community that generates consistent corporate event demand — construction and development company year-end dinners, wealth management client appreciation events, and family business milestone celebrations at residential properties in the upper Vaughan and Woodbridge corridors.
 
 The residential lot stock in the Woodbridge/Kleinburg corridor is large enough to host 25–50 guests. Year-end and holiday events here book 4–6 weeks ahead.
 

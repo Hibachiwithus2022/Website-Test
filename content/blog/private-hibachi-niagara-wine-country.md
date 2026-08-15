@@ -44,7 +44,7 @@ Properties along River Road, Lundy's Lane corridor, and the residential streets 
 
 ## St. Catharines: The Local Niagara Market
 
-[St. Catharines](/locations/ontario/st-catharines) is the largest city in the Niagara region and the one with the most consistent year-round hibachi demand — home events, backyard birthday parties, corporate team dinners at suburban properties, and local anniversary celebrations.
+St. Catharines is the largest city in the Niagara region and the one with the most consistent year-round hibachi demand — home events, backyard birthday parties, corporate team dinners at suburban properties, and local anniversary celebrations.
 
 The St. Catharines market is distinct from the vacation rental markets in NOTL and Niagara Falls: most events here are at residential properties for groups of 10–20. The same chef, the same self-contained setup, the same performance — just at someone's backyard in Port Dalhousie, Merriton, or the north end of the city.
 
@@ -92,6 +92,6 @@ The St. Catharines market is distinct from the vacation rental markets in NOTL a
 
 ## Book Your Niagara Hibachi Event
 
-[Niagara-on-the-Lake](/locations/ontario/niagara-on-the-lake) · [Niagara Falls](/locations/ontario/niagara-falls) · [St. Catharines](/locations/ontario/st-catharines)
+[Niagara-on-the-Lake](/locations/ontario/niagara-on-the-lake) · [Niagara Falls](/locations/ontario/niagara-falls) · St. Catharines
 
 Submit your rental address, event date, and guest count via the [booking page](/booking). Same-day quotes on most Niagara markets. Peak wine country weekends book 4–6 weeks ahead — if you have a Niagara rental confirmed, reserve the chef now.
