@@ -28,7 +28,7 @@
 | 8 | Corporate Events | 3 | Needs more |
 | 9 | Weddings | 1 | Needs more |
 | 10 | Bachelor Parties | 1 | Needs more |
-| 11 | Bachelorette Parties | 1 | Needs more |
+| 11 | Bachelorette Parties | 2 | Needs more |
 | 12 | Family Reunions | 1 | Needs more |
 | 13 | Holiday Parties | 0 | Untouched |
 | 14 | Summer Parties | 0 | Untouched |
@@ -38,12 +38,12 @@
 | 18 | Hibachi vs Restaurant | 2 | Well covered |
 | 19 | Hibachi vs Catering | 0 (partial) | Needs standalone |
 | 20 | Party Planning | 2 | Well covered |
-| 21 | Pricing | 2 | Needs more |
+| 21 | Pricing | 3 | Needs more |
 | 22 | First-Time Hosts | 1 | Needs more |
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
-| 24 | Anniversary | 0 | Untouched |
+| 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 39 | Active — expand to new states |
+| 26 | Local Lifestyle | 43 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -270,9 +270,10 @@
 
 ### ✅ Already Published
 - `hibachi-bachelorette-party` — comprehensive guide to hibachi bachelorette parties
+- `hibachi-bachelorette-toronto` — Toronto/GTA bachelorette weekend guide; condo/terrace rentals, sample weekend itinerary, Muskoka & Niagara-on-the-Lake destination angle
 
 ### 📋 Topics Still Available
-- Bachelorette hibachi dinner itinerary: how to plan the full weekend
+- Bachelorette hibachi dinner itinerary: how to plan the full weekend (general, not state-specific)
 - Bachelorette hibachi at a beach house vs. a city venue: which works better
 - How to customize a bachelorette hibachi experience (signature drinks, themes, upgrades)
 - What to wear to a bachelorette hibachi party (for the chef and guests)
@@ -280,7 +281,7 @@
 
 ### 💡 Next Suggested
 **"Bachelorette Weekend Hibachi Itinerary: How to Plan the Perfect Night"**
-— Goes deeper than the existing post by providing a full timeline/schedule format. Different search intent (itinerary planning vs. general "should I do hibachi").
+— General, evergreen version now that a Toronto-specific post exists. Different search intent (itinerary planning vs. general "should I do hibachi").
 
 ---
 
@@ -474,6 +475,7 @@
 ### ✅ Already Published
 - `how-much-does-private-hibachi-cost` — general 2025 pricing guide
 - `private-hibachi-chef-cost-new-york` — NY-specific pricing
+- `how-much-does-hibachi-cost-toronto` — Toronto/GTA CAD pricing guide ($78/$40/$780 CAD breakdown, premium upgrade table, cost-by-group-size table)
 
 ### 📋 Topics Still Available
 - State-specific pricing guides: SC, GA, FL, NC, NJ, OR, TX (Texas-specific not yet done as standalone)
@@ -533,18 +535,17 @@
 **Search intent:** Couples planning anniversary dinners — especially milestone anniversaries — who want something more intimate and impressive than a restaurant.
 
 ### ✅ Already Published
-- None
+- `hibachi-anniversary-date-night-toronto` — Toronto/GTA anniversary & date-night guide; small-group (2-person) setup, milestone anniversary upgrades, Niagara-on-the-Lake wine country angle
 
 ### 📋 Topics Still Available
-- Private hibachi for anniversary dinners: a romantic setup guide
+- Private hibachi for anniversary dinners: a romantic setup guide (general, not state-specific)
 - Milestone anniversary hibachi party ideas (10th, 25th, 50th)
-- Intimate hibachi for two: is it possible? (small-group minimums explained)
 - Romantic hibachi dinner at home: how to create the right atmosphere
 - Anniversary hibachi gift ideas: how to give the experience as a gift
 
 ### 💡 Next Suggested
 **"Private Hibachi for an Anniversary Dinner: The Complete Romantic Dining Guide"**
-— High-intent romantic occasion. Covers setup, ambiance, premium proteins, and how to make it feel special. Completely uncovered category.
+— General, evergreen version now that a Toronto-specific post exists. Covers setup, ambiance, premium proteins, and how to make it feel special for markets outside Ontario.
 
 ---
 
@@ -628,9 +629,15 @@
 - `private-hibachi-niagara-wine-country` — Niagara region guide: Niagara-on-the-Lake wine country bachelorette weekends (NOTL estate rentals, Old Town corridor), Niagara Falls family reunion and celebration events, St. Catharines residential market; peak season booking windows
 - `private-hibachi-toronto-birthday-party` — Toronto GTA birthday guide: Toronto neighbourhoods (Leslieville, Leaside, Etobicoke, Scarborough), Mississauga, Markham, Oakville; group sizes, seasonal booking calendar
 - `hibachi-corporate-events-gta` — GTA corporate guide: Mississauga Pearson corridor, Markham/Richmond Hill tech corridor, Waterloo/Kitchener innovation corridor, Vaughan/Woodbridge, Toronto Bay Street; holiday season booking timeline
+- `hibachi-bachelorette-toronto` — Toronto bachelorette weekend guide: condo/terrace rentals, King West, sample weekend itinerary, Muskoka & Niagara-on-the-Lake destination angle
+- `how-much-does-hibachi-cost-toronto` — Toronto/GTA CAD pricing guide: $78/$40/$780 CAD breakdown, premium upgrade table, cost-by-group-size table
+- `hibachi-anniversary-date-night-toronto` — Toronto/GTA anniversary & date-night guide: 2-person setup, milestone anniversary upgrades, Niagara-on-the-Lake wine country angle
 - `hibachi-at-home-illinois-guide` — complete Illinois guide (6 markets: Chicago Executive Gold Coast/River North/Lincoln Park/West Loop, North Shore Premier Lake Forest/Winnetka/Evanston, North Shore Family Highland Park/Northbrook/Barrington, DuPage & Western Naperville/Wheaton/Downers Grove/Hinsdale/Oak Brook, Corporate Corridor Schaumburg, Downstate University Champaign/Bloomington/Peoria/Rockford)
 - `private-hibachi-graduation-party-chicago-suburbs` — Chicago suburbs graduation party guide: Naperville North & Central, Wheaton College + WWSHS/Wheaton North, DG North & South, Highland Park HS, Glenbrook North, Carl Sandburg/Orland Park; booking windows 4–6 weeks ahead by district, dual-station setup for 25+ guests
 - `private-hibachi-chicago-north-shore-estate-corporate` — Chicago corporate + North Shore estate guide: River North/Fulton Market/Gold Coast/Lincoln Park corporate and estate events, Oak Brook Fortune 500 (McDonald's/Ace Hardware HQ), Schaumburg corporate corridor (Motorola/Zurich), Lake Forest/Winnetka estate milestone dinners, Evanston Northwestern corporate + lakefront
+- `hibachi-at-home-california-guide` — complete California guide (6 markets: LA Luxury Beverly Hills/Malibu/Calabasas, OC Coastal Newport Beach/Laguna Beach/Irvine/Huntington Beach/Dana Point, San Diego North La Jolla/Coronado/Del Mar/Rancho Santa Fe/Carlsbad, Silicon Valley Atherton/Palo Alto/Los Gatos/SF/San Jose, Wine Country & Sacramento Napa/Healdsburg/Sonoma/Folsom/Granite Bay, Destinations Santa Barbara/SLO/Palm Springs/Palm Desert/South Lake Tahoe/Truckee)
+- `private-hibachi-los-angeles-beverly-hills-malibu` — LA luxury market guide: Beverly Hills Rodeo Drive corridor estate dinners, Malibu Carbon Beach beach estate events, Calabasas/Hidden Hills gated community celebrations, Santa Monica vacation rental events, Manhattan Beach graduation parties, Pasadena Rose Bowl corridor + JPL/Caltech corporate events
+- `private-hibachi-napa-wine-country-palm-springs` — California destination guide: Napa Valley vineyard estate harvest season dinners, Healdsburg Dry Creek Valley + Sonoma Plaza estate events, Santa Barbara Montecito estate + SLO Cal Poly graduation, Palm Springs mid-century vacation rental pool parties + Palm Desert estate events, South Lake Tahoe lakefront cabin weekends + Truckee Tahoe Donner/Northstar mountain destination events
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
