@@ -20,11 +20,11 @@
 |---|----------|----------------|--------|
 | 1 | Vacation Rentals | 2 | Needs more |
 | 2 | Airbnb | 1 | Needs more |
-| 3 | Beach Houses | 1 | Needs more |
+| 3 | Beach Houses | 2 | Needs more |
 | 4 | Lake Houses | 1 | Needs more |
 | 5 | Cabins | 2 | Needs more |
 | 6 | Birthday Parties | 2 | Needs more |
-| 7 | Graduation Parties | 5 | Needs more |
+| 7 | Graduation Parties | 6 | Needs more |
 | 8 | Corporate Events | 3 | Needs more |
 | 9 | Weddings | 1 | Needs more |
 | 10 | Bachelor Parties | 1 | Needs more |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 43 | Active — expand to new states |
+| 26 | Local Lifestyle | 46 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -99,6 +99,7 @@
 
 ### ✅ Already Published
 - `private-hibachi-beach-house-guide` — deck vs. backyard setup, wind/weather, coastal markets (Newport, Narragansett, Westerly, Cape Cod, Myrtle Beach, Virginia Beach, South Haven, Ocean City)
+- `private-hibachi-gulf-shores-orange-beach-beach-house` — Gulf Shores & Orange Beach vacation rental guide: rental checklist, peak season booking windows, family reunions, bachelorette weekends, weather policy
 
 ### 📋 Topics Still Available
 - Beach house hibachi party: how to set up on a deck or patio
@@ -186,6 +187,7 @@
 - `private-hibachi-graduation-party-twin-cities` — Twin Cities graduation party planning guide; Maple Grove, Plymouth, Eagan, Burnsville, Lakeville; booking windows, dual-station setup, group sizes
 - `private-hibachi-graduation-party-columbus-ohio` — Columbus suburbs graduation party guide; Dublin, New Albany, Upper Arlington, Powell, Beachwood, Hudson; booking windows, dual-station setup, premium protein upgrades
 - `private-hibachi-graduation-party-indiana-college-towns` — Indiana graduation guide; IU Bloomington, Purdue West Lafayette/Lafayette, Hamilton County suburbs Carmel/Fishers/Noblesville/Westfield; booking windows by school
+- `private-hibachi-alabama-graduation-party` — Alabama graduation guide; UA Tuscaloosa, Auburn University, Birmingham metro (Mountain Brook, Vestavia Hills, Hoover, Homewood), Huntsville/Madison; booking windows by market
 
 ### 📋 Topics Still Available
 - Private hibachi for a graduation party: the complete planning guide (general, not state-specific)
@@ -638,6 +640,9 @@
 - `hibachi-at-home-california-guide` — complete California guide (6 markets: LA Luxury Beverly Hills/Malibu/Calabasas, OC Coastal Newport Beach/Laguna Beach/Irvine/Huntington Beach/Dana Point, San Diego North La Jolla/Coronado/Del Mar/Rancho Santa Fe/Carlsbad, Silicon Valley Atherton/Palo Alto/Los Gatos/SF/San Jose, Wine Country & Sacramento Napa/Healdsburg/Sonoma/Folsom/Granite Bay, Destinations Santa Barbara/SLO/Palm Springs/Palm Desert/South Lake Tahoe/Truckee)
 - `private-hibachi-los-angeles-beverly-hills-malibu` — LA luxury market guide: Beverly Hills Rodeo Drive corridor estate dinners, Malibu Carbon Beach beach estate events, Calabasas/Hidden Hills gated community celebrations, Santa Monica vacation rental events, Manhattan Beach graduation parties, Pasadena Rose Bowl corridor + JPL/Caltech corporate events
 - `private-hibachi-napa-wine-country-palm-springs` — California destination guide: Napa Valley vineyard estate harvest season dinners, Healdsburg Dry Creek Valley + Sonoma Plaza estate events, Santa Barbara Montecito estate + SLO Cal Poly graduation, Palm Springs mid-century vacation rental pool parties + Palm Desert estate events, South Lake Tahoe lakefront cabin weekends + Truckee Tahoe Donner/Northstar mountain destination events
+- `hibachi-at-home-alabama-guide` — complete Alabama guide (6 markets: Birmingham Estate Mountain Brook/Vestavia Hills, Birmingham Metro/Corporate Hoover/Homewood, Huntsville/North Alabama aerospace market, University Markets Tuscaloosa/Auburn, Central Alabama Montgomery, Gulf Coast Mobile Bay Gulf Shores/Orange Beach/Mobile/Fairhope/Daphne)
+- `private-hibachi-gulf-shores-orange-beach-beach-house` — Gulf Shores & Orange Beach vacation rental guide: rental checklist, peak-season booking windows, bachelorette weekends, family reunions, weather/rain policy
+- `private-hibachi-alabama-graduation-party` — Alabama graduation party guide: UA Tuscaloosa, Auburn University, Birmingham metro (Mountain Brook, Vestavia Hills, Hoover, Homewood), Huntsville/Madison; dual-station setup, booking windows by market
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
