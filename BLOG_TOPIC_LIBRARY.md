@@ -24,11 +24,11 @@
 | 4 | Lake Houses | 1 | Needs more |
 | 5 | Cabins | 2 | Needs more |
 | 6 | Birthday Parties | 2 | Needs more |
-| 7 | Graduation Parties | 6 | Needs more |
+| 7 | Graduation Parties | 7 | Needs more |
 | 8 | Corporate Events | 3 | Needs more |
 | 9 | Weddings | 1 | Needs more |
 | 10 | Bachelor Parties | 1 | Needs more |
-| 11 | Bachelorette Parties | 2 | Needs more |
+| 11 | Bachelorette Parties | 3 | Needs more |
 | 12 | Family Reunions | 1 | Needs more |
 | 13 | Holiday Parties | 0 | Untouched |
 | 14 | Summer Parties | 0 | Untouched |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 46 | Active — expand to new states |
+| 26 | Local Lifestyle | 49 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -188,6 +188,7 @@
 - `private-hibachi-graduation-party-columbus-ohio` — Columbus suburbs graduation party guide; Dublin, New Albany, Upper Arlington, Powell, Beachwood, Hudson; booking windows, dual-station setup, premium protein upgrades
 - `private-hibachi-graduation-party-indiana-college-towns` — Indiana graduation guide; IU Bloomington, Purdue West Lafayette/Lafayette, Hamilton County suburbs Carmel/Fishers/Noblesville/Westfield; booking windows by school
 - `private-hibachi-alabama-graduation-party` — Alabama graduation guide; UA Tuscaloosa, Auburn University, Birmingham metro (Mountain Brook, Vestavia Hills, Hoover, Homewood), Huntsville/Madison; booking windows by market
+- `private-hibachi-arizona-graduation-party` — Arizona graduation guide; ASU Tempe, UA Tucson (Catalina Foothills), NAU Flagstaff, Phoenix metro high school commencements (Scottsdale/Chandler/Gilbert/Mesa); booking windows by market
 
 ### 📋 Topics Still Available
 - Private hibachi for a graduation party: the complete planning guide (general, not state-specific)
@@ -273,6 +274,7 @@
 ### ✅ Already Published
 - `hibachi-bachelorette-party` — comprehensive guide to hibachi bachelorette parties
 - `hibachi-bachelorette-toronto` — Toronto/GTA bachelorette weekend guide; condo/terrace rentals, sample weekend itinerary, Muskoka & Niagara-on-the-Lake destination angle
+- `private-hibachi-scottsdale-bachelorette-weekend` — Scottsdale bachelorette weekend guide; Old Town vacation rentals, DC Ranch/Troon North estates, peak season calendar, premium proteins, Sedona cross-reference
 
 ### 📋 Topics Still Available
 - Bachelorette hibachi dinner itinerary: how to plan the full weekend (general, not state-specific)
@@ -643,6 +645,9 @@
 - `hibachi-at-home-alabama-guide` — complete Alabama guide (6 markets: Birmingham Estate Mountain Brook/Vestavia Hills, Birmingham Metro/Corporate Hoover/Homewood, Huntsville/North Alabama aerospace market, University Markets Tuscaloosa/Auburn, Central Alabama Montgomery, Gulf Coast Mobile Bay Gulf Shores/Orange Beach/Mobile/Fairhope/Daphne)
 - `private-hibachi-gulf-shores-orange-beach-beach-house` — Gulf Shores & Orange Beach vacation rental guide: rental checklist, peak-season booking windows, bachelorette weekends, family reunions, weather/rain policy
 - `private-hibachi-alabama-graduation-party` — Alabama graduation party guide: UA Tuscaloosa, Auburn University, Birmingham metro (Mountain Brook, Vestavia Hills, Hoover, Homewood), Huntsville/Madison; dual-station setup, booking windows by market
+- `hibachi-at-home-arizona-guide` — complete Arizona guide (6 markets: Scottsdale/PV luxury, Phoenix core, East Valley Tempe/Chandler/Gilbert/Mesa/Queen Creek, West Valley Peoria/Glendale/Surprise/Goodyear, Northern AZ mountain Sedona/Flagstaff/Prescott, Southern AZ Tucson/Oro Valley)
+- `private-hibachi-scottsdale-bachelorette-weekend` — Scottsdale & Sedona bachelorette weekend guide; Old Town peak season calendar, DC Ranch/Troon North estates, confirmation checklist, premium proteins for the bride
+- `private-hibachi-arizona-graduation-party` — Arizona graduation guide; ASU Tempe, UA Tucson Catalina Foothills, NAU Flagstaff cabin setup, Phoenix metro high school commencements (Scottsdale/Chandler/Gilbert/Mesa); booking windows by market
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
