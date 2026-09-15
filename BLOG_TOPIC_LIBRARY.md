@@ -648,6 +648,9 @@
 - `hibachi-at-home-arizona-guide` — complete Arizona guide (6 markets: Scottsdale/PV luxury, Phoenix core, East Valley Tempe/Chandler/Gilbert/Mesa/Queen Creek, West Valley Peoria/Glendale/Surprise/Goodyear, Northern AZ mountain Sedona/Flagstaff/Prescott, Southern AZ Tucson/Oro Valley)
 - `private-hibachi-scottsdale-bachelorette-weekend` — Scottsdale & Sedona bachelorette weekend guide; Old Town peak season calendar, DC Ranch/Troon North estates, confirmation checklist, premium proteins for the bride
 - `private-hibachi-arizona-graduation-party` — Arizona graduation guide; ASU Tempe, UA Tucson Catalina Foothills, NAU Flagstaff cabin setup, Phoenix metro high school commencements (Scottsdale/Chandler/Gilbert/Mesa); booking windows by market
+- `hibachi-at-home-arkansas-guide` — complete Arkansas guide (5 markets: Bentonville/Rogers NWA Executive, Fayetteville/Springdale/Bella Vista NWA Community, Little Rock/Conway/Benton Central Arkansas, Hot Springs/Mountain Home/Russellville Destination/Lake, Fort Smith/Jonesboro Regional)
+- `private-hibachi-arkansas-lake-house` — Arkansas lake house guide: Lake Hamilton/Hot Springs bachelorette weekends and family reunions, Lake Norfork/Lake Bull Shoals Twin Lakes cabin groups, Lake Dardanelle/Russellville ATU graduation lake combos; self-contained propane setup, booking windows by market
+- `private-hibachi-arkansas-graduation-party` — Arkansas graduation guide: UA Fayetteville commencement, UCA Conway three-university calendar, ATU Russellville, A-State Jonesboro, NWA high school corridor (Bentonville West/East, Rogers Heritage/High, Fayetteville High, Springdale Har-Ber/High); booking windows by market
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
