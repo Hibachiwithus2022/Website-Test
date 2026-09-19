@@ -651,6 +651,9 @@
 - `hibachi-at-home-arkansas-guide` — complete Arkansas guide (5 markets: Bentonville/Rogers NWA Executive, Fayetteville/Springdale/Bella Vista NWA Community, Little Rock/Conway/Benton Central Arkansas, Hot Springs/Mountain Home/Russellville Destination/Lake, Fort Smith/Jonesboro Regional)
 - `private-hibachi-arkansas-lake-house` — Arkansas lake house guide: Lake Hamilton/Hot Springs bachelorette weekends and family reunions, Lake Norfork/Lake Bull Shoals Twin Lakes cabin groups, Lake Dardanelle/Russellville ATU graduation lake combos; self-contained propane setup, booking windows by market
 - `private-hibachi-arkansas-graduation-party` — Arkansas graduation guide: UA Fayetteville commencement, UCA Conway three-university calendar, ATU Russellville, A-State Jonesboro, NWA high school corridor (Bentonville West/East, Rogers Heritage/High, Fayetteville High, Springdale Har-Ber/High); booking windows by market
+- `hibachi-at-home-louisiana-guide` — complete Louisiana guide (4 markets: New Orleans destination vacation rental, South Louisiana Baton Rouge/Lafayette/Gonzales/Prairieville/Youngsville/Broussard/Hammond, New Orleans Metro Suburbs Metairie/Kenner/Mandeville/Covington, Regional Shreveport/Bossier City/Lake Charles)
+- `private-hibachi-new-orleans-vacation-rental` — New Orleans vacation rental guide: bachelorette weekends (Garden District/Uptown/Marigny Airbnbs), family reunion trips, Jazz Fest groups, corporate retreats; neighborhood-by-neighborhood setup guide, peak-season booking windows
+- `private-hibachi-louisiana-graduation-party` — Louisiana graduation guide: LSU Baton Rouge commencement, UL Lafayette commencement, Tulane/Loyola New Orleans commencement, Southeastern Louisiana Hammond, Grambling/Louisiana Tech Ruston, McNeese State Lake Charles, Centenary Shreveport; Northshore high school commencement corridor Mandeville/Covington; booking windows by market
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
