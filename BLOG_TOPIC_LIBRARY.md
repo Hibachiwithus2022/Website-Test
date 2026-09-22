@@ -654,11 +654,16 @@
 - `hibachi-at-home-louisiana-guide` — complete Louisiana guide (4 markets: New Orleans destination vacation rental, South Louisiana Baton Rouge/Lafayette/Gonzales/Prairieville/Youngsville/Broussard/Hammond, New Orleans Metro Suburbs Metairie/Kenner/Mandeville/Covington, Regional Shreveport/Bossier City/Lake Charles)
 - `private-hibachi-new-orleans-vacation-rental` — New Orleans vacation rental guide: bachelorette weekends (Garden District/Uptown/Marigny Airbnbs), family reunion trips, Jazz Fest groups, corporate retreats; neighborhood-by-neighborhood setup guide, peak-season booking windows
 - `private-hibachi-louisiana-graduation-party` — Louisiana graduation guide: LSU Baton Rouge commencement, UL Lafayette commencement, Tulane/Loyola New Orleans commencement, Southeastern Louisiana Hammond, Grambling/Louisiana Tech Ruston, McNeese State Lake Charles, Centenary Shreveport; Northshore high school commencement corridor Mandeville/Covington; booking windows by market
+- `hibachi-at-home-florida-guide` — complete Florida guide (6 markets: South Florida Miami/Fort Lauderdale/Boca Raton/Palm Beach, Orlando/Central Florida Disney corridor, Tampa Bay, Southwest Florida Naples/Sarasota/Fort Myers/Cape Coral, Panhandle Destin/30A/PCB/Pensacola, Northeast Florida Jacksonville/St. Augustine/Ponte Vedra/Amelia Island); year-round outdoor climate, vacation rental vs residential formats, booking windows by market
+- `private-hibachi-miami-vacation-rental` — Miami & South Florida vacation rental guide: South Beach bachelorette weekends, Coral Gables estate milestone dinners, Coconut Grove reunions, Brickell corporate retreats, Art Basel week groups; neighborhood-by-neighborhood setup guide, peak-season booking windows (Art Basel, UM graduation, spring break, New Year's Eve)
+- `private-hibachi-destin-30a-beach-house` — Panhandle beach house guide: 30A communities (Alys Beach, Rosemary Beach, Seaside, WaterColor/WaterSound), Destin harbor corridor and Miramar Beach, Fort Walton Beach military/residential, Panama City Beach family rentals, Pensacola/NAS Pensacola; pool deck and lanai setup guide, rain backup, booking windows by market
+- `private-hibachi-florida-graduation-party` — Florida graduation guide: UF Gainesville commencement (largest in state, 6–8 weeks), FSU Tallahassee, UCF Orlando, USF Tampa, UM Coral Gables, FAU Boca Raton; South Florida / Orlando / Tampa Bay / Northeast Florida high school corridors; booking windows by market
+- `private-hibachi-orlando-disney-vacation-rental` — Orlando Disney-area vacation rental guide: Kissimmee/Davenport/Lake Buena Vista/Clermont vacation homes, multi-family Disney trips, extended family reunions, pool deck setup, Thanksgiving/Christmas/spring break booking windows
+- `private-hibachi-naples-sarasota-gulf-coast` — Southwest Florida luxury Gulf Coast estate guide: Naples Old Naples/Port Royal estate milestone dinners, Bonita Springs/Marco Island vacation rental events, Sarasota Siesta Key/Ringling corridor, Fort Myers/Cape Coral canal-waterfront properties, Venice; seasonal (Nov–Apr) booking patterns, premium protein norms for this market
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
 - Georgia complete state guide
-- Florida complete state guide
 - North Carolina complete state guide
 - Oregon complete state guide
 - Delaware complete state guide
