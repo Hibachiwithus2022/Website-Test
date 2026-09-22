@@ -63,6 +63,7 @@ import { getAlCityData, getAlBlogPosts, getAlHowItWorks, getAlSectionVariant, ge
 import { getArCityData, getArBlogPosts, getArHowItWorks, getArSectionVariant, getArCityImage, getArSupportImages } from '../../../../lib/arkansasData'
 import { getLaCityData, getLaBlogPosts, getLaHowItWorks, getLaSectionVariant, getLaCityImage, getLaSupportImages } from '../../../../lib/louisianaData'
 import { getOkCityData, getOkBlogPosts, getOkHowItWorks, getOkSectionVariant, getOkCityImage, getOkSupportImages } from '../../../../lib/oklahomaData'
+import { getMsCityData, getMsBlogPosts, getMsHowItWorks, getMsSectionVariant, getMsCityImage, getMsSupportImages } from '../../../../lib/mississippiData'
 import { getCityLinkData, getOtherMajorCities } from '../../../../lib/internalLinks'
 import Navbar  from '../../../../components/Navbar'
 import Footer  from '../../../../components/Footer'
@@ -130,6 +131,7 @@ export async function generateMetadata({ params }) {
     ?? (params.state === 'arkansas'    ? getArCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'louisiana'   ? getLaCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'oklahoma'    ? getOkCityData(citySlug, slugToCity(citySlug))               : null)
+    ?? (params.state === 'mississippi' ? getMsCityData(citySlug, slugToCity(citySlug))               : null)
   const stateData = ALL_STATES.find(s => s.slug === params.state)
   const stateName = stateData?.state || slugToCity(params.state)
   const cityName  = cityData?.cityName || slugToCity(citySlug)
@@ -203,6 +205,7 @@ export default function CityPage({ params }) {
     ?? (params.state === 'arkansas'    ? getArCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'louisiana'   ? getLaCityData(citySlug, slugToCity(citySlug))               : null)
     ?? (params.state === 'oklahoma'    ? getOkCityData(citySlug, slugToCity(citySlug))               : null)
+    ?? (params.state === 'mississippi' ? getMsCityData(citySlug, slugToCity(citySlug))               : null)
   const cityName    = cityData?.cityName  || slugToCity(citySlug)
   const stateAbbr   = cityData?.stateAbbr || STATE_ABBR[params.state] || params.state.toUpperCase().slice(0, 2)
 
@@ -247,6 +250,7 @@ export default function CityPage({ params }) {
   const isArkansas       = params.state === 'arkansas'
   const isLouisiana      = params.state === 'louisiana'
   const isOklahoma       = params.state === 'oklahoma'
+  const isMississippi    = params.state === 'mississippi'
 
   const relatedPosts = isTexas         ? getTexasBlogPosts(variant, 3)
                      : isFlorida       ? getFloridaBlogPosts(variant, 3)
@@ -279,6 +283,7 @@ export default function CityPage({ params }) {
                      : isArkansas      ? getArBlogPosts(variant, 3)
                      : isLouisiana     ? getLaBlogPosts(variant, 3)
                      : isOklahoma      ? getOkBlogPosts(variant, 3)
+                     : isMississippi   ? getMsBlogPosts(variant, 3)
                      : getBlogPostsForCity(variant, 3)
 
   // Enrich relatedPosts with tag/readTime from the shared BLOG_POSTS lookup if missing
@@ -317,6 +322,7 @@ export default function CityPage({ params }) {
                         : isArkansas      ? getArHowItWorks(citySlug)
                         : isLouisiana     ? getLaHowItWorks(citySlug)
                         : isOklahoma      ? getOkHowItWorks(citySlug)
+                        : isMississippi   ? getMsHowItWorks(citySlug)
                         : null
   const howItWorksData  = _howItWorksRaw ? {
     steps:      _howItWorksRaw.steps,
@@ -355,6 +361,7 @@ export default function CityPage({ params }) {
                     : isArkansas      ? getArSectionVariant(citySlug)
                     : isLouisiana     ? getLaSectionVariant(citySlug)
                     : isOklahoma      ? getOkSectionVariant(citySlug)
+                    : isMississippi   ? getMsSectionVariant(citySlug)
                     : null
   const _cityImg    = isTexas         ? getTexasCityImage(citySlug)
                     : isFlorida       ? getFloridaCityImage(citySlug)
@@ -387,6 +394,7 @@ export default function CityPage({ params }) {
                     : isArkansas      ? getArCityImage(citySlug)
                     : isLouisiana     ? getLaCityImage(citySlug)
                     : isOklahoma      ? getOkCityImage(citySlug)
+                    : isMississippi   ? getMsCityImage(citySlug)
                     : null
   const sectionVariant  = _sectionRaw ? {
     heroPill:              _sectionRaw.heroPill,
@@ -441,6 +449,7 @@ export default function CityPage({ params }) {
                       : isArkansas      ? getArSupportImages(citySlug)
                       : isLouisiana     ? getLaSupportImages(citySlug)
                       : isOklahoma      ? getOkSupportImages(citySlug)
+                      : isMississippi   ? getMsSupportImages(citySlug)
                       : null
   const supportImages  = _supportRaw ? {
     testimonial: {
