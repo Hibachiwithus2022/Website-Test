@@ -24,7 +24,7 @@
 | 4 | Lake Houses | 1 | Needs more |
 | 5 | Cabins | 2 | Needs more |
 | 6 | Birthday Parties | 2 | Needs more |
-| 7 | Graduation Parties | 7 | Needs more |
+| 7 | Graduation Parties | 8 | Needs more |
 | 8 | Corporate Events | 3 | Needs more |
 | 9 | Weddings | 1 | Needs more |
 | 10 | Bachelor Parties | 1 | Needs more |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 49 | Active — expand to new states |
+| 26 | Local Lifestyle | 52 | Active — expand to new states |
 | 27 | Seasonal | 0 | Untouched |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -660,6 +660,9 @@
 - `private-hibachi-florida-graduation-party` — Florida graduation guide: UF Gainesville commencement (largest in state, 6–8 weeks), FSU Tallahassee, UCF Orlando, USF Tampa, UM Coral Gables, FAU Boca Raton; South Florida / Orlando / Tampa Bay / Northeast Florida high school corridors; booking windows by market
 - `private-hibachi-orlando-disney-vacation-rental` — Orlando Disney-area vacation rental guide: Kissimmee/Davenport/Lake Buena Vista/Clermont vacation homes, multi-family Disney trips, extended family reunions, pool deck setup, Thanksgiving/Christmas/spring break booking windows
 - `private-hibachi-naples-sarasota-gulf-coast` — Southwest Florida luxury Gulf Coast estate guide: Naples Old Naples/Port Royal estate milestone dinners, Bonita Springs/Marco Island vacation rental events, Sarasota Siesta Key/Ringling corridor, Fort Myers/Cape Coral canal-waterfront properties, Venice; seasonal (Nov–Apr) booking patterns, premium protein norms for this market
+- `hibachi-at-home-oklahoma-guide` — complete Oklahoma guide (5 markets: OKC Metro Edmond/Nichols Hills/Yukon/Moore/Midwest City, Tulsa Metro energy sector and growth corridor Broken Arrow/Bixby/Jenks/Owasso, University Markets OU Norman/OSU Stillwater, Military/SW Oklahoma Lawton/Fort Sill, Cameron University); booking windows by market
+- `private-hibachi-oklahoma-graduation-party` — Oklahoma graduation guide: OU Norman commencement, OSU Stillwater (May and December), Cameron University Lawton, Heritage Hall/Casady Edmond, BA High School, Owasso/Jenks/Bixby corridor, Moore/Westmoore/Midwest City OKC metro, Norman high schools; booking windows by market
+- `private-hibachi-tulsa-backyard-party` — Tulsa growth corridor backyard party guide: Broken Arrow pool decks and Rose District outdoor space, Bixby pool deck communities, Jenks South Tulsa backyard entertaining, Owasso covered patio setups; setup requirements, booking windows, protein choices for this market
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
