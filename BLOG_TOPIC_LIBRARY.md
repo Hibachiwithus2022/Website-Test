@@ -18,14 +18,14 @@
 
 | # | Category | Posts Published | Status |
 |---|----------|----------------|--------|
-| 1 | Vacation Rentals | 2 | Needs more |
+| 1 | Vacation Rentals | 4 | Needs more |
 | 2 | Airbnb | 1 | Needs more |
 | 3 | Beach Houses | 2 | Needs more |
 | 4 | Lake Houses | 1 | Needs more |
-| 5 | Cabins | 2 | Needs more |
-| 6 | Birthday Parties | 2 | Needs more |
+| 5 | Cabins | 3 | Needs more |
+| 6 | Birthday Parties | 3 | Needs more |
 | 7 | Graduation Parties | 8 | Needs more |
-| 8 | Corporate Events | 3 | Needs more |
+| 8 | Corporate Events | 4 | Needs more |
 | 9 | Weddings | 1 | Needs more |
 | 10 | Bachelor Parties | 1 | Needs more |
 | 11 | Bachelorette Parties | 3 | Needs more |
@@ -33,7 +33,7 @@
 | 13 | Holiday Parties | 0 | Untouched |
 | 14 | Summer Parties | 0 | Untouched |
 | 15 | Backyard Parties | 2 | Well covered |
-| 16 | Luxury Dining | 1 | Needs more |
+| 16 | Luxury Dining | 2 | Needs more |
 | 17 | Private Chef Experience | 1 | Needs more |
 | 18 | Hibachi vs Restaurant | 2 | Well covered |
 | 19 | Hibachi vs Catering | 0 (partial) | Needs standalone |
@@ -43,8 +43,8 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 52 | Active — expand to new states |
-| 27 | Seasonal | 0 | Untouched |
+| 26 | Local Lifestyle | 62 | Active — expand to new states |
+| 27 | Seasonal | 1 | Needs more |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
 | 30 | Event Planning | 2 | Needs more |
@@ -59,6 +59,8 @@
 ### ✅ Already Published
 - `lake-of-the-ozarks-branson-hibachi` — Lake of the Ozarks & Branson vacation rental experience
 - `private-hibachi-lake-erie-cedar-point-vacation-rental` — Lake Erie vacation rental guide; Sandusky/Cedar Point area, Avon Lake lakefront, Put-in-Bay/Kelleys Island island weekends
+- `private-hibachi-scottsdale-old-town-vacation-rental` — Scottsdale Old Town vacation rental guide; pool decks, rooftop terraces, courtyards; bachelorette weekends, birthday milestone trips, golf retreat team dinners; self-contained setup, no hookups required
+- `private-hibachi-sedona-arizona-vacation-rental` — Sedona red rock vacation rental guide; Granite Dells, Oak Creek Canyon, West Sedona; bachelorette weekends, anniversary trips, NAU graduation; fully propane-powered self-contained setup
 
 ### 📋 Topics Still Available
 - Private hibachi at a vacation rental: the complete guest guide
@@ -141,6 +143,7 @@
 ### ✅ Already Published
 - `private-hibachi-brainerd-lakes-cabin` — Minnesota cabin guide: Brainerd Lakes, Duluth/North Shore, Stillwater St. Croix; self-contained propane setup, no hookups required
 - `private-hibachi-pocono-mountains-cabin` — Pocono Mountain vacation rental guide: Stroudsburg, Mount Pocono, Hawley/Lake Wallenpaupack; bachelorette weekends, family reunions, graduation cabin trips
+- `private-hibachi-prescott-flagstaff-northern-arizona` — Northern Arizona mountain destination guide: Prescott (Granite Dells, Prescott Lakes, Victorian downtown), Flagstaff (forest cabins, ski season, NAU graduation, Route 66); summer "escape the heat" market; fully self-contained propane setup
 
 ### 📋 Topics Still Available
 - Can you book a private hibachi chef at a mountain cabin?
@@ -162,6 +165,7 @@
 ### ✅ Already Published
 - `hibachi-birthday-party-ideas` — 10 hibachi birthday party ideas (general, all ages)
 - `private-hibachi-toronto-birthday-party` — Toronto GTA birthday guide: East End (Leslieville/Riverdale), Leaside/North York, Etobicoke, Scarborough, Mississauga, Markham, Oakville; group sizes by neighbourhood, seasonal booking calendar
+- `private-hibachi-scottsdale-birthday-party` — Scottsdale birthday party planning guide: Old Town vacation rentals, Gainey Ranch / DC Ranch / McCormick Ranch estates, Paradise Valley, North Scottsdale homes, Arcadia/Biltmore; milestone birthdays 30th–80th; protein upgrade guidance; booking windows
 
 ### 📋 Topics Still Available
 - Private hibachi for a milestone birthday: 30th, 40th, 50th, 60th guide
@@ -212,6 +216,7 @@
 - `hibachi-catering-corporate-events` — why hibachi is the best choice for corporate events (general)
 - `private-hibachi-indianapolis-corporate-carmel-estate` — Indianapolis corporate + Carmel/Zionsville estate guide; Salesforce/Eli Lilly/Cummins team events, healthcare/tech/financial segments, Meridian Hills estate milestone dinners
 - `hibachi-corporate-events-gta` — GTA corporate guide: Mississauga Pearson corridor, Markham/Richmond Hill tech corridor (IBM/AMD/Huawei Canada), Waterloo/Kitchener innovation corridor, Vaughan/Woodbridge entrepreneurial community, Toronto Bay Street; holiday season booking windows
+- `private-hibachi-phoenix-scottsdale-corporate` — Phoenix/Scottsdale corporate event guide: financial services (JPMorgan Chase, Wells Fargo, wealth management), semiconductor/tech (Intel Chandler, NXP, PayPal), healthcare (Banner, HonorHealth), aerospace/defense (Boeing, Honeywell, Raytheon); executive team dinners, client appreciation events, departmental celebrations; group format guide
 
 ### 📋 Topics Still Available
 - Team-building hibachi events: how a shared meal builds culture
@@ -377,6 +382,7 @@
 
 ### ✅ Already Published
 - `private-hibachi-estate-dinner-northern-virginia` — McLean, Leesburg, Charlottesville estate entertaining; premium proteins; NoVA and wine country luxury market
+- `private-hibachi-paradise-valley-luxury-estate` — Paradise Valley estate dinner guide: Camelback Mountain corridor, Mummy Mountain, Mountain Shadows/Sanctuary; premium protein defaults (filet, lobster, wagyu); milestone anniversary and corporate client entertainment; sunset timing guide
 
 ### 📋 Topics Still Available
 - Premium hibachi proteins: filet mignon, lobster tail, wagyu, and scallops guide
@@ -663,6 +669,16 @@
 - `hibachi-at-home-oklahoma-guide` — complete Oklahoma guide (5 markets: OKC Metro Edmond/Nichols Hills/Yukon/Moore/Midwest City, Tulsa Metro energy sector and growth corridor Broken Arrow/Bixby/Jenks/Owasso, University Markets OU Norman/OSU Stillwater, Military/SW Oklahoma Lawton/Fort Sill, Cameron University); booking windows by market
 - `private-hibachi-oklahoma-graduation-party` — Oklahoma graduation guide: OU Norman commencement, OSU Stillwater (May and December), Cameron University Lawton, Heritage Hall/Casady Edmond, BA High School, Owasso/Jenks/Bixby corridor, Moore/Westmoore/Midwest City OKC metro, Norman high schools; booking windows by market
 - `private-hibachi-tulsa-backyard-party` — Tulsa growth corridor backyard party guide: Broken Arrow pool decks and Rose District outdoor space, Bixby pool deck communities, Jenks South Tulsa backyard entertaining, Owasso covered patio setups; setup requirements, booking windows, protein choices for this market
+- `private-hibachi-east-valley-chandler-gilbert` — East Valley guide: Chandler (Intel/NXP/PayPal tech sector, Ocotillo lake communities), Gilbert (graduation season capital, Seville/Val Vista Lakes/Freeman Farms), Tempe (ASU commencement market, young professionals), Mesa (pool deck culture, Eastmark/Las Sendas, spring training); group sizing, booking windows
+- `private-hibachi-west-valley-arizona` — West Valley guide: Goodyear (Palm Valley, Estrella Mountain Ranch, Cactus League spring training), Surprise (Sun City Grand snowbird/retirement market, Bell Road growth corridor), Peoria (Vistancia premium estates, Lake Pleasant), Glendale (State Farm Stadium sports events, Camelback Ranch spring training, Arrowhead neighborhoods)
+- `private-hibachi-tucson-arizona-guide` — Tucson guide: University of Arizona graduation market (May commencement, 4–6 week booking window), Catalina Foothills estates (Skyline CC, La Paloma), Oro Valley/Marana growth corridor (Dove Mountain), Midtown/North Side residential; seasonal guide including monsoon considerations
+- `private-hibachi-arizona-snowbird-winter-season` — Arizona busy season (Oct–May) snowbird/winter resident guide: returning snowbird "we're back" celebrations, visiting family dinners, holiday entertaining, Phoenix Open and spring training occasion guide, Sun City/Sun City West/Sun City Grand retirement community occasions, farewell-of-season dinners; booking calendar by month
+- `private-hibachi-scottsdale-birthday-party` — *also listed in Birthday Parties (cat 6)*
+- `private-hibachi-paradise-valley-luxury-estate` — *also listed in Luxury Dining (cat 16)*
+- `private-hibachi-phoenix-scottsdale-corporate` — *also listed in Corporate Events (cat 8)*
+- `private-hibachi-scottsdale-old-town-vacation-rental` — *also listed in Vacation Rentals (cat 1)*
+- `private-hibachi-sedona-arizona-vacation-rental` — *also listed in Vacation Rentals (cat 1)*
+- `private-hibachi-prescott-flagstaff-northern-arizona` — *also listed in Cabins (cat 5)*
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
@@ -692,7 +708,7 @@
 **Search intent:** Occasion-specific seasonal searchers — people planning events tied to a time of year.
 
 ### ✅ Already Published
-- None
+- `private-hibachi-arizona-snowbird-winter-season` — Arizona's Oct–May busy season guide: snowbird community occasions, spring training and Phoenix Open events, Sun City retirement market; booking calendar by month — *also listed in Local Lifestyle (cat 26)*
 
 ### 📋 Topics Still Available
 - Best time of year to book a private hibachi chef (seasonal booking guide)
