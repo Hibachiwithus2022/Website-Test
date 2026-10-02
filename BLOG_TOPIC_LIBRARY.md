@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 62 | Active — expand to new states |
+| 26 | Local Lifestyle | 68 | Active — expand to new states |
 | 27 | Seasonal | 1 | Needs more |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -679,6 +679,12 @@
 - `private-hibachi-scottsdale-old-town-vacation-rental` — *also listed in Vacation Rentals (cat 1)*
 - `private-hibachi-sedona-arizona-vacation-rental` — *also listed in Vacation Rentals (cat 1)*
 - `private-hibachi-prescott-flagstaff-northern-arizona` — *also listed in Cabins (cat 5)*
+- `hibachi-at-home-kentucky-guide` — complete Kentucky guide (3 Batch 1 markets: Louisville Derby city executive entertaining and U of L graduation, Lexington horse country Keeneland estate events and UK graduation, Bowling Green WKU graduation and south Kentucky corporate events)
+- `private-hibachi-louisville-derby-season` — Louisville guide: Derby season private entertaining, U of L and Bellarmine graduation parties, NuLu and Prospect executive client dinners, The Highlands milestone celebrations; booking windows by market
+- `private-hibachi-wku-bowling-green-graduation` — Bowling Green WKU graduation guide: May and December commencement booking logistics, Corvette Museum corporate corridor, south Kentucky family milestones; graduation party format vs. restaurant scramble
+- `private-hibachi-northern-kentucky-covington-florence` — Northern Kentucky guide: Covington (Cincinnati skyline backdrop, NKU graduation, Kenton County professional corporate events), Florence (Boone County family reunions, Thomas More University graduation, I-75/I-71 corporate teams); self-contained setup for historic and suburban properties
+- `private-hibachi-frankfort-georgetown-kentucky` — Bluegrass Capital Corridor guide: Frankfort (state government team events, retirement celebrations, Kentucky River corridor families), Georgetown (Toyota Motor Manufacturing team events, Georgetown College graduation, Scott County residential events); corridor coverage Versailles/Midway/Lawrenceburg
+- `private-hibachi-western-kentucky-owensboro-paducah` — Western Kentucky guide: Owensboro (Kentucky Wesleyan/Brescia graduation, Owensboro Health corporate events, Ohio River residential milestones), Paducah (Lower Town Arts District group trips, WKCTC graduation, McCracken County backyard parties), Elizabethtown (Fort Knox military homecomings, ECTC graduation, I-65 corridor manufacturing teams)
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
