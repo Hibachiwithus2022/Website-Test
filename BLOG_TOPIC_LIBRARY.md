@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 68 | Active — expand to new states |
+| 26 | Local Lifestyle | 73 | Active — expand to new states |
 | 27 | Seasonal | 1 | Needs more |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -685,6 +685,11 @@
 - `private-hibachi-northern-kentucky-covington-florence` — Northern Kentucky guide: Covington (Cincinnati skyline backdrop, NKU graduation, Kenton County professional corporate events), Florence (Boone County family reunions, Thomas More University graduation, I-75/I-71 corporate teams); self-contained setup for historic and suburban properties
 - `private-hibachi-frankfort-georgetown-kentucky` — Bluegrass Capital Corridor guide: Frankfort (state government team events, retirement celebrations, Kentucky River corridor families), Georgetown (Toyota Motor Manufacturing team events, Georgetown College graduation, Scott County residential events); corridor coverage Versailles/Midway/Lawrenceburg
 - `private-hibachi-western-kentucky-owensboro-paducah` — Western Kentucky guide: Owensboro (Kentucky Wesleyan/Brescia graduation, Owensboro Health corporate events, Ohio River residential milestones), Paducah (Lower Town Arts District group trips, WKCTC graduation, McCracken County backyard parties), Elizabethtown (Fort Knox military homecomings, ECTC graduation, I-65 corridor manufacturing teams)
+- `private-hibachi-lexington-horse-country-estate` — Lexington horse country estate guide: Versailles Road and Paris Pike estate properties, Keeneland April and October meet season booking windows, UK graduation May commencement, Hamburg/Beaumont suburban market; premium protein norms for the thoroughbred industry client
+- `private-hibachi-kentucky-graduation-party` — Kentucky statewide graduation guide: UK Lexington (mid-May, 4–5 weeks ahead), U of L Louisville (early–mid May), WKU Bowling Green (early May), NKU Highland Heights, Georgetown College, Kentucky Wesleyan/Brescia Owensboro, ECTC Elizabethtown, WKCTC Paducah; high school graduation season (late May–mid June); group sizing and booking windows by university
+- `private-hibachi-kentucky-bourbon-trail-weekend` — Kentucky Bourbon Trail destination guide: Louisville vacation rental base (Highlands/NuLu/Anchorage), Lexington horse country base (Hamburg/Versailles corridor, Midway village), Bardstown distillery corridor; corporate retreat circuit format; premium protein norms for the bourbon trail visitor market; booking windows
+- `private-hibachi-kentucky-lake-house` — Kentucky lake house guide: Lake Cumberland (houseboat capital, Jamestown/Russell Springs/Monticello), Barren River Lake (Warren County, Bowling Green families), Nolin Lake and Rough River Lake (west-central KY, Louisville/Elizabethtown market), Green River Lake (Campbellsville, Taylor County), Dale Hollow (KY-TN border, fishing groups); houseboat dock setup requirements; Memorial Day/July 4th/Labor Day booking windows
+- `private-hibachi-louisville-corporate-executive` — Louisville corporate and executive entertaining guide: healthcare executive market (Humana/Kindred, Anchorage/Prospect estates), bourbon industry trade visitor entertaining, UPS Worldport logistics sector, professional services firms; Prospect/Anchorage/St. Matthews/Crestwood property profiles; cocktail hour format; peak corporate season booking windows
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
