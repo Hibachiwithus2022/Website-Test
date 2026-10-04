@@ -22,7 +22,7 @@ function cityLabelIndex(city) {
 
 export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearbyMajorCities = [], nearbyCities = [] }) {
   const isCanada = isCanadaSlug(stateSlug)
-  const bookingHref = isCanada ? 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868' : 'https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538'
+  const bookingHref = isCanada ? '/booking-canada' : '/booking'
   // Show up to 6 nearby cities (major cities first)
   const displayCities = [
     ...nearbyMajorCities,
