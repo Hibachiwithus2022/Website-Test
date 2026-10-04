@@ -76,7 +76,7 @@ export default function CityStickyBar({ cityName, stateSlug }) {
           </svg>
         </a>
         <a
-          href={isCanada ? '/booking-canada' : '/booking'}
+          href={isCanada ? '/booking-canada' : '/booking-usa'}
           style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
             background: '#C8102E',

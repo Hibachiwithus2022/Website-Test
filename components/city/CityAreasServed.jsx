@@ -36,7 +36,7 @@ export default function CityAreasServed({ cityName, stateName, nearbyCities = []
             </p>
 
             <div style={{ marginTop: '2rem' }}>
-              <a href={isOntario ? '/booking-canada' : '/booking'} className="btn-primary">{btnLabel}</a>
+              <a href={isOntario ? '/booking-canada' : '/booking-usa'} className="btn-primary">{btnLabel}</a>
             </div>
           </div>
 

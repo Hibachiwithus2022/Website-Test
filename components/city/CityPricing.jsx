@@ -157,7 +157,7 @@ export default function CityPricing({ cityName, stateName, variant = 0, isOntari
               ))}
             </div>
 
-            <a href={isOntario ? '/booking-canada' : '/booking'} className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+            <a href={isOntario ? '/booking-canada' : '/booking-usa'} className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
               Book Your Chef in {cityName}
             </a>
             <p style={{ textAlign: 'center', marginTop: '0.85rem', fontSize: '0.8rem', color: 'rgba(26,18,9,0.45)' }}>

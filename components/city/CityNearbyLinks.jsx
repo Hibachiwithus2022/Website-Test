@@ -22,7 +22,7 @@ function cityLabelIndex(city) {
 
 export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearbyMajorCities = [], nearbyCities = [] }) {
   const isCanada = isCanadaSlug(stateSlug)
-  const bookingHref = isCanada ? '/booking-canada' : '/booking'
+  const bookingHref = isCanada ? '/booking-canada' : '/booking-usa'
   // Show up to 6 nearby cities (major cities first)
   const displayCities = [
     ...nearbyMajorCities,
