@@ -77,8 +77,6 @@ export default function CityStickyBar({ cityName, stateSlug }) {
         </a>
         <a
           href={isCanada ? 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868' : 'https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538'}
-          target="_blank"
-          rel="noopener noreferrer"
           style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
             background: '#C8102E',

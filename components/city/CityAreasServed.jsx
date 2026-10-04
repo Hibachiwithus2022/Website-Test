@@ -36,7 +36,7 @@ export default function CityAreasServed({ cityName, stateName, nearbyCities = []
             </p>
 
             <div style={{ marginTop: '2rem' }}>
-              <a href={isOntario ? CANADA_BOOKING_URL : 'https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538'} target="_blank" rel="noopener noreferrer" className="btn-primary">{btnLabel}</a>
+              <a href={isOntario ? CANADA_BOOKING_URL : 'https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538'} className="btn-primary">{btnLabel}</a>
             </div>
           </div>
 

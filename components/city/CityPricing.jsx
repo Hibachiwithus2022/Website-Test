@@ -157,7 +157,7 @@ export default function CityPricing({ cityName, stateName, variant = 0, isOntari
               ))}
             </div>
 
-            <a href={isOntario ? 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868' : 'https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538'} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+            <a href={isOntario ? 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868' : 'https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538'} className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
               Book Your Chef in {cityName}
             </a>
             <p style={{ textAlign: 'center', marginTop: '0.85rem', fontSize: '0.8rem', color: 'rgba(26,18,9,0.45)' }}>
