@@ -53,7 +53,7 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="/booking-usa" className="btn-primary" style={{ padding: '0.6rem 1.5rem' }}>
+          <a href="/booking" className="btn-primary" style={{ padding: '0.6rem 1.5rem' }}>
             Book Now
           </a>
         </div>
@@ -86,7 +86,7 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="/booking-usa" className="btn-primary justify-center" onClick={() => setMobileOpen(false)}>
+          <a href="/booking" className="btn-primary justify-center" onClick={() => setMobileOpen(false)}>
             Book Now
           </a>
         </div>
