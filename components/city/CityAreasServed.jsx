@@ -1,4 +1,6 @@
-export default function CityAreasServed({ cityName, stateName, nearbyCities = [], areasPill, areasHeadline, areasIntro, areasButton }) {
+const CANADA_BOOKING_URL = 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868'
+
+export default function CityAreasServed({ cityName, stateName, nearbyCities = [], areasPill, areasHeadline, areasIntro, areasButton, isOntario = false }) {
   const pill     = areasPill ?? 'Areas We Serve'
   const headline = areasHeadline ?? null
   const para1    = areasIntro?.[0] ?? `Hibachi Connect operates throughout ${cityName} and all surrounding neighborhoods, suburbs, and communities. Whether you're in the heart of the city or 20 miles out in the suburbs, our chefs come to you.`
@@ -34,7 +36,7 @@ export default function CityAreasServed({ cityName, stateName, nearbyCities = []
             </p>
 
             <div style={{ marginTop: '2rem' }}>
-              <a href="/booking" className="btn-primary">{btnLabel}</a>
+              <a href={isOntario ? CANADA_BOOKING_URL : '/booking'} target={isOntario ? '_blank' : undefined} rel={isOntario ? 'noopener noreferrer' : undefined} className="btn-primary">{btnLabel}</a>
             </div>
           </div>
 

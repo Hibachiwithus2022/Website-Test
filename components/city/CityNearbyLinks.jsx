@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { isCanadaSlug } from '../../lib/cities'
 
 function cityToSlug(city) {
   return city.toLowerCase().replace(/[^a-z0-9]+/g, '-')
@@ -20,6 +21,8 @@ function cityLabelIndex(city) {
 }
 
 export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearbyMajorCities = [], nearbyCities = [] }) {
+  const isCanada = isCanadaSlug(stateSlug)
+  const bookingHref = isCanada ? 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868' : '/booking'
   // Show up to 6 nearby cities (major cities first)
   const displayCities = [
     ...nearbyMajorCities,
@@ -102,7 +105,7 @@ export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearby
                 </a>
               </li>
               <li>
-                <a href="/booking" style={{ fontSize: '0.88rem', color: '#C8102E', textDecoration: 'none', fontWeight: 600, display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <a href={bookingHref} target={isCanada ? '_blank' : undefined} rel={isCanada ? 'noopener noreferrer' : undefined} style={{ fontSize: '0.88rem', color: '#C8102E', textDecoration: 'none', fontWeight: 600, display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                   <span>›</span> Book Now
                 </a>
               </li>

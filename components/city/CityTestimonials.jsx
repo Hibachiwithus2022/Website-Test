@@ -8,7 +8,9 @@ const TESTIMONIAL_H2 = [
   (city) => ['What Guests Say About', `Hibachi Connect in ${city}`],
 ]
 
-export default function CityTestimonials({ cityName, testimonials = [], subheading, variant = 0, supportImage = null }) {
+const CANADA_BOOKING_URL = 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868'
+
+export default function CityTestimonials({ cityName, testimonials = [], subheading, variant = 0, supportImage = null, isOntario = false }) {
   const [h2Line1, h2Line2] = TESTIMONIAL_H2[variant % TESTIMONIAL_H2.length](cityName)
   const displayTestimonials = testimonials.length >= 3 ? testimonials : [
     ...testimonials,
@@ -66,7 +68,7 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
               <p style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.78, marginBottom: '1.75rem' }}>
                 {introText}
               </p>
-              <a href="https://hibachiconnect.com/booking" className="btn-primary" style={{ display: 'inline-block', textDecoration: 'none' }}>
+              <a href={isOntario ? CANADA_BOOKING_URL : 'https://hibachiconnect.com/booking'} target={isOntario ? '_blank' : undefined} rel={isOntario ? 'noopener noreferrer' : undefined} className="btn-primary" style={{ display: 'inline-block', textDecoration: 'none' }}>
                 Check Availability
               </a>
             </div>

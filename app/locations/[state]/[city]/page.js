@@ -566,6 +566,7 @@ export default function CityPage({ params }) {
           areasHeadline={sectionVariant?.areasHeadline}
           areasIntro={sectionVariant?.areasIntro}
           areasButton={sectionVariant?.areasButton}
+          isOntario={isOntario}
         />
 
         {/* 8. Experience / differentiator */}
@@ -585,6 +586,7 @@ export default function CityPage({ params }) {
           subheading={sectionVariant?.testimonialSubheading}
           variant={variant}
           supportImage={supportImages?.testimonial ?? null}
+          isOntario={isOntario}
         />
 
         {/* 10. FAQ */}

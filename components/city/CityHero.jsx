@@ -90,7 +90,7 @@ export default function CityHero({ cityName, stateName, stateSlug, variant = 0, 
 
         {/* CTAs */}
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
-          <a href="/booking" className="btn-primary">
+          <a href={isCanada ? 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868' : '/booking'} target={isCanada ? '_blank' : undefined} rel={isCanada ? 'noopener noreferrer' : undefined} className="btn-primary">
             Book Now
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>
