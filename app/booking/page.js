@@ -33,7 +33,7 @@ export default function BookingPage() {
       {/* Booking Form */}
       <section style={{ maxWidth: '900px', margin: '0 auto', padding: '48px 24px 80px' }}>
         <iframe
-          src="https://app.acuityscheduling.com/schedule.php?owner=39391414&ref=embedded_csp"
+          src="https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538&ref=embedded_csp"
           title="Schedule Appointment"
           width="100%"
           height="800"
