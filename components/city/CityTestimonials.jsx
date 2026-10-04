@@ -68,7 +68,7 @@ export default function CityTestimonials({ cityName, testimonials = [], subheadi
               <p style={{ fontSize: '0.86rem', color: 'rgba(26,18,9,0.55)', lineHeight: 1.78, marginBottom: '1.75rem' }}>
                 {introText}
               </p>
-              <a href={isOntario ? CANADA_BOOKING_URL : 'https://hibachiconnect.com/booking'} target={isOntario ? '_blank' : undefined} rel={isOntario ? 'noopener noreferrer' : undefined} className="btn-primary" style={{ display: 'inline-block', textDecoration: 'none' }}>
+              <a href={isOntario ? CANADA_BOOKING_URL : 'https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538'} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-block', textDecoration: 'none' }}>
                 Check Availability
               </a>
             </div>

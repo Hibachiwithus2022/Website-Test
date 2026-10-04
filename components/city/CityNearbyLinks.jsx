@@ -22,7 +22,7 @@ function cityLabelIndex(city) {
 
 export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearbyMajorCities = [], nearbyCities = [] }) {
   const isCanada = isCanadaSlug(stateSlug)
-  const bookingHref = isCanada ? 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868' : '/booking'
+  const bookingHref = isCanada ? 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868' : 'https://app.acuityscheduling.com/schedule.php?owner=39391414&appointmentType=93500538'
   // Show up to 6 nearby cities (major cities first)
   const displayCities = [
     ...nearbyMajorCities,
@@ -105,7 +105,7 @@ export default function CityNearbyLinks({ cityName, stateName, stateSlug, nearby
                 </a>
               </li>
               <li>
-                <a href={bookingHref} target={isCanada ? '_blank' : undefined} rel={isCanada ? 'noopener noreferrer' : undefined} style={{ fontSize: '0.88rem', color: '#C8102E', textDecoration: 'none', fontWeight: 600, display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <a href={bookingHref} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.88rem', color: '#C8102E', textDecoration: 'none', fontWeight: 600, display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                   <span>›</span> Book Now
                 </a>
               </li>
