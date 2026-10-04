@@ -1,6 +1,9 @@
 import { CLOSING_VARIANTS } from '../../lib/cityData'
 
-export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClosingVariant = 0, supportImage = null }) {
+const CANADA_BOOKING_URL = 'https://app.acuityscheduling.com/schedule/87fa3c00/appointment/99048868/calendar/14634924?appointmentTypeIds[]=99048868'
+const USA_BOOKING_URL    = 'https://app.acuityscheduling.com/schedule.php?owner=39391414&ref=embedded_csp'
+
+export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClosingVariant = 0, supportImage = null, isOntario = false }) {
   const v = CLOSING_VARIANTS[uniqueClosingVariant % CLOSING_VARIANTS.length]
 
   return (
@@ -90,7 +93,7 @@ export default function CityFinalCTA({ cityName, stateName, stateAbbr, uniqueClo
         {/* Booking calendar — constrained to max-w-3xl */}
         <div style={{ maxWidth: '48rem', margin: '0 auto' }}>
           <iframe
-            src="https://app.acuityscheduling.com/schedule.php?owner=39391414&ref=embedded_csp"
+            src={isOntario ? CANADA_BOOKING_URL : USA_BOOKING_URL}
             title="Schedule Appointment"
             width="100%"
             height="800"

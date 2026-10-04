@@ -630,6 +630,7 @@ export default function CityPage({ params }) {
           stateAbbr={stateAbbr}
           uniqueClosingVariant={cityData?.uniqueClosingVariant ?? variant}
           supportImage={null}
+          isOntario={isOntario}
         />
       </main>
 
