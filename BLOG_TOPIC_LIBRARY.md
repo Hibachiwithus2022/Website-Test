@@ -25,9 +25,9 @@
 | 5 | Cabins | 3 | Needs more |
 | 6 | Birthday Parties | 3 | Needs more |
 | 7 | Graduation Parties | 8 | Needs more |
-| 8 | Corporate Events | 4 | Needs more |
+| 8 | Corporate Events | 5 | Needs more |
 | 9 | Weddings | 1 | Needs more |
-| 10 | Bachelor Parties | 1 | Needs more |
+| 10 | Bachelor Parties | 2 | Needs more |
 | 11 | Bachelorette Parties | 3 | Needs more |
 | 12 | Family Reunions | 1 | Needs more |
 | 13 | Holiday Parties | 0 | Untouched |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 73 | Active — expand to new states |
+| 26 | Local Lifestyle | 76 | Active — expand to new states |
 | 27 | Seasonal | 1 | Needs more |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
