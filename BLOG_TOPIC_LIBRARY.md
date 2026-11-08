@@ -18,7 +18,7 @@
 
 | # | Category | Posts Published | Status |
 |---|----------|----------------|--------|
-| 1 | Vacation Rentals | 4 | Needs more |
+| 1 | Vacation Rentals | 6 | Needs more |
 | 2 | Airbnb | 1 | Needs more |
 | 3 | Beach Houses | 2 | Needs more |
 | 4 | Lake Houses | 1 | Needs more |
@@ -33,7 +33,7 @@
 | 13 | Holiday Parties | 0 | Untouched |
 | 14 | Summer Parties | 0 | Untouched |
 | 15 | Backyard Parties | 2 | Well covered |
-| 16 | Luxury Dining | 2 | Needs more |
+| 16 | Luxury Dining | 3 | Needs more |
 | 17 | Private Chef Experience | 1 | Needs more |
 | 18 | Hibachi vs Restaurant | 2 | Well covered |
 | 19 | Hibachi vs Catering | 0 (partial) | Needs standalone |
@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 76 | Active — expand to new states |
+| 26 | Local Lifestyle | 79 | Active — expand to new states |
 | 27 | Seasonal | 1 | Needs more |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
