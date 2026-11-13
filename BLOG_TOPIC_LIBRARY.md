@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 79 | Active — expand to new states |
+| 26 | Local Lifestyle | 90 | Active — expand to new states |
 | 27 | Seasonal | 1 | Needs more |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
