@@ -43,7 +43,7 @@
 | 23 | Kids Parties | 0 (partial) | Needs standalone |
 | 24 | Anniversary | 1 | Needs more |
 | 25 | Retirement | 0 | Untouched |
-| 26 | Local Lifestyle | 90 | Active — expand to new states |
+| 26 | Local Lifestyle | 105 | Active — expand to new states |
 | 27 | Seasonal | 1 | Needs more |
 | 28 | Food & Cooking | 4 | Needs more |
 | 29 | Entertainment | 0 | Untouched |
@@ -690,15 +690,27 @@
 - `private-hibachi-kentucky-bourbon-trail-weekend` — Kentucky Bourbon Trail destination guide: Louisville vacation rental base (Highlands/NuLu/Anchorage), Lexington horse country base (Hamburg/Versailles corridor, Midway village), Bardstown distillery corridor; corporate retreat circuit format; premium protein norms for the bourbon trail visitor market; booking windows
 - `private-hibachi-kentucky-lake-house` — Kentucky lake house guide: Lake Cumberland (houseboat capital, Jamestown/Russell Springs/Monticello), Barren River Lake (Warren County, Bowling Green families), Nolin Lake and Rough River Lake (west-central KY, Louisville/Elizabethtown market), Green River Lake (Campbellsville, Taylor County), Dale Hollow (KY-TN border, fishing groups); houseboat dock setup requirements; Memorial Day/July 4th/Labor Day booking windows
 - `private-hibachi-louisville-corporate-executive` — Louisville corporate and executive entertaining guide: healthcare executive market (Humana/Kindred, Anchorage/Prospect estates), bourbon industry trade visitor entertaining, UPS Worldport logistics sector, professional services firms; Prospect/Anchorage/St. Matthews/Crestwood property profiles; cocktail hour format; peak corporate season booking windows
+- `hibachi-at-home-washington-guide` — complete Washington state guide (Puget Sound metro Seattle/Bellevue/Tacoma vs Eastern WA Spokane; outdoor season comparison; tech industry and South/East Asian community demand)
+- `private-hibachi-seattle-bellevue-washington` — Seattle and Eastside guide: Seattle neighborhoods by outdoor profile, Bellevue/Redmond/Kirkland South Asian graduation market, Medina/Clyde Hill luxury estate dinners, Microsoft corporate team events; booking windows
+- `private-hibachi-spokane-tacoma-washington` — Spokane and Tacoma guide: Spokane Eastern WA hot dry summer season, Gonzaga/WSU graduation market, South Hill/Valley lot profiles; Tacoma working-class family event culture, JBLM military homecomings, Pierce County suburban market
+- `hibachi-at-home-oregon-guide` — complete Oregon guide (Portland metro, Bend mountain destination, Oregon Coast vacation rental markets; Portland food culture, Nike/Intel/adidas tech suburban demand, Bend ski/outdoor groups, Cannon Beach/Lincoln City beach rentals)
+- `private-hibachi-portland-oregon` — Portland metro guide: Portland neighborhoods by outdoor setup profile, Beaverton/Hillsboro Intel/Nike tech corridor South Asian graduation market, Lake Oswego affluent suburb estate dinners, Salem capital city market; booking windows
+- `private-hibachi-bend-oregon-coast` — Bend and Oregon Coast vacation rental guide: Bend mountain outdoor recreation groups, ski/hiking/retreat weekends, Cannon Beach iconic beach destination rentals, Lincoln City central coast; weather and coverage notes for coast bookings
+- `hibachi-at-home-iowa-guide` — Iowa guide (Des Moines metro, Cedar Rapids, Iowa City; Midwest backyard party culture; Drake/Iowa graduation season; financial services corporate team demand)
+- `private-hibachi-des-moines-iowa` — Des Moines guide: western suburbs West Des Moines/Waukee highest-income corridor, Ankeny/Johnston suburban family event demand, Drake graduation season; outdoor season and booking windows
+- `hibachi-at-home-delaware-guide` — complete Delaware guide (northern affluent corridor Wilmington/Greenville/Hockessin/Newark vs southern Delaware beach resort towns Rehoboth/Lewes/Bethany/Dewey/Fenwick Island; DC/Baltimore/Philadelphia vacation rental market)
+- `private-hibachi-rehoboth-beach-delaware` — Delaware beaches guide: Rehoboth Beach North Shores/Henlopen Acres rental profiles, Lewes upscale larger-property market, Bethany Beach multigenerational family angle, Dewey Beach celebration weekends, Fenwick Island; wind/ocean breeze setup notes
+- `hibachi-at-home-new-hampshire-guide` — New Hampshire guide (Manchester/Bedford metro highest-income corridor, Concord state capital; SNHU/Saint Anselm graduation demand; New England outdoor season May–September)
+- `hibachi-at-home-washington-dc-guide` — Washington DC guide (government/consulting/law professional audience, embassy and international community dinners, Georgetown/GWU/American/Howard graduation season; neighborhood-by-neighborhood outdoor setup profiles including rooftops)
+- `private-hibachi-san-diego-la-jolla-california` — San Diego luxury coastal guide: La Jolla biotech/UCSD executive estate dinners, Coronado island vacation rental and military residential market, Del Mar racing season coastal bluff estates, Rancho Santa Fe estate ranch dinners, Carlsbad La Costa suburban family events; year-round outdoor season
+- `private-hibachi-bay-area-palo-alto-san-francisco` — Bay Area Silicon Valley guide: Atherton top-income zip estate dinner parties, Palo Alto Stanford graduation and tech founder households, San Jose South/East Asian graduation volume and Los Gatos foothill estates, San Francisco neighborhood outdoor setup profiles and fog considerations; booking windows by graduation calendar
+- `private-hibachi-mclean-reston-northern-virginia` — Northern Virginia DC suburbs guide: McLean estate dinners for government/defense/law executives, Reston/Herndon tech corridor with highest South Asian graduation event volume in Mid-Atlantic (TJ High School corridor), Leesburg/Loudoun County fastest-growing high-income county, Manassas Prince William County family market; booking windows 5–6 weeks out for graduation season
 
 ### 📋 Topics Still Available
 **State guides (none published yet):**
 - Georgia complete state guide
 - North Carolina complete state guide
-- Oregon complete state guide
-- Delaware complete state guide
 - New Jersey complete state guide
-- Colorado complete state guide
 - Nevada / Las Vegas guide
 
 **City/region-specific:**
